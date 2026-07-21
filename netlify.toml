@@ -1,5 +1,18 @@
+[build]
+  command = "pip install pillow && python3 selfhost_favicons.py && python3 generate.py"
+  publish = "site"
+  functions = "netlify/functions"
+
 [build.environment]
   LILY_SITE = "verifiedfree"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[edge_functions]]
+  path = "/*"
+  function = "lily-edge"
 
 [[redirects]]
   from = "/api/lily"

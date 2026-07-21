@@ -1,0 +1,8 @@
+[build.environment]
+  LILY_SITE = "verifiedfree"
+
+[[redirects]]
+  from = "/api/lily"
+  to = "/.netlify/functions/lily-collect"
+  status = 200
+  force = true

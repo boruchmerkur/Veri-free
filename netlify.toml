@@ -1,18 +1,25 @@
 [build]
   command = "pip install pillow && python3 selfhost_favicons.py && python3 generate.py"
   publish = "site"
-  functions = "netlify/functions"
 
 [build.environment]
   LILY_SITE = "verifiedfree"
+  # Pin Python so the build image provisions it deterministically.
+  # Without this, `python3`/`pip` can be missing and the whole build aborts,
+  # leaving the previous (function-less) deploy live — which 404s /api/lily.
+  PYTHON_VERSION = "3.11"
 
+# v2 functions in netlify/functions are auto-detected and bundled by Netlify's
+# own pipeline. Do NOT set node_bundler here — "esbuild" is the v1 setting and
+# forcing it can reject these v2 (export default (req, context) => Response)
+# functions for a "missing handler".
 [functions]
   directory = "netlify/functions"
-  node_bundler = "esbuild"
 
-[[edge_functions]]
-  path = "/*"
-  function = "lily-edge"
+# NOTE: the edge function lily-edge is declared INLINE in
+# netlify/edge-functions/lily-edge.js via `export const config = { path: '/*' }`.
+# It is intentionally NOT declared here as well — a second [[edge_functions]]
+# block would double-register it and can fail the deploy.
 
 [[redirects]]
   from = "/api/lily"

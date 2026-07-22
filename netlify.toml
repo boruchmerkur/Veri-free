@@ -21,8 +21,10 @@
 # It is intentionally NOT declared here as well — a second [[edge_functions]]
 # block would double-register it and can fail the deploy.
 
-[[redirects]]
-  from = "/api/lily"
-  to = "/.netlify/functions/lily-collect"
-  status = 200
-  force = true
+# NO /api/lily redirect here on purpose.
+# lily-collect is a v2 function that already claims /api/lily via its inline
+# `export const config = { path: '/api/lily' }`, so it is served AT /api/lily
+# directly. A v2 function with a custom path is NOT exposed at the legacy
+# /.netlify/functions/lily-collect URL — so a forced redirect pointing there
+# rewrites every /api/lily request to a dead URL and returns 404. Removing it
+# lets the function's own route handle /api/lily.

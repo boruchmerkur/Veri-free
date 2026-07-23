@@ -69,11 +69,18 @@ a{color:inherit}
 .dropdown:hover .dropdown-menu{display:block}
 .dropdown-menu a{display:flex;align-items:center;gap:10px;padding:9px 16px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);white-space:nowrap;line-height:1.4}
 .dropdown-menu a:hover{background:var(--paper);color:var(--brand)}
+.dropdown-menu a .dd-count{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted);opacity:.6}
 .dropdown-menu a .cicon{margin:0}
 .dropdown-menu a .cicon svg{width:18px;height:18px}
 .dropdown-menu .sep{height:1px;background:var(--line);margin:4px 12px}
 .catbar{border-bottom:1px solid var(--line);padding:0;background:var(--paper);min-height:42px}
-.catbar-in{display:flex;align-items:center;gap:3px;padding:5px 22px;max-width:var(--maxw);margin:0 auto;flex-wrap:wrap}
+.catbar-in{display:flex;align-items:center;gap:10px;padding:6px 22px;max-width:var(--maxw);margin:0 auto}
+.catfilters{display:flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:2px 1px;scroll-snap-type:x proximity;-webkit-mask-image:linear-gradient(90deg,#000 96%,transparent);mask-image:linear-gradient(90deg,#000 96%,transparent)}
+.catfilters::-webkit-scrollbar{display:none}
+.catfilters .pill-toggle{flex-shrink:0;scroll-snap-align:start}
+.catbar .pill-toggle .pc{font-size:10px;font-weight:700;opacity:.5;margin-left:1px}
+.catbar .pill-toggle.on .pc{color:var(--brand);opacity:.9}
+.catbar .pill-toggle.reset .pc{color:var(--brand);opacity:.85}
 .catbar .pill-toggle{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-decoration:none;color:var(--muted);padding:5px 11px;border-radius:99px;border:1.5px solid transparent;cursor:pointer;transition:color .15s,background .15s,border-color .15s,box-shadow .15s;line-height:1;white-space:nowrap;background:transparent;user-select:none}
 .catbar .pill-toggle.reset{color:var(--brand);font-weight:700;border:1.5px solid var(--brand);background:#E4F2EA}
 .catbar .pill-toggle.reset:hover{background:var(--brand);color:var(--paper)}
@@ -283,7 +290,7 @@ body.loc-ca .ca-badge{display:inline-flex}
 .loc-menu a{display:block;padding:8px 14px;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;text-decoration:none;color:var(--ink);cursor:pointer}
 .loc-menu a:hover{background:var(--paper);color:var(--brand)}
 .loc-menu a.sel{color:var(--brand)}
-.loc-wrap{position:relative;margin-left:auto}
+.loc-wrap{position:relative;flex-shrink:0;padding-left:12px;border-left:1px solid var(--line)}
 .ext-ratings{margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px}
 .ext-rat{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;text-decoration:none;color:var(--muted);border:1.5px solid var(--line);border-radius:6px;padding:3px 9px;transition:border-color .12s}
 .ext-rat:hover{border-color:var(--brand);color:var(--brand)}
@@ -622,8 +629,15 @@ def build():
         f'<div class="sl-item">{pill(k, tip=False)}<span>{esc(d)}</span></div>'
         for k, (_, _, _, d) in VERDICTS.items())
 
+    import collections
+    cat_counts = collections.Counter(l["category"] for l in listings)
+    # Order categories by how many listings each has (largest first), so the
+    # bar and the homepage sections both lead with the most substantial ones.
+    CAT_ORDER = sorted(CATS.keys(), key=lambda k: (-cat_counts.get(k, 0), CATS[k][0].lower()))
+
     sections = ""
-    for cslug, (ctitle, cblurb) in CATS.items():
+    for cslug in CAT_ORDER:
+        ctitle, cblurb = CATS[cslug]
         cards = "".join(card(l) for l in listings if l["category"] == cslug)
         sections += (f'<section class="section" data-section data-cat="{cslug}">'
                      f'<div class="section-head"><h2><a href="/{cslug}/">{esc(ctitle)}</a></h2>'
@@ -635,29 +649,29 @@ def build():
     traps = sum(1 for l in listings if l["verdict"] in ("trap", "fake", "notfree"))
 
     cat_dd = "".join(
-        f'<a href="/{cs}/"><span class="cicon">{ICONS[cs]}</span>{esc(CATS[cs][0])}</a>'
-        for cs in CATS)
+        f'<a href="/{cs}/"><span class="cicon">{ICONS[cs]}</span>{esc(CATS[cs][0])}<span class="dd-count">{cat_counts.get(cs,0)}</span></a>'
+        for cs in CAT_ORDER)
     NAV = (f'<nav class="nav"><div class="wrap nav-in">'
            f'<a class="logo" href="/">VERIFIED·<b>FREE</b></a>'
            f'<div class="nav-links">'
            f'<div class="dropdown"><a href="/#categories">Categories</a>'
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
            f'<a href="/deals/">Verified Deals</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
+           f'<a href="/deals/">Deals</a>'
+           f'<a href="/compare/">Compare</a>'
            f'<a href="/methodology/">How we verify</a>'
            f'<a href="/submit/">For businesses</a>'
            f'</div></div></nav>')
 
     # Category bar
     cat_pills = "".join(
-        f'<span class="pill-toggle on" data-cat="{cs}" data-tip="{esc(CATS[cs][1])}" onclick="toggleCat(this)">{esc(CATS[cs][0])}</span>'
-        for cs in CATS)
+        f'<span class="pill-toggle on" data-cat="{cs}" data-tip="{esc(CATS[cs][1])}" onclick="toggleCat(this)">{ICONS[cs]}{esc(CATS[cs][0])}<span class="pc">{cat_counts.get(cs,0)}</span></span>'
+        for cs in CAT_ORDER)
     CATBAR = (f'<div class="catbar"><div class="catbar-in">'
-              f'<span class="pill-toggle reset" data-tip="Show every category" onclick="resetCats()">All</span>'
-              f'<span class="pill-toggle reset none" data-tip="Hide all categories — then pick just the ones you want" onclick="noneCats()">None</span>'
+              f'<div class="catfilters">'
+              f'<span class="pill-toggle reset on" id="catAll" data-tip="Show every category" onclick="resetCats()">All<span class="pc">{len(listings)}</span></span>'
               f'{cat_pills}'
-              f'<div class="divider"></div>'
-              f'<span class="pill-toggle on" data-tip="Verified deals, student programs, and free-money offers — each one checked" style="border-color:var(--brand);color:var(--brand)" onclick="window.location=\'/deals/\'">Deals &amp; Coupons</span>'
-              f'<a class="pill-link" href="/compare/">Compare</a>'
+              f'</div>'
               f'<div class="loc-wrap"><button class="loc-pick" id="locbtn" onclick="document.getElementById(\'locmenu\').classList.toggle(\'open\')" title="Set your location">🌐 Global</button>'
               f'<div class="loc-menu" id="locmenu">'
               f'<a onclick="setLoc(\'global\')">🌐 Global</a>'

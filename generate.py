@@ -288,6 +288,34 @@ body.loc-ca .ca-badge{display:inline-flex}
 .ext-rat{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;text-decoration:none;color:var(--muted);border:1.5px solid var(--line);border-radius:6px;padding:3px 9px;transition:border-color .12s}
 .ext-rat:hover{border-color:var(--brand);color:var(--brand)}
 .ext-rat .er-score{color:var(--ink);font-size:12px}
+/* free site check (AI + SEO) */
+.sitecheck{border-top:1px solid var(--line);margin:36px 0 0;padding:44px 0}
+.sitecheck .sc-head h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(26px,4vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0 0 8px}
+.sitecheck .sc-head p{margin:0 0 20px;color:var(--muted);max-width:60ch;font-size:16px}
+.sitecheck .sc-head p b{color:var(--ink);font-weight:600}
+.sc-form{display:flex;gap:0;max-width:560px;border:2.5px solid var(--ink);border-radius:12px;background:var(--card);overflow:hidden}
+.sc-form input{flex:1;min-width:0;border:0;outline:0;padding:15px 18px;font:400 17px "Public Sans",sans-serif;background:transparent;color:var(--ink)}
+.sc-form button{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:0;padding:0 22px;background:var(--brand);color:#fff;cursor:pointer;white-space:nowrap;transition:background .15s}
+.sc-form button:hover{background:#0b6239}
+.sc-form button:disabled{opacity:.6;cursor:default}
+.sc-status{margin:16px 0 0;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted);line-height:1.55}
+.sc-status b{color:var(--ink);font-weight:600}
+.sc-status.err{color:#C0392B}
+.sc-results{margin:14px 0 0;max-width:720px}
+.sc-row{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
+.sc-row:last-child{border-bottom:none}
+.sc-ico{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.sc-row.pass .sc-ico{background:var(--brand)}
+.sc-row.warn .sc-ico{background:#B26A00}
+.sc-row.fail .sc-ico{background:#C0392B}
+.sc-rl{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.sc-rl b{font-size:15px;font-weight:600}
+.sc-tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 7px}
+.sc-d{margin:3px 0 0;color:var(--muted);font-size:14px;line-height:1.55}
+.sc-foot{margin:18px 0 0;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted)}
+.sc-foot a{color:var(--brand);text-decoration:none}
+.sc-foot a:hover{text-decoration:underline}
+@media(max-width:480px){.sc-form{flex-direction:column;border-radius:12px}.sc-form button{padding:13px}}
 .headlines{margin:32px 0 0;border-top:1px solid var(--line);padding-top:20px}
 .headlines h2{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
 .hl-list{display:flex;flex-direction:column;gap:6px}
@@ -689,6 +717,20 @@ def build():
 <p class="noresults" id="noresults">Nothing by that name yet. <a href="mailto:hello@veri-free.com">Suggest it</a> and we'll verify it.</p>
 </main>
 {headlines_html}
+<section class="sitecheck"><div class="wrap">
+<div class="sc-head">
+<h2>Can AI and Google actually find your site?</h2>
+<p>A free, instant check: are <b>ChatGPT, Perplexity &amp; Claude</b> allowed to read your site, and are your <b>SEO basics</b> in place? We check it live — no signup, no card.</p>
+</div>
+<form class="sc-form" id="scForm" novalidate>
+<input id="scInput" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="yourdomain.com" aria-label="Website address to check">
+<button type="submit" id="scBtn">Check free</button>
+</form>
+<div class="sc-status" id="scStatus" hidden></div>
+<div class="sc-results" id="scResults"></div>
+<p class="sc-foot" id="scFoot" hidden>Deeper report — security, speed, accessibility &amp; more — at <a href="https://checkmysite.pro/" target="_blank" rel="noopener">checkmysite.pro</a></p>
+</div></section>
+<script src="/sitecheck.js" defer></script>
 <section class="bizband"><div class="wrap">
 <h2>Does your business lead with something free?</h2>
 <p>A free tool, a free scan, a free tier — if it's genuinely free and easy, we'll verify it. Same rubric as everyone; a stamp your customers can trust.</p>

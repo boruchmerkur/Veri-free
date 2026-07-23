@@ -720,7 +720,7 @@ def build():
 <section class="sitecheck"><div class="wrap">
 <div class="sc-head">
 <h2>Can AI and Google actually find your site?</h2>
-<p>A free, instant check: are <b>ChatGPT, Perplexity &amp; Claude</b> allowed to read your site, and are your <b>SEO basics</b> in place? We check it live — no signup, no card.</p>
+<p>A free, instant check: are <b>ChatGPT, Perplexity &amp; Claude</b> allowed to read your site, and are your <b>SEO basics</b> in place? We check it live, free — no signup.</p>
 </div>
 <form class="sc-form" id="scForm" novalidate>
 <input id="scInput" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="yourdomain.com" aria-label="Website address to check">

@@ -4,6 +4,7 @@ Reads listings.json, writes the full site into ./site/.
 Run: python3 generate.py
 """
 import json, re, os, re, shutil, html
+from i18n import L10N, EXTRA_LANGS, LANG_NAMES, HTML_LANG
 
 DOMAIN = "https://veri-free.com"
 SPRITE_INDEX = {}
@@ -70,6 +71,9 @@ a{color:inherit}
 .dropdown-menu a{display:flex;align-items:center;gap:10px;padding:9px 16px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);white-space:nowrap;line-height:1.4}
 .dropdown-menu a:hover{background:var(--paper);color:var(--brand)}
 .dropdown-menu a .dd-count{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted);opacity:.6}
+.dropdown-menu.right{left:auto;right:-12px}
+.langdd>a{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em}
+.dropdown-menu a.cur{color:var(--brand)}
 .dropdown-menu a .cicon{margin:0}
 .dropdown-menu a .cicon svg{width:18px;height:18px}
 .dropdown-menu .sep{height:1px;background:var(--line);margin:4px 12px}
@@ -405,8 +409,10 @@ def legit_box(l):
     rows += f'<div class="lg-row flag"><b>Red flags</b><span>{esc(lg["red_flags"])}</span></div>'
     return f'<div class="legit"><h2>Legitimacy check</h2>{rows}</div>'
 
-def pill(vkey, tip=True):
+def pill(vkey, tip=True, lang="en"):
     label, color, bg, d = VERDICTS[vkey]
+    if lang != "en":
+        label, d = L10N[lang]["verdicts"][vkey]
     t = f' data-tip="{esc(d)}"' if tip else ''
     return f'<span class="pill"{t} style="color:{color};border-color:{color};background:{bg}">{label}</span>'
 
@@ -442,10 +448,19 @@ def favicon(url, big=False, override=None):
     return (f'<img class="{cls}" {wh} src="https://www.google.com/s2/favicons?domain={dom}&amp;sz=128" '
             f'alt="" loading="lazy" referrerpolicy="no-referrer">')
 
-def page(title, desc, path, body, extra_head=""):
+def lang_switcher(current="en"):
+    items = ""
+    for lg in ["en"] + EXTRA_LANGS:
+        href = "/" if lg == "en" else "/" + lg + "/"
+        cur = ' class="cur"' if lg == current else ""
+        items += f'<a href="{href}"{cur}>{LANG_NAMES[lg]}</a>'
+    return (f'<div class="dropdown langdd"><a href="#" onclick="return false">\U0001F310 {current.upper()}</a>'
+            f'<div class="dropdown-menu right"><div class="dd-inner">{items}</div></div></div>')
+
+def page(title, desc, path, body, extra_head="", lang="en"):
     canonical = f"{DOMAIN}{path}"
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{HTML_LANG.get(lang, 'en')}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -596,27 +611,38 @@ def short_worth(w):
     if m: return m.group(0).strip()
     return None
 
-def card(l):
+def card(l, lang="en"):
     get_line = l.get("free_includes", [""])[0]
     c = score_color(l["free_score"])
     sw = l.get("short_worth") or short_worth(l.get("worth", ""))
+    if lang == "en":
+        t_saves, t_pays_you, t_pays, t_costs, t_value, t_you_get = (
+            f"SAVES {sw}", f"PAYS YOU {sw}", f"PAYS {sw}", "COSTS YOU", f"{sw} value", "You get")
+    else:
+        tc = L10N[lang]["card"]
+        t_saves   = tc["saves"].replace("{v}", sw or "")
+        t_pays_you= tc["pays_you"].replace("{v}", sw or "")
+        t_pays    = tc["pays"].replace("{v}", sw or "")
+        t_costs   = tc["costs_you"]
+        t_value   = tc["value"].replace("{v}", sw or "")
+        t_you_get = tc["you_get"]
     if l["category"] == "earn":
         if l["verdict"] in ("truly", "forever") and sw:
-            val = f'<span class="vtag pays" data-tip="Real money paid to you — the realistic rate, not the marketing pitch">PAYS YOU {sw}</span>'
+            val = f'<span class="vtag pays" data-tip="Real money paid to you — the realistic rate, not the marketing pitch">{t_pays_you}</span>'
         elif sw and l["verdict"] == "freeish":
-            val = f'<span class="vtag pays low" data-tip="It does pay — but at this hourly rate. Compare before spending your time">PAYS {sw}</span>'
+            val = f'<span class="vtag pays low" data-tip="It does pay — but at this hourly rate. Compare before spending your time">{t_pays}</span>'
         else:
-            val = f'<span class="vtag trap-warn" data-tip="You pay them, not the other way around — see why inside">COSTS YOU</span>'
+            val = f'<span class="vtag trap-warn" data-tip="You pay them, not the other way around — see why inside">{t_costs}</span>'
     elif l["verdict"] == "truly" and sw:
-        val = f'<span class="vtag saves" data-tip="What the paid equivalent costs — money this free option keeps in your pocket">SAVES {sw}</span>'
+        val = f'<span class="vtag saves" data-tip="What the paid equivalent costs — money this free option keeps in your pocket">{t_saves}</span>'
     elif sw:
-        val = f'<span class="vtag" data-tip="The price of the paid tier this free plan gives you a slice of">{sw} value</span>'
+        val = f'<span class="vtag" data-tip="The price of the paid tier this free plan gives you a slice of">{t_value}</span>'
     else:
         val = ""
     return (f'<a class="card" href="/{l["slug"]}/" data-search="{esc((l["name"]+" "+CATS[l["category"]][0]+" "+VERDICTS[l["verdict"]][0]).lower())}" '
             f'data-free="{l["free_score"]}" data-value="{l["value_score"]}" data-name="{esc(l["name"].lower())}">'
-            f'<div class="row">{favicon(l["url"], override=l.get("favicon_url"))}{pill(l["verdict"])}<span class="chip" data-tip="Free Score {l["free_score"]}/100 — how genuinely free this is. Higher means fewer strings." style="color:{c};border-color:{c}">{l["free_score"]}</span></div><h3>{esc(l["name"])}</h3>'
-            f'<p class="cost"><b>You get</b>{esc(get_line)}</p>'
+            f'<div class="row">{favicon(l["url"], override=l.get("favicon_url"))}{pill(l["verdict"], lang=lang)}<span class="chip" data-tip="Free Score {l["free_score"]}/100 — how genuinely free this is. Higher means fewer strings." style="color:{c};border-color:{c}">{l["free_score"]}</span></div><h3>{esc(l["name"])}</h3>'
+            f'<p class="cost"><b>{t_you_get}</b>{esc(get_line)}</p>'
             f'{val}</a>')
 
 CSS = CSS.replace("{SPRITE_N}", str(len(SPRITE_INDEX) or 1))
@@ -673,6 +699,7 @@ def build():
            f'<a href="/compare/">Compare</a>'
            f'<a href="/methodology/">How we verify</a>'
            f'<a href="/submit/">For businesses</a>'
+           f'{lang_switcher("en")}'
            f'</div></div></nav>')
 
     # Category bar
@@ -812,10 +839,187 @@ window.addEventListener('scroll',function(){{document.getElementById('btt').clas
 </script>
 """
     home_extra = '<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Verified Free","url":"https://veri-free.com","description":"Verified rankings of how free the internets free offers really are.","potentialAction":{"@type":"SearchAction","target":"https://veri-free.com/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>'
+    # hreflang alternates shared by all five homepages
+    ALT_LINKS = f'<link rel="alternate" hreflang="en" href="{DOMAIN}/">'
+    for _lg in EXTRA_LANGS:
+        ALT_LINKS += f'<link rel="alternate" hreflang="{HTML_LANG[_lg]}" href="{DOMAIN}/{_lg}/">'
+    ALT_LINKS += f'<link rel="alternate" hreflang="x-default" href="{DOMAIN}/">'
+
+    # Landing-language suggest banner (EN homepage only): if the browser prefers
+    # es/pt/fr/de, offer that homepage once — dismissible, never a forced redirect.
+    BANNER_JS = """
+<script>
+(function(){
+  if(document.cookie.indexOf('vf_langoff=1')>=0)return;
+  var m={'es':'\\u00bfPrefieres espa\\u00f1ol? Versi\\u00f3n en espa\\u00f1ol \\u2192','pt':'Prefere portugu\\u00eas? Vers\\u00e3o em portugu\\u00eas \\u2192','fr':'Vous pr\\u00e9f\\u00e9rez le fran\\u00e7ais ? Version fran\\u00e7aise \\u2192','de':'Lieber auf Deutsch? Deutsche Version \\u2192'};
+  var l=(navigator.language||'').slice(0,2).toLowerCase();
+  if(!m[l])return;
+  var b=document.createElement('div');
+  b.setAttribute('role','region');b.setAttribute('aria-label','Language suggestion');
+  b.style.cssText='position:relative;z-index:60;background:#0E7B47;color:#fff;font:600 13.5px \\'Public Sans\\',sans-serif;padding:9px 40px 9px 16px;text-align:center';
+  b.innerHTML='<a href="/'+l+'/" style="color:#fff">'+m[l]+'</a><span style="position:absolute;right:14px;top:7px;cursor:pointer;font-size:17px;line-height:1" aria-label="Dismiss">\\u00d7</span>';
+  b.lastChild.onclick=function(){b.remove();document.cookie='vf_langoff=1;path=/;max-age=31536000;SameSite=Lax'};
+  document.body.insertBefore(b,document.body.firstChild);
+})();
+</script>"""
+
     home = page_nav("Verified Free — Is it actually free? We checked.",
                 "Verified Free: verified rankings of how free the internet's 'free' offers really are.",
-                "/", home_body, extra_head=home_extra)
+                "/", home_body + BANNER_JS, extra_head=home_extra + ALT_LINKS)
     open(os.path.join(OUT, "index.html"), "w").write(home)
+
+    # ---------- localized homepages (/es/ /pt/ /fr/ /de/) ----------
+    # Phase 1: full chrome + verdicts + categories + checker in the language;
+    # listing editorial text stays English until listings.json is translated.
+    LANG_HOME_JS = """
+<script>
+const q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')],
+secs=[...document.querySelectorAll('[data-section]')],nores=document.getElementById('noresults'),
+count=document.getElementById('count');
+var R1='__R1__',RN='__RN__';
+q.addEventListener('input',()=>{
+const v=q.value.trim().toLowerCase();let shown=0;
+cards.forEach(c=>{const hit=!v||c.dataset.search.includes(v);c.style.display=hit?'':'none';if(hit)shown++;});
+secs.forEach(s=>{const any=[...s.querySelectorAll('.card')].some(c=>c.style.display!=='none');s.style.display=any?'':'none';});
+nores.style.display=shown?'none':'block';
+count.textContent=v?shown+' '+(shown===1?R1:RN):'';
+});
+document.querySelectorAll('.sortbtn').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.sortbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const key = btn.dataset.sort;
+  document.querySelectorAll('.grid').forEach(grid => {
+    const items = [...grid.children].filter(c => c.classList.contains('card'));
+    items.sort((a, b) => {
+      if (key === 'free') return (+b.dataset.free) - (+a.dataset.free) || (+b.dataset.value) - (+a.dataset.value);
+      if (key === 'value') return (+b.dataset.value) - (+a.dataset.value) || (+b.dataset.free) - (+a.dataset.free);
+      return a.dataset.name.localeCompare(b.dataset.name);
+    });
+    items.forEach(c => grid.appendChild(c));
+  });
+}));
+document.querySelectorAll('.vfilter').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.vfilter').forEach(function(b){b.classList.remove('on')});
+    btn.classList.add('on');
+    var v=btn.dataset.v;
+    document.querySelectorAll('.card').forEach(function(c){
+      if(v==='all'){c.style.display='';return;}
+      var vs=v.split(',');
+      var match=vs.some(function(vv){return c.querySelector('.pill')&&c.querySelector('.pill').textContent.trim().toLowerCase().replace(/[- ]/g,'').indexOf(vv.replace(/[- ]/g,''))>=0});
+      c.style.display=match?'':'none';
+    });
+    document.querySelectorAll('[data-section]').forEach(function(s){
+      var any=[...s.querySelectorAll('.card')].some(function(c){return c.style.display!=='none'});
+      s.style.display=any?'':'none';
+    });
+  });
+});
+</script>
+<button class="backtop" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+window.addEventListener('scroll',function(){document.getElementById('btt').classList.toggle('show',window.scrollY>600)});
+</script>"""
+
+    for LG in EXTRA_LANGS:
+        T = L10N[LG]
+        # nav (links point at the English inner pages until those are localized)
+        cat_dd_L = ""
+        for cs in CAT_ORDER:
+            cat_dd_L += (f'<a href="/{cs}/"><span class="cicon">{ICONS[cs]}</span>{esc(T["cats"][cs][0])}'
+                         f'<span class="dd-count">{cat_counts.get(cs,0)}</span></a>')
+        NAV_L = (f'<nav class="nav"><div class="wrap nav-in">'
+                 f'<a class="logo" href="/{LG}/">VERIFIED·<b>FREE</b></a>'
+                 f'<div class="nav-links">'
+                 f'<div class="dropdown"><a href="/{LG}/#categories">{esc(T["nav"]["categories"])}</a>'
+                 f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd_L}<div class="sep"></div>'
+                 f'<a href="/deals/">{esc(T["nav"]["dd_deals"])}</a><a href="/compare/">{esc(T["nav"]["dd_compare"])}</a>'
+                 f'<a href="/changelog/">{esc(T["nav"]["dd_changed"])}</a><a href="/when-to-buy/">{esc(T["nav"]["dd_buy"])}</a></div></div></div>'
+                 f'<a href="/deals/">{esc(T["nav"]["deals"])}</a>'
+                 f'<a href="/compare/">{esc(T["nav"]["compare"])}</a>'
+                 f'<a href="/methodology/">{esc(T["nav"]["method"])}</a>'
+                 f'<a href="/submit/">{esc(T["nav"]["biz"])}</a>'
+                 f'{lang_switcher(LG)}'
+                 f'</div></div></nav>')
+        cat_pills_L = ""
+        for cs in CAT_ORDER:
+            cat_pills_L += (f'<span class="pill-toggle on" data-cat="{cs}" data-tip="{esc(T["cats"][cs][1])}" '
+                            f'onclick="toggleCat(this)">{ICONS[cs]}{esc(T["cats"][cs][0])}<span class="pc">{cat_counts.get(cs,0)}</span></span>')
+        CATBAR_L = (f'<div class="catbar"><div class="catbar-in">'
+                    f'<div class="catfilters">'
+                    f'<span class="pill-toggle reset on" id="catAll" data-tip="{esc(T["all_tip"])}" onclick="toggleAll()">{esc(T["filters"]["all"])}<span class="pc">{len(listings)}</span></span>'
+                    f'{cat_pills_L}'
+                    f'</div>'
+                    f'<div class="loc-wrap"><button class="loc-pick" id="locbtn" onclick="document.getElementById(\'locmenu\').classList.toggle(\'open\')" title="Set your location">\U0001F310 Global</button>'
+                    f'<div class="loc-menu" id="locmenu">'
+                    f'<a onclick="setLoc(\'global\')">\U0001F310 Global</a>'
+                    f'<a onclick="setLoc(\'ca\')">\U0001F341 Canada</a>'
+                    f'<a onclick="setLoc(\'us\')">\U0001F1FA\U0001F1F8 United States</a>'
+                    f'</div></div>'
+                    f'</div></div>')
+        legend_side_L = "".join(
+            f'<div class="sl-item">{pill(k, tip=False, lang=LG)}<span>{esc(L10N[LG]["verdicts"][k][1])}</span></div>'
+            for k in VERDICTS)
+        sections_L = ""
+        for cslug in CAT_ORDER:
+            clabel = T["cats"][cslug][0]
+            cards_L = "".join(card(l, LG) for l in listings if l["category"] == cslug)
+            sections_L += (f'<section class="section" data-section data-cat="{cslug}">'
+                           f'<div class="section-head"><h2><a href="/{cslug}/">{esc(clabel)}</a></h2>'
+                           f'<a class="all" href="/{cslug}/">{esc(T["all_cat"].replace("{c}", clabel))}</a></div>'
+                           f'<div class="grid">{cards_L}</div></section>')
+        stats_L = (T["stats"].replace("{g}", str(genuine)).replace("{s}", str(squeeze)).replace("{t}", str(traps)))
+        headlines_L = (f'<section class="headlines"><div class="wrap"><h2>{esc(T["news"])}</h2>'
+                       f'<div class="hl-list">{hl_items}</div></div></section>') if hl_items else ""
+        sc_strings = json.dumps(T["sc_js"], ensure_ascii=False)
+        body_L = (f'<header class="hero"><div class="wrap">'
+                  f'<h1>Veri-<em>Free</em></h1>'
+                  f'<p class="tagline">{esc(T["tagline"])}</p>'
+                  f'<p class="sub">{T["sub"]}</p>'
+                  f'<p class="stats">{stats_L}</p>'
+                  f'<div class="searchbar"><input id="q" type="search" aria-label="Search" placeholder="{esc(T["search_ph"])}">'
+                  f'<span class="kbd">{T["verified"].replace("{n}", str(len(listings)))}</span></div>'
+                  f'<p class="count" id="count"></p>'
+                  f'<div class="vfilters">'
+                  f'<button class="vfilter on" data-v="all">{esc(T["filters"]["all"])}</button>'
+                  f'<button class="vfilter" data-v="truly">{esc(T["filters"]["truly"])}</button>'
+                  f'<button class="vfilter" data-v="forever">{esc(T["filters"]["forever"])}</button>'
+                  f'<button class="vfilter" data-v="freeish">{esc(T["filters"]["freeish"])}</button>'
+                  f'<button class="vfilter" data-v="trap,fake,notfree">{esc(T["filters"]["traps"])}</button>'
+                  f'</div></div></header>'
+                  f'<div class="side-legend closed" id="sidepanel">'
+                  f'<div class="sl-tab" onclick="document.getElementById(\'sidepanel\').classList.toggle(\'closed\')">{esc(T["guide"])}</div>'
+                  f'<div class="sl-body"><h2>{esc(T["verdicts_h"])}</h2>{legend_side_L}'
+                  f'<div class="sl-divider"></div><h2>{esc(T["sort_h"])}</h2>'
+                  f'<div class="sl-sorts">'
+                  f'<button class="sortbtn active" data-sort="free">{esc(T["sort_free"])}</button>'
+                  f'<button class="sortbtn" data-sort="value">{esc(T["sort_value"])}</button>'
+                  f'<button class="sortbtn" data-sort="name">{esc(T["sort_az"])}</button>'
+                  f'</div></div></div>'
+                  f'<main class="wrap" id="categories">{sections_L}'
+                  f'<p class="noresults" id="noresults">{T["noresults"]}</p></main>'
+                  f'{headlines_L}'
+                  f'<section class="sitecheck"><div class="wrap">'
+                  f'<div class="sc-head"><h2>{T["sc_h2"]}</h2><p>{T["sc_sub"]}</p></div>'
+                  f'<form class="sc-form" id="scForm" novalidate>'
+                  f'<input id="scInput" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="{esc(T["sc_ph"])}" aria-label="URL">'
+                  f'<button type="submit" id="scBtn">{esc(T["sc_btn"])}</button></form>'
+                  f'<div class="sc-status" id="scStatus" hidden></div>'
+                  f'<div class="sc-results" id="scResults"></div>'
+                  f'<p class="sc-foot" id="scFoot" hidden>{esc(T["sc_foot"])} <a href="https://checkmysite.pro/" target="_blank" rel="noopener">checkmysite.pro</a></p>'
+                  f'</div></section>'
+                  f'<script>window.SC_STRINGS={sc_strings};</script>'
+                  f'<script src="/sitecheck.js" defer></script>'
+                  f'<section class="bizband"><div class="wrap">'
+                  f'<h2>{esc(T["biz_h2"])}</h2><p>{esc(T["biz_p"])}</p>'
+                  f'<a class="visit" href="/submit/">{esc(T["biz_cta"])}</a>'
+                  f'</div></section>'
+                  + LANG_HOME_JS.replace("__R1__", T["result_1"]).replace("__RN__", T["result_n"]))
+        p_L = page(T["meta_title"], T["meta_desc"], f"/{LG}/", body_L,
+                   extra_head=ALT_LINKS, lang=LG)
+        p_L = p_L.replace('<!--NAV-->', '<header class="site-header">' + NAV_L + CATBAR_L + '</header>')
+        os.makedirs(os.path.join(OUT, LG), exist_ok=True)
+        open(os.path.join(OUT, LG, "index.html"), "w").write(p_L)
 
     # ---------- category pages ----------
     for cslug, (ctitle, cblurb) in CATS.items():
@@ -1242,7 +1446,7 @@ Verified Free
                 shutil.copy2(src_f, os.path.join(OUT, f))
             elif os.path.isdir(src_f):
                 shutil.copytree(src_f, os.path.join(OUT, f), dirs_exist_ok=True)
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
     if comparisons:
         urls.extend(comp_urls[1:])  # skip /compare/ already added
     from datetime import date

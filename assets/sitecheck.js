@@ -13,6 +13,15 @@
       foot = document.getElementById('scFoot');
   var API = 'https://dreamsitedesign.com/api/audit';
   var ICO = { pass: '✓', warn: '!', fail: '✕' };
+  // Localized homepages set window.SC_STRINGS before this script loads.
+  var S = Object.assign({
+    enter: 'Enter a web address like yourdomain.com',
+    checking: 'Reading {d} — checking AI access and SEO…',
+    err: 'Couldn’t complete the check — try again.',
+    unreach: 'Couldn’t reach the checker — try again in a moment.',
+    issues_1: '{n} issue to fix', issues_n: '{n} issues to fix',
+    review: '{n} to review', passed: 'all {n} checks passed ✓'
+  }, window.SC_STRINGS || {});
 
   function clean(h) {
     return h.replace(/^https?:\/\//i, '').replace(/\/.*/, '').replace(/\s/g, '').toLowerCase().trim();
@@ -29,14 +38,14 @@
     var d = clean(input.value);
     if (!d || d.indexOf('.') < 1) {
       statusEl.hidden = false; statusEl.className = 'sc-status err';
-      statusEl.textContent = 'Enter a web address like yourdomain.com';
+      statusEl.textContent = S.enter;
       return;
     }
     if (busy) return;
     busy = true; btn.disabled = true;
-    var lbl = btn.textContent; btn.textContent = 'Checking…';
+    var lbl = btn.textContent; btn.textContent = '…';
     statusEl.hidden = false; statusEl.className = 'sc-status';
-    statusEl.textContent = 'Reading ' + d + ' — checking AI access and SEO…';
+    statusEl.textContent = S.checking.replace('{d}', d);
     results.innerHTML = ''; foot.hidden = true;
 
     fetch(API, {
@@ -49,7 +58,7 @@
         var j = res.j;
         if (!res.ok || !j || j.error) {
           statusEl.className = 'sc-status err';
-          statusEl.textContent = (j && j.error) ? j.error : 'Couldn’t complete the check — try again.';
+          statusEl.textContent = (j && j.error) ? j.error : S.err;
           return;
         }
         var items = (j.checks || []).filter(function (c) { return c.cat === 'AI Search' || c.cat === 'SEO'; });
@@ -60,9 +69,9 @@
         var passed = items.filter(function (c) { return c.status === 'pass'; }).length;
         statusEl.className = 'sc-status';
         statusEl.innerHTML = '<b>' + esc(j.host || d) + '</b> — ' +
-          (fails ? (fails + ' issue' + (fails === 1 ? '' : 's') + ' to fix')
-                 : warns ? (warns + ' to review')
-                         : ('all ' + passed + ' checks passed ✓'));
+          (fails ? (fails === 1 ? S.issues_1 : S.issues_n).replace('{n}', fails)
+                 : warns ? S.review.replace('{n}', warns)
+                         : S.passed.replace('{n}', passed));
         results.innerHTML = items.map(function (c) {
           return '<div class="sc-row ' + c.status + '"><span class="sc-ico">' + ICO[c.status] + '</span>' +
             '<div class="sc-txt"><div class="sc-rl"><b>' + esc(c.label) + '</b>' +
@@ -73,7 +82,7 @@
       })
       .catch(function () {
         statusEl.className = 'sc-status err';
-        statusEl.textContent = 'Couldn’t reach the checker — try again in a moment.';
+        statusEl.textContent = S.unreach;
       })
       .then(function () { busy = false; btn.disabled = false; btn.textContent = lbl; });
   });

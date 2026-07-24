@@ -75,14 +75,13 @@ a{color:inherit}
 .dropdown-menu .sep{height:1px;background:var(--line);margin:4px 12px}
 .catbar{border-bottom:1px solid var(--line);padding:0;background:var(--paper);min-height:42px}
 .catbar-in{display:flex;align-items:center;gap:10px;padding:6px 22px;max-width:var(--maxw);margin:0 auto}
-.catfilters{display:flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:2px 1px;scroll-snap-type:x proximity;-webkit-mask-image:linear-gradient(90deg,#000 96%,transparent);mask-image:linear-gradient(90deg,#000 96%,transparent)}
-.catfilters::-webkit-scrollbar{display:none}
-.catfilters .pill-toggle{flex-shrink:0;scroll-snap-align:start}
+.catfilters{display:flex;align-items:center;flex-wrap:wrap;gap:6px;flex:1 1 auto;min-width:0;padding:2px 1px}
 .catbar .pill-toggle .pc{font-size:10px;font-weight:700;opacity:.5;margin-left:1px}
 .catbar .pill-toggle.on .pc{color:var(--brand);opacity:.9}
 .catbar .pill-toggle.reset .pc{color:var(--brand);opacity:.85}
 .catbar .pill-toggle{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-decoration:none;color:var(--muted);padding:5px 11px;border-radius:99px;border:1.5px solid transparent;cursor:pointer;transition:color .15s,background .15s,border-color .15s,box-shadow .15s;line-height:1;white-space:nowrap;background:transparent;user-select:none}
 .catbar .pill-toggle.reset{color:var(--brand);font-weight:700;border:1.5px solid var(--brand);background:#E4F2EA}
+.catbar .pill-toggle.reset:not(.on):not(.none){background:transparent}
 .catbar .pill-toggle.reset:hover{background:var(--brand);color:var(--paper)}
 .catbar .pill-toggle.reset.none{color:var(--muted);border-color:var(--line);background:transparent}
 .catbar .pill-toggle.reset.none:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
@@ -497,13 +496,26 @@ def page(title, desc, path, body, extra_head=""):
 </script>
 <script>
 
+function updateAllChip(){{
+  var pills=document.querySelectorAll('.catbar .pill-toggle[data-cat]');
+  var on=0;pills.forEach(function(p){{if(p.classList.contains('on'))on++}});
+  var a=document.getElementById('catAll');
+  if(!a)return;
+  a.classList.toggle('on',on===pills.length);
+  a.classList.toggle('none',on===0);
+}}
 function noneCats(){{
   document.querySelectorAll('.catbar .pill-toggle[data-cat]').forEach(function(p){{p.classList.remove('on')}});
-  saveCats();applyCats();
+  saveCats();applyCats();updateAllChip();
 }}
 function resetCats(){{
   document.querySelectorAll('.catbar .pill-toggle[data-cat]').forEach(function(p){{p.classList.add('on')}});
-  saveCats();applyCats();
+  saveCats();applyCats();updateAllChip();
+}}
+function toggleAll(){{
+  var pills=document.querySelectorAll('.catbar .pill-toggle[data-cat]');
+  var allOn=true;pills.forEach(function(p){{if(!p.classList.contains('on'))allOn=false}});
+  if(allOn)noneCats();else resetCats();
 }}
 function toggleCat(el){{
   if(!document.querySelector('[data-section][data-cat]')){{
@@ -511,7 +523,7 @@ function toggleCat(el){{
     return;
   }}
   el.classList.toggle('on');
-  saveCats();applyCats();
+  saveCats();applyCats();updateAllChip();
 }}
 (function(){{
   var KEY='vf_cats';
@@ -539,7 +551,7 @@ function toggleCat(el){{
       var c=p.getAttribute('data-cat');
       p.classList.toggle('on',saved.indexOf(c)>=0);
     }});
-    applyCats();
+    applyCats();updateAllChip();
   }}
 }})();
 function setLoc(loc){{
@@ -669,7 +681,7 @@ def build():
         for cs in CAT_ORDER)
     CATBAR = (f'<div class="catbar"><div class="catbar-in">'
               f'<div class="catfilters">'
-              f'<span class="pill-toggle reset on" id="catAll" data-tip="Show every category" onclick="resetCats()">All<span class="pc">{len(listings)}</span></span>'
+              f'<span class="pill-toggle reset on" id="catAll" data-tip="Toggle every category on or off" onclick="toggleAll()">All<span class="pc">{len(listings)}</span></span>'
               f'{cat_pills}'
               f'</div>'
               f'<div class="loc-wrap"><button class="loc-pick" id="locbtn" onclick="document.getElementById(\'locmenu\').classList.toggle(\'open\')" title="Set your location">🌐 Global</button>'

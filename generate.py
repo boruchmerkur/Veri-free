@@ -328,6 +328,9 @@ body.loc-ca .ca-badge{display:inline-flex}
 .sc-rl b{font-size:15px;font-weight:600}
 .sc-tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:1px 7px}
 .sc-d{margin:3px 0 0;color:var(--muted);font-size:14px;line-height:1.55}
+.sc-lead-h{margin:22px 0 8px;font-size:15px;font-weight:600;color:var(--ink)}
+.sc-lead{margin-top:0}
+.sc-lead-msg{margin:10px 0 0;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;color:var(--brand)}
 .sc-foot{margin:18px 0 0;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted)}
 .sc-foot a{color:var(--brand);text-decoration:none}
 .sc-foot a:hover{text-decoration:underline}
@@ -1421,24 +1424,43 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 
 <h2>Request a verdict — anyone</h2>
 <p>Found a "free" offer you don't trust? Want us to check something before you sign up? Drop it here.</p>
-<div class="reqform" id="reqform">
-<label>What should we verify?</label>
-<input type="text" id="req-name" placeholder="App, service, or offer name">
-<label>Link (if you have one)</label>
-<input type="url" id="req-url" placeholder="https://...">
-<label>What made you suspicious? (optional)</label>
-<textarea id="req-note" placeholder="E.g. 'says free but asked for my card…'"></textarea>
-<button onclick="
-  var n=document.getElementById('req-name').value.trim();
-  if(!n){document.getElementById('req-name').focus();return;}
-  var u=document.getElementById('req-url').value.trim();
-  var t=document.getElementById('req-note').value.trim();
-  var s='Verify: '+n+(u?' — '+u:'')+(t?'\\n\\n'+t:'');
-  window.location='mailto:hello@veri-free.com?subject='+encodeURIComponent('Verify: '+n)+'&body='+encodeURIComponent(s);
-  document.querySelector('.ty').style.display='block';
-">Submit for verification →</button>
-<p class="ty">Request sent — we'll publish the verdict.</p>
-</div>
+<form class="reqform" id="reqform" name="verify-request" method="POST" action="/submit/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="verify-request">
+<p style="display:none"><label>Leave this empty: <input name="bot-field"></label></p>
+<label for="req-name">What should we verify?</label>
+<input type="text" id="req-name" name="what" required placeholder="App, service, or offer name">
+<label for="req-url">Link (if you have one)</label>
+<input type="url" id="req-url" name="link" placeholder="https://...">
+<label for="req-note">What made you suspicious? (optional)</label>
+<textarea id="req-note" name="note" placeholder="E.g. 'says free but asked for my card…'"></textarea>
+<button type="submit">Submit for verification →</button>
+<p class="ty">Request received — we'll verify it and publish the verdict.</p>
+<p class="terr" style="display:none;font-size:15px;color:#C0392B;font-weight:600;padding:16px 0">Couldn't send just now — try again, or email <a href="mailto:hello@veri-free.com">hello@veri-free.com</a>.</p>
+</form>
+<script>
+(function(){
+  var f=document.getElementById('reqform');
+  if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('button[type=submit]');
+    btn.disabled=true;
+    fetch('/submit/',{method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(new FormData(f)).toString()})
+      .then(function(r){
+        if(!r.ok)throw 0;
+        f.querySelector('.ty').style.display='block';
+        f.querySelector('.terr').style.display='none';
+        f.reset();btn.disabled=false;
+      })
+      .catch(function(){
+        f.querySelector('.terr').style.display='block';
+        btn.disabled=false;
+      });
+  });
+})();
+</script>
 
 <h2>For businesses — get your free offering stamped</h2>
 <p>If your business leads with something genuinely free — a tool, a scan, a calculator, a real free tier — a verified listing puts it in front of people actively searching for free options.</p>
@@ -1470,6 +1492,16 @@ Verified Free
              "/submit/", submit_body)
     os.makedirs(os.path.join(OUT, "submit"))
     open(os.path.join(OUT, "submit", "index.html"), "w").write(p)
+
+    # thanks page — non-JS fallback target for the verify-request form
+    thanks_body = ('<main class="wrap"><header class="pagehead"><h1>Request received</h1>'
+                   '<p>Thanks — it\'s in the verification queue. If it checks out (or doesn\'t), '
+                   'the verdict gets published; watch the <a href="/changelog/">changelog</a>.</p>'
+                   '<p><a href="/">← Back to the rankings</a></p></header></main>')
+    p = page_nav("Request received — Verified Free", "Your verification request was received.",
+                 "/submit/thanks/", thanks_body, extra_head='<meta name="robots" content="noindex">')
+    os.makedirs(os.path.join(OUT, "submit", "thanks"), exist_ok=True)
+    open(os.path.join(OUT, "submit", "thanks", "index.html"), "w").write(p)
 
     # ---------- extras ----------
     open(os.path.join(OUT, "favicon.svg"), "w").write(

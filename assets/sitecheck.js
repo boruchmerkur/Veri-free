@@ -20,8 +20,13 @@
     err: 'Couldn’t complete the check — try again.',
     unreach: 'Couldn’t reach the checker — try again in a moment.',
     issues_1: '{n} issue to fix', issues_n: '{n} issues to fix',
-    review: '{n} to review', passed: 'all {n} checks passed ✓'
+    review: '{n} to review', passed: 'all {n} checks passed ✓',
+    lead_h: 'Want the full report — security, speed, accessibility & more — by email?',
+    lead_ph: 'you@email.com', lead_btn: 'Email me the report',
+    lead_sent: 'Sent — check your inbox.', lead_err: 'Couldn’t send — try again.'
   }, window.SC_STRINGS || {});
+  var LEAD = 'https://dreamsitedesign.com/api/lead';
+  var lastAudit = null;
 
   function clean(h) {
     return h.replace(/^https?:\/\//i, '').replace(/\/.*/, '').replace(/\s/g, '').toLowerCase().trim();
@@ -29,6 +34,45 @@
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  // After a successful check, offer the FULL report (every category, not just
+  // AI+SEO) by email — posts to the dreamsite lead endpoint, which emails the
+  // visitor the itemized report. Honest states only: success shown on 200.
+  var lead = null;
+  function showLead() {
+    if (lead || !lastAudit || !lastAudit.checks) return;
+    lead = document.createElement('div');
+    lead.innerHTML =
+      '<p class="sc-lead-h">' + esc(S.lead_h) + '</p>' +
+      '<form class="sc-form sc-lead" novalidate>' +
+      '<input type="email" autocomplete="email" placeholder="' + esc(S.lead_ph) + '" aria-label="Email">' +
+      '<button type="submit">' + esc(S.lead_btn) + '</button></form>' +
+      '<p class="sc-lead-msg" hidden></p>';
+    foot.parentNode.insertBefore(lead, foot);
+    var lf = lead.querySelector('form'), li = lead.querySelector('input'),
+        lb = lead.querySelector('button'), lm = lead.querySelector('.sc-lead-msg');
+    lf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var em = li.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) { li.focus(); return; }
+      lb.disabled = true;
+      fetch(LEAD, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: em, host: lastAudit.host, source: 'verifree',
+          lang: (document.documentElement.getAttribute('lang') || 'en').slice(0, 5),
+          checks: lastAudit.checks, fails: lastAudit.fails, warns: lastAudit.warns,
+          summary: lastAudit.summary || null, page: location.pathname, ref: document.referrer || ''
+        })
+      })
+        .then(function (r) { return r.json().then(function (j2) { return { ok: r.ok, j: j2 }; }); })
+        .then(function (resp) {
+          if (!resp.ok || (resp.j && resp.j.error)) throw 0;
+          lm.hidden = false; lm.textContent = S.lead_sent; lf.style.display = 'none';
+        })
+        .catch(function () { lm.hidden = false; lm.textContent = S.lead_err; lb.disabled = false; });
     });
   }
 
@@ -79,6 +123,8 @@
             '<div class="sc-d">' + esc(c.detail) + '</div></div></div>';
         }).join('');
         foot.hidden = false;
+        lastAudit = j;
+        showLead();
       })
       .catch(function () {
         statusEl.className = 'sc-status err';

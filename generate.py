@@ -13,6 +13,12 @@ if os.path.exists("assets/brand-index.json") and os.path.exists("assets/brand-sp
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "site")
 
+# Translated per-listing card lines ("You get" text), keyed lang -> name -> text.
+# Optional: missing file or missing entry falls back to the English line.
+GET_L10N = {}
+if os.path.exists("i18n_listings.json"):
+    GET_L10N = json.load(open("i18n_listings.json", encoding="utf-8"))
+
 CATS = {
     "software-tools": ("Software", "Editors, office suites, VPNs, storage, site builders — the apps everyone claims are free."),
     "ai-tools": ("AI", "Chatbots, image generators, and model hubs — which free tiers are real."),
@@ -459,8 +465,9 @@ def lang_switcher(current="en"):
 
 def page(title, desc, path, body, extra_head="", lang="en"):
     canonical = f"{DOMAIN}{path}"
+    langbase = "" if lang == "en" else f' data-langbase="/{lang}"'
     return f"""<!DOCTYPE html>
-<html lang="{HTML_LANG.get(lang, 'en')}">
+<html lang="{HTML_LANG.get(lang, 'en')}"{langbase}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -534,7 +541,7 @@ function toggleAll(){{
 }}
 function toggleCat(el){{
   if(!document.querySelector('[data-section][data-cat]')){{
-    window.location='/'+el.getAttribute('data-cat')+'/';
+    window.location=(document.documentElement.getAttribute('data-langbase')||'')+'/'+el.getAttribute('data-cat')+'/';
     return;
   }}
   el.classList.toggle('on');
@@ -613,6 +620,8 @@ def short_worth(w):
 
 def card(l, lang="en"):
     get_line = l.get("free_includes", [""])[0]
+    if lang != "en":
+        get_line = GET_L10N.get(lang, {}).get(l["name"], get_line)
     c = score_color(l["free_score"])
     sw = l.get("short_worth") or short_worth(l.get("worth", ""))
     if lang == "en":
@@ -921,12 +930,13 @@ document.querySelectorAll('.vfilter').forEach(function(btn){
 window.addEventListener('scroll',function(){document.getElementById('btt').classList.toggle('show',window.scrollY>600)});
 </script>"""
 
+    LANG_NAV = {}
     for LG in EXTRA_LANGS:
         T = L10N[LG]
-        # nav (links point at the English inner pages until those are localized)
+        # nav (category links localized; other inner pages English until translated)
         cat_dd_L = ""
         for cs in CAT_ORDER:
-            cat_dd_L += (f'<a href="/{cs}/"><span class="cicon">{ICONS[cs]}</span>{esc(T["cats"][cs][0])}'
+            cat_dd_L += (f'<a href="/{LG}/{cs}/"><span class="cicon">{ICONS[cs]}</span>{esc(T["cats"][cs][0])}'
                          f'<span class="dd-count">{cat_counts.get(cs,0)}</span></a>')
         NAV_L = (f'<nav class="nav"><div class="wrap nav-in">'
                  f'<a class="logo" href="/{LG}/">VERIFIED·<b>FREE</b></a>'
@@ -965,8 +975,8 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
             clabel = T["cats"][cslug][0]
             cards_L = "".join(card(l, LG) for l in listings if l["category"] == cslug)
             sections_L += (f'<section class="section" data-section data-cat="{cslug}">'
-                           f'<div class="section-head"><h2><a href="/{cslug}/">{esc(clabel)}</a></h2>'
-                           f'<a class="all" href="/{cslug}/">{esc(T["all_cat"].replace("{c}", clabel))}</a></div>'
+                           f'<div class="section-head"><h2><a href="/{LG}/{cslug}/">{esc(clabel)}</a></h2>'
+                           f'<a class="all" href="/{LG}/{cslug}/">{esc(T["all_cat"].replace("{c}", clabel))}</a></div>'
                            f'<div class="grid">{cards_L}</div></section>')
         stats_L = (T["stats"].replace("{g}", str(genuine)).replace("{s}", str(squeeze)).replace("{t}", str(traps)))
         headlines_L = (f'<section class="headlines"><div class="wrap"><h2>{esc(T["news"])}</h2>'
@@ -1015,9 +1025,10 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                   f'<a class="visit" href="/submit/">{esc(T["biz_cta"])}</a>'
                   f'</div></section>'
                   + LANG_HOME_JS.replace("__R1__", T["result_1"]).replace("__RN__", T["result_n"]))
+        LANG_NAV[LG] = '<header class="site-header">' + NAV_L + CATBAR_L + '</header>'
         p_L = page(T["meta_title"], T["meta_desc"], f"/{LG}/", body_L,
                    extra_head=ALT_LINKS, lang=LG)
-        p_L = p_L.replace('<!--NAV-->', '<header class="site-header">' + NAV_L + CATBAR_L + '</header>')
+        p_L = p_L.replace('<!--NAV-->', LANG_NAV[LG])
         os.makedirs(os.path.join(OUT, LG), exist_ok=True)
         open(os.path.join(OUT, LG, "index.html"), "w").write(p_L)
 
@@ -1039,10 +1050,39 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
             {"@type": "ItemList", "itemListElement": [
                 {"@type": "ListItem", "position": n + 1, "name": f"Is {l['name']} actually free?", "url": f"{DOMAIN}/{l['slug']}/"}
                 for n, l in enumerate(cl)]}]})
+        # hreflang alternates: EN /cat/ <-> each /{lg}/cat/
+        cat_alt = f'<link rel="alternate" hreflang="en" href="{DOMAIN}/{cslug}/">'
+        for _lg in EXTRA_LANGS:
+            cat_alt += f'<link rel="alternate" hreflang="{HTML_LANG[_lg]}" href="{DOMAIN}/{_lg}/{cslug}/">'
+        cat_alt += f'<link rel="alternate" hreflang="x-default" href="{DOMAIN}/{cslug}/">'
         p = page_nav(f"{ctitle} — Verified Free", cblurb, f"/{cslug}/", body,
-                     extra_head=f'<script type="application/ld+json">{cat_schema}</script>')
+                     extra_head=f'<script type="application/ld+json">{cat_schema}</script>' + cat_alt)
         os.makedirs(os.path.join(OUT, cslug))
         open(os.path.join(OUT, cslug, "index.html"), "w").write(p)
+
+        # localized category pages (/{lg}/{cslug}/)
+        for LG in EXTRA_LANGS:
+            T = L10N[LG]
+            clabel, cblurb_L = T["cats"][cslug]
+            cards_L = "".join(card(l, LG) for l in cl)
+            body_L = (f'<header class="pagehead wrap"><h1>{esc(clabel)}</h1><p>{esc(cblurb_L)}</p></header>'
+                      f'<main class="wrap"><section data-section data-cat="{cslug}">'
+                      f'<h2 class="sechead">{esc(T["cat_every"].replace("{c}", clabel))}</h2>'
+                      f'<p class="seclede">{esc(T["cat_lede"].replace("{n}", str(len(cl))).replace("{t}", str(truly)))}</p>'
+                      f'<div class="grid">{cards_L}</div></section></main>')
+            schema_L = json.dumps({"@context": "https://schema.org", "@graph": [
+                {"@type": "CollectionPage", "name": f"{clabel} — Verified Free",
+                 "url": f"{DOMAIN}/{LG}/{cslug}/", "inLanguage": HTML_LANG[LG], "description": cblurb_L},
+                {"@type": "BreadcrumbList", "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/{LG}/"},
+                    {"@type": "ListItem", "position": 2, "name": clabel, "item": f"{DOMAIN}/{LG}/{cslug}/"}]}]},
+                ensure_ascii=False)
+            p_L = page(f"{clabel} — Verified Free", cblurb_L, f"/{LG}/{cslug}/", body_L,
+                       extra_head=f'<script type="application/ld+json">{schema_L}</script>' + cat_alt,
+                       lang=LG)
+            p_L = p_L.replace('<!--NAV-->', LANG_NAV[LG])
+            os.makedirs(os.path.join(OUT, LG, cslug), exist_ok=True)
+            open(os.path.join(OUT, LG, cslug, "index.html"), "w").write(p_L)
 
     # ---------- listing pages ----------
     for l in listings:
@@ -1446,7 +1486,7 @@ Verified Free
                 shutil.copy2(src_f, os.path.join(OUT, f))
             elif os.path.isdir(src_f):
                 shutil.copytree(src_f, os.path.join(OUT, f), dirs_exist_ok=True)
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
     if comparisons:
         urls.extend(comp_urls[1:])  # skip /compare/ already added
     from datetime import date

@@ -6869,6 +6869,123 @@
       ],
       "favicon_url": "https://checkmysite.pro",
       "disclosure": "Shares an owner with Verified Free. The verdict rests on a fact anyone can check in ten seconds — there is no paid tier."
+    },
+    {
+      "name": "Beis Moshiach",
+      "category": "books-reading",
+      "url": "https://beismoshiach.org",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "The website is open; the printed weekly is a separate paid subscription",
+      "realcost": "Nothing to read online. Print is the paid product.",
+      "free_includes": [
+        "The weekly magazine's content, open in the browser",
+        "Years of archive — sichos, farbrengens, and Moshiach & Geulah essays and features",
+        "No account, no card, no paywall, no metering"
+      ],
+      "paid_locked": [
+        "The printed weekly edition (subscription)"
+      ],
+      "short": "Yes — the magazine's website is fully open: current content and years of archive with no account, no card and no paywall. Money only enters if you want the printed weekly delivered.",
+      "catch": "It's a focused publication — Chabad, Moshiach and Geulah — so the depth is the draw and the niche is the limit. The printed weekly costs money; the site doesn't.",
+      "worth": "Jewish weeklies typically run $100–180/year in print or metered digital; the open archive here is $0.",
+      "smart_moves": [
+        "Read the current features online before deciding whether you want print",
+        "Treat the archive as a research library — it goes back years"
+      ],
+      "free_score": 97,
+      "value_score": 6,
+      "get_summary": "In practice: an international weekly's worth of Chassidus, Moshiach and Geulah reading — plus its archive — permanently open in the browser.",
+      "drawbacks": [
+        "Niche by design — Chabad/Moshiach focus",
+        "The print edition is a separate paid subscription"
+      ],
+      "more_info": [
+        [
+          "Why is the website free if print costs money?",
+          "Print subscriptions cover the physical product; the content itself stays open. The website is the magazine, not a teaser for it."
+        ]
+      ],
+      "short_worth": null,
+      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free."
+    },
+    {
+      "name": "The Rebbe's Letters",
+      "category": "books-reading",
+      "url": "https://rebbesletters.com",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "A reader's portal — the printed Igros Kodesh volumes remain the full scholarly set",
+      "realcost": "Nothing.",
+      "free_includes": [
+        "A clean reader's portal into the Rebbe's Igros Kodesh",
+        "Browse and read letters in the browser — nothing to install",
+        "No account, no card, no ads"
+      ],
+      "paid_locked": [],
+      "short": "Yes — completely open: a reader's portal into the Rebbe's letters with no account, no card and no ads. The printed volumes are for owning; reading is free.",
+      "catch": "It's a portal into one literature — the Rebbe's Igros Kodesh — not a general Jewish library, and Hebrew reading skills help.",
+      "worth": "A printed Igros Kodesh set runs into the hundreds of dollars; reading online is $0.",
+      "smart_moves": [
+        "Start from the portal's entry points rather than browsing volume by volume"
+      ],
+      "free_score": 100,
+      "value_score": 7,
+      "get_summary": "In practice: the Rebbe's correspondence — a library in itself — readable free in the browser.",
+      "drawbacks": [
+        "Single-literature focus",
+        "Not a substitute for the printed set's apparatus"
+      ],
+      "more_info": [
+        [
+          "What are the Igros Kodesh?",
+          "The Lubavitcher Rebbe's collected letters — thousands of letters on Torah, guidance and public affairs, printed in dozens of volumes and studied daily by many."
+        ]
+      ],
+      "short_worth": null,
+      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free."
+    },
+    {
+      "name": "Yeshiva 101",
+      "category": "books-reading",
+      "url": "https://yeshiva101.netlify.app",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "One masechta so far — Pesachim",
+      "realcost": "Nothing.",
+      "free_includes": [
+        "The full source page for Maseches Pesachim — gemara with the classic mefarshim laid out around it",
+        "Reads like a printed daf, in the browser",
+        "No account, no card, no ads"
+      ],
+      "paid_locked": [],
+      "short": "Yes — a free source-page reader for Maseches Pesachim: the daf with its commentaries arranged around it, no account, no card, no ads.",
+      "catch": "It's one tractate, not all of Shas — a focused study bench rather than a full library. If your masechta isn't Pesachim, it isn't here yet.",
+      "worth": "A printed masechta with mefarshim is $20–40; the study bench here is $0.",
+      "smart_moves": [
+        "Use it alongside your shiur — the layout mirrors the printed daf, so nothing needs relearning"
+      ],
+      "free_score": 100,
+      "value_score": 5,
+      "get_summary": "In practice: a printed-daf study experience for Pesachim, free in the browser.",
+      "drawbacks": [
+        "Pesachim only, so far",
+        "Browser only — no apps"
+      ],
+      "more_info": [
+        [
+          "Why one masechta?",
+          "It's built as a careful, daf-faithful reading bench; tractates get added as they're completed rather than shipping all of Shas half-done."
+        ]
+      ],
+      "short_worth": null,
+      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free."
     }
   ],
   "deals": [

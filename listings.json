@@ -6948,44 +6948,6 @@
       ],
       "short_worth": null,
       "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free."
-    },
-    {
-      "name": "Yeshiva 101",
-      "category": "books-reading",
-      "url": "https://yeshiva101.netlify.app",
-      "verdict": "truly",
-      "card": "No",
-      "autobill": "—",
-      "account": "None needed",
-      "limits": "One masechta so far — Pesachim",
-      "realcost": "Nothing.",
-      "free_includes": [
-        "The full source page for Maseches Pesachim — gemara with the classic mefarshim laid out around it",
-        "Reads like a printed daf, in the browser",
-        "No account, no card, no ads"
-      ],
-      "paid_locked": [],
-      "short": "Yes — a free source-page reader for Maseches Pesachim: the daf with its commentaries arranged around it, no account, no card, no ads.",
-      "catch": "It's one tractate, not all of Shas — a focused study bench rather than a full library. If your masechta isn't Pesachim, it isn't here yet.",
-      "worth": "A printed masechta with mefarshim is $20–40; the study bench here is $0.",
-      "smart_moves": [
-        "Use it alongside your shiur — the layout mirrors the printed daf, so nothing needs relearning"
-      ],
-      "free_score": 100,
-      "value_score": 5,
-      "get_summary": "In practice: a printed-daf study experience for Pesachim, free in the browser.",
-      "drawbacks": [
-        "Pesachim only, so far",
-        "Browser only — no apps"
-      ],
-      "more_info": [
-        [
-          "Why one masechta?",
-          "It's built as a careful, daf-faithful reading bench; tractates get added as they're completed rather than shipping all of Shas half-done."
-        ]
-      ],
-      "short_worth": null,
-      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free."
     }
   ],
   "deals": [

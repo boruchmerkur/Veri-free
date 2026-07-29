@@ -304,6 +304,14 @@ body.loc-ca .ca-badge{display:inline-flex}
 .ext-rat{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;text-decoration:none;color:var(--muted);border:1.5px solid var(--line);border-radius:6px;padding:3px 9px;transition:border-color .12s}
 .ext-rat:hover{border-color:var(--brand);color:var(--brand)}
 .ext-rat .er-score{color:var(--ink);font-size:12px}
+/* AI-page leaderboard sidebar (self-hosted checkmysite widget, themed native) */
+.ai-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:30px;align-items:start}
+.ai-lb{position:sticky;top:18px;
+  --cms-bg:var(--card);--cms-panel:var(--paper);--cms-text:var(--ink);--cms-dim:var(--muted);
+  --cms-accent:var(--brand);--cms-rule:var(--line);
+  --cms-font:"Public Sans",system-ui,sans-serif;--cms-mono:"IBM Plex Mono",monospace}
+.ai-lb-note{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);margin:10px 0 0;line-height:1.6}
+@media(max-width:1000px){.ai-layout{grid-template-columns:1fr}.ai-lb{position:static;order:2}}
 /* free site check (AI + SEO) */
 .sitecheck{border-top:1px solid var(--line);margin:36px 0 0;padding:44px 0}
 .sitecheck .sc-head h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(26px,4vw,40px);line-height:1.05;letter-spacing:-.02em;margin:0 0 8px}
@@ -1038,15 +1046,38 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         open(os.path.join(OUT, LG, "index.html"), "w").write(p_L)
 
     # ---------- category pages ----------
+    # Live AI-agent leaderboard sidebar on the AI page (self-hosted widget +
+    # same-origin /api/ai-leaderboard function; auto-refreshes from arena.ai).
+    AI_LB = {
+        "en": ("Live AI agent leaderboard",
+               "Which agent actually delivers? Live standings from 1.2M+ real sessions — refreshes itself."),
+        "es": ("Ranking de agentes de IA — en vivo",
+               "¿Qué agente cumple de verdad? Posiciones en vivo de más de 1,2M de sesiones reales — se actualiza solo."),
+        "pt": ("Ranking de agentes de IA — ao vivo",
+               "Qual agente entrega de verdade? Posições ao vivo de mais de 1,2M de sessões reais — atualiza sozinho."),
+        "fr": ("Classement des agents IA — en direct",
+               "Quel agent tient vraiment ses promesses ? Classement en direct sur plus de 1,2 M de sessions réelles — mise à jour automatique."),
+        "de": ("KI-Agenten-Rangliste — live",
+               "Welcher Agent liefert wirklich? Live-Stand aus über 1,2 Mio. echten Sessions — aktualisiert sich selbst."),
+    }
+    def ai_aside(lg):
+        t_lb, n_lb = AI_LB[lg]
+        return (f'<aside class="ai-lb"><div data-checkmysite-ai data-compact="1" data-top="8" data-title="{esc(t_lb)}"></div>'
+                f'<p class="ai-lb-note">{esc(n_lb)}</p></aside>')
+
     for cslug, (ctitle, cblurb) in CATS.items():
         cl = [l for l in listings if l["category"] == cslug]
         cards = "".join(card(l) for l in cl)
         truly = sum(1 for l in cl if l["verdict"] == "truly")
+        is_ai = cslug == "ai-tools"
+        main_cls = "wrap ai-layout" if is_ai else "wrap"
         body = (f'<header class="pagehead wrap"><h1>{esc(ctitle)}</h1><p>{esc(cblurb)}</p></header>'
-                f'<main class="wrap"><section data-section data-cat="{cslug}">'
+                f'<main class="{main_cls}"><section data-section data-cat="{cslug}">'
                 f'<h2 class="sechead">Every {esc(ctitle.lower())} listing, ranked by how free it really is</h2>'
                 f'<p class="seclede">{len(cl)} verified · {truly} truly free · sorted by Free Score.</p>'
-                f'<div class="grid">{cards}</div></section></main>')
+                f'<div class="grid">{cards}</div></section>'
+                + (ai_aside("en") if is_ai else "") + '</main>'
+                + ('<script src="/ai-widget.js" defer></script>' if is_ai else ''))
         cat_schema = json.dumps({"@context": "https://schema.org", "@graph": [
             {"@type": "CollectionPage", "name": f"{ctitle} — Verified Free", "url": f"{DOMAIN}/{cslug}/", "description": cblurb},
             {"@type": "BreadcrumbList", "itemListElement": [
@@ -1071,10 +1102,12 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
             clabel, cblurb_L = T["cats"][cslug]
             cards_L = "".join(card(l, LG) for l in cl)
             body_L = (f'<header class="pagehead wrap"><h1>{esc(clabel)}</h1><p>{esc(cblurb_L)}</p></header>'
-                      f'<main class="wrap"><section data-section data-cat="{cslug}">'
+                      f'<main class="{main_cls}"><section data-section data-cat="{cslug}">'
                       f'<h2 class="sechead">{esc(T["cat_every"].replace("{c}", clabel))}</h2>'
                       f'<p class="seclede">{esc(T["cat_lede"].replace("{n}", str(len(cl))).replace("{t}", str(truly)))}</p>'
-                      f'<div class="grid">{cards_L}</div></section></main>')
+                      f'<div class="grid">{cards_L}</div></section>'
+                      + (ai_aside(LG) if is_ai else "") + '</main>'
+                      + ('<script src="/ai-widget.js" defer></script>' if is_ai else ''))
             schema_L = json.dumps({"@context": "https://schema.org", "@graph": [
                 {"@type": "CollectionPage", "name": f"{clabel} — Verified Free",
                  "url": f"{DOMAIN}/{LG}/{cslug}/", "inLanguage": HTML_LANG[LG], "description": cblurb_L},

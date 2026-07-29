@@ -643,8 +643,10 @@ def card(l, lang="en"):
             val = f'<span class="vtag pays" data-tip="Real money paid to you — the realistic rate, not the marketing pitch">{t_pays_you}</span>'
         elif sw and l["verdict"] == "freeish":
             val = f'<span class="vtag pays low" data-tip="It does pay — but at this hourly rate. Compare before spending your time">{t_pays}</span>'
-        else:
+        elif l["verdict"] in ("trap", "fake", "notfree"):
             val = f'<span class="vtag trap-warn" data-tip="You pay them, not the other way around — see why inside">{t_costs}</span>'
+        else:
+            val = ""  # free-to-use earn tools (job boards etc.) — no rate, no scare tag
     elif l["verdict"] == "truly" and sw:
         val = f'<span class="vtag saves" data-tip="What the paid equivalent costs — money this free option keeps in your pocket">{t_saves}</span>'
     elif sw:
@@ -1290,9 +1292,6 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 <li><b>The bundle you didn't want.</b> "Free" accessories that push you to a higher tier cost more than buying the thing you actually needed.</li>
 <li><b>The doorbuster spec-down.</b> Especially in TVs and laptops: a model manufactured specifically for the sale, with a slower panel or less RAM, at a price that looks like a steal against a model it isn't.</li>
 </ul>
-
-<h2>What we won't do</h2>
-<p>We don't run a live price-drop feed. Prices change hourly, a stale price is worse than no price, and this site's only asset is that when we tell you something, we checked it. What you get instead is the structure — the cycles that repeat, the traps that recur, and honest math on the offers designed to confuse you. That doesn't expire.</p>
 
 </div></main>"""
     p = page_nav("When to Buy — Verified Free",

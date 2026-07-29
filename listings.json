@@ -6948,6 +6948,342 @@
       ],
       "short_worth": null,
       "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free."
+    },
+    {
+      "name": "Indeed",
+      "category": "earn",
+      "url": "https://www.indeed.com",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "Needed to apply through Indeed; browsing is open",
+      "limits": "Job seekers: none that matter. Employers are the paying side.",
+      "realcost": "Nothing for job seekers — employers pay for visibility.",
+      "free_includes": [
+        "Search and apply to millions of job postings",
+        "Resume hosting and one-click applications",
+        "Company reviews and salary data",
+        "Job alerts by email"
+      ],
+      "paid_locked": [
+        "Nothing for seekers — sponsored placement is what employers buy"
+      ],
+      "short": "Yes, for job seekers — searching, applying, alerts and a hosted resume are all free with an account. The money comes from employers paying to promote their postings.",
+      "catch": "You're the product being matched: expect recruiter contact and marketing email, and remember sort order reflects employer spend, not just fit. Applying through Indeed needs an account.",
+      "worth": "Job boards used to charge seekers subscription fees; every core seeker feature here is $0.",
+      "smart_moves": [
+        "Set alerts for tight queries instead of scrolling the firehose",
+        "Apply on the company's own site when the posting allows it — same job, cleaner pipeline"
+      ],
+      "free_score": 84,
+      "value_score": 7,
+      "get_summary": "In practice: the biggest job board's full seeker toolkit, free — funded entirely by the employer side.",
+      "drawbacks": [
+        "Account required to apply",
+        "Listing order is influenced by employer spend",
+        "Recruiter and marketing email volume"
+      ],
+      "more_info": [
+        [
+          "Who pays, if seekers don't?",
+          "Employers — for sponsored placement and promoted postings. That keeps every seeker feature free, and it's also why two similar jobs can rank very differently."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "LinkedIn Jobs",
+      "category": "earn",
+      "url": "https://www.linkedin.com/jobs",
+      "verdict": "forever",
+      "card": "No — unless you take the Premium trial",
+      "autobill": "Only the Premium trial (card up front, bills after a month)",
+      "account": "Required",
+      "limits": "Free tier covers search, applications and networking; insights and InMail sit behind Premium",
+      "realcost": "Nothing for the real job-search workflow. Premium is ~$30-40/month if you opt in.",
+      "free_includes": [
+        "Job search, applications, and networking on the free tier",
+        "Easy Apply on participating postings",
+        "A public professional profile recruiters actually search"
+      ],
+      "paid_locked": [
+        "Applicant insights and profile-view lists",
+        "InMail to people outside your network",
+        "Interview prep and salary insights (Premium)"
+      ],
+      "short": "Yes — the parts that get people hired (profile, search, applying, networking) are free forever. Premium is layered on top and pitched constantly, with a card-up-front one-month trial that bills if you forget.",
+      "catch": "The Premium trial is a classic auto-bill setup — card required, charges after 30 days. And the free tier's price is your data plus a steady drumbeat of upgrade prompts.",
+      "worth": "Premium Career runs ~$360/year; most job seekers get hired without it.",
+      "smart_moves": [
+        "Treat Premium as a one-month tool for an active search sprint — and cancel the same day you start the trial",
+        "Recruiters search profiles; a complete free profile beats a Premium badge"
+      ],
+      "free_score": 76,
+      "value_score": 7,
+      "get_summary": "In practice: a complete, free job-search and networking layer — with a paid tier constantly waving at you and a trial that bills on autopilot.",
+      "drawbacks": [
+        "Persistent Premium upsells",
+        "Trial requires a card and auto-bills",
+        "Your activity data is the business model"
+      ],
+      "more_info": [
+        [
+          "Is LinkedIn Premium worth it for a job search?",
+          "Occasionally, briefly. The insights help during an intense search window; almost nobody needs it year-round. If you try it, calendar the cancellation when you sign up."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "FlexJobs",
+      "category": "earn",
+      "url": "https://www.flexjobs.com",
+      "verdict": "notfree",
+      "card": "Yes — to see the actual listings",
+      "autobill": "Yes, subscriptions renew automatically",
+      "account": "Required, paid",
+      "limits": "Previews only without paying",
+      "realcost": "Roughly $10/week, $25/month, or ~$60/year on the usual promo — before you can apply to anything.",
+      "free_includes": [
+        "Nothing without paying — browsing previews only"
+      ],
+      "paid_locked": [
+        "The job listings themselves",
+        "Applying to anything",
+        "The skills tests and resume reviews"
+      ],
+      "short": "No. FlexJobs charges job seekers a subscription before they can see or apply to its hand-screened remote listings. People keep searching 'FlexJobs free' — there is no free tier, only previews.",
+      "catch": "You're paying for curation — a scam-filtered remote job board. That's a real service, but it inverts the normal deal: the seeker funds the board. Auto-renewal is on by default.",
+      "worth": "The screened listings largely exist free elsewhere (company sites, Remote OK, LinkedIn) — you're buying the filtering and the time it saves.",
+      "smart_moves": [
+        "If you buy it, buy one month during an active search — not the annual plan — and turn off auto-renew immediately",
+        "Check Remote OK and We Work Remotely first; the overlap is large"
+      ],
+      "free_score": 8,
+      "value_score": 3,
+      "get_summary": "In practice: a paid, scam-screened remote job board that a lot of people arrive at expecting to be free. It isn't.",
+      "drawbacks": [
+        "No free tier at all",
+        "Auto-renewing subscription",
+        "Much of the inventory is findable free elsewhere"
+      ],
+      "more_info": [
+        [
+          "Is FlexJobs a scam?",
+          "No — it's a legitimate paid service with real, screened listings. The trap is expectation: it markets to people searching for free remote-job help, then charges at the door."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "Remote OK",
+      "category": "earn",
+      "url": "https://remoteok.com",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "None for seekers — browse and apply straight to the employer",
+      "realcost": "Nothing. Employers pay to post.",
+      "free_includes": [
+        "Browse every remote job listing — no account, no card",
+        "Apply directly on the employer's own page",
+        "Salary ranges shown on many listings"
+      ],
+      "paid_locked": [
+        "Nothing for seekers — employers pay for postings and highlights"
+      ],
+      "short": "Yes — fully open: every remote listing is browsable and applications go straight to the employer, no account, no card, no wall. Employers pay to post; seekers pay nothing.",
+      "catch": "It's a firehose, not a concierge — tech-heavy inventory, minimal screening compared to paid boards, and the site is dense with promoted listings.",
+      "worth": "Paid boards charge seekers ~$60/year for a comparable remote-jobs feed; this one is $0.",
+      "smart_moves": [
+        "Filter by salary-disclosed listings first — they correlate with serious employers"
+      ],
+      "free_score": 93,
+      "value_score": 5,
+      "get_summary": "In practice: a genuinely open remote-jobs board — the thing people hope FlexJobs is.",
+      "drawbacks": [
+        "Tech-skewed inventory",
+        "Light screening — do your own diligence",
+        "Ad-dense layout"
+      ],
+      "more_info": [
+        [
+          "Remote OK vs FlexJobs?",
+          "Same category, opposite models: Remote OK is free for seekers and funded by employers; FlexJobs charges seekers for curation. Start free; pay only if the filtering earns it."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "Feedly",
+      "category": "software-tools",
+      "url": "https://feedly.com",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "Only if you subscribe to Pro",
+      "account": "Required",
+      "limits": "Up to 100 sources in 3 folders; search and AI features are paid",
+      "realcost": "Nothing at the free tier. Pro starts around $6-8/month.",
+      "free_includes": [
+        "Follow up to 100 sources in 3 folders",
+        "Web and mobile apps that sync",
+        "The basic magazine-style reading experience"
+      ],
+      "paid_locked": [
+        "Search within your feeds",
+        "Notes, highlights, and AI filtering (Leo)",
+        "Integrations (Evernote, IFTTT, Zapier) and hiding sponsored cards"
+      ],
+      "short": "Yes — a real permanent free tier: 100 sources, 3 folders, solid apps. But search inside your own feeds is paywalled, which stings once your archive matters, and the upgrade prompts are constant.",
+      "catch": "100 sources sounds like plenty until it isn't, and not being able to search your own feeds is the squeeze that converts people. Sponsored cards appear in the free reading flow.",
+      "worth": "Pro is ~$72-96/year; casual readers genuinely don't need it.",
+      "smart_moves": [
+        "Prune dead feeds to stay under the 100-source cap",
+        "Pair the free tier with your browser's find-on-page instead of paying just for search"
+      ],
+      "free_score": 72,
+      "value_score": 6,
+      "get_summary": "In practice: the mainstream RSS reader's real free tier — comfortable for casual following, deliberately cramped for power users.",
+      "drawbacks": [
+        "No search on free",
+        "100-source cap",
+        "Sponsored cards and persistent upsells"
+      ],
+      "more_info": [
+        [
+          "Is RSS still worth using?",
+          "More than ever — it's the algorithm-free way to follow sources directly. Every reader listed here consumes the same open feeds, so you can switch readers without losing anything."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "Inoreader",
+      "category": "software-tools",
+      "url": "https://www.inoreader.com",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "Only if you subscribe",
+      "account": "Required",
+      "limits": "Up to 150 feeds with ads; rules, monitoring and full search are paid",
+      "realcost": "Nothing at the free tier — you read with ads. Paid plans from roughly $7.50/month.",
+      "free_includes": [
+        "Follow up to 150 feeds, with ads",
+        "Web and mobile apps with sync",
+        "Basic folders and tagging"
+      ],
+      "paid_locked": [
+        "Automation rules and filters",
+        "Keyword monitoring and alerts",
+        "Full-archive search, and removing the ads"
+      ],
+      "short": "Yes — one of the roomier free tiers in RSS: 150 feeds, real apps, folders. The price is ads in your reading flow, and the genuinely powerful stuff (rules, monitoring, search) is paid.",
+      "catch": "Ads inside a reading app annoy exactly the kind of person who uses RSS; that's the nudge. Power features are firmly paywalled.",
+      "worth": "Comparable paid plans run ~$90/year; the free tier covers ordinary daily reading.",
+      "smart_moves": [
+        "Use folders aggressively — the free tier's organization is better than most rivals'"
+      ],
+      "free_score": 74,
+      "value_score": 6,
+      "get_summary": "In practice: a generous, ad-supported free reader whose paid tiers chase the power users.",
+      "drawbacks": [
+        "Ads in the free reading flow",
+        "Automation and search are paid",
+        "150-feed cap"
+      ],
+      "more_info": [
+        [
+          "Feedly or Inoreader free?",
+          "Inoreader's free tier is roomier (150 feeds vs 100) and has ads; Feedly's is cleaner-looking but caps harder. Both read the same open RSS — try both, keep one."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "NewsBlur",
+      "category": "software-tools",
+      "url": "https://newsblur.com",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "Only if you subscribe",
+      "account": "Required",
+      "limits": "Up to 64 sites free; the premium that lifts it is one of the cheapest in software",
+      "realcost": "Nothing for 64 sites. Premium is about $36/year.",
+      "free_includes": [
+        "Read up to 64 sites with training and filtering",
+        "The 'training' system that hides what you don't care about",
+        "Web, iOS and Android apps — open source"
+      ],
+      "paid_locked": [
+        "More than 64 sites",
+        "River-of-news reading and text-extraction views",
+        "Search and saved-story archives"
+      ],
+      "short": "Yes — 64 sites free, forever, from a one-developer operation that's been quietly reliable for over a decade. The cap is honest and the paid tier that lifts it costs less than most apps' monthly fee, per year.",
+      "catch": "64 sites is a genuine ceiling for heavy readers, and the interface has an old-forum charm that isn't for everyone.",
+      "worth": "Premium is ~$36/year — the 'squeeze' here is about as gentle as paid software gets.",
+      "smart_moves": [
+        "Train it early — the hide-this filtering is the actual killer feature",
+        "If you pass 64 feeds, the annual fee is cheaper than the time you'll spend working around it"
+      ],
+      "free_score": 78,
+      "value_score": 5,
+      "get_summary": "In practice: an honest indie RSS reader — real free tier, cheap upgrade, no dark patterns.",
+      "drawbacks": [
+        "64-site cap",
+        "Dated interface",
+        "Small team means slower feature pace"
+      ],
+      "more_info": [
+        [
+          "Who runs NewsBlur?",
+          "Essentially one developer, openly, since 2009 — the code is open source. That's the opposite failure profile of VC-funded readers that pivot or fold."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "The Old Reader",
+      "category": "software-tools",
+      "url": "https://theoldreader.com",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "Only if you subscribe",
+      "account": "Required (or sign in with Google/Facebook)",
+      "limits": "Up to 100 feeds; search and no-ads need the ~$3/month premium",
+      "realcost": "Nothing for 100 feeds and the classic reading experience.",
+      "free_includes": [
+        "Follow up to 100 feeds in a clean, Google-Reader-style UI",
+        "Sharing and comments with friends who also use it",
+        "Import your subscriptions from any reader (OPML)"
+      ],
+      "paid_locked": [
+        "More than 100 feeds",
+        "Full-text search",
+        "Faster feed refresh and no ads"
+      ],
+      "short": "Yes — it exists specifically to be what Google Reader was: simple, fast, 100 feeds free. Premium is a modest ~$3/month for search and a higher cap.",
+      "catch": "Deliberately basic — no AI, no automation, minimal apps (it's web-first). If you want power features, this isn't where they live.",
+      "worth": "It replaces a product people still mourn, for $0.",
+      "smart_moves": [
+        "Export/import via OPML — your subscriptions are portable between every reader on this list"
+      ],
+      "free_score": 80,
+      "value_score": 4,
+      "get_summary": "In practice: the Google Reader experience, alive and free at 100 feeds.",
+      "drawbacks": [
+        "Web-first, thin mobile story",
+        "No power features by design",
+        "100-feed cap"
+      ],
+      "more_info": [
+        [
+          "Why do people still want Google Reader?",
+          "Because a chronological list of exactly what you chose to follow — no ranking, no engagement bait — turned out to be the healthiest way to read the web. RSS never died; the readers just got quieter."
+        ]
+      ],
+      "short_worth": null
     }
   ],
   "deals": [

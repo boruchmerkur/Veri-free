@@ -300,10 +300,14 @@ body.loc-ca .ca-badge{display:inline-flex}
 .loc-menu a:hover{background:var(--paper);color:var(--brand)}
 .loc-menu a.sel{color:var(--brand)}
 .loc-wrap{position:relative;flex-shrink:0;padding-left:12px;border-left:1px solid var(--line)}
-.ext-ratings{margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.ext-ratings{margin:22px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.ext-ratings .er-lbl{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);width:100%;margin:0 0 -1px}
+.ext-ratings .er-note{font-size:11px;color:var(--muted);font-style:italic;width:100%;margin:2px 0 0}
 .ext-rat{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;text-decoration:none;color:var(--muted);border:1.5px solid var(--line);border-radius:6px;padding:3px 9px;transition:border-color .12s}
 .ext-rat:hover{border-color:var(--brand);color:var(--brand)}
 .ext-rat .er-score{color:var(--ink);font-size:12px}
+.ext-rat .er-n{color:var(--muted);font-size:10.5px;font-weight:500}
+.ext-rat .er-n::before{content:"· "}
 /* AI-page leaderboard sidebar (self-hosted checkmysite widget, themed native) */
 .ai-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:30px;align-items:start}
 .ai-lb{position:sticky;top:18px;
@@ -403,6 +407,19 @@ footer{border-top:2.5px solid var(--ink);margin-top:30px}
 :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
 @media(max-width:560px){.facts td.k{width:130px;white-space:normal}.hero{padding-top:52px}}
 """
+
+def ratings_row(l):
+    rows = l.get("external_ratings")
+    if not rows:
+        return ""
+    chips = ""
+    for r in rows:
+        n = f'<span class="er-n">{esc(r["count"])}</span>' if r.get("count") else ""
+        chips += (f'<a class="ext-rat" href="{esc(r["url"])}" target="_blank" rel="noopener">'
+                  f'{esc(r["source"])} <span class="er-score">{esc(r["score"])}</span>{n}</a>')
+    return (f'<div class="ext-ratings"><span class="er-lbl">Ratings elsewhere</span>{chips}'
+            f'<span class="er-note">Live scores from the sources named — not ours. Store counts rounded.</span></div>')
+
 
 def sentiment_box(l):
     s = l.get("sentiment")
@@ -1208,7 +1225,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 <p class="checked">Last checked: {esc(checked)} · Verdict: {vlabel} — {esc(vdef.lower())}</p>
 {disc}
 {'<div class="ca-badge avail">🍁 Canada</div><p class="ca-note">'+esc(l["canada"])+'</p>' if l.get("canada") else ""}
-{'<div class="ext-ratings">'+''.join(f'<a class="ext-rat" href="{esc(r["url"])}" target="_blank" rel="noopener">{esc(r["source"])} <span class="er-score">{esc(r["score"])}</span></a>' for r in l["external_ratings"])+'</div>' if l.get("external_ratings") else ""}
+{ratings_row(l)}
 {legit_box(l)}
 {sentiment_box(l)}
 <a class="visit" href="{esc(l['url'])}" target="_blank" rel="noopener">Visit {esc(l['name'])} →</a>

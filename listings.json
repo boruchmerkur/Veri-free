@@ -49,7 +49,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-libreoffice-actually-free"
+      "slug": "is-libreoffice-actually-free",
+      "sentiment": {
+        "split": "No paid edition exists, so there is no billing record to read — the discussion is compatibility, not cost.",
+        "praised": "Reviewers consistently report that it opens and writes the Microsoft formats they're handed, runs on hardware Office has abandoned, and never nags for a subscription.",
+        "complained": "The recurring complaint is fidelity at the edges: complex Word layouts, tracked changes, and heavily formatted spreadsheets can shift when passed back and forth. Real-time co-editing to match Google Docs is the other gap.",
+        "takeaway": "A complete office suite for your own documents, and a good-but-imperfect translator for someone else's. If your day is round-tripping complex Office files with colleagues, test before you commit."
+      }
     },
     {
       "name": "GIMP",
@@ -99,7 +105,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-gimp-actually-free"
+      "slug": "is-gimp-actually-free",
+      "sentiment": {
+        "split": "No billing to review — the public record is forums, tutorials, and “is this download safe” questions.",
+        "praised": "Two decades of users confirm the same thing: it does the core of what Photoshop does — layers, masks, retouching, batch work — without an account, a subscription, or a watermark on the output.",
+        "complained": "The complaint is almost never the price or the result; it's the interface. Reviewers describe a learning curve that assumes you already know image editing, and menus that don't match the Adobe muscle memory most people arrive with.",
+        "takeaway": "The cost is your time, not your wallet. Budget an afternoon of tutorials and it stays free forever — and take the download from gimp.org, because the ad-funded mirror sites are where bundled junk lives."
+      }
     },
     {
       "name": "VLC Media Player",
@@ -144,7 +156,27 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-vlc-media-player-actually-free"
+      "slug": "is-vlc-media-player-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "3.7/5",
+          "url": "https://apps.apple.com/us/app/id650377962",
+          "count": "5.8K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.0/5",
+          "url": "https://play.google.com/store/apps/details?id=org.videolan.vlc&hl=en_US&gl=US",
+          "count": "2.0M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 3.7/5 · Google Play 4.0/5 — strikingly low for software this well regarded on the desktop.",
+        "praised": "The desktop reputation is close to unanimous: it plays whatever you give it, needs no codec packs, carries no ads, and asks for nothing.",
+        "complained": "The mobile scores are the outlier, and the reviews behind them are about the phone apps — interface and playback bugs — not the desktop player people are usually asking about. Elsewhere the friction is cosmetic: a dated UI and defaults most users never touch.",
+        "takeaway": "Read the store scores as a review of the mobile apps only. The desktop VLC that built the reputation is a different and better-regarded piece of software, and both are free the same way."
+      }
     },
     {
       "name": "Blender",
@@ -193,7 +225,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-blender-actually-free"
+      "slug": "is-blender-actually-free",
+      "sentiment": {
+        "split": "No paid tier — funded by the Blender Foundation and its development fund. The record to read is professional adoption, not billing.",
+        "praised": "The strongest signal isn't a score, it's the migration: studios and freelancers have moved production work onto it, and the release cadence keeps pace with commercial packages costing thousands a year.",
+        "complained": "Learning curve and pipeline. Reviewers describe steep early hours, and some studio pipelines still assume Maya or 3ds Max. Hardware demands for rendering are the other steady gripe.",
+        "takeaway": "When the main criticism of free software is that it's hard to learn and taxes your GPU, the price genuinely isn't the catch."
+      }
     },
     {
       "name": "Audacity",
@@ -239,7 +277,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-audacity-actually-free"
+      "slug": "is-audacity-actually-free",
+      "sentiment": {
+        "split": "Free and open source throughout — the controversy in the record is about telemetry, not money.",
+        "praised": "Users credit it as the tool that gets a recording cleaned up and exported without a subscription: multitrack editing, noise reduction, and format conversion, running happily on old hardware.",
+        "complained": "Two things recur. The interface looks its age. And the 2021 change of ownership brought a data-collection policy that drew heavy criticism and pushed part of the community to forks such as Tenacity — worth knowing, even though the app remains free and open source.",
+        "takeaway": "Still free, still capable, still the default answer for casual audio work. The reputational damage was about telemetry and trust — nobody was charged."
+      }
     },
     {
       "name": "OBS Studio",
@@ -284,7 +328,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-obs-studio-actually-free"
+      "slug": "is-obs-studio-actually-free",
+      "sentiment": {
+        "split": "No paid tier and no upsell — the record is dominated by setup questions rather than complaints.",
+        "praised": "Streamers and teachers converge on one point: this is the professional capture and streaming stack, given away, with none of the watermarks or resolution caps that paid competitors put on their free plans.",
+        "complained": "The friction is configuration. Reviewers describe bitrate, encoder, and scene setup as the barrier, and performance problems on modest machines that usually turn out to be settings rather than software.",
+        "takeaway": "The complaints are about the first hour, not the product or the price. Everything rivals gate — watermarks, resolution, session length — is simply absent here."
+      }
     },
     {
       "name": "7-Zip",
@@ -329,7 +379,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-7-zip-actually-free"
+      "slug": "is-7-zip-actually-free",
+      "sentiment": {
+        "split": "No paid version, no bundled offers, no installer sponsors — unusual for a file utility.",
+        "praised": "The recurring note is about what it doesn't do: no nagware, no trial expiry, no toolbar. It handles nearly every archive format, and its own 7z format compresses harder than ZIP.",
+        "complained": "Appearance, mostly — the interface is deliberately plain. A minority report file-association and context-menu annoyances on recent Windows builds.",
+        "takeaway": "A category famous for paid nagware, and this one just works and asks for nothing. Download from 7-zip.org — the imitation sites are the only real risk here."
+      }
     },
     {
       "name": "Canva",
@@ -398,8 +454,26 @@
           "source": "G2",
           "score": "4.7/5",
           "url": "https://www.g2.com/products/canva/reviews"
+        },
+        {
+          "source": "App Store",
+          "score": "4.9/5",
+          "url": "https://apps.apple.com/us/app/id897446215",
+          "count": "3.5M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.8/5",
+          "url": "https://play.google.com/store/apps/details?id=com.canva.editor&hl=en_US&gl=US",
+          "count": "26M"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.7/5 from business users · Trustpilot 3.4/5 from consumers · App Store 4.9/5 and Google Play 4.8/5 across roughly 30 million app ratings.",
+        "praised": "Near-universal on the product: non-designers get a usable result fast, the template library is enormous, and the free tier is genuinely productive rather than a demo.",
+        "complained": "Complaints cluster on the border between free and Pro — elements and templates that feel available until you export, and billing friction on subscription renewals and team seats.",
+        "takeaway": "The app-store scores are rating the tool; the Trustpilot score is rating the checkout. Both are accurate about different things, and the gap between them is the tell."
+      }
     },
     {
       "name": "Notion",
@@ -462,8 +536,26 @@
           "source": "Trustpilot",
           "score": "2.8/5",
           "url": "https://www.trustpilot.com/review/notion.so"
+        },
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id1232780281",
+          "count": "90K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=notion.id&hl=en_US&gl=US",
+          "count": "380K"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.7/5 from business users · Trustpilot 2.8/5 from consumers · App Store 4.8/5 · Google Play 4.6/5.",
+        "praised": "Reviewers describe the tool that replaced four others — docs, wikis, tasks, and light databases in one place — with a personal free tier that has stayed generous while rivals shrank theirs.",
+        "complained": "Two patterns: performance at scale, where large workspaces and search feel slow, and the blank-page problem, where the power only pays off after you've built the system yourself. Business complaints center on per-seat billing as teams grow.",
+        "takeaway": "The low consumer score is not a verdict on the product — it's the sound of people meeting a subscription or a setup cost they didn't expect. The personal free tier is among the least restricted in this category."
+      }
     },
     {
       "name": "Figma",
@@ -527,7 +619,13 @@
           "score": "4.7/5",
           "url": "https://www.g2.com/products/figma/reviews"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.7/5 from professional users — among the highest scores in the design category. No large consumer-review base.",
+        "praised": "Multiplayer editing in the browser is where every reviewer lands: no installs, no version files, no handoff exports. It became the category standard on merit.",
+        "complained": "The complaints are about pricing and the ceiling, not the tool. Successive plan changes have reshaped what a free team gets, and the shared-project cap arrives fast for anyone working with others.",
+        "takeaway": "Excellent product, on a free tier that has been narrowed more than once. Solo practice stays free indefinitely; team work hits the wall almost immediately — which is the design, not an accident."
+      }
     },
     {
       "name": "Zoom",
@@ -601,6 +699,18 @@
           "source": "Trustpilot",
           "score": "1.6/5",
           "url": "https://www.trustpilot.com/review/zoom.us"
+        },
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id546505307",
+          "count": "3.2M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.1/5",
+          "url": "https://play.google.com/store/apps/details?id=us.zoom.videomeetings&hl=en_US&gl=US",
+          "count": "4.6M"
         }
       ],
       "sentiment": {
@@ -671,8 +781,26 @@
           "source": "G2",
           "score": "4.5/5",
           "url": "https://www.g2.com/products/slack/reviews"
+        },
+        {
+          "source": "App Store",
+          "score": "4.1/5",
+          "url": "https://apps.apple.com/us/app/id618783545",
+          "count": "49K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.Slack&hl=en_US&gl=US",
+          "count": "207K"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.5/5 from business users · App Store 4.1/5 · Google Play 4.6/5.",
+        "praised": "Reliability, search, and the integration ecosystem are the consistent compliments — there's a reason most teams standardised on it.",
+        "complained": "The free plan's 90-day visible history dominates the grievances: teams discover their institutional memory has aged out of view, and the only fix is a per-seat subscription. Notification volume is the runner-up.",
+        "takeaway": "Product complaints are minor; the free-tier complaint is structural. On the free plan you are renting visibility into your own archive — and after a year the older messages are gone for good."
+      }
     },
     {
       "name": "Grammarly",
@@ -733,7 +861,13 @@
           "score": "4.7/5",
           "url": "https://www.g2.com/products/grammarly/reviews"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "Trustpilot 4.4/5 · G2 4.7/5 — rare agreement between consumer and business reviewers.",
+        "praised": "Both audiences credit the same thing: it catches what a spellchecker misses, in whatever box you're typing into, and the free tier alone measurably tidies up writing.",
+        "complained": "The recurring frustrations are the upsell mechanics — being shown a running count of the Premium suggestions being withheld — and unease about text being processed on Grammarly's servers. Cancellation friction appears in a minority of negative reviews.",
+        "takeaway": "One of the few listings where the crowd is broadly happy. The thing to weigh isn't quality or billing — it's whether you want your drafts leaving your machine."
+      }
     },
     {
       "name": "Dropbox",
@@ -802,8 +936,26 @@
           "source": "Trustpilot",
           "score": "1.7/5",
           "url": "https://www.trustpilot.com/review/dropbox.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id327630330",
+          "count": "874K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.4/5",
+          "url": "https://play.google.com/store/apps/details?id=com.dropbox.android&hl=en_US&gl=US",
+          "count": "2.3M"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.4/5 from business users · Trustpilot 1.7/5 from consumers · App Store 4.8/5 · Google Play 4.4/5.",
+        "praised": "Sync reliability is the steady compliment — files land where they should, across machines, without drama. That is why it's still a default for many teams.",
+        "complained": "Consumer complaints are commercial rather than technical: renewals charged without a warning people registered, refusals of refunds, and the 2GB free tier turning every sync into an upgrade prompt once it fills.",
+        "takeaway": "A 1.7 sitting next to a 4.4 usually means a good product with an aggressive subscription. Treat the free tier as a shared folder rather than storage, and diary any trial before it renews."
+      }
     },
     {
       "name": "Google Drive & Gmail",
@@ -858,7 +1010,13 @@
       "short_worth": null,
       "slug": "is-google-drive-gmail-actually-free",
       "canada": "Identical free tier in Canada. Google One paid storage priced in CAD.",
-      "favicon_url": "https://www.google.com"
+      "favicon_url": "https://www.google.com",
+      "sentiment": {
+        "split": "No meaningful consumer-review record — almost everyone uses it, and nobody reviews a free utility that works.",
+        "praised": "The verdict shows up in behaviour rather than stars: 15GB, no card, no expiry, and it interoperates with everything. Complaints about the free tier itself are scarce.",
+        "complained": "What does recur, loudly, is account recovery — users locked out of the address that anchors their whole digital life, with no human to appeal to. The storage also fills quietly, because Gmail, Drive and Photos draw from the same tank.",
+        "takeaway": "The risk here isn't a surprise charge, it's a single point of failure. Set up a recovery method you actually control and export what matters. Free doesn't mean guaranteed access."
+      }
     },
     {
       "name": "Proton VPN",
@@ -915,8 +1073,26 @@
           "source": "Trustpilot",
           "score": "4.4/5",
           "url": "https://www.trustpilot.com/review/protonvpn.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.6/5",
+          "url": "https://apps.apple.com/us/app/id1437005085",
+          "count": "84K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=ch.protonvpn.android&hl=en_US&gl=US",
+          "count": "1.2M"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "Trustpilot 4.4/5 · App Store 4.6/5 · Google Play 4.7/5 across more than a million ratings — consistently positive from every source.",
+        "praised": "Reviewers repeat the two things that matter in a free VPN: no data cap and no ads. More technical reviewers cite the Swiss jurisdiction, the published audits, and the open-source clients.",
+        "complained": "The free tier's limits are the complaint — a handful of countries you can't choose between, one device, and slower speeds at peak hours. Support response times show up in negative reviews.",
+        "takeaway": "The complaints are about what the free tier withholds, not about what it does with you. In a category where the free product is usually the user, that distinction is the whole story."
+      }
     },
     {
       "name": "Hola VPN",
@@ -967,7 +1143,13 @@
           "why": "A free VPN funded by paid tiers, not by selling your bandwidth"
         }
       ],
-      "slug": "is-hola-vpn-actually-free"
+      "slug": "is-hola-vpn-actually-free",
+      "sentiment": {
+        "split": "The record here isn't star ratings — it's security research. Independent analyses, and a documented 2015 incident, centre on the peer-to-peer design that routes other people's traffic through users' connections.",
+        "praised": "Positive reviews are real and consistent about one thing: it unblocks geo-restricted video, easily, at no cash cost.",
+        "complained": "The substantive criticism has never been about performance. It is the architecture — a free tier built on sharing users' bandwidth, alongside a commercial business that sells access to that same network. Security researchers, not disappointed customers, drive the negative record.",
+        "takeaway": "Read the good reviews as accurate about the feature and silent about the price. When the free VPN's product is your connection, “free” is the wrong word. Proton VPN's free tier does the same job without it."
+      }
     },
     {
       "name": "Adobe Creative Cloud",
@@ -1106,7 +1288,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-wix-actually-free"
+      "slug": "is-wix-actually-free",
+      "sentiment": {
+        "split": "No consumer-rating consensus at scale — the free plan's reputation is set by what visitors see, not by reviewers.",
+        "praised": "Ease is the constant: people with no web experience get a real, working, responsive site up in an afternoon, hosting handled.",
+        "complained": "Two complaints dominate. The free plan puts Wix's own ad and a wixsite.com address on your site. And the template can't be swapped after you publish — a redesign means rebuilding.",
+        "takeaway": "The free tier is a working showroom for Wix with your content in it. Fine for learning; the moment it represents a business, the ad and the subdomain cost you more than the plan saves."
+      }
     },
     {
       "name": "Netlify",
@@ -1204,7 +1392,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-github-actually-free"
+      "slug": "is-github-actually-free",
+      "sentiment": {
+        "split": "No consumer-review record to speak of — the verdict is adoption: this is where most of the world's open source lives.",
+        "praised": "The generosity of the free plan is the recurring point: unlimited public and private repositories, automation minutes, Pages hosting, and no card.",
+        "complained": "Complaints concentrate at the paid edges — automation and storage overages that surprise heavy users — and on account suspensions or takedowns that arrive with little explanation. Microsoft's ownership and Copilot's training on public code remain contested.",
+        "takeaway": "One of the few free tiers that has grown more generous over time instead of less. Keep your own copy of anything critical: a repository you don't control is a dependency."
+      }
     },
     {
       "name": "ChatGPT",
@@ -1261,8 +1455,26 @@
           "source": "Trustpilot",
           "score": "3.2/5",
           "url": "https://www.trustpilot.com/review/openai.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id6448311069",
+          "count": "9.0M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.8/5",
+          "url": "https://play.google.com/store/apps/details?id=com.openai.chatgpt&hl=en_US&gl=US",
+          "count": "51M"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "Trustpilot 3.2/5 from consumers · App Store 4.8/5 and Google Play 4.8/5 across roughly 60 million app ratings.",
+        "praised": "The app scores are among the highest of anything on this site, at a scale that's hard to argue with — people are rating the free tier itself as useful, not as a teaser.",
+        "complained": "The consumer score comes from the subscription side: renewal and refund disputes, and difficulty reaching support. Free-tier complaints are about rationing — caps and quiet model downgrades at peak times, arriving without much warning.",
+        "takeaway": "An unusually clean split: near-universal approval of the product, concentrated anger at the billing. If you never subscribe, most of the negative record doesn't apply to you."
+      }
     },
     {
       "name": "Claude",
@@ -1312,7 +1524,27 @@
       ],
       "short_worth": null,
       "slug": "is-claude-actually-free",
-      "canada": "Available in Canada. Free tier identical. Pro billed in USD."
+      "canada": "Available in Canada. Free tier identical. Pro billed in USD.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id6473753684",
+          "count": "215K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.5/5",
+          "url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US&gl=US",
+          "count": "644K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.7/5 · Google Play 4.5/5. No large consumer-billing review record yet.",
+        "praised": "Reviewers single out long-document handling and writing quality, and note that the free tier is a working version of the product rather than a trial.",
+        "complained": "The daily message cap is the near-universal complaint — free users describe hitting it mid-task and waiting, rather than being warned. Newer features reach paid tiers first.",
+        "takeaway": "The thing to know before relying on it free is that the ceiling is a clock, not a feature list: you get the good model, for a while, each day."
+      }
     },
     {
       "name": "Google Gemini",
@@ -1362,7 +1594,27 @@
       ],
       "short_worth": null,
       "slug": "is-google-gemini-actually-free",
-      "favicon_url": "https://www.google.com"
+      "favicon_url": "https://www.google.com",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id6477489729",
+          "count": "2.1M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.bard&hl=en_US&gl=US",
+          "count": "41M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.7/5 · Google Play 4.6/5 — read the Android volume with care, since the app ships preinstalled on many phones.",
+        "praised": "The free tier gets capable models, generous limits, and tight integration with Gmail, Docs and Android. Convenience is what reviewers rate highly.",
+        "complained": "Complaints split between inconsistency against rivals on harder tasks, and the Android assistant transition, where users describe losing behaviours the old Assistant had. Privacy questions recur, because conversations sit inside a Google account.",
+        "takeaway": "Free the way Gmail is free — the cost is a data relationship, not a bill. Check the activity settings once, and the free tier is genuinely capable."
+      }
     },
     {
       "name": "Perplexity",
@@ -1411,7 +1663,27 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-perplexity-actually-free"
+      "slug": "is-perplexity-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id1668000334",
+          "count": "491K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=ai.perplexity.app.android&hl=en_US&gl=US",
+          "count": "2.0M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.6/5 across roughly 2.5 million ratings.",
+        "praised": "Citations are the recurring compliment. Reviewers value being able to check the source, and the free tier answers with links rather than asking to be trusted.",
+        "complained": "The daily cap on advanced searches is the main friction — users describe answers thinning noticeably once it's spent. Accuracy complaints, where a confident answer outruns the sources under it, appear steadily.",
+        "takeaway": "The free tier's value is the citations, and the citations are also the check. Follow the links on anything that matters — and the cap will tell you when you've left the good tier."
+      }
     },
     {
       "name": "Hugging Face",
@@ -1568,7 +1840,27 @@
       ],
       "short_worth": null,
       "slug": "is-khan-academy-actually-free",
-      "canada": "Fully available in Canada. No geographic restrictions."
+      "canada": "Fully available in Canada. No geographic restrictions.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.6/5",
+          "url": "https://apps.apple.com/us/app/id469863705",
+          "count": "109K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.2/5",
+          "url": "https://play.google.com/store/apps/details?id=org.khanacademy.android&hl=en_US&gl=US",
+          "count": "173K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.6/5 · Google Play 4.2/5. No billing complaints, because there is no billing.",
+        "praised": "Parents and students describe the same arc: a topic that wasn't landing in class lands here, at their own pace, with no account wall in front of the lessons.",
+        "complained": "The friction is coverage and depth. Reviewers hit the ceiling in advanced or niche subjects, and some report app bugs and progress-sync problems that don't exist on the website.",
+        "takeaway": "The complaints are about what a nonprofit hasn't built yet, not about a bill. This is the benchmark every other “free” learning platform on this site is measured against."
+      }
     },
     {
       "name": "freeCodeCamp",
@@ -1614,7 +1906,13 @@
       ],
       "short_worth": null,
       "slug": "is-freecodecamp-actually-free",
-      "canada": "Fully available worldwide including Canada. No restrictions."
+      "canada": "Fully available worldwide including Canada. No restrictions.",
+      "sentiment": {
+        "split": "A donor-funded nonprofit with no paid tier — the record is outcomes, not ratings.",
+        "praised": "The recurring story is employment: people describing a path from zero to a paid developer job on this curriculum alone, with certifications that cost nothing and a forum that answers.",
+        "complained": "Self-direction is the complaint. There's no instructor, no deadline, and no one to notice when you stop — reviewers who dropped out cite motivation, not content. Some find the projects jump in difficulty faster than the lessons prepare you for.",
+        "takeaway": "The thing that makes bootcamps worth thousands is accountability, not material. This gives away the material; you supply the accountability."
+      }
     },
     {
       "name": "MIT OpenCourseWare",
@@ -1767,6 +2065,18 @@
           "source": "Trustpilot",
           "score": "2.2/5",
           "url": "https://www.trustpilot.com/review/duolingo.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id570060128",
+          "count": "5.4M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.duolingo&hl=en_US&gl=US",
+          "count": "47M"
         }
       ],
       "sentiment": {
@@ -1834,8 +2144,26 @@
           "source": "G2",
           "score": "4.3/5",
           "url": "https://www.g2.com/products/coursera/reviews"
+        },
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id736535961",
+          "count": "173K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.3/5",
+          "url": "https://play.google.com/store/apps/details?id=org.coursera.android&hl=en_US&gl=US",
+          "count": "308K"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.3/5 from business buyers · Trustpilot 2.0/5 from consumers · App Store 4.8/5 · Google Play 4.3/5.",
+        "praised": "Course quality and the university branding are what reviewers rate — real institutions, real instructors, and the audit track genuinely does open the lectures.",
+        "complained": "The consumer score is a billing score. Complaints centre on subscriptions that renewed unnoticed, refunds refused, and a signup flow that presents payment as the default path while “audit” is a small link. Certificate value is the other doubt.",
+        "takeaway": "A 2.0 next to a 4.3 is the signature of a good product with a hostile checkout. Find the audit link before you find your card — and the financial-aid application, which is real and quietly generous."
+      }
     },
     {
       "name": "edX",
@@ -1883,7 +2211,27 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-edx-actually-free"
+      "slug": "is-edx-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id945480667",
+          "count": "11K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.8/5",
+          "url": "https://play.google.com/store/apps/details?id=org.edx.mobile&hl=en_US&gl=US",
+          "count": "112K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.8/5 — unusually high for a platform with a paid conversion motive.",
+        "praised": "Reviewers rate the source material: MIT, Harvard and peers, in full, on the free audit track. The absence of hard-sell tactics compared with rivals comes up repeatedly.",
+        "complained": "The free track's expiry is the grievance — audit access closes on a schedule while paid access doesn't, so a course you paused is a course you lost. Graded work and certificates sitting behind the paywall is the other recurring note.",
+        "takeaway": "The complaint isn't that the free tier is thin; it's that it's on a timer. Start when you actually have the weeks, not when you find the course."
+      }
     },
     {
       "name": "Codecademy",
@@ -1932,7 +2280,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-codecademy-actually-free"
+      "slug": "is-codecademy-actually-free",
+      "sentiment": {
+        "split": "No consumer-rating consensus at scale — the discussion is whether the free tier is enough on its own.",
+        "praised": "The interactive editor is what people credit: you write code in the browser from minute one, with immediate feedback, and the free basics genuinely teach syntax.",
+        "complained": "The complaint is where the free tier stops. Projects, paths, quizzes and portfolio work are Pro features, so reviewers describe learning the grammar of a language without ever building anything with it.",
+        "takeaway": "Free Codecademy is a good introduction that ends exactly where the useful part starts. If you finish it and want the rest, freeCodeCamp goes further for nothing."
+      }
     },
     {
       "name": "Skillshare",
@@ -1994,7 +2348,21 @@
           "why": "Real university lectures, no account needed"
         }
       ],
-      "slug": "is-skillshare-actually-free"
+      "slug": "is-skillshare-actually-free",
+      "external_ratings": [
+        {
+          "source": "Google Play",
+          "score": "4.1/5",
+          "url": "https://play.google.com/store/apps/details?id=com.skillshare.Skillshare&hl=en_US&gl=US",
+          "count": "59K"
+        }
+      ],
+      "sentiment": {
+        "split": "Google Play 4.1/5 — and, as with most trial-first services, a review record dominated by the billing rather than the classes.",
+        "praised": "The creative catalog is real: illustration, design, photography and craft classes from working practitioners, and reviewers who stayed subscribed rate the teaching well.",
+        "complained": "The complaints are almost entirely about the trial. Reviewers describe a card taken up front, a charge arriving at the end of a period they'd forgotten, and cancellation that they had to hunt for. Course quality is uneven, since anyone can teach.",
+        "takeaway": "The classes aren't the problem — the clock is. If you start the trial, cancel on day one: access runs to the end either way, and that single step turns a trap into a genuinely free month."
+      }
     },
     {
       "name": "LinkedIn Learning",
@@ -2053,7 +2421,21 @@
         }
       ],
       "slug": "is-linkedin-learning-actually-free",
-      "canada": "Available free through many Canadian public libraries — check Toronto Public Library, Vancouver Public Library, etc."
+      "canada": "Available free through many Canadian public libraries — check Toronto Public Library, Vancouver Public Library, etc.",
+      "external_ratings": [
+        {
+          "source": "Google Play",
+          "score": "4.8/5",
+          "url": "https://play.google.com/store/apps/details?id=com.linkedin.android.learning&hl=en_US&gl=US",
+          "count": "182K"
+        }
+      ],
+      "sentiment": {
+        "split": "Google Play 4.8/5 for the app · and a separate, much cooler consumer record around the trial and the subscription.",
+        "praised": "The library is professionally produced and broad, and reviewers rate the business, software and career courses as genuinely useful rather than filler.",
+        "complained": "Two patterns: the trial requires a card and converts to a monthly charge, and the subscription is bundled with LinkedIn Premium in a way people describe as hard to unpick when cancelling.",
+        "takeaway": "Before you start any trial, check your public library card — a great many library systems include LinkedIn Learning free. Same catalog, no card, no clock, no cancellation to remember."
+      }
     },
     {
       "name": "YouTube",
@@ -2106,7 +2488,27 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-youtube-actually-free"
+      "slug": "is-youtube-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id544007664",
+          "count": "48M"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.9/5",
+          "url": "https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=en_US&gl=US",
+          "count": "171M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.7/5 · Google Play 3.9/5 across more than 200 million ratings — one of the widest platform splits anywhere.",
+        "praised": "Nobody disputes the value: essentially every subject, taught or performed by someone, at no cash cost, on every device.",
+        "complained": "Ad load dominates the negative reviews — frequency and length, and the fact that both have grown. The blocking of ad-blockers, recommendation quality, and interface changes make up most of the rest.",
+        "takeaway": "The rating gap tracks the ad experience, not the content. Free here means ad-funded and profile-funded — an honest trade, but one that's been getting steadily more expensive in attention."
+      }
     },
     {
       "name": "Tubi",
@@ -2151,7 +2553,27 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-tubi-actually-free"
+      "slug": "is-tubi-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id886445756",
+          "count": "1.2M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.9/5",
+          "url": "https://play.google.com/store/apps/details?id=com.tubitv&hl=en_US&gl=US",
+          "count": "2.5M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.9/5 across roughly 3.7 million ratings — among the highest scores on this site.",
+        "praised": "Reviewers keep making the same point: no account required, no card, no trial, and a catalog far deeper than they expected. The ad load is widely described as lighter than broadcast television.",
+        "complained": "Titles rotate out as licences lapse, which frustrates people mid-series, and search and app stability draw complaints on TV devices. Nobody complains about being charged, because nobody is.",
+        "takeaway": "A rare case where high scores and an honest free model agree. What you're trading is ad breaks and a catalog that shifts — not your card details."
+      }
     },
     {
       "name": "Pluto TV",
@@ -2195,7 +2617,27 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-pluto-tv-actually-free"
+      "slug": "is-pluto-tv-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id751712884",
+          "count": "1.6M"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.7/5",
+          "url": "https://play.google.com/store/apps/details?id=tv.pluto.android&hl=en_US&gl=US",
+          "count": "802K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 3.7/5 — the platform's biggest divide is between its own apps.",
+        "praised": "The channel-surfing format is the appeal: hundreds of themed linear channels, on-demand titles alongside, and no account required to start watching.",
+        "complained": "The Android score reflects app complaints — playback stalls, repeated ads for the same product, and ad breaks that resume awkwardly. The lean-back format also means you often can't choose what's on.",
+        "takeaway": "The low Android score is about the app, not the bargain. This is broadcast television's old deal — free programming paid for by commercials — and it's honest about it."
+      }
     },
     {
       "name": "Spotify",
@@ -2251,8 +2693,26 @@
           "source": "Trustpilot",
           "score": "1.4/5",
           "url": "https://www.trustpilot.com/review/spotify.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id324684580",
+          "count": "41M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.3/5",
+          "url": "https://play.google.com/store/apps/details?id=com.spotify.music&hl=en_US&gl=US",
+          "count": "36M"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "Trustpilot 1.4/5 from consumers · App Store 4.8/5 · Google Play 4.3/5 across roughly 77 million app ratings.",
+        "praised": "The catalog, the recommendations and the cross-device playback are rated as well as anything in this category. On desktop the free tier is close to a full player.",
+        "complained": "The consumer score is a billing and support score: renewals people didn't expect, refunds refused, and no reachable human. Free-tier complaints concentrate on mobile — the shuffle restrictions and the ad breaks between them.",
+        "takeaway": "Read the two numbers as two products. The app people rate at 4.8 is the one you use; the company people rate at 1.4 is the one you'd have to email. On free, you'll only ever meet the first."
+      }
     },
     {
       "name": "Crunchyroll",
@@ -2310,7 +2770,27 @@
           "why": "Free anime channels among hundreds of others"
         }
       ],
-      "slug": "is-crunchyroll-actually-free"
+      "slug": "is-crunchyroll-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id329913454",
+          "count": "1.5M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.crunchyroll.crunchyroid&hl=en_US&gl=US",
+          "count": "4.3M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.6/5 — but those rate a service that is no longer free at all.",
+        "praised": "Subscribers rate the catalog and the simulcast speed highly; for licensed anime in English-speaking markets it remains the deepest library there is.",
+        "complained": "The free tier is the story. Reviewers describe years of gradual erosion — more ads, delayed episodes, shrinking availability — ending with the ad-supported tier being switched off entirely on 1 January 2026. Account and billing complaints follow the usual subscription pattern.",
+        "takeaway": "This listing exists as a record of how a free tier ends: not with an announcement, but by degrees. Some older Crunchyroll titles still surface on Tubi and Pluto TV, which are still genuinely free."
+      }
     },
     {
       "name": "Kanopy",
@@ -2356,7 +2836,21 @@
       ],
       "short_worth": null,
       "slug": "is-kanopy-actually-free",
-      "canada": "Available through many Canadian public libraries including Toronto Public Library."
+      "canada": "Available through many Canadian public libraries including Toronto Public Library.",
+      "external_ratings": [
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.kanopy&hl=en_US&gl=US",
+          "count": "15K"
+        }
+      ],
+      "sentiment": {
+        "split": "Google Play 4.6/5 — a small rating base, because almost nobody knows it exists.",
+        "praised": "The catalog is the compliment: Criterion, indie, documentary and foreign film, ad-free, through a library card. Reviewers routinely describe it as the best-kept secret in streaming.",
+        "complained": "The credit system is the friction — a monthly allowance set by your library, which runs out faster than people expect — and coverage is uneven, since not every library system participates.",
+        "takeaway": "Rationed rather than unlimited, and worth the ration. Ad-free arthouse streaming for a library card is the best value-per-dollar on this site, because the dollar figure is zero."
+      }
     },
     {
       "name": "Hoopla",
@@ -2402,7 +2896,27 @@
       ],
       "short_worth": null,
       "slug": "is-hoopla-actually-free",
-      "canada": "Available through participating Canadian libraries — check your library's digital resources."
+      "canada": "Available through participating Canadian libraries — check your library's digital resources.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id580643740",
+          "count": "1.4M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.hoopladigital.android&hl=en_US&gl=US",
+          "count": "216K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.7/5 across roughly 1.6 million ratings.",
+        "praised": "The breadth is what reviewers rate: films, television, music, audiobooks, ebooks and comics in one app — and, unlike Libby, no waitlists, because every title is always available.",
+        "complained": "The monthly borrow cap set by your library is the universal complaint, and it's often modest. Catalog gaps on new releases and occasional app playback problems make up the rest.",
+        "takeaway": "The trade against Libby is clear: Hoopla never makes you wait but counts your borrows; Libby doesn't count but makes you queue. Most library cards give you both — use them together."
+      }
     },
     {
       "name": "Amazon Prime Video",
@@ -2465,7 +2979,27 @@
           "why": "Festival films and documentaries, free with a library card"
         }
       ],
-      "slug": "is-amazon-prime-video-actually-free"
+      "slug": "is-amazon-prime-video-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id545519333",
+          "count": "3.0M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient&hl=en_US&gl=US",
+          "count": "5.5M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.7/5 — app scores that say nothing about the billing this listing is really about.",
+        "praised": "The catalog and the bundling are what subscribers rate — video arriving alongside shipping benefits makes the whole package feel worth it.",
+        "complained": "Two complaints recur, and both are commercial. Trials that auto-billed after 30 days without a warning people noticed, and the introduction of ads into a tier that had been ad-free, with an extra charge to remove them again.",
+        "takeaway": "The app is fine; the clock is the product. If you start the trial, put the cancellation date in your calendar the same hour — and know that “paid” here still means ads unless you pay twice."
+      }
     },
     {
       "name": "Project Gutenberg",
@@ -2510,7 +3044,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-project-gutenberg-actually-free"
+      "slug": "is-project-gutenberg-actually-free",
+      "sentiment": {
+        "split": "A volunteer-run nonprofit archive with no paid tier and no account — there is nothing to review commercially.",
+        "praised": "Tens of thousands of public-domain titles, in formats that work on any device, with no signup and no tracking. Readers and educators treat it as infrastructure rather than a service.",
+        "complained": "Transcription quality varies between titles, the interface is plain, and the collection stops where copyright begins — no recent bestsellers, by design and by law.",
+        "takeaway": "The oldest genuinely free thing on the internet, and still one of the cleanest. For anything written before roughly the 1930s, start here; for this year's releases, use Libby."
+      }
     },
     {
       "name": "Standard Ebooks",
@@ -2605,7 +3145,27 @@
       ],
       "short_worth": null,
       "slug": "is-libby-actually-free",
-      "canada": "Works with Canadian public libraries. Toronto, Vancouver, and most major systems participate."
+      "canada": "Works with Canadian public libraries. Toronto, Vancouver, and most major systems participate.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.9/5",
+          "url": "https://apps.apple.com/us/app/id1076402606",
+          "count": "4.4M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.8/5",
+          "url": "https://play.google.com/store/apps/details?id=com.overdrive.mobile.android.libby&hl=en_US&gl=US",
+          "count": "720K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.9/5 · Google Play 4.8/5 across roughly 5 million ratings — the highest-rated app on this entire site.",
+        "praised": "Reviewers describe it as the app that gave them back reading: ebooks and audiobooks from their own library, on their phone, at no cost and with nothing to cancel.",
+        "complained": "Waitlists are the single complaint. Popular new releases can take weeks or months, hold limits are set by the library, and coverage depends on your system's budget.",
+        "takeaway": "A 4.9 across five million ratings, on something that is free with a library card. If one recommendation on this site is worth acting on this week, it's getting a card and installing this."
+      }
     },
     {
       "name": "Open Library",
@@ -2650,7 +3210,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-open-library-actually-free"
+      "slug": "is-open-library-actually-free",
+      "sentiment": {
+        "split": "No large consumer-rating record — the public discussion is the publishers' litigation, not user complaints.",
+        "praised": "Readers value what nothing else offers: out-of-print, obscure and older titles, borrowable in the browser, alongside a genuinely open catalog of bibliographic data.",
+        "complained": "Availability is the frustration — one reader per copy, loans that expire, and a lending catalog that has thinned in places following the court ruling against the Internet Archive's lending programme. Scan quality varies on older titles.",
+        "takeaway": "A real library, run by a nonprofit, under legal pressure. It is safe and legitimate to use — the uncertainty is about what will still be lendable next year, not about you."
+      }
     },
     {
       "name": "Sefaria",
@@ -2695,7 +3261,21 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-sefaria-actually-free"
+      "slug": "is-sefaria-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.5/5",
+          "url": "https://apps.apple.com/us/app/id1163273965",
+          "count": "764"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.5/5",
+          "url": "https://play.google.com/store/apps/details?id=org.sefaria.sefaria&hl=en_US&gl=US",
+          "count": "4.1K"
+        }
+      ]
     },
     {
       "name": "Audible",
@@ -2759,7 +3339,27 @@
           "why": "Classic audiobooks and ebooks, no account needed"
         }
       ],
-      "slug": "is-audible-actually-free"
+      "slug": "is-audible-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.9/5",
+          "url": "https://apps.apple.com/us/app/id379693831",
+          "count": "5.6M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.audible.application&hl=en_US&gl=US",
+          "count": "1.8M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.9/5 · Google Play 4.6/5 across roughly 7 million ratings.",
+        "praised": "The library and narration quality rate near the top of the category, and reviewers consistently confirm the part that matters here: credits spent during a trial keep the book, even after you cancel.",
+        "complained": "The complaints are subscription mechanics — charges after a trial people meant to cancel, credits expiring unused, and the discovery that a “library” of purchased titles is licensed rather than owned.",
+        "takeaway": "The one genuinely free thing here is the trial credit, and it survives cancellation. Claim the book, cancel the same day, decide about the subscription later — or skip it entirely and borrow audiobooks free through Libby."
+      }
     },
     {
       "name": "Kindle Unlimited",
@@ -2868,7 +3468,27 @@
       ],
       "short_worth": null,
       "slug": "is-credit-karma-actually-free",
-      "canada": "Available in Canada with Equifax and TransUnion scores. Slightly different feature set than US version."
+      "canada": "Available in Canada with Equifax and TransUnion scores. Slightly different feature set than US version.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id519817714",
+          "count": "7.7M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.creditkarma.mobile&hl=en_US&gl=US",
+          "count": "3.2M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.7/5 across roughly 11 million ratings.",
+        "praised": "Reviewers confirm the core promise: scores and full reports from two bureaus, updated regularly, with no card and no trial. For most people it replaces a paid credit-monitoring subscription outright.",
+        "complained": "Two patterns. The scores shown are VantageScore rather than the FICO figure most lenders actually pull, so users report a gap at application time. And the recommendation cards are relentless — reviewers describe the app as an offer engine wrapped around a score.",
+        "takeaway": "Free and genuinely useful for watching the direction of your credit. Read every “recommended for you” card as a paid advertisement, because that is precisely what funds the zero."
+      }
     },
     {
       "name": "Wave Accounting",
@@ -3014,7 +3634,27 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-robinhood-actually-free"
+      "slug": "is-robinhood-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.3/5",
+          "url": "https://apps.apple.com/us/app/id938003185",
+          "count": "4.8M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.2/5",
+          "url": "https://play.google.com/store/apps/details?id=com.robinhood.android&hl=en_US&gl=US",
+          "count": "531K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.3/5 · Google Play 4.2/5 across roughly 5 million ratings — lower than most finance apps on this site.",
+        "praised": "Ease of entry is the compliment: commission-free trades, fractional shares, and an interface that made investing legible to people the industry had ignored.",
+        "complained": "Trust is the theme. Reviewers still cite the 2021 trading restrictions, outages during volatile sessions, and account or transfer holds resolved slowly. Regulators have fined the company over outage handling and disclosures — that record is public, not alleged.",
+        "takeaway": "Zero commission doesn't mean zero cost: order flow is sold, and that's what funds it. Nothing here is investment advice — but if a broker's free-ness is the reason you chose it, understand who is paying for it."
+      }
     },
     {
       "name": "AnnualCreditReport.com",
@@ -3109,7 +3749,21 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-rocket-money-actually-free"
+      "slug": "is-rocket-money-actually-free",
+      "external_ratings": [
+        {
+          "source": "Google Play",
+          "score": "4.5/5",
+          "url": "https://play.google.com/store/apps/details?id=com.truebill&hl=en_US&gl=US",
+          "count": "136K"
+        }
+      ],
+      "sentiment": {
+        "split": "Google Play 4.5/5 — and a review record where the app's own subscription is the recurring subject.",
+        "praised": "The core function works: users report finding forgotten subscriptions they'd been paying for years, and the cancellation service genuinely cancels things.",
+        "complained": "The irony is the complaint. An app for killing subscriptions is itself a subscription, with the useful features behind Premium and a “pay what you want” prompt that reviewers describe as pressuring. The bill-negotiation service takes a substantial cut of the savings it wins.",
+        "takeaway": "Use the free tier for what it's honestly good at — showing you the list of what's charging you. Then cancel those yourself, and cancel this one too. The list is the value; the service is the upsell."
+      }
     },
     {
       "name": "DreamSite Site Checkup",
@@ -3225,8 +3879,26 @@
           "source": "Trustpilot",
           "score": "2.7/5",
           "url": "https://www.trustpilot.com/review/hubspot.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id1107711722",
+          "count": "15K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.5/5",
+          "url": "https://play.google.com/store/apps/details?id=com.hubspot.android&hl=en_US&gl=US",
+          "count": "13K"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.4/5 from business users · Trustpilot 2.7/5 from consumers · App Store 4.7/5 · Google Play 4.5/5.",
+        "praised": "The free CRM is rated as genuinely complete rather than crippled — contacts, deals, email tracking and forms, with no seat limit and no expiry. Onboarding and documentation rate well.",
+        "complained": "The consumer score is about contracts. Reviewers describe annual commitments that don't cancel mid-term, steep step-ups between tiers, and pricing that scales with contact count in ways they didn't model. HubSpot branding on free tools is the other gripe.",
+        "takeaway": "The best free CRM available, and the most carefully engineered funnel entrance in business software. Both are true. Stay on free deliberately, and read any annual contract before you sign it."
+      }
     },
     {
       "name": "Mailchimp",
@@ -3294,6 +3966,18 @@
           "source": "Trustpilot",
           "score": "1.3/5",
           "url": "https://www.trustpilot.com/review/mailchimp.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.9/5",
+          "url": "https://apps.apple.com/us/app/id366794783",
+          "count": "52K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.mailchimp.mailchimp&hl=en_US&gl=US",
+          "count": "24K"
         }
       ],
       "sentiment": {
@@ -3357,8 +4041,26 @@
           "source": "G2",
           "score": "4.4/5",
           "url": "https://www.g2.com/products/trello/reviews"
+        },
+        {
+          "source": "App Store",
+          "score": "4.3/5",
+          "url": "https://apps.apple.com/us/app/id461504587",
+          "count": "6.9K"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.8/5",
+          "url": "https://play.google.com/store/apps/details?id=com.trello&hl=en_US&gl=US",
+          "count": "122K"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.4/5 from business users · App Store 4.3/5 · Google Play 3.8/5.",
+        "praised": "Simplicity is the compliment across every source: a board, lists, cards — learnable in a minute, and the free tier holds real teams for years.",
+        "complained": "The Android score carries app complaints — sync delays and a mobile experience reviewers find heavier than the web. The ten-board workspace ceiling and small attachment limits are the free-tier grievances, alongside the sense that development attention moved to Atlassian's bigger products.",
+        "takeaway": "Rare among the “free forever” tools in that the ceiling is generously placed and clearly marked. If ten boards isn't enough, the problem is probably your board sprawl, not the plan."
+      }
     },
     {
       "name": "Calendly",
@@ -3415,7 +4117,13 @@
           "score": "4.7/5",
           "url": "https://www.g2.com/products/calendly/reviews"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.7/5 from business users — among the highest in scheduling. No large consumer-complaint record.",
+        "praised": "It removes the email back-and-forth, and reviewers rate the calendar integrations and the polish of the booking page. The free tier is a working product, not a demo.",
+        "complained": "The single-event-type limit is what reviewers run into: enough for one offer, one short of any real service menu. Branding on the free booking page and gated integrations follow.",
+        "takeaway": "Excellent tool with a fence placed with real precision. If you only ever book one kind of meeting, free is permanent; the moment you have two, that's the bill."
+      }
     },
     {
       "name": "Loom",
@@ -3472,7 +4180,13 @@
           "score": "4.7/5",
           "url": "https://www.g2.com/products/loom/reviews"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.7/5 from business users — very highly rated for what it does.",
+        "praised": "Reviewers describe it replacing meetings outright: record the screen, send the link, done — with transcripts and viewer notifications that make async work feel accountable.",
+        "complained": "The five-minute recording cap and the 25-video library are the complaints, and they arrive exactly when the habit forms. Since Atlassian's acquisition, reviewers watch the free tier's terms nervously.",
+        "takeaway": "Both free limits are placed where dependence begins, which is the design rather than an oversight. Download anything you'd hate to lose — a video library you don't control is not an archive."
+      }
     },
     {
       "name": "Google Business Profile",
@@ -4022,7 +4736,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-vs-code-actually-free"
+      "slug": "is-vs-code-actually-free",
+      "sentiment": {
+        "split": "No paid tier and no upsell in the editor — the record is adoption, and it's overwhelming.",
+        "praised": "Extensions, speed, and the fact that it's the same editor for every language are the constants. Reviewers note it displaced paid IDEs without ever asking for money.",
+        "complained": "Two threads: memory use on large projects, and the distinction between open-source Code and Microsoft's build, which adds telemetry and a marketplace under a proprietary licence. Copilot prompts inside the editor draw irritation from people who don't want them.",
+        "takeaway": "Free and staying free, because developer mindshare is the product. If the telemetry bothers you, VSCodium is the same editor without it — also free."
+      }
     },
     {
       "name": "Signal",
@@ -4065,7 +4785,27 @@
       ],
       "short_worth": null,
       "slug": "is-signal-actually-free",
-      "canada": "Available worldwide. No geographic restrictions."
+      "canada": "Available worldwide. No geographic restrictions.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id874139669",
+          "count": "1.1M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.5/5",
+          "url": "https://play.google.com/store/apps/details?id=org.thoughtcrime.securesms&hl=en_US&gl=US",
+          "count": "2.9M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.7/5 · Google Play 4.5/5 across roughly 4 million ratings. Run by a nonprofit foundation with nothing to sell.",
+        "praised": "The security community's endorsement is the strongest signal here — the protocol is audited, open, and used under other companies' branding. Users rate it as a normal messenger that happens to be private.",
+        "complained": "Network effects and features. Reviewers describe having to persuade contacts to install it, and miss conveniences other apps have. Phone-number identity draws criticism from users who want to be reachable without giving out a number, and backup and multi-device setup are described as fiddly.",
+        "takeaway": "The only listing on this site where the free product is also the recommended-by-experts product. Nothing is being harvested; the foundation runs on donations, and that's the entire model."
+      }
     },
     {
       "name": "WhatsApp",
@@ -4110,7 +4850,27 @@
       ],
       "short_worth": null,
       "slug": "is-whatsapp-actually-free",
-      "canada": "Available in Canada. Widely used for international calls to family abroad — free over WiFi."
+      "canada": "Available in Canada. Widely used for international calls to family abroad — free over WiFi.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id310633997",
+          "count": "18M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.whatsapp&hl=en_US&gl=US",
+          "count": "240M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.7/5 · Google Play 4.6/5 across roughly 258 million ratings — the largest rating base of anything listed here.",
+        "praised": "Reliability at global scale, and end-to-end encryption on by default, are the compliments. For most of the world it simply replaced SMS and international calling.",
+        "complained": "Meta's ownership drives the criticism. The 2021 privacy-policy change triggered a mass migration to Signal and Telegram, and reviewers remain uneasy about metadata even while accepting that message content is encrypted. Account bans without explanation recur.",
+        "takeaway": "Free and encrypted for personal use — the cost is the metadata, not the content. Who you talk to, how often, and from where still flows to Meta. That's the trade, and it's a real one."
+      }
     },
     {
       "name": "Telegram",
@@ -4155,7 +4915,27 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-telegram-actually-free"
+      "slug": "is-telegram-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.0/5",
+          "url": "https://apps.apple.com/us/app/id686449807",
+          "count": "276K"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.9/5",
+          "url": "https://play.google.com/store/apps/details?id=org.telegram.messenger&hl=en_US&gl=US",
+          "count": "17M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.0/5 · Google Play 3.9/5 across roughly 17 million ratings — notably lower than its rivals.",
+        "praised": "Features and generosity: huge groups, channels, big file transfers, bots, and cloud sync across devices with no storage cap worth mentioning. Reviewers rate it the most capable free messenger by a distance.",
+        "complained": "Two very different complaints. Privacy-aware reviewers object that ordinary chats are not end-to-end encrypted by default — only Secret Chats are — which is widely misunderstood. Everyone else complains about spam, scam accounts, and the moderation record on public channels.",
+        "takeaway": "Generous, capable, and weaker on privacy than its reputation suggests. If you chose it for security, you probably wanted Signal; if you chose it for capability, you chose correctly."
+      }
     },
     {
       "name": "Bitwarden",
@@ -4213,8 +4993,26 @@
           "source": "G2",
           "score": "4.7/5",
           "url": "https://www.g2.com/products/bitwarden/reviews"
+        },
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id1137397744",
+          "count": "30K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.x8bit.bitwarden&hl=en_US&gl=US",
+          "count": "167K"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.7/5 from business users · App Store 4.7/5 · Google Play 4.7/5 — consistently high from every direction.",
+        "praised": "The free tier is the compliment: unlimited passwords, unlimited devices, sync everywhere, and open-source code with published audits. Reviewers arriving from competitors describe the free plan as more generous than what they were paying for.",
+        "complained": "Interface polish is the recurring criticism — functional rather than elegant, with browser-extension autofill occasionally missing fields. Some describe self-hosting as more work than the documentation implies.",
+        "takeaway": "The reference case for this whole site: a security product whose free tier is complete, whose code is inspectable, and whose paid tier sells conveniences rather than hostages."
+      }
     },
     {
       "name": "WordPress.com",
@@ -4338,8 +5136,20 @@
           "source": "Trustpilot",
           "score": "1.2/5",
           "url": "https://www.trustpilot.com/review/turbotax.intuit.com"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.9/5",
+          "url": "https://play.google.com/store/apps/details?id=com.intuit.turbotax.mobile&hl=en_US&gl=US",
+          "count": "322K"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "Trustpilot 1.2/5 from consumers · Google Play 3.9/5.",
+        "praised": "The software itself is rated well — the interview flow is the clearest in the category, imports work, and the accuracy guarantees are real.",
+        "complained": "The complaint is unusually uniform: reviewers describe entering hours of personal data under the word “free,” then hitting a required upgrade partway through because of one form. The FTC found the advertising deceptive, and the company has been ordered to pay refunds to affected filers.",
+        "takeaway": "A 1.2 this consistent is not a product failure — it's a business model working as designed. Check whether you qualify before you enter a single figure, and know that FreeTaxUSA and IRS Free File finish the same return without the wall."
+      }
     },
     {
       "name": "Cash App",
@@ -4386,7 +5196,27 @@
       ],
       "short_worth": null,
       "slug": "is-cash-app-actually-free",
-      "canada": "Not available in Canada. Canadian equivalents for peer-to-peer payments: Interac e-Transfer (free through most banks) and Wealthsimple Cash."
+      "canada": "Not available in Canada. Canadian equivalents for peer-to-peer payments: Interac e-Transfer (free through most banks) and Wealthsimple Cash.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id711923939",
+          "count": "8.6M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.squareup.cash&hl=en_US&gl=US",
+          "count": "4.4M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.7/5 across roughly 13 million ratings.",
+        "praised": "Speed and simplicity are the compliments — money moves in seconds, and the extras (card, free tax filing, investing) are rated as real rather than decorative.",
+        "complained": "Fraud and support dominate the negative record. Reviewers describe scams executed over the platform, funds sent to the wrong recipient with no recall, and accounts frozen with slow resolution. Regulators have taken action over how fraud complaints were handled.",
+        "takeaway": "Genuinely free for ordinary personal transfers. But peer-to-peer payments are not card payments — there is no chargeback. Treat every send as cash handed over: irreversible, and only to people you know."
+      }
     },
     {
       "name": "Venmo",
@@ -4433,7 +5263,27 @@
       ],
       "short_worth": null,
       "slug": "is-venmo-actually-free",
-      "canada": "Not available in Canada. Use Interac e-Transfer — free, instant, built into Canadian banking."
+      "canada": "Not available in Canada. Use Interac e-Transfer — free, instant, built into Canadian banking.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id351727428",
+          "count": "15M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.0/5",
+          "url": "https://play.google.com/store/apps/details?id=com.venmo&hl=en_US&gl=US",
+          "count": "913K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.0/5 across roughly 16 million ratings.",
+        "praised": "The social feed and the friction-free splitting of bills are what reviewers rate. Standard transfers between friends are genuinely free, and always have been.",
+        "complained": "The same pattern as its category: scams, sent-to-the-wrong-person errors that cannot be reversed, and account freezes during reviews. The instant-transfer fee and the default public visibility of transactions draw steady criticism.",
+        "takeaway": "Free for what most people use it for. Two things to do today: set your transactions to private, and remember that a Venmo payment to a stranger has no protection whatsoever."
+      }
     },
     {
       "name": "PayPal",
@@ -4482,7 +5332,27 @@
       ],
       "short_worth": null,
       "slug": "is-paypal-actually-free",
-      "canada": "Available in Canada. Same free personal transfers; FX fees on cross-border payments are higher than in the US."
+      "canada": "Available in Canada. Same free personal transfers; FX fees on cross-border payments are higher than in the US.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id283646709",
+          "count": "6.3M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.2/5",
+          "url": "https://play.google.com/store/apps/details?id=com.paypal.android.p2pmobile&hl=en_US&gl=US",
+          "count": "3.7M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.2/5 across roughly 10 million ratings.",
+        "praised": "Buyer protection is the standout — reviewers repeatedly describe disputes resolved in their favour, which is exactly what the free personal side is worth.",
+        "complained": "Sellers and freelancers drive the negative record: funds held for extended reviews, accounts limited without a clear reason, and support that's hard to escalate. Currency-conversion margins are a steady complaint on international transfers.",
+        "takeaway": "Free and genuinely protective when you're buying. The complaints cluster on the receiving side — so if money is coming in rather than going out, read the holds policy before you rely on it."
+      }
     },
     {
       "name": "Netflix",
@@ -4542,7 +5412,27 @@
       ],
       "short_worth": null,
       "slug": "is-netflix-actually-free",
-      "canada": "No free tier in Canada either. Same paid-only model worldwide."
+      "canada": "No free tier in Canada either. Same paid-only model worldwide.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id363590051",
+          "count": "7.0M"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.9/5",
+          "url": "https://play.google.com/store/apps/details?id=com.netflix.mediaclient&hl=en_US&gl=US",
+          "count": "15M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.7/5 · Google Play 3.9/5 across roughly 22 million ratings.",
+        "praised": "Reliability and the original catalog are the consistent compliments — playback quality and the recommendation engine rate well across both stores.",
+        "complained": "Price rises, password-sharing enforcement, and shows cancelled after a season dominate recent reviews. The Android score also carries app-specific complaints about downloads and playback.",
+        "takeaway": "None of this is a free-tier debate, because there isn't one. Netflix tested free plans in a few markets years ago and ended them; anything promising free Netflix today is phishing or piracy."
+      }
     },
     {
       "name": "Disney+",
@@ -4590,7 +5480,27 @@
         }
       ],
       "short_worth": null,
-      "slug": "is-disney-actually-free"
+      "slug": "is-disney-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.6/5",
+          "url": "https://apps.apple.com/us/app/id1446075923",
+          "count": "2.0M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.3/5",
+          "url": "https://play.google.com/store/apps/details?id=com.disney.disneyplus&hl=en_US&gl=US",
+          "count": "5.1M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.6/5 · Google Play 4.3/5 across roughly 7 million ratings.",
+        "praised": "The library is the whole argument — Disney, Pixar, Marvel, Star Wars and National Geographic in one place — and family-account controls rate well.",
+        "complained": "Repeated price increases, the shift of the cheaper tier to ad-supported, and password-sharing enforcement drive the negative reviews. App reviewers cite playback and profile bugs on TV devices.",
+        "takeaway": "There has never been a free ad-supported tier here, and the launch free trials ended in 2019. Bundles are the only genuine saving — “free Disney+” offers are not offers."
+      }
     },
     {
       "name": "Peacock",
@@ -4643,7 +5553,21 @@
         }
       ],
       "short_worth": null,
-      "slug": "is-peacock-actually-free"
+      "slug": "is-peacock-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id1508186374",
+          "count": "3.6M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.peacocktv.peacockandroid&hl=en_US&gl=US",
+          "count": "624K"
+        }
+      ]
     },
     {
       "name": "The Roku Channel",
@@ -4780,7 +5704,27 @@
         }
       ],
       "short_worth": null,
-      "slug": "is-udemy-actually-free"
+      "slug": "is-udemy-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id562413829",
+          "count": "77K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.4/5",
+          "url": "https://play.google.com/store/apps/details?id=com.udemy.android&hl=en_US&gl=US",
+          "count": "510K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.7/5 · Google Play 4.4/5 across roughly 600,000 ratings.",
+        "praised": "The high scores reflect the paid catalog more than the free one: reviewers rate individual instructors highly and value lifetime access to a course they bought once.",
+        "complained": "Quality variance is the constant — an open marketplace means excellent courses beside padded ones, with the ratings doing all the sorting. The permanent “sale” pricing draws steady scepticism, and free courses are widely read as promotional teasers.",
+        "takeaway": "Nothing here auto-bills, which puts it well ahead of the trial platforms. But treat the free catalog as sampling, read the recent reviews on any course, and never pay a list price — there's always a sale."
+      }
     },
     {
       "name": "Discord",
@@ -4832,8 +5776,26 @@
           "source": "Trustpilot",
           "score": "1.2/5",
           "url": "https://www.trustpilot.com/review/discord.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id985746746",
+          "count": "3.5M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.3/5",
+          "url": "https://play.google.com/store/apps/details?id=com.discord&hl=en_US&gl=US",
+          "count": "6.9M"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "Trustpilot 1.2/5 from consumers · App Store 4.7/5 · Google Play 4.3/5 across roughly 10 million app ratings.",
+        "praised": "The free tier is rated as unusually complete: voice, video, screen share and unlimited history, with no seat limits and nothing essential withheld. Nitro sells cosmetics, not function.",
+        "complained": "The Trustpilot score is almost entirely about account bans and the absence of a support human to appeal to. App complaints focus on resource use and notification noise. Moderation of servers is a persistent theme in both directions.",
+        "takeaway": "One of the most generous free products on this site, attached to one of the least reachable support operations. The thing to protect isn't your wallet — it's your account."
+      }
     },
     {
       "name": "Reddit",
@@ -4872,22 +5834,42 @@
       ],
       "more_info": [],
       "short_worth": null,
-      "slug": "is-reddit-actually-free"
+      "slug": "is-reddit-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id1064216828",
+          "count": "3.5M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.reddit.frontpage&hl=en_US&gl=US",
+          "count": "4.7M"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.8/5 · Google Play 4.6/5 across roughly 8 million ratings.",
+        "praised": "The archive is the value: for niche questions, the answers people actually search for live here. Free, no paywall, and the whole thing readable without an account.",
+        "complained": "The 2023 API pricing change killed the third-party apps many long-term users preferred, and that grievance still dominates the record. Beyond it: moderation inconsistency, and an official app reviewers rate below the ones it replaced.",
+        "takeaway": "Free and ad-funded, with your engagement as the merchandise — an old trade, honestly priced. Premium removes ads and adds nothing you need."
+      }
     },
     {
       "name": "Plex",
       "category": "entertainment",
       "url": "https://www.plex.tv",
-      "verdict": "forever",
+      "verdict": "freeish",
       "card": "No",
       "autobill": "—",
       "account": "Required",
-      "limits": "Plex Pass features locked",
+      "limits": "Remote playback of your own media now needs a paid pass; Plex Pass features locked",
       "realcost": "An account. The media server and free streaming are both genuinely free.",
-      "free_score": 80,
+      "free_score": 62,
       "value_score": 7,
-      "short": "Yes — Plex is two free products: a media server that organizes and streams your own files across devices, and a free ad-supported streaming service with movies and shows. Both are permanently free.",
-      "catch": "Plex Pass ($5/month or $120 lifetime) adds hardware transcoding, mobile sync, and live TV with a tuner. The free tier covers the core of both products — hosting your library and watching their free catalog.",
+      "short": "Free to run and watch at home, and free to stream Plex's own ad-supported catalog — but as of 2025, watching your own files from anywhere else requires a paid pass.",
+      "catch": "The free tier changed in 2025. Watching your own library at home is still free, but streaming it from outside your home network now requires the server owner to hold Plex Pass, or the viewer a cheaper Remote Watch Pass — a capability that had been free for years. Enforcement started on Roku in late 2025 and reaches the remaining apps through 2026. Plex Pass still adds hardware transcoding, mobile sync and live TV on top.",
       "free_includes": [
         "A personal media server for your own files",
         "Free ad-supported movies and live TV channels",
@@ -4906,7 +5888,7 @@
         "The free streaming catalog rotates"
       ],
       "get_summary": "In practice: a way to organize and stream your own media library across every device — plus a Tubi-like free streaming service bolted on.",
-      "worth": "Media server software historically cost $50–100; Plex's core is free. The streaming library competes with $8–15/month services.",
+      "worth": "Media server software historically cost $50–100 and Plex's core is still free at home. But remote access — the feature that made it worth setting up for most people — is now $1.99/month as a Remote Watch Pass, or bundled into Plex Pass.",
       "smart_moves": [
         "Start with the free streaming to test the app; add your own library when ready",
         "The media server runs on any old computer — even a Raspberry Pi",
@@ -4914,7 +5896,27 @@
       ],
       "more_info": [],
       "short_worth": null,
-      "slug": "is-plex-actually-free"
+      "slug": "is-plex-actually-free",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.6/5",
+          "url": "https://apps.apple.com/us/app/id383457673",
+          "count": "138K"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.plexapp.android&hl=en_US&gl=US",
+          "count": "482K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.6/5 · Google Play 3.6/5 — and a free tier that has narrowed sharply since 2025.",
+        "praised": "As a front end for your own media library, reviewers rate it the best there is: metadata, artwork and subtitles handled automatically, playing to every device you own.",
+        "complained": "The 2025 change is the grievance. Streaming your own personal media from outside your home network now requires the server owner to hold Plex Pass, or the viewer a Remote Watch Pass — a capability that had been free for years. Enforcement began on Roku in late 2025 and extends to other apps through 2026. Ad-supported catalog content pushed into the interface is the older complaint.",
+        "takeaway": "Watching your own files at home is still free. Watching them from anywhere else is now a subscription — which is a real change to a product many people adopted precisely because it wasn't one. Jellyfin does the same job with nothing gated."
+      }
     },
     {
       "name": "Google Meet",
@@ -5071,8 +6073,20 @@
           "source": "G2",
           "score": "4.4/5",
           "url": "https://www.g2.com/products/shopify/reviews"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.2/5",
+          "url": "https://play.google.com/store/apps/details?id=com.shopify.mobile&hl=en_US&gl=US",
+          "count": "70K"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.4/5 from business users · Trustpilot 1.6/5 from consumers · Google Play 4.2/5.",
+        "praised": "Merchants rate the platform itself well: reliable checkout, a deep app ecosystem, and the fastest route from idea to a working store.",
+        "complained": "The consumer score is a store-owner score. Complaints centre on the trial converting to a real monthly bill, apps that each carry their own subscription until the true cost is several times the plan, and payment holds. Store closures with limited recourse recur.",
+        "takeaway": "Nothing here is free beyond the trial, and the plan price is the smallest part of the real number. Budget for the apps before you budget for the plan — that's where the surprise lives."
+      }
     },
     {
       "name": "Squarespace",
@@ -5135,7 +6149,13 @@
           "score": "4.4/5",
           "url": "https://www.g2.com/products/squarespace/reviews"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "G2 4.4/5 from business users · Trustpilot 2.5/5 from consumers.",
+        "praised": "Design quality is the consistent compliment — the templates look professional without a designer, and hosting, security and updates are handled.",
+        "complained": "Complaints are commercial and structural: annual plans that renew automatically, refunds refused after renewal, and content that can't be exported cleanly to another platform. Reviewers describe realising too late how much their site is locked in.",
+        "takeaway": "A genuinely good builder with no free tier at all — the trial is the whole free offer. Before committing, check what you can export, because that's the cost of leaving rather than the cost of joining."
+      }
     },
     {
       "name": "GoDaddy Website Builder",
@@ -5247,6 +6267,18 @@
           "source": "Trustpilot",
           "score": "1.3/5",
           "url": "https://www.trustpilot.com/review/lastpass.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.4/5",
+          "url": "https://apps.apple.com/us/app/id324613447",
+          "count": "57K"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.lastpass.lpandroid&hl=en_US&gl=US",
+          "count": "236K"
         }
       ],
       "sentiment": {
@@ -5311,8 +6343,26 @@
           "source": "Trustpilot",
           "score": "4.5/5",
           "url": "https://www.trustpilot.com/review/nordvpn.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id905953485",
+          "count": "691K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.nordvpn.android&hl=en_US&gl=US",
+          "count": "1.3M"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "Trustpilot 4.5/5 · App Store 4.7/5 · Google Play 4.6/5 across roughly 2 million ratings.",
+        "praised": "Speed and reliability rate highly, and the audited no-logs claims are cited by reviewers who care about them. Nobody is arguing that it doesn't work.",
+        "complained": "Pricing structure drives nearly all the negative reviews: a headline rate that applies to a multi-year prepayment, a much higher renewal that arrives automatically, and refund disputes when people notice. The money-back guarantee is real but must be claimed.",
+        "takeaway": "A good product with no free tier — the 30-day guarantee is a refund, not a trial. If your budget is genuinely zero, Proton VPN's free tier is uncapped and doesn't need a card."
+      }
     },
     {
       "name": "Wikipedia",
@@ -5355,7 +6405,27 @@
       ],
       "short_worth": null,
       "slug": "is-wikipedia-actually-free",
-      "canada": "Available everywhere. English and French Wikipedia both extensive."
+      "canada": "Available everywhere. English and French Wikipedia both extensive.",
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.3/5",
+          "url": "https://apps.apple.com/us/app/id324715238",
+          "count": "6.2K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.3/5",
+          "url": "https://play.google.com/store/apps/details?id=org.wikipedia&hl=en_US&gl=US",
+          "count": "694K"
+        }
+      ],
+      "sentiment": {
+        "split": "App Store 4.3/5 · Google Play 4.3/5 — solid rather than spectacular, for a service with no revenue model at all.",
+        "praised": "Reviewers rate the obvious: the sum of general knowledge, in hundreds of languages, with no account, no ads, and no paywall — and offline reading in the apps.",
+        "complained": "The criticisms are editorial rather than commercial: bias and edit-war disputes on contested topics, thin coverage outside major languages, and the annual donation banners. App reviewers cite interface changes and reading-list sync issues.",
+        "takeaway": "The only free service on this site whose main criticism is about accuracy rather than money. Cite it as a starting point and follow the footnotes — that's what they're for."
+      }
     },
     {
       "name": "FreeTaxUSA",
@@ -5401,7 +6471,13 @@
       ],
       "short_worth": null,
       "slug": "is-freetaxusa-actually-free",
-      "canada": "US only. Canadian equivalent: Wealthsimple Tax — free for all return types with optional pay-what-you-want."
+      "canada": "US only. Canadian equivalent: Wealthsimple Tax — free for all return types with optional pay-what-you-want.",
+      "sentiment": {
+        "split": "No large consumer-complaint record — unusual in a category defined by them.",
+        "praised": "The recurring note is the absence of a wall: users describe complex situations — self-employment, investments, rental income — filing federally at no cost, with the same forms the expensive products use.",
+        "complained": "The interface is plainer than the market leader's, imports are more manual, and the state return costs around $15. Support is thinner than the paid competition.",
+        "takeaway": "It looks less polished and it charges for state, and both are stated up front. That's the entire difference between this listing and the one-star tax products: the price is where you can see it."
+      }
     },
     {
       "name": "H&R Block Free Online",
@@ -5846,6 +6922,12 @@
           "source": "Trustpilot",
           "score": "4.2/5",
           "url": "https://www.trustpilot.com/review/fiverr.com"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.3/5",
+          "url": "https://play.google.com/store/apps/details?id=com.fiverr.fiverr&hl=en_US&gl=US",
+          "count": "360K"
         }
       ],
       "legitimacy": {
@@ -5905,6 +6987,18 @@
           "source": "Trustpilot",
           "score": "2.2/5 (buyer-heavy reviews)",
           "url": "https://www.trustpilot.com/review/etsy.com"
+        },
+        {
+          "source": "App Store",
+          "score": "4.9/5",
+          "url": "https://apps.apple.com/us/app/id477128284",
+          "count": "7.2M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.9/5",
+          "url": "https://play.google.com/store/apps/details?id=com.etsy.android&hl=en_US&gl=US",
+          "count": "2.2M"
         }
       ],
       "legitimacy": {
@@ -6035,6 +7129,12 @@
           "source": "Trustpilot",
           "score": "4.0/5 (43K reviews)",
           "url": "https://www.trustpilot.com/review/www.swagbucks.com"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.2/5",
+          "url": "https://play.google.com/store/apps/details?id=com.prodege.swagbucksmobile&hl=en_US&gl=US",
+          "count": "449K"
         }
       ],
       "legitimacy": {
@@ -6243,6 +7343,20 @@
           "The filter controversy, both sides",
           "Yelp's software marks reviews 'recommended' or not, and hidden ones don't count toward the score. Yelp says the filter fights fakes and is advertising-blind; a federal court agreed there was no proven manipulation. Thousands of small-business owners remain convinced otherwise. The honest read: the filter catches real fakes AND buries real reviews, and its opacity makes every theory unfalsifiable. Check the hidden reviews yourself — the link is at the bottom of every listing."
         ]
+      ],
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.5/5",
+          "url": "https://apps.apple.com/us/app/id284910350",
+          "count": "2.0M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.6/5",
+          "url": "https://play.google.com/store/apps/details?id=com.yelp.android&hl=en_US&gl=US",
+          "count": "652K"
+        }
       ]
     },
     {
@@ -6330,6 +7444,14 @@
           "Give-to-get, judged fairly",
           "The wall is why Glassdoor's data exists — pure free-riding would have produced an empty site. As data tolls go, it's proportionate and transparent. The fairer criticism is the employer side: companies pay Glassdoor for enhanced branding on the very pages workers read as neutral, a quieter version of the conflict every review platform carries."
         ]
+      ],
+      "external_ratings": [
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.glassdoor.app&hl=en_US&gl=US",
+          "count": "697K"
+        }
       ]
     },
     {
@@ -6465,6 +7587,20 @@
           "Free alternatives to Meetup itself",
           "Library event calendars, city Parks & Recreation programs, and Facebook Groups host enormous numbers of free gatherings with no organizer fee. Meetup is the most discoverable, but it's not the only — or cheapest — way to find your people."
         ]
+      ],
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id375990038",
+          "count": "273K"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.9/5",
+          "url": "https://play.google.com/store/apps/details?id=com.meetup&hl=en_US&gl=US",
+          "count": "234K"
+        }
       ]
     },
     {
@@ -6507,6 +7643,20 @@
           "Reading a free event listing",
           "Genuine free events describe the actual content: 'Watercolor basics, materials provided.' Disguised sales events stay vague and emphasize the free-ness: 'FREE wealth-building seminar — seats limited!' The vaguer the value and the louder the FREE, the more likely there's a pitch at the end."
         ]
+      ],
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.9/5",
+          "url": "https://apps.apple.com/us/app/id487922291",
+          "count": "1.8M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.9/5",
+          "url": "https://play.google.com/store/apps/details?id=com.eventbrite.attendee&hl=en_US&gl=US",
+          "count": "272K"
+        }
       ]
     },
     {
@@ -6557,6 +7707,20 @@
           "Why the headline discount lies (a little)",
           "A '$50 for $100 value' massage looks like 50% off. Then: gratuity on the full $100 (not the $50 you paid), a booking limited to weekday afternoons, and a 90-day expiry. The discount is real but smaller than advertised once the extras land. Multiply the true out-the-door cost before deciding — the same discipline this site applies to every 'free' trial."
         ]
+      ],
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id352683833",
+          "count": "588K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.4/5",
+          "url": "https://play.google.com/store/apps/details?id=com.groupon&hl=en_US&gl=US",
+          "count": "1.7M"
+        }
       ]
     },
     {
@@ -6989,7 +8153,21 @@
           "Employers — for sponsored placement and promoted postings. That keeps every seeker feature free, and it's also why two similar jobs can rank very differently."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id309735670",
+          "count": "4.0M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.indeed.android.jobsearch&hl=en_US&gl=US",
+          "count": "13M"
+        }
+      ]
     },
     {
       "name": "LinkedIn Jobs",
@@ -7032,7 +8210,21 @@
           "Occasionally, briefly. The insights help during an intense search window; almost nobody needs it year-round. If you try it, calendar the cancellation when you sign up."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id288429040",
+          "count": "642K"
+        },
+        {
+          "source": "Google Play",
+          "score": "3.9/5",
+          "url": "https://play.google.com/store/apps/details?id=com.linkedin.android&hl=en_US&gl=US",
+          "count": "3.5M"
+        }
+      ]
     },
     {
       "name": "FlexJobs",
@@ -7156,7 +8348,15 @@
           "More than ever — it's the algorithm-free way to follow sources directly. Every reader listed here consumes the same open feeds, so you can switch readers without losing anything."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "external_ratings": [
+        {
+          "source": "Google Play",
+          "score": "4.4/5",
+          "url": "https://play.google.com/store/apps/details?id=com.devhd.feedly&hl=en_US&gl=US",
+          "count": "317K"
+        }
+      ]
     },
     {
       "name": "Inoreader",
@@ -7198,7 +8398,21 @@
           "Inoreader's free tier is roomier (150 feeds vs 100) and has ads; Feedly's is cleaner-looking but caps harder. Both read the same open RSS — try both, keep one."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.7/5",
+          "url": "https://apps.apple.com/us/app/id892355414",
+          "count": "4.3K"
+        },
+        {
+          "source": "Google Play",
+          "score": "2.9/5",
+          "url": "https://play.google.com/store/apps/details?id=com.innologica.inoreader&hl=en_US&gl=US",
+          "count": "9.6K"
+        }
+      ]
     },
     {
       "name": "NewsBlur",
@@ -7325,7 +8539,21 @@
           "Similar engines under the hood. Copilot's free tier is more generous with web-grounded answers and images; ChatGPT's app ecosystem is bigger. Both are real free tiers."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.8/5",
+          "url": "https://apps.apple.com/us/app/id6472538445",
+          "count": "405K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.7/5",
+          "url": "https://play.google.com/store/apps/details?id=com.microsoft.copilot&hl=en_US&gl=US",
+          "count": "2.4M"
+        }
+      ]
     },
     {
       "name": "DeepSeek",
@@ -7366,7 +8594,21 @@
           "The model file itself. You can run it on your own hardware, offline, forever, commercially — no account, no terms changes, no shutdown risk. That's freer than any hosted free tier."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.0/5",
+          "url": "https://apps.apple.com/us/app/id6737597349",
+          "count": "11K"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.1/5",
+          "url": "https://play.google.com/store/apps/details?id=com.deepseek.chat&hl=en_US&gl=US",
+          "count": "313K"
+        }
+      ]
     },
     {
       "name": "NotebookLM",
@@ -7490,7 +8732,21 @@
           "Scale and engagement are the product — your hours and conversations are worth more to the company than a subscription wall would be."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "external_ratings": [
+        {
+          "source": "Google Play",
+          "score": "2.0/5",
+          "url": "https://play.google.com/store/apps/details?id=ai.character.app&hl=en_US&gl=US",
+          "count": "2.4M"
+        }
+      ],
+      "sentiment": {
+        "split": "Google Play 2.0/5 across roughly 2.4 million ratings — the lowest score of any listing on this site.",
+        "praised": "The technology impresses users, and the free tier is genuinely unlimited in a way paid rivals aren't — reviewers describe conversations that feel sustained and characterful.",
+        "complained": "The score is driven by organised anger at content filtering that tightened repeatedly, changed without notice, and altered characters people had spent months building. Separately and more seriously, the company has faced lawsuits over harms to minors and has since restricted teen access — a safety record that belongs in any assessment of it.",
+        "takeaway": "A 2.0 from 2.4 million people is not a normal review distribution; it's a user base in revolt over changes to a free product. Free here is paid in hours, and the conversations are training data — treat it as entertainment, never as a confidant."
+      }
     },
     {
       "name": "Suno",
@@ -7615,7 +8871,21 @@
           "ChatGPT's free tier is roomier and standalone. Grok's one edge is live X data — if you don't need that, the account requirement buys you nothing."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "external_ratings": [
+        {
+          "source": "App Store",
+          "score": "4.9/5",
+          "url": "https://apps.apple.com/us/app/id6670324846",
+          "count": "1.3M"
+        },
+        {
+          "source": "Google Play",
+          "score": "4.8/5",
+          "url": "https://play.google.com/store/apps/details?id=ai.x.grok&hl=en_US&gl=US",
+          "count": "3.6M"
+        }
+      ]
     }
   ],
   "deals": [

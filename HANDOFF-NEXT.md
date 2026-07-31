@@ -1,4 +1,4 @@
-# veri-free.com — handoff (written 2026-07-30)
+# veri-free.com — handoff (updated 2026-07-31)
 
 ## Ground rules — read first
 - **Working home: `C:\Users\BoruchMerkur\Projects\Veri-free`** (git works here).
@@ -46,26 +46,39 @@ then trigger a redeploy. Until then POSTs to the verify-request form 404.
 After enabling: re-test with a POST, and add a form email notification to
 hello@veri-free.com. (Everything code-side is already deployed.)
 
-## THE NEXT TASK — consumer-info pass (user approved direction)
-Goal: more consumer info, reviews, and advice. Agreed plan, in order:
+## Consumer-info pass — steps 1 and 2 DONE (2026-07-31, live)
+- `sentiment` 8 → **77 listings**. Shape unchanged: `{"split", "praised",
+  "complained", "takeaway"}`.
+- `external_ratings` 32 → **79 listings**, +127 chips, and the chip now takes
+  an optional `"count"` (`"36M"`, `"122K"`) rendered after the score. The row
+  is labelled "Ratings elsewhere" with a not-ours note. Rendered by
+  `ratings_row()`.
+- **Trustpilot and G2 both 403 automated access** — they cannot be scraped and
+  nothing from them was guessed. The new scores came from Apple's public
+  `itunes.apple.com/lookup` API and Play store `ratingValue`, title-matched
+  against the listing. Existing Trustpilot/G2 entries were left alone. To
+  refresh, re-run that fetch; to add Trustpilot/G2 for a new listing, read the
+  score by hand.
+- **`safety` field + "Is X safe?" section on 59 listings.** Shape:
+  `{"verdict" (required), "download", "data", "scams", "account_risk"}` — the
+  optional rows render only when present. Rendered by `safety_box()`, sits
+  right after The catch, and `safety_faq()` injects it as the **second**
+  FAQPage question. Generalises the earn-only `legitimacy` box.
+- Caught a real drift while writing Plex's sentiment: since 2025, remote
+  playback of your OWN media needs Plex Pass (server owner) or a Remote Watch
+  Pass (viewer); Roku enforcement began late 2025, other apps through 2026.
+  Re-graded **free forever → squeezed, 80 → 62** and rewrote catch/short/worth.
 
-1. **Populate existing fields on the top ~50 listings** (by traffic/prominence):
-   - `sentiment` boxes ("What users actually say") — currently only 8/149 have
-     them. Shape: `{"split": "...", "praised": "...", "complained": "...",
-     "takeaway": "..."}` — see an existing listing for the voice. These are
-     editorial readings of the public review record — patterns, not quotes.
-   - `external_ratings` — currently 32/149. Shape:
-     `[{"source": "Trustpilot", "score": "4.1", "url": "https://..."}]`.
-2. **"Is it safe?" block** on listing pages + FAQPage schema:
-   - Search Console shows safety-intent queries (is gimp safe, gimp download
-     safe, is openlibrary.org safe). Add an optional `safety` field per listing
-     (short honest verdict: download safety, data practices, scam status) and
-     render it as its own section with FAQ schema so it can win rich results.
-   - Generalizes the existing `legitimacy` box (earn-only today).
-3. **Reader feedback** ("Was this verdict right?") per listing — after 1+2.
+### Still open from that plan
+3. **Reader feedback** ("Was this verdict right?") per listing.
    Netlify Forms (once detection is on) or the Netlify Blobs moderated-review
    pattern already running on the doula site. Publish curated quotes as
    "Reader reports".
+4. Sentiment on the remaining 72 listings and safety on the remaining 90 —
+   the ones done were picked by prominence and by where the question is real.
+   Batch scripts live in the session scratchpad pattern: a `BATCH` dict keyed
+   by listing name, applied by a small script that validates names and keys
+   before writing. Cheap to repeat.
 
 Also useful next: advice guides (/guides/: how to cancel any trial, how to
 spot fake free, student discounts), and /compare/ additions now that the data
@@ -76,3 +89,11 @@ Sentiment/safety text must be conservative and verifiable — no invented
 review quotes, no specific figures that churn (message caps etc.); describe
 structures, not numbers, unless checked. When in doubt, hedge the way the
 existing listings do.
+
+Two rules that came out of the 2026-07-31 pass and should hold:
+- **Never write a rating you couldn't fetch.** If the source blocks you, use a
+  source that doesn't, or write a non-numeric split line. A fabricated
+  Trustpilot score would poison the one thing this site sells.
+- **Hedge anything whose default is known to move.** The Claude safety row
+  tells the reader to open the current privacy settings rather than asserting
+  what the training default is, because that default has already changed once.

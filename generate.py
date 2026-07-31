@@ -1050,15 +1050,15 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
     # same-origin /api/ai-leaderboard function; auto-refreshes from arena.ai).
     AI_LB = {
         "en": ("Live AI agent leaderboard",
-               "Which agent actually delivers? Live standings from 1.2M+ real sessions — refreshes itself."),
+               "Standings from 1.2M+ real coding-agent sessions, auto-refreshing. One lens on AI quality — the verified free tiers alongside cover the rest: chat, image, music, voice and open models."),
         "es": ("Ranking de agentes de IA — en vivo",
-               "¿Qué agente cumple de verdad? Posiciones en vivo de más de 1,2M de sesiones reales — se actualiza solo."),
+               "Posiciones de más de 1,2M de sesiones reales de agentes de código, actualizadas solas. Una lente sobre la IA — los niveles gratuitos verificados de al lado cubren el resto: chat, imagen, música, voz y modelos abiertos."),
         "pt": ("Ranking de agentes de IA — ao vivo",
-               "Qual agente entrega de verdade? Posições ao vivo de mais de 1,2M de sessões reais — atualiza sozinho."),
+               "Posições de mais de 1,2M de sessões reais de agentes de código, atualizadas sozinhas. Uma lente sobre a IA — os planos grátis verificados ao lado cobrem o resto: chat, imagem, música, voz e modelos abertos."),
         "fr": ("Classement des agents IA — en direct",
-               "Quel agent tient vraiment ses promesses ? Classement en direct sur plus de 1,2 M de sessions réelles — mise à jour automatique."),
+               "Classement issu de plus de 1,2 M de sessions réelles d'agents de code, mis à jour automatiquement. Un angle sur l'IA — les offres gratuites vérifiées à côté couvrent le reste : chat, image, musique, voix et modèles ouverts."),
         "de": ("KI-Agenten-Rangliste — live",
-               "Welcher Agent liefert wirklich? Live-Stand aus über 1,2 Mio. echten Sessions — aktualisiert sich selbst."),
+               "Stand aus über 1,2 Mio. echten Coding-Agent-Sessions, aktualisiert sich selbst. Eine Perspektive auf KI — die geprüften Gratis-Tarife daneben decken den Rest ab: Chat, Bild, Musik, Stimme und offene Modelle."),
     }
     def ai_aside(lg):
         t_lb, n_lb = AI_LB[lg]

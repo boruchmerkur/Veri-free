@@ -140,7 +140,15 @@
 "Feedly": "Sigue hasta 100 fuentes en 3 carpetas",
 "Inoreader": "Sigue hasta 150 feeds, con anuncios",
 "NewsBlur": "Lee hasta 64 sitios con entrenamiento y filtros",
-"The Old Reader": "Sigue hasta 100 feeds en una interfaz limpia al estilo Google Reader"
+"The Old Reader": "Sigue hasta 100 feeds en una interfaz limpia al estilo Google Reader",
+"Microsoft Copilot": "El asistente gratis en Windows, Edge, Bing y la app",
+"DeepSeek": "Chat gratis con un modelo de primer nivel, web y app",
+"NotebookLM": "Sube tus documentos y consúltalos con citas",
+"Stable Diffusion": "Generación de imágenes de pesos abiertos en tu propia máquina",
+"Character.AI": "Chat de personajes ilimitado en el plan gratuito",
+"Suno": "Generación completa de canciones — voces, letra, arreglo — con créditos diarios",
+"ElevenLabs": "Texto a voz de primera clase con una cuota mensual",
+"Grok": "Una asignación gratuita limitada de chat y generación de imágenes"
 },
 "pt": {
 "LibreOffice": "A suíte completa: Writer, Calc, Impress, Draw, Base",
@@ -283,7 +291,15 @@
 "Feedly": "Siga até 100 fontes em 3 pastas",
 "Inoreader": "Siga até 150 feeds, com anúncios",
 "NewsBlur": "Leia até 64 sites com treinamento e filtros",
-"The Old Reader": "Siga até 100 feeds em uma interface limpa no estilo Google Reader"
+"The Old Reader": "Siga até 100 feeds em uma interface limpa no estilo Google Reader",
+"Microsoft Copilot": "O assistente grátis no Windows, Edge, Bing e no app",
+"DeepSeek": "Chat grátis com um modelo de ponta, web e app",
+"NotebookLM": "Envie seus documentos e consulte-os com citações",
+"Stable Diffusion": "Geração de imagens de pesos abertos na sua própria máquina",
+"Character.AI": "Chat de personagens ilimitado no plano gratuito",
+"Suno": "Geração completa de músicas — vozes, letra, arranjo — com créditos diários",
+"ElevenLabs": "Texto para fala de primeira linha com cota mensal",
+"Grok": "Uma cota gratuita limitada de chat e geração de imagens"
 },
 "fr": {
 "LibreOffice": "La suite complète : Writer, Calc, Impress, Draw, Base",
@@ -426,7 +442,15 @@
 "Feedly": "Suivez jusqu'à 100 sources dans 3 dossiers",
 "Inoreader": "Suivez jusqu'à 150 flux, avec publicités",
 "NewsBlur": "Lisez jusqu'à 64 sites avec entraînement et filtres",
-"The Old Reader": "Suivez jusqu'à 100 flux dans une interface épurée façon Google Reader"
+"The Old Reader": "Suivez jusqu'à 100 flux dans une interface épurée façon Google Reader",
+"Microsoft Copilot": "L'assistant gratuit dans Windows, Edge, Bing et l'appli",
+"DeepSeek": "Chat gratuit avec un modèle de pointe, web et appli",
+"NotebookLM": "Importez vos documents et interrogez-les avec citations",
+"Stable Diffusion": "Génération d'images en poids ouverts sur votre propre machine",
+"Character.AI": "Chat de personnages illimité sur l'offre gratuite",
+"Suno": "Génération complète de chansons — voix, paroles, arrangement — avec crédits quotidiens",
+"ElevenLabs": "Synthèse vocale haut de gamme avec un quota mensuel",
+"Grok": "Une allocation gratuite limitée de chat et de génération d'images"
 },
 "de": {
 "LibreOffice": "Die komplette Suite: Writer, Calc, Impress, Draw, Base",
@@ -569,6 +593,14 @@
 "Feedly": "Bis zu 100 Quellen in 3 Ordnern folgen",
 "Inoreader": "Bis zu 150 Feeds folgen, mit Werbung",
 "NewsBlur": "Bis zu 64 Seiten lesen, mit Training und Filtern",
-"The Old Reader": "Bis zu 100 Feeds in einer schlichten Oberfläche im Google-Reader-Stil"
+"The Old Reader": "Bis zu 100 Feeds in einer schlichten Oberfläche im Google-Reader-Stil",
+"Microsoft Copilot": "Der Gratis-Assistent in Windows, Edge, Bing und der App",
+"DeepSeek": "Gratis-Chat mit einem Spitzenmodell, Web und App",
+"NotebookLM": "Eigene Dokumente hochladen und mit Quellenangaben befragen",
+"Stable Diffusion": "Bildgenerierung mit offenen Gewichten auf dem eigenen Rechner",
+"Character.AI": "Unbegrenzter Charakter-Chat im Gratis-Tarif",
+"Suno": "Komplette Songs — Gesang, Text, Arrangement — mit Tagescredits",
+"ElevenLabs": "Erstklassige Sprachausgabe mit Monatskontingent",
+"Grok": "Ein begrenztes Gratis-Kontingent für Chat und Bildgenerierung"
 }
 }

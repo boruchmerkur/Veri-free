@@ -7284,6 +7284,338 @@
         ]
       ],
       "short_worth": null
+    },
+    {
+      "name": "Microsoft Copilot",
+      "category": "ai-tools",
+      "url": "https://copilot.microsoft.com",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "Only if you subscribe to Pro",
+      "account": "Microsoft account for full features; basic use without",
+      "limits": "Usage caps at busy times; newest models and Office integration sit in Pro",
+      "realcost": "Nothing for everyday chat and image help. Pro is $20/month.",
+      "free_includes": [
+        "The mainstream assistant free in Windows, Edge, Bing and the app",
+        "Chat, image generation, and web-grounded answers",
+        "No card at any point on the free tier"
+      ],
+      "paid_locked": [
+        "Priority access at peak times and the newest models",
+        "Copilot in Word, Excel and Outlook (Pro / Microsoft 365)"
+      ],
+      "short": "Yes — Microsoft's assistant is genuinely free for everyday use across Windows, Edge and the app, with image generation included. Pro buys peak-time priority and Office integration.",
+      "catch": "It's woven into Windows whether you asked for it or not, it leans on a Microsoft account, and the free tier gets deprioritized when demand spikes. Your prompts feed the product.",
+      "worth": "Pro is $240/year; the free tier covers most people's actual usage.",
+      "smart_moves": [
+        "Use it signed-in for history, signed-out for quick anonymous checks",
+        "If you only want Office AI occasionally, a single month of Pro beats a subscription"
+      ],
+      "free_score": 77,
+      "value_score": 7,
+      "get_summary": "In practice: a capable free assistant already sitting in the software most people use all day.",
+      "drawbacks": [
+        "Deprioritized at peak times",
+        "Pushes Microsoft account and Pro",
+        "Embedded in Windows by default"
+      ],
+      "more_info": [
+        [
+          "Copilot free vs ChatGPT free?",
+          "Similar engines under the hood. Copilot's free tier is more generous with web-grounded answers and images; ChatGPT's app ecosystem is bigger. Both are real free tiers."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "DeepSeek",
+      "category": "ai-tools",
+      "url": "https://www.deepseek.com",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "Required for the app/web chat",
+      "limits": "Generous daily use; the open-weights models are free to download outright",
+      "realcost": "Nothing for chat. The models themselves are MIT-licensed — free even commercially.",
+      "free_includes": [
+        "Free chat with a frontier-class model, web and app",
+        "The model weights themselves, MIT-licensed, free to run yourself",
+        "Reasoning mode included on the free tier"
+      ],
+      "paid_locked": [
+        "Only the developer API bills — by usage, cheaply"
+      ],
+      "short": "Yes — unusually so. The chat is free with generous limits, and unlike every Western lab, the underlying models are open-weights under MIT: you can download and run them yourself, even commercially.",
+      "catch": "The hosted service runs on servers in China and your conversations are subject to Chinese data law and content filtering. Privacy-sensitive users should run the open weights locally instead — that's the genuinely free path.",
+      "worth": "Comparable Western frontier access runs $20/month; here both the service and the weights are $0.",
+      "smart_moves": [
+        "Treat the hosted chat as public — or run the weights locally via Ollama/LM Studio for real privacy",
+        "The distilled small models run on ordinary laptops"
+      ],
+      "free_score": 84,
+      "value_score": 8,
+      "get_summary": "In practice: frontier-class AI where 'free' includes the model itself, with a data-jurisdiction trade-off on the hosted version.",
+      "drawbacks": [
+        "Hosted data goes through China",
+        "Content filtering on political topics",
+        "API (not chat) is the paid surface"
+      ],
+      "more_info": [
+        [
+          "What does open-weights actually get me?",
+          "The model file itself. You can run it on your own hardware, offline, forever, commercially — no account, no terms changes, no shutdown risk. That's freer than any hosted free tier."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "NotebookLM",
+      "category": "ai-tools",
+      "url": "https://notebooklm.google.com",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "Google account required",
+      "limits": "Caps on notebooks and sources per notebook; higher caps in the paid Plus tier",
+      "realcost": "Nothing at the free tier.",
+      "free_includes": [
+        "Upload your documents and query them with citations",
+        "Audio Overviews — the two-host podcast summaries",
+        "Real source-grounded answers, not open-web guessing"
+      ],
+      "paid_locked": [
+        "Higher notebook/source caps and team features (Plus)"
+      ],
+      "short": "Yes — Google's research notebook is free with a Google account: upload sources, ask questions, get cited answers, generate the podcast-style audio summaries. Plus mainly raises caps.",
+      "catch": "Everything routes through your Google account, caps are real for heavy research use, and Google has a history of retiring experiments — don't make it your only archive.",
+      "worth": "The closest paid equivalents are $20/month research tools; the free tier does the core job.",
+      "smart_moves": [
+        "Keep master copies of your sources elsewhere — treat it as a lens, not a library",
+        "Audio Overviews are the standout: feed it a dense PDF before a commute"
+      ],
+      "free_score": 80,
+      "value_score": 7,
+      "get_summary": "In practice: a genuinely free grounded-research tool — your documents, cited answers, audio summaries.",
+      "drawbacks": [
+        "Google account required",
+        "Source and notebook caps",
+        "Experiment-status product risk"
+      ],
+      "more_info": [
+        [
+          "How is this different from ChatGPT?",
+          "It only answers from the sources you give it, with citations — which means far fewer invented facts, and it's actually checkable."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "Stable Diffusion",
+      "category": "ai-tools",
+      "url": "https://stability.ai",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None — the weights are downloadable",
+      "limits": "Your own hardware: a mid-range GPU (or patience) is the real requirement",
+      "realcost": "Nothing for the models. Hosted convenience services charge — the local route doesn't.",
+      "free_includes": [
+        "Open-weights image generation you run on your own machine",
+        "Unlimited generations — no credits, no watermark, no queue",
+        "A huge free ecosystem: ComfyUI, Automatic1111, community models"
+      ],
+      "paid_locked": [
+        "Nothing locally — hosted front-ends (DreamStudio etc.) sell convenience"
+      ],
+      "short": "Yes — the genuinely free image generator: open weights you download and run locally, unlimited, no account, no credits. The cost is hardware and setup, not money.",
+      "catch": "The free path assumes a decent GPU and an evening of setup. Every polished website offering 'free Stable Diffusion' is a credit-metered business — the freedom is in the local install, not the hosted wrappers.",
+      "worth": "Midjourney-class generation runs $10–30/month subscription; local SD is $0 forever.",
+      "smart_moves": [
+        "Start with ComfyUI or A1111 and a community model from a model hub",
+        "No GPU? A used 8–12GB card pays for itself in three months of subscription prices"
+      ],
+      "free_score": 95,
+      "value_score": 8,
+      "get_summary": "In practice: unlimited image generation for the price of your own electricity — the open-weights answer to Midjourney.",
+      "drawbacks": [
+        "Needs a real GPU and technical setup",
+        "Quality depends on the model/workflow you pick",
+        "Hosted wrappers reintroduce credits and fees"
+      ],
+      "more_info": [
+        [
+          "Stable Diffusion vs Midjourney?",
+          "Midjourney is easier and has no free tier at all; SD is free forever but you do the setup. If you generate regularly, local SD is the only path where volume costs nothing."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "Character.AI",
+      "category": "ai-tools",
+      "url": "https://character.ai",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "Only if you subscribe to c.ai+",
+      "account": "Required",
+      "limits": "Free chat is effectively unlimited; queues and ads appear at peak, faster responses are paid",
+      "realcost": "Nothing in money. Attention and hours are the actual price.",
+      "free_includes": [
+        "Unlimited character chat on the free tier",
+        "Creating your own characters",
+        "Community characters and group chats"
+      ],
+      "paid_locked": [
+        "Faster responses and priority access (c.ai+)",
+        "Early features"
+      ],
+      "short": "Yes — the free tier is real and effectively unlimited; c.ai+ sells speed and priority rather than unlocking the product. The business runs on your engagement, not your card.",
+      "catch": "It's engineered to keep you talking — the 'free' here is paid in hours. Filters are strict and shift without notice, and conversations train the system. Not a privacy surface for anything personal.",
+      "worth": "c.ai+ is ~$120/year for impatience; the product itself is free.",
+      "smart_moves": [
+        "Treat every conversation as logged and analyzed — because it is",
+        "If response queues annoy you, off-peak hours beat paying"
+      ],
+      "free_score": 70,
+      "value_score": 5,
+      "get_summary": "In practice: genuinely free entertainment chat whose real cost is measured in time, not dollars.",
+      "drawbacks": [
+        "Engagement-optimized by design",
+        "Strict, changeable content filters",
+        "Conversations feed training"
+      ],
+      "more_info": [
+        [
+          "Why is it so free?",
+          "Scale and engagement are the product — your hours and conversations are worth more to the company than a subscription wall would be."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "Suno",
+      "category": "ai-tools",
+      "url": "https://suno.com",
+      "verdict": "freeish",
+      "card": "No",
+      "autobill": "Only if you subscribe",
+      "account": "Required",
+      "limits": "A daily credit allowance (roughly ten songs) — and no commercial rights on the free tier",
+      "realcost": "Nothing in money — but free-tier songs aren't yours to monetize.",
+      "free_includes": [
+        "Full song generation — vocals, lyrics, arrangement — on daily credits",
+        "Enough daily allowance to genuinely play and prototype"
+      ],
+      "paid_locked": [
+        "Commercial use of what you make",
+        "More credits and priority generation",
+        "Newest model versions at times"
+      ],
+      "short": "Sort of — you can genuinely make complete songs every day for nothing. But the free tier's fine print matters: you can't use those songs commercially, and the credits reset keeps real projects paying.",
+      "catch": "The rights, not the credits, are the real wall: free-tier output is non-commercial. If a song matters to you, you need the subscription that covers it — that's the squeeze working as designed.",
+      "worth": "Paid plans run ~$10–30/month; for casual play the daily free credits are honestly generous.",
+      "smart_moves": [
+        "Prototype free, subscribe only for the month you produce something you'll publish",
+        "Read the rights terms before putting a free-tier song anywhere monetized"
+      ],
+      "free_score": 58,
+      "value_score": 6,
+      "get_summary": "In practice: real free song-making for fun — with ownership of the results as the paid product.",
+      "drawbacks": [
+        "No commercial rights on free output",
+        "Daily credit ceiling",
+        "Ongoing industry litigation around training data"
+      ],
+      "more_info": [
+        [
+          "Can I put free-tier Suno songs on YouTube?",
+          "On a non-monetized channel, generally yes under their terms; monetized use needs a paid plan. Terms shift — check before publishing."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "ElevenLabs",
+      "category": "ai-tools",
+      "url": "https://elevenlabs.io",
+      "verdict": "freeish",
+      "card": "No",
+      "autobill": "Only if you subscribe",
+      "account": "Required",
+      "limits": "A small monthly character allowance (~10 minutes of speech) with attribution required",
+      "realcost": "Nothing in money for light use — attribution and tight quota are the price.",
+      "free_includes": [
+        "Best-in-class text-to-speech on a monthly quota",
+        "A taste of voice design and the voice library"
+      ],
+      "paid_locked": [
+        "Commercial use without attribution",
+        "Voice cloning",
+        "Real volume — the free quota is minutes, not hours"
+      ],
+      "short": "Sort of — the free tier is a real, recurring monthly quota of excellent TTS, but it's small, requires crediting ElevenLabs, and voice cloning sits behind payment. It's a demo that renews.",
+      "catch": "Roughly ten minutes of audio a month evaporates fast on any real project, and free output needs attribution. The tier exists to show you the quality, then meter it.",
+      "worth": "Paid starts around $5/month — cheap if you need it; the free tier is for finding out whether you do.",
+      "smart_moves": [
+        "Spend the free quota on final takes, not drafts — iterate the text first",
+        "For long-form free TTS, pair it with a local engine and save ElevenLabs for the parts that matter"
+      ],
+      "free_score": 55,
+      "value_score": 6,
+      "get_summary": "In practice: the best voices in the business, free in demo-sized monthly doses.",
+      "drawbacks": [
+        "Very small monthly quota",
+        "Attribution required on free output",
+        "Cloning and volume are paid"
+      ],
+      "more_info": [
+        [
+          "Is there a truly free ElevenLabs alternative?",
+          "Local open models (Piper, XTTS-class) are free and unlimited but a clear step down in naturalness. The gap is why the meter works."
+        ]
+      ],
+      "short_worth": null
+    },
+    {
+      "name": "Grok",
+      "category": "ai-tools",
+      "url": "https://grok.com",
+      "verdict": "freeish",
+      "card": "No",
+      "autobill": "Only via X Premium / SuperGrok subscriptions",
+      "account": "X (or Grok) account required",
+      "limits": "A capped number of free messages per window; higher limits ride on X Premium or SuperGrok",
+      "realcost": "Nothing in money for light use — an X account and your data are the entry fee.",
+      "free_includes": [
+        "A capped free allowance of chat and image generation",
+        "Real-time X/Twitter data in answers — its distinctive trick"
+      ],
+      "paid_locked": [
+        "Meaningful usage volume (Premium / SuperGrok)",
+        "Newest model versions and heavy features"
+      ],
+      "short": "Sort of — there's a real free allowance, but it's tightly capped and exists inside the X ecosystem: account required, usage data feeding the platform, and the paid tiers doing the heavy lifting.",
+      "catch": "The free tier is a funnel into X Premium/SuperGrok subscriptions, caps shift without much notice, and your prompts default into the training pipeline unless you opt out in settings.",
+      "worth": "Comparable capped-free chat exists at every rival without requiring a social-network account; the X-data angle is the only unique free value.",
+      "smart_moves": [
+        "Opt out of data training in settings first thing",
+        "Use the free cap for the X-realtime questions rivals can't answer; do everything else on a roomier free tier"
+      ],
+      "free_score": 60,
+      "value_score": 5,
+      "get_summary": "In practice: a capped free taste of X's chatbot, priced in account linkage and data rather than dollars.",
+      "drawbacks": [
+        "Tight, shifting free caps",
+        "Tied to the X ecosystem",
+        "Training opt-out is buried in settings"
+      ],
+      "more_info": [
+        [
+          "Grok free vs ChatGPT free?",
+          "ChatGPT's free tier is roomier and standalone. Grok's one edge is live X data — if you don't need that, the account requirement buys you nothing."
+        ]
+      ],
+      "short_worth": null
     }
   ],
   "deals": [

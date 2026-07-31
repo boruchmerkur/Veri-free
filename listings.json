@@ -55,6 +55,12 @@
         "praised": "Reviewers consistently report that it opens and writes the Microsoft formats they're handed, runs on hardware Office has abandoned, and never nags for a subscription.",
         "complained": "The recurring complaint is fidelity at the edges: complex Word layouts, tracked changes, and heavily formatted spreadsheets can shift when passed back and forth. Real-time co-editing to match Google Docs is the other gap.",
         "takeaway": "A complete office suite for your own documents, and a good-but-imperfect translator for someone else's. If your day is round-tripping complex Office files with colleagues, test before you commit."
+      },
+      "safety": {
+        "verdict": "Yes. Open source, inspected by a large community, and it doesn't phone home.",
+        "download": "libreoffice.org, or your system's package manager. Paid “LibreOffice” listings on app stores are third parties reselling free software — some harmless, some not.",
+        "data": "Documents stay on your machine unless you put them somewhere else. No account, and no content is transmitted.",
+        "scams": "The Document Foundation never charges for the suite. Anyone selling you a licence key for it is selling air."
       }
     },
     {
@@ -111,6 +117,12 @@
         "praised": "Two decades of users confirm the same thing: it does the core of what Photoshop does — layers, masks, retouching, batch work — without an account, a subscription, or a watermark on the output.",
         "complained": "The complaint is almost never the price or the result; it's the interface. Reviewers describe a learning curve that assumes you already know image editing, and menus that don't match the Adobe muscle memory most people arrive with.",
         "takeaway": "The cost is your time, not your wallet. Budget an afternoon of tutorials and it stays free forever — and take the download from gimp.org, because the ad-funded mirror sites are where bundled junk lives."
+      },
+      "safety": {
+        "verdict": "Yes — GIMP itself is safe. The risk is where you download it from, not what it does.",
+        "download": "Take it from gimp.org, the Microsoft Store, or your distribution's package manager. Search ads and “free download” mirror sites repackage the installer with adware, and they buy the top ad slot for exactly that reason.",
+        "data": "Runs entirely on your machine. No account, no cloud, no telemetry — your images never leave the computer.",
+        "scams": "There is no paid GIMP. Any site charging for it, or offering a “pro” or “premium” edition, is reselling a program you already have the right to use for nothing."
       }
     },
     {
@@ -176,6 +188,12 @@
         "praised": "The desktop reputation is close to unanimous: it plays whatever you give it, needs no codec packs, carries no ads, and asks for nothing.",
         "complained": "The mobile scores are the outlier, and the reviews behind them are about the phone apps — interface and playback bugs — not the desktop player people are usually asking about. Elsewhere the friction is cosmetic: a dated UI and defaults most users never touch.",
         "takeaway": "Read the store scores as a review of the mobile apps only. The desktop VLC that built the reputation is a different and better-regarded piece of software, and both are free the same way."
+      },
+      "safety": {
+        "verdict": "Yes — VLC is among the most scrutinised pieces of consumer software there is.",
+        "download": "videolan.org only. VLC is a perennial target for copycat download sites that wrap the installer in adware, and “codec pack” downloads offered alongside it are a long-running malware route.",
+        "data": "No account, and no record of what you play. It can fetch album art and subtitles online if you allow it; both are optional.",
+        "scams": "There is no premium VLC and never has been. Paid “VLC” apps in mobile stores are repackaged free software."
       }
     },
     {
@@ -231,6 +249,12 @@
         "praised": "The strongest signal isn't a score, it's the migration: studios and freelancers have moved production work onto it, and the release cadence keeps pace with commercial packages costing thousands a year.",
         "complained": "Learning curve and pipeline. Reviewers describe steep early hours, and some studio pipelines still assume Maya or 3ds Max. Hardware demands for rendering are the other steady gripe.",
         "takeaway": "When the main criticism of free software is that it's hard to learn and taxes your GPU, the price genuinely isn't the catch."
+      },
+      "safety": {
+        "verdict": "Yes. Open source, maintained by a foundation, with the source available to anyone who wants to check it.",
+        "download": "blender.org or the official store listings.",
+        "data": "No account required, and nothing is uploaded.",
+        "scams": "The thing to be careful with is add-ons: a Blender add-on is Python code that runs with your own permissions, so install those only from sources you'd trust with your machine. And sites selling “Blender Pro” are selling something you can download for nothing."
       }
     },
     {
@@ -283,6 +307,12 @@
         "praised": "Users credit it as the tool that gets a recording cleaned up and exported without a subscription: multitrack editing, noise reduction, and format conversion, running happily on old hardware.",
         "complained": "Two things recur. The interface looks its age. And the 2021 change of ownership brought a data-collection policy that drew heavy criticism and pushed part of the community to forks such as Tenacity — worth knowing, even though the app remains free and open source.",
         "takeaway": "Still free, still capable, still the default answer for casual audio work. The reputational damage was about telemetry and trust — nobody was charged."
+      },
+      "safety": {
+        "verdict": "Safe to use — with a caveat about ownership that's worth understanding before you install.",
+        "download": "audacityteam.org. Fake Audacity download sites are common enough that this matters more than usual.",
+        "data": "Your recordings stay on your machine. The 2021 acquisition by Muse Group introduced optional data collection and a privacy policy that drew heavy criticism; the dispute was about analytics and error reporting, not about your audio.",
+        "scams": "If the telemetry bothers you, the community forks — Tenacity is the best known — are the same program without it, and equally free."
       }
     },
     {
@@ -334,6 +364,12 @@
         "praised": "Streamers and teachers converge on one point: this is the professional capture and streaming stack, given away, with none of the watermarks or resolution caps that paid competitors put on their free plans.",
         "complained": "The friction is configuration. Reviewers describe bitrate, encoder, and scene setup as the barrier, and performance problems on modest machines that usually turn out to be settings rather than software.",
         "takeaway": "The complaints are about the first hour, not the product or the price. Everything rivals gate — watermarks, resolution, session length — is simply absent here."
+      },
+      "safety": {
+        "verdict": "Yes. Open source, widely audited, and used by a large share of everyone who streams anything.",
+        "download": "obsproject.com. “OBS” apps sold in app stores are third parties repackaging it, and some ad-funded mirrors add extras of their own.",
+        "data": "No account and no telemetry by default. Your stream goes where you point it and nowhere else.",
+        "scams": "Paid “OBS-based” streaming apps resell what OBS gives away. Plugins run with your permissions, so take those from the official plugin directory."
       }
     },
     {
@@ -385,6 +421,12 @@
         "praised": "The recurring note is about what it doesn't do: no nagware, no trial expiry, no toolbar. It handles nearly every archive format, and its own 7z format compresses harder than ZIP.",
         "complained": "Appearance, mostly — the interface is deliberately plain. A minority report file-association and context-menu annoyances on recent Windows builds.",
         "takeaway": "A category famous for paid nagware, and this one just works and asks for nothing. Download from 7-zip.org — the imitation sites are the only real risk here."
+      },
+      "safety": {
+        "verdict": "Yes — and its installer is one of the cleanest in Windows software.",
+        "download": "7-zip.org. This matters here: lookalike domains and app-store clones are common, and the real project has no ads, no bundled offers, and no sponsor screens at any point. If your installer showed you one of those, you got it from the wrong place.",
+        "data": "Fully offline. Nothing is transmitted anywhere.",
+        "scams": "It's free under an open-source licence. Anything charging for it is charging you for someone else's work."
       }
     },
     {
@@ -1092,6 +1134,12 @@
         "praised": "Reviewers repeat the two things that matter in a free VPN: no data cap and no ads. More technical reviewers cite the Swiss jurisdiction, the published audits, and the open-source clients.",
         "complained": "The free tier's limits are the complaint — a handful of countries you can't choose between, one device, and slower speeds at peak hours. Support response times show up in negative reviews.",
         "takeaway": "The complaints are about what the free tier withholds, not about what it does with you. In a category where the free product is usually the user, that distinction is the whole story."
+      },
+      "safety": {
+        "verdict": "Yes — and among free VPNs, that is genuinely not a given.",
+        "download": "protonvpn.com or the official app stores.",
+        "data": "Swiss company, published no-logs audits, open-source clients. The free tier is funded by paying subscribers rather than by selling access to free users' traffic, which is what makes it the exception in this category.",
+        "scams": "Ask of any free VPN: who is paying for the servers? If the answer isn't visible, it's usually you. That question is why several free VPNs are listed on this site as fake rather than free."
       }
     },
     {
@@ -1149,6 +1197,12 @@
         "praised": "Positive reviews are real and consistent about one thing: it unblocks geo-restricted video, easily, at no cash cost.",
         "complained": "The substantive criticism has never been about performance. It is the architecture — a free tier built on sharing users' bandwidth, alongside a commercial business that sells access to that same network. Security researchers, not disappointed customers, drive the negative record.",
         "takeaway": "Read the good reviews as accurate about the feature and silent about the price. When the free VPN's product is your connection, “free” is the wrong word. Proton VPN's free tier does the same job without it."
+      },
+      "safety": {
+        "verdict": "No — not in the sense most people mean when they ask whether a VPN is safe.",
+        "data": "The free service has operated as a peer-to-peer network: your connection can carry other users' traffic, and the company's commercial arm has sold access to that pool of residential connections. A 2015 incident brought the design to wide public attention.",
+        "account_risk": "Other people's traffic leaving from your IP address is a real legal and security exposure, not a hypothetical one.",
+        "scams": "It isn't malware, and calling it outright fraud would be inaccurate — the arrangement has been described in the terms. The problem is that almost nobody reads them, and the marketing says “free VPN”. Proton VPN's free tier does the same job without this design."
       }
     },
     {
@@ -1474,6 +1528,13 @@
         "praised": "The app scores are among the highest of anything on this site, at a scale that's hard to argue with — people are rating the free tier itself as useful, not as a teaser.",
         "complained": "The consumer score comes from the subscription side: renewal and refund disputes, and difficulty reaching support. Free-tier complaints are about rationing — caps and quiet model downgrades at peak times, arriving without much warning.",
         "takeaway": "An unusually clean split: near-universal approval of the product, concentrated anger at the billing. If you never subscribe, most of the negative record doesn't apply to you."
+      },
+      "safety": {
+        "verdict": "Safe to use. The question worth asking is what you type into it, not whether the site is legitimate.",
+        "download": "chatgpt.com and the official app stores. Fake “ChatGPT” apps and browser extensions are a persistent problem and several have harvested credentials.",
+        "data": "By default, conversations may be used to improve the models. There is a setting to turn that off — find it before you paste anything confidential, medical, or belonging to an employer.",
+        "scams": "OpenAI does not sell ChatGPT through third-party resellers. Paid “ChatGPT Pro” apps in app stores are wrappers around the free API, charging you for something you can use for nothing.",
+        "account_risk": "Answers can be confidently wrong. For anything legal, medical or financial, treat it as a starting point, never the decision."
       }
     },
     {
@@ -1544,6 +1605,13 @@
         "praised": "Reviewers single out long-document handling and writing quality, and note that the free tier is a working version of the product rather than a trial.",
         "complained": "The daily message cap is the near-universal complaint — free users describe hitting it mid-task and waiting, rather than being warned. Newer features reach paid tiers first.",
         "takeaway": "The thing to know before relying on it free is that the ceiling is a clock, not a feature list: you get the good model, for a while, each day."
+      },
+      "safety": {
+        "verdict": "Safe to use, with the same caution any AI assistant deserves about what you put in.",
+        "download": "claude.ai and the official app stores.",
+        "data": "Whether consumer conversations are used to improve the models is a setting, and Anthropic has changed the default at least once. Open the privacy settings and read what it currently says rather than trusting any summary — including this one.",
+        "scams": "There are no authorised resellers. Paid “Claude” apps from third parties are wrappers around the API.",
+        "account_risk": "It can be confidently wrong, and it will sound just as certain either way. Verify anything that carries consequences."
       }
     },
     {
@@ -1860,6 +1928,13 @@
         "praised": "Parents and students describe the same arc: a topic that wasn't landing in class lands here, at their own pace, with no account wall in front of the lessons.",
         "complained": "The friction is coverage and depth. Reviewers hit the ceiling in advanced or niche subjects, and some report app bugs and progress-sync problems that don't exist on the website.",
         "takeaway": "The complaints are about what a nonprofit hasn't built yet, not about a bill. This is the benchmark every other “free” learning platform on this site is measured against."
+      },
+      "safety": {
+        "verdict": "Yes — and for a service used this heavily by children, that answer matters.",
+        "download": "khanacademy.org and the official apps.",
+        "data": "A registered US nonprofit. No advertising, and nothing is sold to you at any point. Children's accounts are covered by the applicable student-privacy commitments.",
+        "scams": "Nothing to buy, so nothing to be sold. Sites charging for Khan Academy content are reselling free material.",
+        "account_risk": "No card is ever needed. If something asks for one in Khan Academy's name, it isn't Khan Academy."
       }
     },
     {
@@ -2084,6 +2159,13 @@
         "praised": "Nobody disputes that the free tier teaches, or that the streak mechanic works — millions keep coming back, which is itself the review.",
         "complained": "The energy meter dominates recent complaints. Long-time users describe a system that now drains even on correct answers, capping free mobile learning at a couple of lessons a day where it once ran unlimited.",
         "takeaway": "The low score isn't people saying the app doesn't work. It's people saying it used to be better before the free tier was throttled toward a subscription."
+      },
+      "safety": {
+        "verdict": "Yes. A public company, a real free tier, no card required, and nothing predatory in the billing.",
+        "download": "duolingo.com and the official app stores.",
+        "data": "Free use is ad-supported, so learning and engagement data feeds advertising and product design.",
+        "account_risk": "The mechanics are built to hold your attention — streaks, notifications, and an energy meter that gates free lessons. That's the actual cost, and it's worth naming.",
+        "scams": "No trials that auto-bill and no hidden charges. Whatever else it does, it doesn't ambush you at checkout."
       }
     },
     {
@@ -2362,6 +2444,12 @@
         "praised": "The creative catalog is real: illustration, design, photography and craft classes from working practitioners, and reviewers who stayed subscribed rate the teaching well.",
         "complained": "The complaints are almost entirely about the trial. Reviewers describe a card taken up front, a charge arriving at the end of a period they'd forgotten, and cancellation that they had to hunt for. Course quality is uneven, since anyone can teach.",
         "takeaway": "The classes aren't the problem — the clock is. If you start the trial, cancel on day one: access runs to the end either way, and that single step turns a trap into a genuinely free month."
+      },
+      "safety": {
+        "verdict": "A real company with a real product — and a trial designed to convert on a date you'll forget.",
+        "account_risk": "The card is taken up front and the charge lands automatically at the end of the trial. Cancel on the day you sign up: access continues to the end of the trial either way, and this one step converts a trap into a genuinely free month.",
+        "scams": "No fraud, and cancellation does work — but reviewers consistently describe having to hunt for it. Do it from the account settings on the website, not the app.",
+        "data": "Nothing unusual. The exposure here is the recurring charge, not your information."
       }
     },
     {
@@ -2573,6 +2661,12 @@
         "praised": "Reviewers keep making the same point: no account required, no card, no trial, and a catalog far deeper than they expected. The ad load is widely described as lighter than broadcast television.",
         "complained": "Titles rotate out as licences lapse, which frustrates people mid-series, and search and app stability draw complaints on TV devices. Nobody complains about being charged, because nobody is.",
         "takeaway": "A rare case where high scores and an honest free model agree. What you're trading is ad breaks and a catalog that shifts — not your card details."
+      },
+      "safety": {
+        "verdict": "Yes. Fox-owned, fully licensed, ad-supported, and it doesn't even need an account.",
+        "download": "tubitv.com or the official apps. “Free movie” sites that look similar are usually the pirated kind — this one is the licensed one.",
+        "data": "Watching without an account is possible. If you make one, viewing data feeds ad targeting, which is what pays for the catalog.",
+        "scams": "Nothing to cancel, because there's nothing to buy. If you are ever asked for a card, you're not on Tubi."
       }
     },
     {
@@ -2637,6 +2731,12 @@
         "praised": "The channel-surfing format is the appeal: hundreds of themed linear channels, on-demand titles alongside, and no account required to start watching.",
         "complained": "The Android score reflects app complaints — playback stalls, repeated ads for the same product, and ad breaks that resume awkwardly. The lean-back format also means you often can't choose what's on.",
         "takeaway": "The low Android score is about the app, not the bargain. This is broadcast television's old deal — free programming paid for by commercials — and it's honest about it."
+      },
+      "safety": {
+        "verdict": "Yes. Owned by Paramount, fully licensed, and free without an account.",
+        "download": "pluto.tv or the official apps.",
+        "data": "No signup required to watch. Advertising is the entire business model, so viewing data supports ad targeting.",
+        "scams": "No card is ever requested. Any “Pluto TV” prompt asking for payment details is not Pluto TV."
       }
     },
     {
@@ -2850,6 +2950,12 @@
         "praised": "The catalog is the compliment: Criterion, indie, documentary and foreign film, ad-free, through a library card. Reviewers routinely describe it as the best-kept secret in streaming.",
         "complained": "The credit system is the friction — a monthly allowance set by your library, which runs out faster than people expect — and coverage is uneven, since not every library system participates.",
         "takeaway": "Rationed rather than unlimited, and worth the ration. Ad-free arthouse streaming for a library card is the best value-per-dollar on this site, because the dollar figure is zero."
+      },
+      "safety": {
+        "verdict": "Yes — it's licensed through your library, so everything on it is there legally.",
+        "download": "kanopy.com or the official apps; you sign in with a library card or university login.",
+        "data": "Your library or institution authenticates you and pays per view. No card is taken and there are no ads.",
+        "scams": "Nothing to buy inside it. The only limit is the monthly credit allowance your library sets."
       }
     },
     {
@@ -2916,6 +3022,12 @@
         "praised": "The breadth is what reviewers rate: films, television, music, audiobooks, ebooks and comics in one app — and, unlike Libby, no waitlists, because every title is always available.",
         "complained": "The monthly borrow cap set by your library is the universal complaint, and it's often modest. Catalog gaps on new releases and occasional app playback problems make up the rest.",
         "takeaway": "The trade against Libby is clear: Hoopla never makes you wait but counts your borrows; Libby doesn't count but makes you queue. Most library cards give you both — use them together."
+      },
+      "safety": {
+        "verdict": "Yes. Library-licensed, ad-free, and there's nothing to purchase inside it.",
+        "download": "hoopladigital.com or the official apps, with a library card.",
+        "data": "Your library authenticates the borrow and pays per loan — which is why the monthly cap exists.",
+        "scams": "No card, no upsell, no subscription. Every title is licensed, so nothing here is a legal grey area."
       }
     },
     {
@@ -3050,6 +3162,12 @@
         "praised": "Tens of thousands of public-domain titles, in formats that work on any device, with no signup and no tracking. Readers and educators treat it as infrastructure rather than a service.",
         "complained": "Transcription quality varies between titles, the interface is plain, and the collection stops where copyright begins — no recent bestsellers, by design and by law.",
         "takeaway": "The oldest genuinely free thing on the internet, and still one of the cleanest. For anything written before roughly the 1930s, start here; for this year's releases, use Libby."
+      },
+      "safety": {
+        "verdict": "Yes. One of the oldest nonprofits on the internet, and the files are plain text and EPUB.",
+        "download": "gutenberg.org. Mirror sites exist and most are legitimate, but the main site is the one to trust by default.",
+        "data": "No account, no email, no tracking required to read or download.",
+        "scams": "Public-domain titles from here are frequently resold on ebook stores at full price. That's legal, and it's also a reason to check here first for anything written before roughly the 1930s."
       }
     },
     {
@@ -3094,7 +3212,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-standard-ebooks-actually-free"
+      "slug": "is-standard-ebooks-actually-free",
+      "safety": {
+        "verdict": "Yes. A volunteer project producing public-domain books, with no account, no payment, and no tracking.",
+        "download": "standardebooks.org. Files are plain EPUB and can be checked like any other file.",
+        "data": "No signup, no email required, nothing collected to read.",
+        "scams": "Everything here is public domain, which means it is legal to download, keep and share. Anyone selling these exact editions is selling free files."
+      }
     },
     {
       "name": "Libby",
@@ -3165,6 +3289,12 @@
         "praised": "Reviewers describe it as the app that gave them back reading: ebooks and audiobooks from their own library, on their phone, at no cost and with nothing to cancel.",
         "complained": "Waitlists are the single complaint. Popular new releases can take weeks or months, hold limits are set by the library, and coverage depends on your system's budget.",
         "takeaway": "A 4.9 across five million ratings, on something that is free with a library card. If one recommendation on this site is worth acting on this week, it's getting a card and installing this."
+      },
+      "safety": {
+        "verdict": "Yes. It's your public library's own app, operated by OverDrive on the library's behalf.",
+        "download": "The official app stores, or libbyapp.com in a browser.",
+        "data": "Your library card authenticates you. Reading data is subject to library privacy practices, which are among the strongest of anything on this site — libraries have a long institutional habit of not keeping borrowing records.",
+        "scams": "Nothing is sold to you inside the app. If a site asks you to pay for “Libby”, it isn't Libby."
       }
     },
     {
@@ -3216,6 +3346,12 @@
         "praised": "Readers value what nothing else offers: out-of-print, obscure and older titles, borrowable in the browser, alongside a genuinely open catalog of bibliographic data.",
         "complained": "Availability is the frustration — one reader per copy, loans that expire, and a lending catalog that has thinned in places following the court ruling against the Internet Archive's lending programme. Scan quality varies on older titles.",
         "takeaway": "A real library, run by a nonprofit, under legal pressure. It is safe and legitimate to use — the uncertainty is about what will still be lendable next year, not about you."
+      },
+      "safety": {
+        "verdict": "Yes — it's a real library run by a nonprofit, and using it is safe and lawful for you.",
+        "download": "openlibrary.org. Loans open in your browser or as time-limited files; nothing needs installing.",
+        "data": "An Internet Archive account is needed to borrow. No card, no payment, and no advertising.",
+        "scams": "Nothing predatory here at all. The uncertainty around it is legal and institutional — publishers won their case against the Internet Archive's lending programme, and the lending catalog has thinned as a result. That's a question about what will still be borrowable next year, not about your safety in borrowing today."
       }
     },
     {
@@ -3275,7 +3411,13 @@
           "url": "https://play.google.com/store/apps/details?id=org.sefaria.sefaria&hl=en_US&gl=US",
           "count": "4.1K"
         }
-      ]
+      ],
+      "safety": {
+        "verdict": "Yes. A nonprofit library of Jewish texts, free to read, with the underlying texts openly licensed.",
+        "download": "sefaria.org and the official apps.",
+        "data": "No account needed to read. An account syncs your notes and reading history across devices, and that's its only purpose.",
+        "scams": "Nothing is upsold. The organisation runs on donations, and the text database is published for anyone to build on."
+      }
     },
     {
       "name": "Audible",
@@ -3359,6 +3501,12 @@
         "praised": "The library and narration quality rate near the top of the category, and reviewers consistently confirm the part that matters here: credits spent during a trial keep the book, even after you cancel.",
         "complained": "The complaints are subscription mechanics — charges after a trial people meant to cancel, credits expiring unused, and the discovery that a “library” of purchased titles is licensed rather than owned.",
         "takeaway": "The one genuinely free thing here is the trial credit, and it survives cancellation. Claim the book, cancel the same day, decide about the subscription later — or skip it entirely and borrow audiobooks free through Libby."
+      },
+      "safety": {
+        "verdict": "Safe and legitimate — Amazon-operated, with one genuinely good free feature and one thing worth understanding.",
+        "account_risk": "The trial requires a card and converts to a monthly charge. Set the cancellation reminder the same hour you start it.",
+        "data": "Books claimed with trial credits stay in your library after cancelling — that part of the offer is real and worth taking.",
+        "scams": "No deception in the billing, but understand what you own: purchased audiobooks are licensed to your account, not owned outright, and an account closure takes the library with it."
       }
     },
     {
@@ -3488,6 +3636,12 @@
         "praised": "Reviewers confirm the core promise: scores and full reports from two bureaus, updated regularly, with no card and no trial. For most people it replaces a paid credit-monitoring subscription outright.",
         "complained": "Two patterns. The scores shown are VantageScore rather than the FICO figure most lenders actually pull, so users report a gap at application time. And the recommendation cards are relentless — reviewers describe the app as an offer engine wrapped around a score.",
         "takeaway": "Free and genuinely useful for watching the direction of your credit. Read every “recommended for you” card as a paid advertisement, because that is precisely what funds the zero."
+      },
+      "safety": {
+        "verdict": "Safe and legitimate — the questions worth asking are about the offers, not about security.",
+        "data": "It's owned by Intuit, and the business model is lead generation: your profile is used to target financial offers. That is what pays for the free score.",
+        "scams": "Checking your own score here is a soft inquiry and does not affect your credit. Nothing on this site is the free annual report guaranteed by federal law — that's AnnualCreditReport.com, which is also listed here.",
+        "account_risk": "Read every “recommended for you” card as a paid advertisement, because that's what it is. Approval odds are estimates, and applying still puts a hard inquiry on your file."
       }
     },
     {
@@ -3700,7 +3854,13 @@
       ],
       "short_worth": null,
       "slug": "is-annualcreditreport-com-actually-free",
-      "canada": "US only. Canadians: request free credit reports directly from Equifax Canada and TransUnion Canada once per year."
+      "canada": "US only. Canadians: request free credit reports directly from Equifax Canada and TransUnion Canada once per year.",
+      "safety": {
+        "verdict": "Yes — and this is the one address to memorise, because the imitators are the actual risk.",
+        "scams": "Lookalike “free credit report” sites are a long-running racket: near-identical names, a signup that funnels into paid monitoring, and a card taken for a trial. This exact address is the site mandated by federal law and operated by the three bureaus.",
+        "data": "It provides reports, not scores. Nothing is sold to you, and no card is required at any point.",
+        "account_risk": "You'll be asked identity-verification questions from your own credit history — that's the real site working correctly, not a phishing attempt."
+      }
     },
     {
       "name": "Rocket Money",
@@ -4384,7 +4544,13 @@
           "why": "Free static QR codes with logos and colors — no expiry, no account"
         }
       ],
-      "slug": "is-qr-code-generator-qr-code-generator-com-actually-free"
+      "slug": "is-qr-code-generator-qr-code-generator-com-actually-free",
+      "safety": {
+        "verdict": "The site is safe to use. The codes are what can hurt you.",
+        "data": "A dynamic QR code routes every scan through the provider's server, so they can see the scans and change where the code points. That's the feature — and the reason it stops resolving when you stop paying.",
+        "scams": "No fraud and no card taken, but the trap is real: a dynamic code printed on your menu, flyer or packaging goes dead when the trial ends, after your customers already have it. Static codes made on the same site keep working forever.",
+        "account_risk": "Before printing anything, confirm you generated a static code. If a QR code provider ever needs a subscription to keep your code alive, your print run is their hostage."
+      }
     },
     {
       "name": "QRCode Monkey",
@@ -4487,7 +4653,12 @@
           "why": "Free logo templates with actual free downloads — no ransom at checkout"
         }
       ],
-      "slug": "is-free-logo-makers-looka-tailor-brands-co-actually-free"
+      "slug": "is-free-logo-makers-looka-tailor-brands-co-actually-free",
+      "safety": {
+        "verdict": "Real companies, not fraud — but the price arrives after your effort, by design.",
+        "scams": "Nothing is stolen from you. You design free, fall for the result, and meet the bill at download. Reviewers of Tailor Brands specifically report signups that looked monthly arriving as annual subscriptions, so read the term before entering a card.",
+        "account_risk": "Check the licence, not just the price. Cheaper tiers often deliver low-resolution files without the full commercial rights you'd need to put the logo on products or trademark it."
+      }
     },
     {
       "name": "Unsplash",
@@ -4641,7 +4812,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-photopea-actually-free"
+      "slug": "is-photopea-actually-free",
+      "safety": {
+        "verdict": "Yes — and unusually for a web app, your files aren't uploaded to run it.",
+        "download": "Nothing to install: use photopea.com directly. Browser extensions claiming to be Photopea are not from the developer.",
+        "data": "Editing happens in your browser tab, and the developer states images are not sent to a server. The ads beside the canvas are ordinary network-served web ads.",
+        "scams": "The free version is feature-identical to the paid one — paying only removes the ads. Nothing is withheld to sell back to you."
+      }
     },
     {
       "name": "DaVinci Resolve",
@@ -4694,7 +4871,13 @@
       ],
       "short_worth": null,
       "slug": "is-davinci-resolve-actually-free",
-      "canada": "Available worldwide. Blackmagic has offices in Melbourne — no Canadian restrictions."
+      "canada": "Available worldwide. Blackmagic has offices in Melbourne — no Canadian restrictions.",
+      "safety": {
+        "verdict": "Yes. Blackmagic Design is an established public hardware company; this is real commercial software given away to sell cameras.",
+        "download": "blackmagicdesign.com. The download form asks for a name and email — that's marketing, not a payment step.",
+        "data": "Runs locally. Projects and footage stay on your own drives.",
+        "scams": "The free version is the full application minus specific Studio features. Sites selling cheap “Resolve Studio” keys are selling stolen or fabricated licences."
+      }
     },
     {
       "name": "VS Code",
@@ -4742,6 +4925,12 @@
         "praised": "Extensions, speed, and the fact that it's the same editor for every language are the constants. Reviewers note it displaced paid IDEs without ever asking for money.",
         "complained": "Two threads: memory use on large projects, and the distinction between open-source Code and Microsoft's build, which adds telemetry and a marketplace under a proprietary licence. Copilot prompts inside the editor draw irritation from people who don't want them.",
         "takeaway": "Free and staying free, because developer mindshare is the product. If the telemetry bothers you, VSCodium is the same editor without it — also free."
+      },
+      "safety": {
+        "verdict": "Yes — with one real caveat, and it isn't the editor.",
+        "download": "code.visualstudio.com or your package manager.",
+        "data": "Microsoft's build collects telemetry by default. It can be turned off in settings, and VSCodium is the same editor built without it.",
+        "scams": "The genuine risk is the extension marketplace. Extensions run with your permissions, and malicious lookalikes of popular extensions have been published and removed repeatedly. Check the publisher name and install count before installing anything."
       }
     },
     {
@@ -4805,6 +4994,12 @@
         "praised": "The security community's endorsement is the strongest signal here — the protocol is audited, open, and used under other companies' branding. Users rate it as a normal messenger that happens to be private.",
         "complained": "Network effects and features. Reviewers describe having to persuade contacts to install it, and miss conveniences other apps have. Phone-number identity draws criticism from users who want to be reachable without giving out a number, and backup and multi-device setup are described as fiddly.",
         "takeaway": "The only listing on this site where the free product is also the recommended-by-experts product. Nothing is being harvested; the foundation runs on donations, and that's the entire model."
+      },
+      "safety": {
+        "verdict": "Yes. It is the messenger security researchers use themselves.",
+        "download": "signal.org or the official app stores. Modified “Signal” clients circulate and defeat the entire purpose of using it.",
+        "data": "Messages are end-to-end encrypted, and the nonprofit holds so little that its responses to subpoenas — which it publishes — amount to little more than when an account was created and last connected.",
+        "account_risk": "Your phone number is your identifier and is visible to people you message. Set a registration lock PIN so nobody can take over your number and re-register it."
       }
     },
     {
@@ -4870,6 +5065,13 @@
         "praised": "Reliability at global scale, and end-to-end encryption on by default, are the compliments. For most of the world it simply replaced SMS and international calling.",
         "complained": "Meta's ownership drives the criticism. The 2021 privacy-policy change triggered a mass migration to Signal and Telegram, and reviewers remain uneasy about metadata even while accepting that message content is encrypted. Account bans without explanation recur.",
         "takeaway": "Free and encrypted for personal use — the cost is the metadata, not the content. Who you talk to, how often, and from where still flows to Meta. That's the trade, and it's a real one."
+      },
+      "safety": {
+        "verdict": "Yes — message content is end-to-end encrypted by default, which is more than most messengers do.",
+        "download": "whatsapp.com and the official app stores. Modified clients such as “GB WhatsApp” are not from Meta, break the encryption guarantee, and get accounts banned.",
+        "data": "Content is encrypted; metadata is not. Who you talk to, how often, and from where flows to Meta. That's the actual trade, and it's a real one.",
+        "scams": "The impersonation scam is the one to know: a message from an unknown number claiming to be your child or a relative with a new phone, asking for money. Verify by calling the old number.",
+        "account_risk": "Turn on two-step verification. Account takeovers happen by tricking you into forwarding the six-digit code — nobody legitimate ever needs it."
       }
     },
     {
@@ -4935,6 +5137,13 @@
         "praised": "Features and generosity: huge groups, channels, big file transfers, bots, and cloud sync across devices with no storage cap worth mentioning. Reviewers rate it the most capable free messenger by a distance.",
         "complained": "Two very different complaints. Privacy-aware reviewers object that ordinary chats are not end-to-end encrypted by default — only Secret Chats are — which is widely misunderstood. Everyone else complains about spam, scam accounts, and the moderation record on public channels.",
         "takeaway": "Generous, capable, and weaker on privacy than its reputation suggests. If you chose it for security, you probably wanted Signal; if you chose it for capability, you chose correctly."
+      },
+      "safety": {
+        "verdict": "Safe as software, weaker on privacy than its reputation suggests.",
+        "download": "telegram.org and the official app stores.",
+        "data": "Ordinary chats are encrypted to Telegram's servers but not end-to-end — only “Secret Chats” are, and they must be started deliberately, one conversation at a time, on mobile. Many people believe they have end-to-end encryption here and do not.",
+        "scams": "Telegram is a heavily used channel for crypto and investment fraud, and for fake support and giveaway accounts. Nobody legitimate will DM you first about money.",
+        "account_risk": "If you want messages that only you and the recipient can read, use Signal. If you want Telegram's features, use it knowing what's encrypted and what isn't."
       }
     },
     {
@@ -5012,6 +5221,13 @@
         "praised": "The free tier is the compliment: unlimited passwords, unlimited devices, sync everywhere, and open-source code with published audits. Reviewers arriving from competitors describe the free plan as more generous than what they were paying for.",
         "complained": "Interface polish is the recurring criticism — functional rather than elegant, with browser-extension autofill occasionally missing fields. Some describe self-hosting as more work than the documentation implies.",
         "takeaway": "The reference case for this whole site: a security product whose free tier is complete, whose code is inspectable, and whose paid tier sells conveniences rather than hostages."
+      },
+      "safety": {
+        "verdict": "Yes — and it's the rare case where you don't have to take that on trust.",
+        "download": "bitwarden.com and the official store listings. Password-manager lookalikes are a known phishing tactic; check the publisher before installing.",
+        "data": "Your vault is encrypted on your device before it leaves it, so the company cannot read it. The clients are open source and the security audits are published.",
+        "account_risk": "The master password cannot be recovered — Bitwarden has no way to reset it, which is the entire point. Write down the recovery details and keep them somewhere offline before you move your passwords in.",
+        "scams": "Free is a real permanent plan here, not a trial that lapses."
       }
     },
     {
@@ -5216,6 +5432,12 @@
         "praised": "Speed and simplicity are the compliments — money moves in seconds, and the extras (card, free tax filing, investing) are rated as real rather than decorative.",
         "complained": "Fraud and support dominate the negative record. Reviewers describe scams executed over the platform, funds sent to the wrong recipient with no recall, and accounts frozen with slow resolution. Regulators have taken action over how fraud complaints were handled.",
         "takeaway": "Genuinely free for ordinary personal transfers. But peer-to-peer payments are not card payments — there is no chargeback. Treat every send as cash handed over: irreversible, and only to people you know."
+      },
+      "safety": {
+        "verdict": "The app is safe. Peer-to-peer payments are not, and that distinction is the whole answer.",
+        "scams": "Cash App is a favourite channel for scams precisely because sends are instant and final: fake “support” accounts on social media, cash-flipping and giveaway schemes, and accidental-payment refund tricks. Cash App support never asks for your PIN or a sign-in code, ever.",
+        "account_risk": "A peer-to-peer payment has no chargeback. Once it's sent, it's gone — treat every send as handing over cash, and only to people you actually know. Regulators have taken action over how the company handled fraud complaints, which tells you how the disputes usually end.",
+        "data": "Operated by Block, a public company. The money side is legitimate; the exposure is the irreversibility."
       }
     },
     {
@@ -5283,6 +5505,12 @@
         "praised": "The social feed and the friction-free splitting of bills are what reviewers rate. Standard transfers between friends are genuinely free, and always have been.",
         "complained": "The same pattern as its category: scams, sent-to-the-wrong-person errors that cannot be reversed, and account freezes during reviews. The instant-transfer fee and the default public visibility of transactions draw steady criticism.",
         "takeaway": "Free for what most people use it for. Two things to do today: set your transactions to private, and remember that a Venmo payment to a stranger has no protection whatsoever."
+      },
+      "safety": {
+        "verdict": "Safe as an app, and unprotected as a payment method — those are two different questions.",
+        "scams": "The same category pattern: fake support accounts, overpayment-and-refund tricks, and “pay me here” requests from spoofed profiles. Purchases from strangers are the danger zone; personal payments carry no buyer protection at all.",
+        "account_risk": "Payments cannot be reversed. Check the last four digits of the recipient's phone number before sending — a wrong name match is the most common expensive mistake here.",
+        "data": "Transactions default to publicly visible. Set your account and past transactions to private — it takes thirty seconds and there is no reason not to."
       }
     },
     {
@@ -5352,6 +5580,12 @@
         "praised": "Buyer protection is the standout — reviewers repeatedly describe disputes resolved in their favour, which is exactly what the free personal side is worth.",
         "complained": "Sellers and freelancers drive the negative record: funds held for extended reviews, accounts limited without a clear reason, and support that's hard to escalate. Currency-conversion margins are a steady complaint on international transfers.",
         "takeaway": "Free and genuinely protective when you're buying. The complaints cluster on the receiving side — so if money is coming in rather than going out, read the holds policy before you rely on it."
+      },
+      "safety": {
+        "verdict": "Yes for buying — buyer protection is the reason to use it. Receiving money is where the risk sits.",
+        "scams": "PayPal is the most-imitated brand in phishing: emails and texts claiming a payment problem, and fake invoices sent through the real PayPal system. Never click through from a message. Open paypal.com yourself and look at your account.",
+        "account_risk": "Sellers and freelancers report funds held for extended review and accounts limited without a clear reason. If money is coming in rather than going out, read the holds policy before you depend on it.",
+        "data": "Never use “friends and family” to pay a stranger for goods — it removes your protection entirely, which is exactly why scammers ask for it."
       }
     },
     {
@@ -5724,6 +5958,12 @@
         "praised": "The high scores reflect the paid catalog more than the free one: reviewers rate individual instructors highly and value lifetime access to a course they bought once.",
         "complained": "Quality variance is the constant — an open marketplace means excellent courses beside padded ones, with the ratings doing all the sorting. The permanent “sale” pricing draws steady scepticism, and free courses are widely read as promotional teasers.",
         "takeaway": "Nothing here auto-bills, which puts it well ahead of the trial platforms. But treat the free catalog as sampling, read the recent reviews on any course, and never pay a list price — there's always a sale."
+      },
+      "safety": {
+        "verdict": "Safe to buy from — a public company with a working refund policy. Course quality is the real variable.",
+        "data": "Nothing here auto-bills, which already puts it ahead of the trial platforms on this site.",
+        "scams": "The marketplace risk is quality, not fraud: anyone can publish, so a course can be padded, outdated, or lifted from elsewhere. Read the recent reviews rather than the star average, and check when the course was last updated.",
+        "account_risk": "There's a refund window on purchases — know its length before you buy, and don't pay a list price, because the permanent sale means one is always coming."
       }
     },
     {
@@ -5795,6 +6035,13 @@
         "praised": "The free tier is rated as unusually complete: voice, video, screen share and unlimited history, with no seat limits and nothing essential withheld. Nitro sells cosmetics, not function.",
         "complained": "The Trustpilot score is almost entirely about account bans and the absence of a support human to appeal to. App complaints focus on resource use and notification noise. Moderation of servers is a persistent theme in both directions.",
         "takeaway": "One of the most generous free products on this site, attached to one of the least reachable support operations. The thing to protect isn't your wallet — it's your account."
+      },
+      "safety": {
+        "verdict": "Safe as software. The risk is who reaches you inside it, especially for younger users.",
+        "download": "discord.com and the official app stores.",
+        "data": "Messages are not end-to-end encrypted; Discord can read server and direct messages. Don't treat it as private communication.",
+        "scams": "Nitro-giveaway phishing links and fake “free Nitro” bots are relentless, and account-token theft through malicious links is the usual outcome. Enable two-factor authentication.",
+        "account_risk": "Anyone can DM you unless you restrict it. If this is an account for a child, the direct-message and friend-request settings are the ones that matter — server moderation does nothing for private messages."
       }
     },
     {
@@ -5854,6 +6101,12 @@
         "praised": "The archive is the value: for niche questions, the answers people actually search for live here. Free, no paywall, and the whole thing readable without an account.",
         "complained": "The 2023 API pricing change killed the third-party apps many long-term users preferred, and that grievance still dominates the record. Beyond it: moderation inconsistency, and an official app reviewers rate below the ones it replaced.",
         "takeaway": "Free and ad-funded, with your engagement as the merchandise — an old trade, honestly priced. Premium removes ads and adds nothing you need."
+      },
+      "safety": {
+        "verdict": "Safe as a site. The risk is what strangers on it tell you to do.",
+        "data": "Ad-funded: browsing and engagement power targeted advertising. Posts are public and indexed by search engines, essentially forever.",
+        "scams": "Investment, crypto and “work from home” pitches arriving by DM after you post are a constant. Subreddit moderators cannot vet a private message, and no legitimate opportunity starts with one.",
+        "account_risk": "Anything you post is permanent in practice, even after deletion. Reddit accounts have been de-anonymised from post history more than once — keep the identifying details out."
       }
     },
     {
@@ -5916,6 +6169,13 @@
         "praised": "As a front end for your own media library, reviewers rate it the best there is: metadata, artwork and subtitles handled automatically, playing to every device you own.",
         "complained": "The 2025 change is the grievance. Streaming your own personal media from outside your home network now requires the server owner to hold Plex Pass, or the viewer a Remote Watch Pass — a capability that had been free for years. Enforcement began on Roku in late 2025 and extends to other apps through 2026. Ad-supported catalog content pushed into the interface is the older complaint.",
         "takeaway": "Watching your own files at home is still free. Watching them from anywhere else is now a subscription — which is a real change to a product many people adopted precisely because it wasn't one. Jellyfin does the same job with nothing gated."
+      },
+      "safety": {
+        "verdict": "The software is safe. The thing to think about is what you point it at and who you share it with.",
+        "download": "plex.tv and the official app stores.",
+        "data": "Plex accounts sync library metadata and watch state to Plex's servers, and the free ad-supported catalog is ad-targeted. Your media files themselves stay on your own server.",
+        "account_risk": "Sharing your server with others shares access to your files — set library permissions deliberately. And note the 2025 change: remote playback of your own media now requires a paid pass, so a setup that used to work from anywhere may stop.",
+        "scams": "Plex itself is legitimate and licensed. What people put on their own servers is their own business — and their own legal exposure."
       }
     },
     {
@@ -6286,6 +6546,13 @@
         "praised": "Long-time users still credit the interface and browser integration — it was the default for a reason.",
         "complained": "Two events dominate: the 2021 restriction of free accounts to a single device type (which broke the core purpose of a password manager), and the 2022 breach of encrypted vaults. Reviewers describe migrating away and telling others to.",
         "takeaway": "A rare case where the crowd's verdict and the security community's verdict agree. Both point to Bitwarden."
+      },
+      "safety": {
+        "verdict": "Functional, and carrying a breach history that a password manager doesn't get to shrug off.",
+        "data": "In 2022 attackers took encrypted customer vaults along with some unencrypted metadata such as site URLs. Vaults protected by a strong, unique master password remained encrypted — but the copies are out there permanently, and weak master passwords are exposed to offline cracking indefinitely.",
+        "account_risk": "If you had a LastPass vault in 2022 and haven't since rotated the passwords inside it, that's the action item — not changing the master password, but changing what the vault contained.",
+        "scams": "Phishing that imitates LastPass increased sharply after the breach, because attackers knew which sites each vault held.",
+        "download": "lastpass.com and the official stores. If you're choosing a password manager today, Bitwarden's free tier is more generous and has no comparable history."
       }
     },
     {
@@ -6425,6 +6692,12 @@
         "praised": "Reviewers rate the obvious: the sum of general knowledge, in hundreds of languages, with no account, no ads, and no paywall — and offline reading in the apps.",
         "complained": "The criticisms are editorial rather than commercial: bias and edit-war disputes on contested topics, thin coverage outside major languages, and the annual donation banners. App reviewers cite interface changes and reading-list sync issues.",
         "takeaway": "The only free service on this site whose main criticism is about accuracy rather than money. Cite it as a starting point and follow the footnotes — that's what they're for."
+      },
+      "safety": {
+        "verdict": "Yes. No ads, no tracking for profit, no account needed, and nothing is sold to you.",
+        "download": "wikipedia.org and the official apps. The donation banners are genuine; donation solicitations arriving by email or text are often not.",
+        "data": "The Wikimedia Foundation is a nonprofit and does not sell reader data. Reading without an account is normal and supported.",
+        "account_risk": "The safety question here is accuracy, not security. Anyone can edit, contested topics attract edit wars, and vandalism is usually caught fast but not always. Follow the footnotes for anything that matters — that's what they're there for."
       }
     },
     {
@@ -6561,7 +6834,13 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-linux-ubuntu-actually-free"
+      "slug": "is-linux-ubuntu-actually-free",
+      "safety": {
+        "verdict": "Yes. This is among the most examined pieces of software on earth.",
+        "download": "ubuntu.com — and verify the checksum the download page gives you. That step exists precisely so a tampered image can't pass unnoticed.",
+        "data": "Ubuntu asks once whether to send hardware diagnostics, and declining is a normal, supported choice. No ads, and no account needed to use the desktop.",
+        "scams": "Paid install media and support contracts are legitimate products when labelled as such. Sites selling “Ubuntu licences” are not — there is nothing to license."
+      }
     },
     {
       "name": "Cloudflare",
@@ -6759,6 +7038,12 @@
         "praised": "Reviewers consistently confirm the thing that matters most on a paid-research platform: the money arrives, at the rate promised, without games. Fair pay rates and quick PayPal cashouts recur throughout.",
         "complained": "The friction is availability and account bans — participants describe quiet weeks with no matching studies, and occasional bans they consider unexplained. Notably absent from the complaints: unpaid work.",
         "takeaway": "When 15,000 reviewers complain about how *few* studies they get rather than whether they were paid, that's the strongest possible signal of legitimacy."
+      },
+      "safety": {
+        "verdict": "Legitimate and unusually clean, with one impersonation risk worth knowing.",
+        "data": "You are paid to provide data to academic and commercial researchers. Studies disclose what they collect, and university ethics approval is standard for the academic work.",
+        "scams": "The scam risk isn't Prolific — it's people using its name. Real studies appear only inside your Prolific account. Nobody legitimate recruits you by DM, and nobody legitimate asks you to pay anything or to install software to qualify.",
+        "account_risk": "Bans are the main complaint and appeals are slow. Most trace back to attention checks — read those rules once, properly, before your first study."
       }
     },
     {
@@ -6815,6 +7100,12 @@
         "pays_via": "PayPal, 7 days after each test",
         "track_record": "Fortune 500 client base; 3,400+ Trustpilot reviews at 4.5/5; nearly two decades of continuous payouts",
         "red_flags": "None structural. Complaints center on test availability and screener time, not payment failures."
+      },
+      "safety": {
+        "verdict": "Legitimate. Nearly two decades of payouts and a Fortune 500 client base.",
+        "data": "Tests record your screen, your voice, and usually your face. That footage goes to the client company — so run tests somewhere private and close anything you wouldn't want on the recording.",
+        "scams": "Recruiting happens on the platform. Approaches by DM or email offering “UserTesting jobs” with an upfront payment or a check to deposit are a well-worn check-fraud scam.",
+        "account_risk": "Screener questions are the gate, and answering them to fit rather than truthfully gets accounts removed."
       }
     },
     {
@@ -6871,6 +7162,12 @@
         "pays_via": "PayPal or Payoneer after study completion",
         "track_record": "Clients include Fortune 500 companies and major research firms; Trustpilot 4.2/5",
         "red_flags": "None structural. Fraudulent 'studies' impersonating Respondent exist on social media — only accept studies through the actual platform, never through DMs."
+      },
+      "safety": {
+        "verdict": "Legitimate — real companies, real payouts, with an active impersonation problem around it.",
+        "data": "Studies are professional research interviews; you're paid for your expertise and opinions. What's collected is disclosed per study.",
+        "scams": "This one matters: fraudulent “studies” impersonating Respondent circulate on social media and messaging apps. Only ever accept a study through the platform itself. No legitimate research pays you by check-in-advance, and none needs your bank login.",
+        "account_risk": "Misrepresenting your professional profile to qualify is the usual reason accounts get closed, and it also wastes a researcher's session."
       }
     },
     {
@@ -6935,6 +7232,12 @@
         "pays_via": "PayPal, bank transfer, or Fiverr Revenue Card, 14 days after order completion",
         "track_record": "Public company with audited financials; millions of completed transactions",
         "red_flags": "The platform is legitimate; individual buyers can be difficult. Never take communication or payment off-platform — that's where scams happen."
+      },
+      "safety": {
+        "verdict": "The platform is safe. Individual buyers and sellers vary, and the platform only protects you while you stay on it.",
+        "scams": "Every serious Fiverr scam begins the same way: someone moves the conversation, the files, or the payment off-platform. On-platform the escrow and dispute process protect both sides; off it, you have nothing at all.",
+        "account_risk": "Payment is held for a period after delivery, which surprises new sellers. Chargebacks after work is delivered are the recurring seller complaint.",
+        "data": "Publicly traded company with audited financials. The money side is real; the quality side is a marketplace, so read recent reviews rather than the star average."
       }
     },
     {
@@ -7006,6 +7309,12 @@
         "pays_via": "Direct bank deposit via Etsy Payments",
         "track_record": "Public company; 90+ million active buyers. The low Trustpilot score reflects buyer disputes and seller fee frustration, not payment fraud",
         "red_flags": "Legitimate marketplace with real fee complaints. Watch for off-platform payment requests from 'buyers' — always a scam."
+      },
+      "safety": {
+        "verdict": "Safe to buy on, with normal marketplace caveats.",
+        "scams": "The scams that work are off-platform. A “buyer” asking you to complete payment by bank transfer, or a “seller” offering a better price outside Etsy, is a scam every single time. Etsy's protection only exists inside Etsy.",
+        "account_risk": "Sellers report account holds and reserve periods on payouts, and fee changes that arrive without much warning. Don't build a business on it without somewhere else to sell.",
+        "data": "Publicly traded, with real buyer protection. The low consumer score reflects fee frustration and individual seller disputes — not payment fraud."
       }
     },
     {
@@ -7068,7 +7377,13 @@
           "slug": "is-google-digital-garage-actually-free",
           "why": "Free digital marketing training with real certificates"
         }
-      ]
+      ],
+      "safety": {
+        "verdict": "Not safe as a purchase, and the claims are frequently the kind regulators act on.",
+        "scams": "The pattern repeats to the point of parody: income screenshots that turn out to show course revenue, closing-soon urgency, upsells nested inside upsells, and no verifiable track record outside selling courses. The FTC has brought repeated actions against business-opportunity sellers on exactly these grounds.",
+        "account_risk": "Refunds are the usual dispute — guarantees with conditions that make them unclaimable. If you pay at all, pay by card so a chargeback stays possible. Never by wire, gift card, or crypto.",
+        "data": "High-ticket programmes often require a “strategy call”, which is a sales call. Anything you say on it becomes material for the pitch."
+      }
     },
     {
       "name": "Swagbucks",
@@ -7148,6 +7463,12 @@
         "praised": "The volume of positive reviews is real, and so is the payout — reviewers confirm gift cards and PayPal cashouts arrive. The platform is not a scam and the reviews reflect that.",
         "complained": "The recurring frustration isn't fraud, it's time: survey disqualifications after several minutes of screening, and the slow grind of points that turn out to be worth pennies.",
         "takeaway": "A 4.0 average that hides a $2–6/hour reality. The reviews measure whether it pays — they don't measure whether it's worth your afternoon. This site measures both."
+      },
+      "safety": {
+        "verdict": "Legitimate — it genuinely pays. The costs are your time, your data and your inbox, not fraud.",
+        "data": "The business model is data: survey answers, shopping behaviour and browsing activity are the merchandise being sold. That's the trade, and it is disclosed.",
+        "account_risk": "Account closures for “invalid activity” are the recurring complaint, and pending points are forfeited when it happens. Cash out at the low thresholds instead of banking a large balance.",
+        "scams": "The sharp practice lives on third-party offer walls, not in Swagbucks itself — app installs that never credit, and trials that quietly convert to subscriptions. Skip any offer that needs a card."
       }
     },
     {
@@ -7194,7 +7515,12 @@
           "Why it's legal if it looks like a pyramid scheme",
           "The legal line between an MLM and a pyramid scheme is whether real products are sold to real outside customers at real retail prices. Many MLMs exist in the gray zone where participants are the primary customers. When the FTC investigates, companies often settle or restructure rather than face a definitive ruling."
         ]
-      ]
+      ],
+      "safety": {
+        "verdict": "Legal in most cases, and still the worst financial outcome documented on this site.",
+        "scams": "Where income depends on recruiting participants who buy product, rather than on retail sales to outside customers, the structure is the one the FTC has acted against dozens of times. The pitch language — “business owner”, “community”, “residual income” — is consistent enough across companies to be a tell in itself.",
+        "account_risk": "The exposure is upfront and ongoing: starter kits, monthly minimum purchases to stay qualified, and inventory bought to hold rank. Most MLMs publish an income disclosure statement, and those documents consistently show the large majority of participants earning very little or losing money once costs are counted. Ask to see it before spending anything — a company that won't show you its own disclosure has answered the question."
+      }
     },
     {
       "name": "Trustpilot",
@@ -7721,7 +8047,13 @@
           "url": "https://play.google.com/store/apps/details?id=com.groupon&hl=en_US&gl=US",
           "count": "1.7M"
         }
-      ]
+      ],
+      "safety": {
+        "verdict": "Safe — a real marketplace with a real refund policy, not a fraud risk.",
+        "scams": "The complaints cluster in travel: “Getaways” and mystery vacations, where a third party controls what you actually receive. Check the merchant's own reviews before buying the voucher, because Groupon is selling you someone else's service.",
+        "account_risk": "The amount you paid generally remains redeemable after the promotional value expires — Groupon's own policy says so, and US gift-card law backs it. If a merchant tells you an expired voucher is worthless, that's usually wrong.",
+        "data": "The deal emails are the business model. Turn the frequency down at signup rather than trying to later."
+      }
     },
     {
       "name": "Free Community Events (Library, Parks & Rec)",
@@ -7821,7 +8153,13 @@
           "slug": "is-free-museum-days-actually-free",
           "why": "Real free experiences with no strings"
         }
-      ]
+      ],
+      "safety": {
+        "verdict": "No. This is the clearest outright fraud pattern on this site.",
+        "scams": "Three tells, and they hold almost universally: you never entered the contest you have supposedly won; you must pay something to claim it; and the details stay vague — “five-star resort” rather than a named hotel with a booking reference. Genuine prizes carry taxes you pay to the IRS, never a claim fee paid to the company giving the prize.",
+        "account_risk": "The card details are usually the actual objective, not the fee. If you have already given them, treat the card as compromised: call your bank now rather than waiting to see what appears.",
+        "data": "Entering these “sweepstakes” puts your number and email onto lists that get resold. The call volume afterwards is itself the evidence."
+      }
     },
     {
       "name": "Timeshare 'Free Stay' Presentations",
@@ -7870,7 +8208,13 @@
           "Why we stamped this Free-ish, not Fake",
           "The free nights are usually real, so this isn't fraud — but the 'free' hides a cost (hours of pressure) and a catastrophic downside risk (a five-figure impulse contract). That's the exact shape of a Free-ish verdict: a real free thing, structured to move you toward a very expensive one."
         ]
-      ]
+      ],
+      "safety": {
+        "verdict": "Legitimate, legal, and built specifically to overcome your judgment.",
+        "scams": "Not a scam — real companies, real free nights, enforceable contracts. The exposure is the contract you might sign at the end of a professionally engineered sales day, and timeshare contracts are notoriously difficult and expensive to exit afterwards.",
+        "account_risk": "Find your state's rescission period before you travel — most US states give a short window to cancel in writing, and that window is the only easy exit. Decide in advance that you will sign nothing on the day, and tell the person you're travelling with to hold you to it.",
+        "data": "Expect the contact details you register with to be used for follow-up marketing well after the trip."
+      }
     },
     {
       "name": "House Sitting & Home Exchange",
@@ -7978,7 +8322,12 @@
           "slug": "deals",
           "why": "Sell your old device for real credit instead of locked-in bill credits"
         }
-      ]
+      ],
+      "safety": {
+        "verdict": "Legitimate offers with public terms — and still not free.",
+        "scams": "No fraud here; everything is disclosed. The exposure is the 24-to-36-month plan commitment, the tax on the phone's full retail price and the activation fee due upfront, and bill credits that stop the moment you leave.",
+        "account_risk": "This is a financing agreement that sits on your credit, not a giveaway. Before signing, ask one question and get the answer in writing: what do I owe if I switch carriers in month fourteen? The answer is usually the entire remaining balance of the phone, at once."
+      }
     },
     {
       "name": "checkmysite.pro",
@@ -8608,7 +8957,14 @@
           "url": "https://play.google.com/store/apps/details?id=com.deepseek.chat&hl=en_US&gl=US",
           "count": "313K"
         }
-      ]
+      ],
+      "safety": {
+        "verdict": "Capable and free — and the data question here is different from the others, so answer it deliberately.",
+        "download": "The official apps and deepseek.com. Wrapper apps charging for it are common.",
+        "data": "The company is Chinese and its consumer service stores user data on servers in China under Chinese law. Several governments have restricted the app on official devices for that reason. This is a jurisdiction question, not an accusation — but it should decide what you type into it.",
+        "scams": "The open-weight models are genuinely open and can be run locally, which is the way to use it if the jurisdiction concerns you.",
+        "account_risk": "Treat anything you send as leaving your control. That's true of every hosted AI service; the variable here is which legal system it lands in."
+      }
     },
     {
       "name": "NotebookLM",
@@ -8746,6 +9102,13 @@
         "praised": "The technology impresses users, and the free tier is genuinely unlimited in a way paid rivals aren't — reviewers describe conversations that feel sustained and characterful.",
         "complained": "The score is driven by organised anger at content filtering that tightened repeatedly, changed without notice, and altered characters people had spent months building. Separately and more seriously, the company has faced lawsuits over harms to minors and has since restricted teen access — a safety record that belongs in any assessment of it.",
         "takeaway": "A 2.0 from 2.4 million people is not a normal review distribution; it's a user base in revolt over changes to a free product. Free here is paid in hours, and the conversations are training data — treat it as entertainment, never as a confidant."
+      },
+      "safety": {
+        "verdict": "This is the one listing on this site where we'd give a qualified no, and it isn't about money.",
+        "data": "Conversations are stored and used to improve the system. Nothing you tell a character should be treated as private, and that includes anything about your health, your relationships, or your location.",
+        "account_risk": "The product is engineered for engagement, and the review record is full of people describing hours they didn't intend to spend. The company has faced lawsuits over harms to minors and has since restricted access for teenagers.",
+        "scams": "No financial scam — the free tier is real. The cost is time, attention, and the data in the conversations.",
+        "download": "The official apps and character.ai. Unofficial clients asking for your login are credential theft."
       }
     },
     {

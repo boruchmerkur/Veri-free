@@ -371,6 +371,13 @@ body.loc-ca .ca-badge{display:inline-flex}
 .sent .sn-row b{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 3px}
 .sent .sn-take{border-top:1px solid var(--line);padding-top:12px;margin-top:14px;font-size:15px;line-height:1.6;font-weight:600}
 .sent .sn-src{font-size:11.5px;color:var(--muted);margin:12px 0 0;font-style:italic}
+.safety{margin:26px 0 0;border:1.5px solid var(--line);border-left:4px solid var(--ink);border-radius:10px;padding:18px 20px;background:var(--card)}
+.safety h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:21px;margin:0 0 8px}
+.safety .sf-verdict{margin:0 0 14px;font-size:16px;line-height:1.55;font-weight:600}
+.safety .sf-row{display:flex;gap:10px;margin:0 0 9px;font-size:14.5px;line-height:1.55}
+.safety .sf-row b{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);flex-shrink:0;width:118px;padding-top:3px}
+.safety .sf-src{border-top:1px solid var(--line);padding-top:11px;margin:14px 0 0;font-size:11.5px;color:var(--muted);font-style:italic}
+@media(max-width:560px){.safety .sf-row{display:block}.safety .sf-row b{width:auto;display:block;margin:0 0 2px}}
 .legit{margin:26px 0 0;border:2px solid var(--ink);border-radius:12px;padding:18px 20px;background:var(--card)}
 .legit h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px;color:var(--ink)}
 .legit h2::before{content:"🛡 "}
@@ -407,6 +414,33 @@ footer{border-top:2.5px solid var(--ink);margin-top:30px}
 :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
 @media(max-width:560px){.facts td.k{width:130px;white-space:normal}.hero{padding-top:52px}}
 """
+
+SAFETY_ROWS = [("Download", "download"), ("Your data", "data"),
+               ("Scams to watch", "scams"), ("Account risk", "account_risk")]
+
+
+def safety_box(l, checked=""):
+    """"Is X safe?" — answers the safety-intent query directly, in its own section."""
+    s = l.get("safety")
+    if not s:
+        return ""
+    rows = "".join(f'<div class="sf-row"><b>{lbl}</b><span>{esc(s[k])}</span></div>'
+                   for lbl, k in SAFETY_ROWS if s.get(k))
+    return (f'<div class="safety" id="safe"><h2>Is {esc(l["name"])} safe?</h2>'
+            f'<p class="sf-verdict">{esc(s["verdict"])}</p>{rows}'
+            f'<p class="sf-src">Safety here means downloads, data practices, and scam exposure — '
+            f'it is separate from the free verdict above. Checked {esc(checked)}.</p></div>')
+
+
+def safety_faq(l):
+    """The same answer, flattened for FAQPage schema."""
+    s = l.get("safety")
+    if not s:
+        return None
+    parts = [s["verdict"]] + [s[k] for _, k in SAFETY_ROWS if s.get(k)]
+    return {"@type": "Question", "name": f"Is {l['name']} safe?",
+            "acceptedAnswer": {"@type": "Answer", "text": " ".join(parts)}}
+
 
 def ratings_row(l):
     rows = l.get("external_ratings")
@@ -1151,6 +1185,11 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         faq_qs = [{"@type": "Question",
                    "name": f"Is {l['name']} actually free?",
                    "acceptedAnswer": {"@type": "Answer", "text": l["short"]}}]
+        # safety sits second: it's the other question people type, and rich
+        # results favour the questions that lead.
+        sq = safety_faq(l)
+        if sq:
+            faq_qs.append(sq)
         if l.get("catch"):
             faq_qs.append({"@type": "Question",
                            "name": f"What's the catch with {l['name']}?",
@@ -1220,6 +1259,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 {gets}
 <div class="facts"><h2>Free facts</h2><table>{facts_rows}</table></div>
 <div class="catch"><h2>The catch</h2><p>{esc(l['catch'])}</p></div>
+{safety_box(l, checked)}
 {plays}
 {more}
 <p class="checked">Last checked: {esc(checked)} · Verdict: {vlabel} — {esc(vdef.lower())}</p>

@@ -69,6 +69,28 @@ hello@veri-free.com. (Everything code-side is already deployed.)
   Pass (viewer); Roku enforcement began late 2025, other apps through 2026.
   Re-graded **free forever → squeezed, 80 → 62** and rewrote catch/short/worth.
 
+## /free-in-real-life/ — the offline extension (2026-08-01)
+New page + new top-level `irl` key in listings.json: a list of
+`{group, blurb, items[]}`, where each item uses the **same shape as `deals`**
+(name, type, status, url, summary, who, how, worth, caveat). Rendered by the
+shared `deal_card()` — hoisted out of the deals block, so both pages use it.
+
+**The rule that defines this page: standing programmes only.** Published dates,
+public policies, federal entitlements — things verifiable once that stay
+verified. NOT weekly circulars, flash sales, sample-of-the-day or sweepstakes:
+those churn daily and by zip code, so a "last checked" date on them would be a
+lie, and that date is the whole product. Where something genuinely varies by
+location (kids-eat-free, library passes) the card says so and explains how to
+check locally rather than printing a national list that's wrong half the time.
+
+Second rule, from the birthday-freebie group: **name the programme, not the
+prize.** Loyalty programmes last years; the specific reward gets quietly
+downgraded. Any page stating exactly what a chain gives you this year is
+quoting something it hasn't checked.
+
+NPS fee-free dates are year-specific — the remaining 2026 ones are hardcoded in
+the card text and in the page's FAQ schema. **Refresh both each January.**
+
 ### Still open from that plan
 3. **Reader feedback** ("Was this verdict right?") per listing.
    Netlify Forms (once detection is on) or the Netlify Blobs moderated-review

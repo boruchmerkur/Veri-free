@@ -9947,5 +9947,224 @@
       "title": "The best free streaming services compared — 5 options, all genuinely free",
       "link": "/compare/best-free-streaming-services/"
     }
+  ],
+  "irl": [
+    {
+      "group": "Free days at museums and parks",
+      "blurb": "Standing programmes with published dates. These are the most reliable free days in the country and the least advertised.",
+      "items": [
+        {
+          "name": "National Park free-entrance days",
+          "type": "Published dates, entrance fee waived nationwide",
+          "status": "verified",
+          "url": "https://www.nps.gov/planyourvisit/fee-free-parks.htm",
+          "summary": "The National Park Service waives entrance fees on a set of announced days each year. For 2026 the remaining dates are August 25 (the Park Service's 110th birthday), September 17 (Constitution Day), October 27 (Theodore Roosevelt's birthday) and November 11 (Veterans Day). Earlier 2026 dates were Presidents Day, Memorial Day, Flag Day, and July 3–5.",
+          "who": "Everyone. No card, no registration, no residency test.",
+          "how": "Turn up on the date. Nothing to claim in advance.",
+          "worth": "$20–35 per vehicle at the parks that charge — and most NPS sites are free every day anyway.",
+          "caveat": "It waives the entrance fee only. Camping, tours, boat trips and reservations still cost, and timed-entry reservations still apply at the busiest parks. Popular parks are very crowded on these days."
+        },
+        {
+          "name": "Bank of America — Museums on Us",
+          "type": "Free general admission, first full weekend monthly",
+          "status": "verified",
+          "url": "https://about.bankofamerica.com/en/making-an-impact/museums-on-us-partners",
+          "summary": "Cardholders get free general admission to more than 235 museums and cultural centres on the first full Saturday and Sunday of every month, across 40 states and Washington DC.",
+          "who": "Anyone holding a Bank of America, Merrill or BofA Private Bank debit or credit card — authorised users included.",
+          "how": "Show the card and photo ID at the desk. Nothing to book.",
+          "worth": "$15–30 per visit, twelve times a year.",
+          "caveat": "One general admission per cardholder, not transferable, and special or ticketed exhibitions are excluded. Check the partner list first — participation varies by city."
+        },
+        {
+          "name": "Blue Star Museums",
+          "type": "Free admission for military families, summer-long",
+          "status": "verified",
+          "url": "https://www.arts.gov/initiatives/blue-star-museums",
+          "summary": "A National Endowment for the Arts partnership giving free admission at participating museums nationwide, from Armed Forces Day through Labor Day. In 2026 that runs May 16 to September 7 — so it is open right now.",
+          "who": "Active-duty military and their families, including National Guard and Reserve.",
+          "how": "Show a military ID at participating museums. No pre-registration.",
+          "worth": "Free entry for the whole family across an entire summer.",
+          "caveat": "Participation is per-museum and what's covered varies — some include the family, some exclude special exhibitions. Check the individual museum before travelling."
+        },
+        {
+          "name": "Your library's museum pass",
+          "type": "Free or near-free museum entry, borrowed like a book",
+          "status": "verified",
+          "url": "https://www.usa.gov/libraries",
+          "summary": "A great many public library systems lend museum and attraction passes — you reserve one with your card and it covers admission for a family. It is one of the least-known benefits of a library card and it is nowhere near as advertised as it should be.",
+          "who": "Anyone with a card at a participating library system.",
+          "how": "Search your library's site for “museum pass” or “culture pass”, or ask at the desk. Passes book out weeks ahead in summer.",
+          "worth": "$40–80 for a family visit, repeatable through the year.",
+          "caveat": "Availability is entirely local — some systems have dozens of passes, some have none. This is a “check yours” item, not a national guarantee."
+        },
+        {
+          "name": "Smithsonian museums",
+          "type": "Permanently free, every day",
+          "status": "verified",
+          "url": "https://www.si.edu/museums",
+          "summary": "Every Smithsonian museum and the National Zoo are free to enter, every day, with no ticket price. It is the largest standing free-culture offer in the United States and it needs no card, code or date.",
+          "who": "Everyone.",
+          "how": "Walk in. Some sites use free timed-entry passes at busy periods — check the specific museum.",
+          "worth": "Comparable museums elsewhere charge $25–30 a head.",
+          "caveat": "Free admission does not mean free parking, and a few special exhibitions and IMAX screenings are ticketed."
+        }
+      ]
+    },
+    {
+      "group": "Birthday freebies",
+      "blurb": "Real, and worth about $100–200 a year if you set it up once. Almost every list you'll find online is affiliate spam full of dead entries — so here is the method instead, which doesn't go stale.",
+      "items": [
+        {
+          "name": "The method — set it up once, in about 30 minutes",
+          "type": "How to actually collect these",
+          "status": "verified",
+          "url": "https://www.usa.gov/",
+          "summary": "Birthday rewards are attached to loyalty programmes, not to the restaurant. Join the programmes of places you already go, put your real birth date in the profile, and the reward posts to your account in your birthday month with no action from you.",
+          "who": "Anyone. No purchase is needed to join a rewards programme.",
+          "how": "Sign up at least a month ahead — most programmes require you to have joined 30 days before your birthday, specifically to stop people signing up on the day.",
+          "worth": "A free drink or dessert is $5–8; a free entrée is $12–18. Ten programmes is a realistic $100+ a year.",
+          "caveat": "Rewards usually expire within days of your birthday, not your birthday month, and most require a purchase to redeem — a free entrée typically means with the purchase of another. Read the reward before you drive over."
+        },
+        {
+          "name": "Where it's most reliable",
+          "type": "Programme types that have offered this for years",
+          "status": "verified",
+          "url": "https://www.usa.gov/",
+          "summary": "The durable ones are the big chain loyalty programmes: coffee chains, ice-cream chains, casual-dining chains, and the beauty and shoe retailers. We name the programme rather than the prize on purpose — the programmes last for years, the specific reward gets changed without notice.",
+          "who": "Anyone who joins the programme.",
+          "how": "Join the app or email programme of the chains you already use. Don't join forty — the value is in the ones you'd visit anyway.",
+          "worth": "Highest per-signup value tends to be casual dining; highest reliability tends to be coffee and ice cream.",
+          "caveat": "Anyone telling you exactly what a given chain gives you this year is quoting something they haven't checked. Reward tiers get quietly downgraded, which is the same pattern this whole site documents."
+        },
+        {
+          "name": "The catch nobody mentions",
+          "type": "What you're actually paying",
+          "status": "verified",
+          "url": "https://www.usa.gov/",
+          "summary": "You are paying with your inbox and your data. A birthday reward buys the chain your date of birth, your email, your phone number in many cases, and permission to market to you all year.",
+          "who": "Everyone who signs up.",
+          "how": "Use an email alias or a dedicated address for loyalty signups. Give the birth date, which is the point, but skip the optional fields.",
+          "worth": "Worth it if you'd eat there anyway. Not worth it as a reason to start.",
+          "caveat": "Your date of birth is a real identity-verification data point. Handing it to fifty companies is a genuine (if small) exposure, and it's the reason to be selective rather than exhaustive."
+        }
+      ]
+    },
+    {
+      "group": "Kids eat free",
+      "blurb": "Real and widespread — and the national lists are wrong more often than they're right, because franchisees set this per location.",
+      "items": [
+        {
+          "name": "Why the lists you'll find are wrong",
+          "type": "How this actually works",
+          "status": "verified",
+          "url": "https://www.usa.gov/",
+          "summary": "Kids-eat-free nights are usually set by the individual franchise owner, not the chain. So a national list saying a chain does Tuesdays will be right in one town and wrong in the next, and it goes stale the moment a location changes hands.",
+          "who": "Typically one free child's meal per paying adult, with an age cap — often under 10 or under 12.",
+          "how": "Call the specific location, or check that location's own page rather than the chain's. Thirty seconds on the phone beats any list, including this one.",
+          "worth": "$6–9 per child per visit, and it's usually weekly.",
+          "caveat": "Almost always requires an adult entrée purchase, and drinks are usually excluded. Some locations restrict it to dine-in."
+        },
+        {
+          "name": "Where to look instead",
+          "type": "Sources that stay current",
+          "status": "verified",
+          "url": "https://www.usa.gov/",
+          "summary": "Local parenting groups and city-specific “on the cheap” sites keep far more accurate kids-eat-free calendars than national roundups, because they're maintained by people who actually go.",
+          "who": "Families anywhere in the US.",
+          "how": "Search your city plus “kids eat free”, and prefer a source that names specific addresses over one that names chains.",
+          "worth": "A family of four can cover most of a week's eating out.",
+          "caveat": "Even good local lists drift. Treat any list as a shortlist to phone, not a schedule to plan around."
+        },
+        {
+          "name": "Summer meals for kids — the one that isn't a promotion",
+          "type": "Federally funded, no purchase, no enrolment",
+          "status": "seasonal",
+          "url": "https://www.fns.usda.gov/summer",
+          "summary": "USDA-funded summer meal programmes serve free meals to children and teens at schools, libraries, parks and community sites when school is out. No purchase, no application, and no income documentation at the site.",
+          "who": "Children and teens 18 and under, at participating sites. No enrolment or proof of income needed.",
+          "how": "Use the USDA site finder, or text or call the national hotline listed there, to find sites near you.",
+          "worth": "Free breakfast and lunch through the summer.",
+          "caveat": "Runs when school is out, so availability is seasonal and site-by-site. Most sites require the child to eat there rather than take food away."
+        }
+      ]
+    },
+    {
+      "group": "Health services that are genuinely free or sliding-scale",
+      "blurb": "Not deals — public programmes. Included because they're the highest-value thing on this page and the least known.",
+      "items": [
+        {
+          "name": "Community health centers",
+          "type": "Federally funded, sliding scale by income",
+          "status": "verified",
+          "url": "https://findahealthcenter.hrsa.gov/",
+          "summary": "HRSA-funded health centres provide primary care, dental and often mental health services, charging on a sliding scale by income. They are required to see you whether or not you have insurance and whether or not you can pay.",
+          "who": "Anyone. Insurance is not required, and immigration status is not a barrier to being seen.",
+          "how": "Find one through the official HRSA locator and ask about the sliding fee scale when you book.",
+          "worth": "A visit that might otherwise run several hundred dollars can cost little or nothing.",
+          "caveat": "Sliding scale means reduced, not always zero — it depends on household income. Wait times for non-urgent appointments can be long."
+        },
+        {
+          "name": "Vaccines for Children",
+          "type": "Free vaccines for eligible children",
+          "status": "verified",
+          "url": "https://www.cdc.gov/vaccines-for-children/",
+          "summary": "A federal programme providing recommended vaccines at no cost for children who are uninsured, underinsured, Medicaid-eligible, or American Indian or Alaska Native.",
+          "who": "Children through age 18 who meet one of those criteria.",
+          "how": "Ask whether your provider is a VFC provider, or contact your state's VFC coordinator through the CDC page.",
+          "worth": "The full childhood schedule runs into the thousands of dollars.",
+          "caveat": "The vaccine itself is free; a provider may still charge an administration fee, and that fee can be waived if you can't pay. Ask before the visit."
+        },
+        {
+          "name": "211 — the number for everything else",
+          "type": "Free national referral line",
+          "status": "verified",
+          "url": "https://www.211.org/",
+          "summary": "Dialling 211 connects you to a local referral service for food, housing, utility assistance, healthcare and crisis support. It is free, confidential, and staffed by people who know what exists in your specific county.",
+          "who": "Anyone in the US and much of Canada.",
+          "how": "Dial 211, or search the directory at 211.org.",
+          "worth": "The single highest-leverage free phone call on this page.",
+          "caveat": "Coverage and hours vary by region, and the person you reach is a referral specialist rather than a caseworker."
+        }
+      ]
+    },
+    {
+      "group": "Retail rights you already have",
+      "blurb": "Not giveaways — money you're entitled to and usually don't ask for.",
+      "items": [
+        {
+          "name": "Price adjustment after you buy",
+          "type": "Refund of the difference if the price drops",
+          "status": "verified",
+          "url": "https://www.usa.gov/",
+          "summary": "Many large retailers will refund the difference if an item you bought goes on sale within a set window after purchase. Almost nobody claims it, because it requires you to notice and to ask.",
+          "who": "Anyone with the receipt, inside that retailer's window.",
+          "how": "Check the specific retailer's price-adjustment policy, then take the receipt to customer service or contact online support. The window is commonly a couple of weeks.",
+          "worth": "Whatever the price fell by — frequently $20–100 on electronics and appliances.",
+          "caveat": "Policies differ sharply by retailer and several have narrowed theirs, so confirm the current policy rather than assuming. Marketplace and third-party sellers are usually excluded."
+        },
+        {
+          "name": "Price matching before you buy",
+          "type": "Same item, lower price, matched at the till",
+          "status": "verified",
+          "url": "https://www.usa.gov/",
+          "summary": "Most large chains will match a competitor's advertised price on an identical item, which saves you a second trip. The policies are public, and staff will apply them if you produce the evidence.",
+          "who": "Anyone who asks, with proof of the competitor's price.",
+          "how": "Have the competitor's listing on your phone. Ask before the item is rung up, not after.",
+          "worth": "The gap between the two prices, immediately.",
+          "caveat": "Matching normally requires an identical model number in stock at the competitor, and excludes clearance, marketplace and members-only pricing. Several retailers have quietly cut their policies back."
+        },
+        {
+          "name": "Warranty and repair you already paid for",
+          "type": "Free repair or replacement, often forgotten",
+          "status": "verified",
+          "url": "https://www.usa.gov/",
+          "summary": "Manufacturer warranties, credit-card purchase protection and extended-warranty benefits on the card you paid with routinely go unclaimed because people forget they exist.",
+          "who": "Anyone still inside the warranty period — and many cards add a year to it automatically.",
+          "how": "Check the manufacturer's warranty term first, then your card's benefits guide. Keep the receipt; card issuers will usually pull the transaction record if you can't.",
+          "worth": "The full repair or replacement cost.",
+          "caveat": "Card benefits have been trimmed across the industry in recent years, so read your current guide rather than what the card offered when you got it."
+        }
+      ]
+    }
   ]
 }

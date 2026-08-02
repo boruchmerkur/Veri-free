@@ -378,6 +378,11 @@ body.loc-ca .ca-badge{display:inline-flex}
 .safety .sf-row b{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);flex-shrink:0;width:118px;padding-top:3px}
 .safety .sf-src{border-top:1px solid var(--line);padding-top:11px;margin:14px 0 0;font-size:11.5px;color:var(--muted);font-style:italic}
 @media(max-width:560px){.safety .sf-row{display:block}.safety .sf-row b{width:auto;display:block;margin:0 0 2px}}
+/* free in real life */
+.irl-wrap{max-width:720px}
+.irl-wrap section{padding:0 0 14px}
+.irl-h{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:25px;margin:34px 0 6px}
+.irl-blurb{color:var(--muted);font-size:15.5px;line-height:1.6;margin:0 0 18px;max-width:62ch}
 .legit{margin:26px 0 0;border:2px solid var(--ink);border-radius:12px;padding:18px 20px;background:var(--card)}
 .legit h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px;color:var(--ink)}
 .legit h2::before{content:"🛡 "}
@@ -414,6 +419,23 @@ footer{border-top:2.5px solid var(--ink);margin-top:30px}
 :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
 @media(max-width:560px){.facts td.k{width:130px;white-space:normal}.hero{padding-top:52px}}
 """
+
+def deal_card(d, cta="Go to offer →"):
+    """Shared card for /deals/ and /free-in-real-life/."""
+    st = d.get("status", "verified")
+    badge_cls = "verified" if st == "verified" else "seasonal" if st == "seasonal" else "expired"
+    return (f'<div class="deal">'
+            f'<div class="dtop">{favicon(d["url"], override=d.get("favicon_url"))}<h3>{esc(d["name"])}</h3>'
+            f'<span class="dbadge {badge_cls}">{st.upper()}</span></div>'
+            f'<p class="dtype">{esc(d["type"])}</p>'
+            f'<p>{esc(d["summary"])}</p>'
+            f'<p><b>Who qualifies:</b> {esc(d["who"])}</p>'
+            f'<p><b>How to get it:</b> {esc(d["how"])}</p>'
+            f'<p class="dlabel">What it\'s worth</p><p class="dworth">{esc(d["worth"])}</p>'
+            f'<p class="dcav">{esc(d["caveat"])}</p>'
+            f'<a class="dlink" href="{esc(d["url"])}" target="_blank" rel="noopener">{cta}</a>'
+            f'</div>')
+
 
 SAFETY_ROWS = [("Download", "download"), ("Your data", "data"),
                ("Scams to watch", "scams"), ("Account risk", "account_risk")]
@@ -557,7 +579,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 <script
   src="https://dreamsitedesign.com/credit.js"
@@ -767,8 +789,9 @@ def build():
            f'<div class="nav-links">'
            f'<div class="dropdown"><a href="/#categories">Categories</a>'
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
-           f'<a href="/deals/">Verified Deals</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
+           f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
            f'<a href="/deals/">Deals</a>'
+           f'<a href="/free-in-real-life/">Real Life</a>'
            f'<a href="/compare/">Compare</a>'
            f'<a href="/methodology/">How we verify</a>'
            f'<a href="/submit/">For businesses</a>'
@@ -1309,20 +1332,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
     # ---------- deals ----------
     deals = data.get("deals", [])
     if deals:
-        def render_deal(d):
-            st = d.get("status", "verified")
-            badge_cls = "verified" if st == "verified" else "seasonal" if st == "seasonal" else "expired"
-            badge_label = st.upper()
-            return (f'<div class="deal">'
-                    f'<div class="dtop">{favicon(d["url"], override=d.get("favicon_url"))}<h3>{esc(d["name"])}</h3><span class="dbadge {badge_cls}">{badge_label}</span></div>'
-                    f'<p class="dtype">{esc(d["type"])}</p>'
-                    f'<p>{esc(d["summary"])}</p>'
-                    f'<p><b>Who qualifies:</b> {esc(d["who"])}</p>'
-                    f'<p><b>How to get it:</b> {esc(d["how"])}</p>'
-                    f'<p class="dlabel">What it\'s worth</p><p class="dworth">{esc(d["worth"])}</p>'
-                    f'<p class="dcav">{esc(d["caveat"])}</p>'
-                    f'<a class="dlink" href="{esc(d["url"])}" target="_blank" rel="noopener">Go to offer →</a>'
-                    f'</div>')
+        render_deal = deal_card
         guarantee_names = {"Costco — Risk-Free 100% Satisfaction Guarantee","REI — 100% Satisfaction Guarantee (1 Year for Co-op Members)","Zappos — 365-Day Free Returns","Target — 90 Days (1 Year on Target-Owned Brands)","Patagonia — Ironclad Guarantee (repair first)"}
         regular_deals = [d for d in deals if d["name"] not in guarantee_names]
         guarantee_deals = [d for d in deals if d["name"] in guarantee_names]
@@ -1347,6 +1357,57 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         os.makedirs(os.path.join(OUT, "deals"))
         open(os.path.join(OUT, "deals", "index.html"), "w").write(p)
 
+
+    # ---------- free in real life ----------
+    irl = data.get("irl", [])
+    if irl:
+        sections = ""
+        for g in irl:
+            cards = "".join(deal_card(i, cta="Official page →") for i in g["items"])
+            sections += (f'<section><h2 class="irl-h">{esc(g["group"])}</h2>'
+                         f'<p class="irl-blurb">{esc(g["blurb"])}</p>{cards}</section>')
+        irl_faq = [
+            {"@type": "Question", "name": "What free things can you get in real life?",
+             "acceptedAnswer": {"@type": "Answer", "text":
+              "Standing offline programmes: national park fee-free days, museum free days through "
+              "Bank of America's Museums on Us and library museum passes, birthday rewards from "
+              "loyalty programmes, kids-eat-free nights, USDA summer meals for children, "
+              "sliding-scale community health centers, and retail price adjustments you can claim "
+              "after buying."}},
+            {"@type": "Question", "name": "Are birthday freebies real?",
+             "acceptedAnswer": {"@type": "Answer", "text":
+              "Yes. They are attached to loyalty programmes rather than to restaurants, so you join "
+              "the programme, put your birth date in the profile, and the reward posts in your "
+              "birthday month. Join at least 30 days ahead — most programmes require that. Rewards "
+              "usually expire within days and most need another purchase to redeem."}},
+            {"@type": "Question", "name": "When are national parks free in 2026?",
+             "acceptedAnswer": {"@type": "Answer", "text":
+              "The National Park Service waives entrance fees on announced days. The remaining 2026 "
+              "dates are August 25, September 17, October 27 and November 11. The waiver covers the "
+              "entrance fee only — camping, tours and timed-entry reservations still apply."}}]
+        irl_schema = json.dumps({"@context": "https://schema.org", "@graph": [
+            {"@type": "FAQPage", "mainEntity": irl_faq},
+            {"@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"},
+                {"@type": "ListItem", "position": 2, "name": "Free in Real Life",
+                 "item": f"{DOMAIN}/free-in-real-life/"}]}]}, ensure_ascii=False)
+        irl_body = f"""
+<header class="pagehead wrap"><h1>Free in Real Life</h1>
+<p>The same trust layer, off the internet. Standing programmes only — things that are true all year, not this week's circular.</p></header>
+<main class="wrap"><div class="prose">
+<h2>What's here, and what isn't</h2>
+<p>Everything below is a <strong>standing programme</strong>: published dates, a public policy, or a federal entitlement. Those can be verified once and stay verified, which is the only way a "last checked" date means anything.</p>
+<p>What we deliberately don't list: weekly store circulars, flash sales, free-sample-of-the-day sites, and sweepstakes. Those change daily and by zip code, so any page claiming to have checked them is guessing — and that corner of the web is already wall-to-wall affiliate spam with dead links. We'd rather cover less and be right.</p>
+<p>Where a thing genuinely varies by location — kids-eat-free nights, library passes — we say so and tell you how to check yours, instead of printing a national list that's wrong in half the country.</p>
+</div>
+<div class="irl-wrap">{sections}</div>
+<div style="padding-bottom:50px"></div></main>"""
+        p = page_nav("Free in Real Life — Verified Free",
+                     "Free things offline that are true all year: park and museum free days, birthday rewards, kids eat free, health programmes, and retail refunds you can claim.",
+                     "/free-in-real-life/", irl_body,
+                     extra_head=f'<script type="application/ld+json">{irl_schema}</script>')
+        os.makedirs(os.path.join(OUT, "free-in-real-life"))
+        open(os.path.join(OUT, "free-in-real-life", "index.html"), "w").write(p)
 
     # ---------- when to buy ----------
     wtb_body = """
@@ -1607,7 +1668,7 @@ Verified Free
                 shutil.copy2(src_f, os.path.join(OUT, f))
             elif os.path.isdir(src_f):
                 shutil.copytree(src_f, os.path.join(OUT, f), dirs_exist_ok=True)
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
     if comparisons:
         urls.extend(comp_urls[1:])  # skip /compare/ already added
     from datetime import date

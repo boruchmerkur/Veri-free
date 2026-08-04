@@ -378,6 +378,23 @@ body.loc-ca .ca-badge{display:inline-flex}
 .safety .sf-row b{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);flex-shrink:0;width:118px;padding-top:3px}
 .safety .sf-src{border-top:1px solid var(--line);padding-top:11px;margin:14px 0 0;font-size:11.5px;color:var(--muted);font-style:italic}
 @media(max-width:560px){.safety .sf-row{display:block}.safety .sf-row b{width:auto;display:block;margin:0 0 2px}}
+/* "was this verdict right?" */
+.vfb{margin:34px 0 0;border-top:1px solid var(--line);padding:26px 0 0}
+.vfb h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 6px}
+.vfb .vfb-lede{color:var(--muted);font-size:14.5px;line-height:1.6;margin:0 0 14px;max-width:56ch}
+.vfb-opts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.vfb-opt{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--line);border-radius:8px;padding:8px 13px;font-size:14px;cursor:pointer;transition:border-color .12s,background .12s}
+.vfb-opt:hover{border-color:var(--brand)}
+.vfb-opt input{accent-color:var(--brand);margin:0}
+.vfb-opt:has(input:checked){border-color:var(--ink);background:var(--card)}
+.vfb textarea,.vfb input[type=email]{display:block;width:100%;max-width:520px;border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;font:400 15px "Public Sans",sans-serif;color:var(--ink);background:var(--paper);margin:0 0 9px}
+.vfb textarea{height:64px;resize:vertical}
+.vfb textarea:focus,.vfb input[type=email]:focus{outline:2px solid var(--brand);border-color:var(--brand)}
+.vfb button{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13.5px;letter-spacing:.06em;border:2.5px solid var(--ink);border-radius:10px;padding:10px 22px;background:var(--ink);color:var(--paper);cursor:pointer;transition:background .12s,border-color .12s}
+.vfb button:hover{background:var(--brand);border-color:var(--brand)}
+.vfb button:disabled{opacity:.55;cursor:default}
+.vfb .vfb-err{color:#C0392B;font-size:14px;font-weight:600;margin:10px 0 0}
+.vfb .vfb-ty{color:var(--brand);font-size:15px;font-weight:600;margin:0;max-width:56ch;line-height:1.55}
 /* free in real life */
 .irl-wrap{max-width:720px}
 .irl-wrap section{padding:0 0 14px}
@@ -419,6 +436,62 @@ footer{border-top:2.5px solid var(--ink);margin-top:30px}
 :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
 @media(max-width:560px){.facts td.k{width:130px;white-space:normal}.hero{padding-top:52px}}
 """
+
+FEEDBACK_JS = """<script>
+(function(){
+  var f=document.getElementById('vfb');
+  if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.querySelector('input[name=answer]:checked')){
+      f.querySelector('.vfb-err').textContent='Pick one first.';
+      f.querySelector('.vfb-err').style.display='block';return;
+    }
+    var btn=f.querySelector('button[type=submit]');
+    btn.disabled=true;
+    fetch(location.pathname,{method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(new FormData(f)).toString()})
+      .then(function(r){
+        if(!r.ok)throw 0;
+        f.querySelector('.vfb-body').style.display='none';
+        f.querySelector('.vfb-ty').style.display='block';
+      })
+      .catch(function(){
+        var er=f.querySelector('.vfb-err');
+        er.textContent="Couldn't send just now — email hello@veri-free.com instead.";
+        er.style.display='block';btn.disabled=false;
+      });
+  });
+})();
+</script>"""
+
+
+def feedback_form(l, vlabel):
+    """"Was this verdict right?" — Netlify form, one per listing, moderated by hand."""
+    opts = "".join(
+        f'<label class="vfb-opt"><input type="radio" name="answer" value="{v}"><span>{t}</span></label>'
+        for v, t in [("right", "Yes, that matches"),
+                     ("changed", "It's changed since you checked"),
+                     ("wrong", "No — you've got it wrong")])
+    return (f'<form class="vfb" id="vfb" name="verdict-feedback" method="POST" '
+            f'action="/submit/thanks/" data-netlify="true" netlify-honeypot="bot-field">'
+            f'<input type="hidden" name="form-name" value="verdict-feedback">'
+            f'<input type="hidden" name="listing" value="{esc(l["name"])}">'
+            f'<input type="hidden" name="slug" value="{esc(l["slug"])}">'
+            f'<input type="hidden" name="verdict" value="{esc(vlabel)}">'
+            f'<p style="display:none"><label>Leave blank <input name="bot-field"></label></p>'
+            f'<div class="vfb-body"><h2>Was this verdict right?</h2>'
+            f'<p class="vfb-lede">Free tiers change without notice. If you have just used it, '
+            f'you know something we don\'t.</p>'
+            f'<div class="vfb-opts">{opts}</div>'
+            f'<textarea name="note" placeholder="What changed? (optional, but it\'s what makes this useful)"></textarea>'
+            f'<input type="email" name="email" placeholder="Email, only if you want a reply (optional)">'
+            f'<button type="submit">Send</button>'
+            f'<p class="vfb-err" style="display:none"></p></div>'
+            f'<p class="vfb-ty" style="display:none">Thank you — that goes to a human, and if it '
+            f'checks out the page gets re-verified.</p></form>')
+
 
 def deal_card(d, cta="Go to offer →"):
     """Shared card for /deals/ and /free-in-real-life/."""
@@ -1292,7 +1365,9 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 {legit_box(l)}
 {sentiment_box(l)}
 <a class="visit" href="{esc(l['url'])}" target="_blank" rel="noopener">Visit {esc(l['name'])} →</a>
+{feedback_form(l, vlabel)}
 </article>
+{FEEDBACK_JS}
 <section class="related"><h2>More in {esc(ctitle)}</h2><div class="grid">{rel_cards}</div></section>
 </main>"""
         p = page_nav(f"Is {l['name']} Actually Free? ({checked}) — Verified Free",

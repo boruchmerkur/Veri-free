@@ -378,6 +378,18 @@ body.loc-ca .ca-badge{display:inline-flex}
 .safety .sf-row b{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);flex-shrink:0;width:118px;padding-top:3px}
 .safety .sf-src{border-top:1px solid var(--line);padding-top:11px;margin:14px 0 0;font-size:11.5px;color:var(--muted);font-style:italic}
 @media(max-width:560px){.safety .sf-row{display:block}.safety .sf-row b{width:auto;display:block;margin:0 0 2px}}
+/* house ad — sister studio */
+#hoad{position:fixed;left:0;right:0;bottom:0;z-index:900;display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--card);color:var(--ink);border-top:2px solid var(--ink);box-shadow:0 -2px 14px rgba(0,0,0,.07);transform:translateY(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);font-size:14px}
+#hoad.in{transform:none}
+#hoad .ho-lbl{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+#hoad .ho-msg{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink);text-decoration:none;font-weight:600}
+#hoad .ho-msg:hover{text-decoration:underline}
+#hoad .ho-pitch{font-weight:400;color:var(--muted)}
+#hoad .ho-go{flex-shrink:0;border:1.5px solid var(--brand);color:var(--brand);border-radius:999px;padding:4px 15px;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.05em;text-decoration:none}
+#hoad .ho-go:hover{background:var(--brand);color:var(--paper)}
+#hoad .ho-x{background:none;border:0;color:var(--muted);font-size:21px;line-height:1;cursor:pointer;padding:0 2px;flex-shrink:0}
+#hoad .ho-x:hover{color:var(--ink)}
+@media(max-width:620px){#hoad .ho-go{display:none}#hoad .ho-pitch{display:none}}
 /* "was this verdict right?" */
 .vfb{margin:34px 0 0;border-top:1px solid var(--line);padding:26px 0 0}
 .vfb h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 6px}
@@ -620,6 +632,41 @@ def lang_switcher(current="en"):
     return (f'<div class="dropdown langdd"><a href="#" onclick="return false">\U0001F310 {current.upper()}</a>'
             f'<div class="dropdown-menu right"><div class="dd-inner">{items}</div></div></div>')
 
+# House ad for the sister studio. Rendered natively rather than via the shared
+# promo-bar.js so it needs no third-party script and no CSP loosening — the
+# existing policy already permits inline script and dreamsitedesign.com.
+# Same behaviour as the network bar: once per session, dismissible, remembered
+# for 7 days, and it never runs on the pages about DreamSite itself.
+HOUSE_AD = """<div id="hoad" hidden>
+<span class="ho-lbl">From the studio behind this site</span>
+<a class="ho-msg" href="https://dreamsitedesign.com/?ref=veri-free" rel="noopener">DreamSite&nbsp;Design <span class="ho-pitch">— websites built to be found by Google and AI</span></a>
+<a class="ho-go" href="https://dreamsitedesign.com/?ref=veri-free" rel="noopener">Visit</a>
+<button class="ho-x" type="button" aria-label="Dismiss">&times;</button>
+</div>
+<script>
+(function(){
+  var p=location.pathname;
+  if(p.indexOf('dreamsite')>-1||p.indexOf('checkmysite')>-1)return;
+  try{
+    var off=parseInt(localStorage.getItem('vfhoad:off')||'0',10);
+    if(off&&Date.now()-off<6048e5)return;
+    if(sessionStorage.getItem('vfhoad:seen'))return;
+    sessionStorage.setItem('vfhoad:seen','1');
+  }catch(e){}
+  var bar=document.getElementById('hoad');
+  if(!bar)return;
+  bar.hidden=false;
+  // setTimeout, not rAF: rAF never fires in a backgrounded or non-compositing
+  // tab, which would leave the bar parked off-screen at translateY(100%).
+  setTimeout(function(){bar.classList.add('in');},60);
+  bar.querySelector('.ho-x').addEventListener('click',function(){
+    try{localStorage.setItem('vfhoad:off',String(Date.now()));}catch(e){}
+    bar.remove();
+  });
+})();
+</script>"""
+
+
 def page(title, desc, path, body, extra_head="", lang="en"):
     canonical = f"{DOMAIN}{path}"
     langbase = "" if lang == "en" else f' data-langbase="/{lang}"'
@@ -654,6 +701,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
 <span><a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
+{HOUSE_AD}
 <script
   src="https://dreamsitedesign.com/credit.js"
   data-site="verifree"

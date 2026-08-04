@@ -639,7 +639,7 @@ def lang_switcher(current="en"):
 # for 7 days, and it never runs on the pages about DreamSite itself.
 HOUSE_AD = """<div id="hoad" hidden>
 <span class="ho-lbl">From the studio behind this site</span>
-<a class="ho-msg" href="https://dreamsitedesign.com/?ref=veri-free" rel="noopener">DreamSite&nbsp;Design <span class="ho-pitch">— websites built to be found by Google and AI</span></a>
+<a class="ho-msg" href="https://dreamsitedesign.com/?ref=veri-free" rel="noopener">dreamsitedesign.com <span class="ho-pitch">— websites built to be found by Google and AI</span></a>
 <a class="ho-go" href="https://dreamsitedesign.com/?ref=veri-free" rel="noopener">Visit</a>
 <button class="ho-x" type="button" aria-label="Dismiss">&times;</button>
 </div>

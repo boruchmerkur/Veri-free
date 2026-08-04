@@ -9249,6 +9249,536 @@
           "count": "3.6M"
         }
       ]
+    },
+    {
+      "name": "Wikidata & Wikimedia dumps",
+      "category": "data-apis",
+      "url": "https://dumps.wikimedia.org",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "None on the dumps; API has courtesy rate limits",
+      "realcost": "Nothing. A nonprofit publishes its entire database on purpose.",
+      "free_includes": [
+        "The full Wikidata graph as downloadable JSON and RDF",
+        "Complete Wikipedia article dumps in every language",
+        "A live query service (SPARQL) with no key",
+        "CC0 licensing on Wikidata — no attribution required"
+      ],
+      "paid_locked": [
+        "Nothing"
+      ],
+      "short": "Yes, completely. Wikimedia publishes its whole database as free downloads — no key, no account, no rate card. Wikidata is CC0, so you can use it commercially without even crediting it.",
+      "catch": "There is no catch on price. The catch is size: the full dumps run to tens of gigabytes compressed, so you need a plan for storage and parsing before you start.",
+      "worth": "A commercial knowledge graph of this scope is a five-figure annual licence. This is a free download.",
+      "smart_moves": [
+        "Take the truthy subset rather than the full dump unless you need history — it's a fraction of the size",
+        "Use the SPARQL endpoint for exploring, dumps for production — the endpoint has timeouts by design",
+        "Mirror from a regional mirror rather than hammering the primary server"
+      ],
+      "free_score": 100,
+      "value_score": 9,
+      "get_summary": "In practice: the single best free structured-data source on the internet, and the one most projects should start from.",
+      "drawbacks": [
+        "Full dumps are large enough to need real disk and real patience",
+        "Data quality varies by topic — it's crowd-maintained",
+        "The query service enforces timeouts on expensive queries"
+      ],
+      "more_info": [
+        [
+          "Why CC0 matters more than it sounds",
+          "Most 'open' data carries a share-alike or attribution licence that quietly infects whatever you build with it. Wikidata is CC0 — public domain dedication — so it can go into a commercial product with no licence obligations at all. That is rarer than it should be, and it is the reason Wikidata ends up underneath so many other services."
+        ],
+        [
+          "Dumps versus the API",
+          "The API and query service are for exploring and for light live lookups; they are rate-limited as a courtesy to everyone else. If your job is bulk — building an index, training something, joining against your own data — take the dump. Downloading once is kinder and faster than a million polite requests."
+        ]
+      ]
+    },
+    {
+      "name": "OpenStreetMap",
+      "category": "data-apis",
+      "url": "https://www.openstreetmap.org",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "Only to edit",
+      "limits": "None on the data; tile servers have a usage policy",
+      "realcost": "Nothing. Attribution under the ODbL licence is the only obligation.",
+      "free_includes": [
+        "The entire world map as downloadable data (planet file and regional extracts)",
+        "Geocoding through Nominatim with no key",
+        "Routing, tiles and editing tools built on top",
+        "Commercial use permitted under ODbL"
+      ],
+      "paid_locked": [
+        "Nothing — though hosted providers sell convenience on top"
+      ],
+      "short": "Yes. The map data is free to download and free to use commercially, with attribution. It's the reason a mapping product doesn't have to mean a Google bill.",
+      "catch": "The data is free; serving it at scale is not. The community tile and geocoding servers run on donations and have a usage policy — build anything real and you self-host or pay a hosting provider.",
+      "worth": "The direct replacement for Google Maps Platform, whose bills start at zero and don't stay there.",
+      "smart_moves": [
+        "Take a regional extract from Geofabrik rather than the whole planet file",
+        "Never point a production app at the community Nominatim or tile servers — that's the one rule everyone breaks",
+        "ODbL is share-alike for derived databases; read it before you mix it into a proprietary dataset"
+      ],
+      "free_score": 96,
+      "value_score": 9,
+      "get_summary": "In practice: the world's map, yours to download, with a licence that permits business use.",
+      "drawbacks": [
+        "Coverage quality varies sharply by region",
+        "Self-hosting tiles or geocoding is real infrastructure work",
+        "ODbL's share-alike terms need reading if you're building a product"
+      ],
+      "more_info": [
+        [
+          "The usage policy is the actual catch",
+          "The free community servers exist so people can learn and prototype. Pointing an app with real users at them will get you blocked, and rightly — you'd be spending a donation-funded budget. Either self-host, or use one of the commercial OSM hosts, which are still typically far cheaper than the proprietary alternatives."
+        ],
+        [
+          "ODbL versus CC0",
+          "OpenStreetMap is share-alike: if you build a derived database and distribute it, that derived database has to carry the same licence. Using OSM to draw a map in your product is fine and normal. Merging OSM into a proprietary dataset you then sell is where you need legal advice."
+        ]
+      ]
+    },
+    {
+      "name": "data.gov",
+      "category": "data-apis",
+      "url": "https://data.gov",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "None; some agency APIs ask for a free key",
+      "realcost": "Nothing. It's published by the US government and mostly public domain.",
+      "free_includes": [
+        "Hundreds of thousands of federal, state and local datasets",
+        "Census, weather, health, transport, energy and spending data",
+        "A free api.data.gov key covering many agency APIs",
+        "US federal works are generally public domain — no licence fee, no attribution requirement"
+      ],
+      "paid_locked": [
+        "Nothing"
+      ],
+      "short": "Yes. It's the US government's own data catalogue — free to download, free to use commercially, and mostly public domain because taxpayers already paid for it.",
+      "catch": "No price catch. The catch is condition: it's a catalogue pointing at hundreds of agencies, so formats are inconsistent, some links rot, and 'available' doesn't always mean 'clean'.",
+      "worth": "Commercial vendors repackage this exact data and charge subscriptions for it.",
+      "smart_moves": [
+        "Get one api.data.gov key — it works across many agencies instead of one per API",
+        "Go to the agency directly for anything you'll rely on; the catalogue entry can lag the source",
+        "Check the update cadence before building on a dataset — some are live, some were published once in 2019"
+      ],
+      "free_score": 100,
+      "value_score": 8,
+      "get_summary": "In practice: an enormous, free, legally unencumbered dataset library — if you're willing to do the cleaning.",
+      "drawbacks": [
+        "Wildly inconsistent formats and documentation between agencies",
+        "Dead links and stale datasets are common",
+        "Mostly US-focused"
+      ],
+      "more_info": [
+        [
+          "Public domain is the quiet superpower",
+          "Works of the US federal government generally carry no copyright, which means no licence, no attribution clause, and nothing to negotiate before putting the data in a commercial product. Very little other data comes this unencumbered — check the specific dataset, since state, local and contractor-produced data can differ."
+        ],
+        [
+          "Treat the catalogue as an index, not a source",
+          "data.gov catalogues what agencies publish; it doesn't host or maintain most of it. For anything going into production, find the agency's own endpoint and subscribe to its update notices, so a schema change doesn't quietly break you."
+        ]
+      ]
+    },
+    {
+      "name": "OpenAlex",
+      "category": "data-apis",
+      "url": "https://openalex.org",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "Generous rate limits; add your email for the polite pool",
+      "realcost": "Nothing. Nonprofit-run, CC0 licensed, with the full dataset downloadable.",
+      "free_includes": [
+        "Metadata for hundreds of millions of scholarly works, authors and institutions",
+        "A full REST API with no key required",
+        "The complete dataset as a downloadable snapshot",
+        "CC0 licensing — no restrictions on reuse"
+      ],
+      "paid_locked": [
+        "Premium support and higher-throughput access for institutions"
+      ],
+      "short": "Yes. An open replacement for the paid scholarly databases — full API, no key, no account, and the entire dataset downloadable under CC0.",
+      "catch": "None on price. Metadata coverage is broad but imperfect, and it indexes records rather than hosting the papers themselves.",
+      "worth": "The commercial equivalents (Scopus, Web of Science) are institutional subscriptions costing tens of thousands a year.",
+      "smart_moves": [
+        "Put your email in the API call to land in the faster 'polite pool' — it's free and it helps them contact you if you misbehave",
+        "Take the snapshot for bulk work rather than paginating the API for days",
+        "Cross-check against Crossref for anything where a single record matters"
+      ],
+      "free_score": 98,
+      "value_score": 8,
+      "get_summary": "In practice: the scholarly-metadata layer that used to require a university library subscription.",
+      "drawbacks": [
+        "Metadata quality varies, especially author disambiguation",
+        "Indexes metadata, not full text",
+        "Younger and less curated than the paid incumbents"
+      ],
+      "more_info": [
+        [
+          "It exists because the old one was bought",
+          "OpenAlex was built after Microsoft Academic Graph was discontinued, on the view that the scholarly record shouldn't depend on one company's product roadmap. That origin is the argument for using it: it's structured to be forkable, because the data is CC0 and downloadable in full."
+        ]
+      ]
+    },
+    {
+      "name": "Common Crawl",
+      "category": "data-apis",
+      "url": "https://commoncrawl.org",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "None from Common Crawl; your own storage and egress are the limit",
+      "realcost": "Nothing to access. Processing petabytes is where your money goes.",
+      "free_includes": [
+        "Petabytes of crawled web pages, updated monthly",
+        "Raw pages, extracted text and metadata indexes",
+        "Free access from public cloud storage",
+        "No licence fee and no usage agreement to sign"
+      ],
+      "paid_locked": [
+        "Nothing — but compute to process it is on you"
+      ],
+      "short": "Yes, the archive is genuinely free. What isn't free is the compute and bandwidth to do anything with several petabytes of it.",
+      "catch": "The download costs nothing and the processing costs plenty. Pulling a full monthly crawl out of cloud storage can generate a serious egress bill — with the wrong setup that's a four-figure surprise.",
+      "worth": "The raw material behind a great many search and AI products, given away by a nonprofit.",
+      "smart_moves": [
+        "Use the URL index to fetch only the pages you want instead of downloading crawls whole",
+        "Run your processing in the same cloud region as the data so egress stays near zero",
+        "Start with the extracted-text files rather than raw WARC unless you need the HTML"
+      ],
+      "free_score": 95,
+      "value_score": 8,
+      "get_summary": "In practice: a free, enormous snapshot of the public web — for people who already know how to handle data at that scale.",
+      "drawbacks": [
+        "Scale makes casual use impractical",
+        "Careless egress can cost real money — the data is free, moving it isn't",
+        "Crawl coverage is broad but not complete"
+      ],
+      "more_info": [
+        [
+          "The free thing that can still generate a bill",
+          "This is the clearest example on the site of free data with an expensive shadow. Common Crawl charges nothing. Your cloud provider charges for every byte leaving its network. Process in-region, filter with the index first, and the bill stays near zero — do it naively and it won't."
+        ]
+      ]
+    },
+    {
+      "name": "Hugging Face Datasets",
+      "category": "data-apis",
+      "url": "https://huggingface.co/datasets",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "Optional for public data",
+      "limits": "Fair-use bandwidth; private storage and compute are paid",
+      "realcost": "An account for some downloads. The hosting is subsidised by the paid business.",
+      "free_includes": [
+        "Hundreds of thousands of public datasets, downloadable",
+        "Free hosting for your own public datasets",
+        "A streaming loader so you needn't download everything",
+        "Dataset cards documenting licence and provenance"
+      ],
+      "paid_locked": [
+        "Private repositories beyond the free allowance",
+        "Hosted inference and GPU compute",
+        "Enterprise access controls and support"
+      ],
+      "short": "Yes for using and publishing public datasets — that part is free and has stayed free. The paid business is compute and private storage, not access.",
+      "catch": "Free hosting is subject to fair use, and 'fair use' is defined by the company, not by a published number. Also: the platform is free, but each dataset carries its own licence, and plenty are non-commercial.",
+      "worth": "Free CDN-backed hosting for large datasets, which would otherwise be a real storage bill.",
+      "smart_moves": [
+        "Read the dataset card's licence before commercial use — the platform being free says nothing about the data",
+        "Use streaming mode for large datasets instead of downloading the whole thing",
+        "Keep a copy of anything critical; a dataset repo can be taken down by its owner"
+      ],
+      "free_score": 84,
+      "value_score": 8,
+      "get_summary": "In practice: the default place to find, download and publish machine-learning datasets, free.",
+      "drawbacks": [
+        "Fair-use limits aren't published as hard numbers",
+        "Dataset licences vary enormously and some are restrictive",
+        "Datasets can disappear when their owner removes them"
+      ],
+      "more_info": [
+        [
+          "The platform's licence is not the data's licence",
+          "This trips people constantly. Hugging Face being free to use tells you nothing about whether a given dataset may be used commercially — that is set by whoever uploaded it, on the dataset card. Non-commercial and research-only terms are common. Check per dataset, every time."
+        ]
+      ]
+    },
+    {
+      "name": "Open-Meteo",
+      "category": "data-apis",
+      "url": "https://open-meteo.com",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "Free for non-commercial use under a daily call allowance",
+      "realcost": "Nothing for personal and non-commercial projects. Commercial use is a paid plan.",
+      "free_includes": [
+        "Weather forecasts and historical data with no API key at all",
+        "Global coverage from national weather-service models",
+        "Historical reanalysis going back decades",
+        "Open-source code and open data licensing"
+      ],
+      "paid_locked": [
+        "Commercial use",
+        "Higher call volumes and guaranteed uptime"
+      ],
+      "short": "Yes for non-commercial use, and unusually so — there is no API key, no signup and no card. You call the URL and get weather back.",
+      "catch": "The free tier is non-commercial. If it's inside a product you make money from, you're on a paid plan — that boundary is stated plainly rather than hidden, which is more than the incumbent manages.",
+      "worth": "The main alternative gates comparable data behind an account, a key, and a card on file.",
+      "smart_moves": [
+        "No key means you can test it from a browser address bar in ten seconds",
+        "Cache responses — the daily allowance is generous but not infinite",
+        "If the project starts earning, move to the commercial plan; the terms are clear"
+      ],
+      "free_score": 94,
+      "value_score": 8,
+      "get_summary": "In practice: weather data with the lowest barrier to entry of anything in this category.",
+      "drawbacks": [
+        "Non-commercial only on the free tier",
+        "No uptime guarantee without a paid plan",
+        "Smaller operation than the incumbents"
+      ],
+      "more_info": [
+        [
+          "Why 'no API key' is worth noticing",
+          "Requiring a key isn't a technical necessity; it's the hook that attaches your usage to an account, and eventually to a card. A service that answers without one has given up that hook deliberately. It's the clearest signal in this category that the free tier is meant to be used rather than converted."
+        ]
+      ]
+    },
+    {
+      "name": "Supabase",
+      "category": "data-apis",
+      "url": "https://supabase.com",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "Required",
+      "limits": "2 active projects; 500MB database; pauses after a week idle",
+      "realcost": "An account, and the pausing rule. No card for the free plan.",
+      "free_includes": [
+        "A real hosted Postgres database with an auto-generated API",
+        "Authentication, file storage and realtime subscriptions",
+        "Unlimited API requests",
+        "Two active projects at once"
+      ],
+      "paid_locked": [
+        "More than two active projects",
+        "Databases beyond the free size and no idle pausing",
+        "Daily backups, log retention and support"
+      ],
+      "short": "Yes — a genuinely usable free tier with a real Postgres database, no card required. The limits that matter are two active projects and a pause after a week of inactivity.",
+      "catch": "Free projects pause after about a week with no activity. Nothing is deleted and you can wake it up, but a side project you visit monthly will greet you asleep — and so will your users.",
+      "worth": "A managed Postgres instance with auth and storage is otherwise $15–25/month at the low end.",
+      "smart_moves": [
+        "Anything with real users needs the paid tier — the pause rule alone makes free unsuitable for production",
+        "Two active projects is the real ceiling; archive rather than accumulate",
+        "Take your own backups on free — daily backups are a paid feature"
+      ],
+      "free_score": 76,
+      "value_score": 8,
+      "get_summary": "In practice: a full backend for prototypes and small tools, free, provided nothing depends on it being awake.",
+      "drawbacks": [
+        "Idle projects pause, which rules out low-traffic production use",
+        "Only two active projects",
+        "No automatic backups on the free plan"
+      ],
+      "more_info": [
+        [
+          "The pause rule, plainly",
+          "A week without activity and the project suspends. You can restore it from the dashboard and the data is intact, but the first visitor after a quiet week meets an error rather than your app. For learning, prototyping and internal tools that's fine. For anything a stranger might load, it isn't."
+        ]
+      ]
+    },
+    {
+      "name": "Firebase",
+      "category": "data-apis",
+      "url": "https://firebase.google.com",
+      "verdict": "freeish",
+      "card": "Not for Spark; required for Blaze",
+      "autobill": "Yes on Blaze — usage-based, no hard cap by default",
+      "account": "Google account required",
+      "limits": "Spark plan quotas; several services need the paid plan at all",
+      "realcost": "Free until you need a feature Spark doesn't carry — then it's metered billing.",
+      "free_includes": [
+        "The Spark plan: a hosted database, authentication and hosting at small scale",
+        "Generous free quotas for a prototype or small app",
+        "No card required to stay on Spark"
+      ],
+      "paid_locked": [
+        "Cloud Functions and several other services require the Blaze plan",
+        "Any usage above the Spark quotas",
+        "Outbound networking from functions"
+      ],
+      "short": "Free to start and genuinely usable at small scale — but the moment you need cloud functions or outgrow the quotas, you move to metered billing with a card attached.",
+      "catch": "The real risk isn't the upgrade, it's what the upgrade means: Blaze bills by usage with no hard spending cap by default. A loop in your code or a burst of traffic bills you for it, and the budget alert tells you afterwards.",
+      "worth": "The free quotas genuinely cover a prototype. The danger is the shape of the plan above them.",
+      "smart_moves": [
+        "Set a budget alert the same hour you enable Blaze — before you write any code against it",
+        "Alerts notify; they don't stop spend. If a hard ceiling matters, add a function that disables billing when the budget trips",
+        "Supabase's free tier covers a lot of the same ground without metered billing at all"
+      ],
+      "free_score": 58,
+      "value_score": 6,
+      "get_summary": "In practice: a strong free prototype tier attached to a pay-as-you-go plan that has no brakes fitted as standard.",
+      "drawbacks": [
+        "Blaze bills by usage with no default hard cap",
+        "Core features like functions aren't available on the free plan at all",
+        "Deep lock-in — moving off Firebase later is a rewrite"
+      ],
+      "more_info": [
+        [
+          "Budget alerts are not spending limits",
+          "This is the single most important thing to understand before enabling Blaze. A budget in Google Cloud sends a notification when you cross a threshold — it does not stop the meter. Capping spend for real requires wiring the alert to something that actually disables billing. Plenty of people have learned this from an invoice."
+        ],
+        [
+          "Lock-in is the other price",
+          "Firebase's database and auth aren't standards you can pick up and move. That is fine while you're small and it is the reason migrations off it are projects rather than afternoons. Weigh that at the start, when switching is still cheap."
+        ]
+      ]
+    },
+    {
+      "name": "Google Maps Platform",
+      "category": "data-apis",
+      "url": "https://developers.google.com/maps",
+      "verdict": "freeish",
+      "card": "Yes — a billing account is required for a key",
+      "autobill": "Yes — pay-as-you-go above the free caps",
+      "account": "Google Cloud project required",
+      "limits": "Per-service monthly free caps, replacing the old flat credit",
+      "realcost": "A card on file from day one, and a bill the month your traffic grows.",
+      "free_includes": [
+        "A monthly free allowance per service — commonly 10,000 calls on the core APIs",
+        "Some services, including embedded maps, free without a cap",
+        "The full API surface while you're inside the allowance"
+      ],
+      "paid_locked": [
+        "Everything above each service's monthly free cap"
+      ],
+      "short": "Free up to a monthly allowance per service — but you attach a card before you get a key, and everything past the allowance bills automatically.",
+      "catch": "The structure changed in 2025: the old single monthly credit became a per-service free cap. Nobody is deceiving you, but 'free tier' here means a metered account with a card attached, not a free product.",
+      "worth": "Real value inside the caps. The reason this listing exists is what happens outside them.",
+      "smart_moves": [
+        "Set API restrictions on the key immediately — an unrestricted key found in your frontend gets used by strangers, and billed to you",
+        "Set quota limits per API in the console; those are hard caps, unlike budget alerts",
+        "For a static map or a handful of lookups, OpenStreetMap does it with no card at all"
+      ],
+      "free_score": 44,
+      "value_score": 6,
+      "get_summary": "In practice: excellent data, metered from the first day, with the free allowance as the on-ramp.",
+      "drawbacks": [
+        "A billing account with a card is required before you can start",
+        "Overages bill automatically",
+        "A leaked or unrestricted key is billed to you, not the person using it"
+      ],
+      "more_info": [
+        [
+          "Restrict the key on day one",
+          "Maps keys live in frontend code where anyone can read them. An unrestricted key can be lifted and used by strangers against your billing account. Restrict by HTTP referrer or IP and by API, and set per-API quota caps — those are real ceilings, where a budget alert is only a message."
+        ],
+        [
+          "What changed in 2025",
+          "The long-standing flat monthly credit was replaced with per-service free caps. For small users the practical result is broadly similar; for anyone modelling costs, the arithmetic is different, so recalculate against the current SKU table rather than the figure you remember."
+        ]
+      ]
+    },
+    {
+      "name": "Reddit API",
+      "category": "data-apis",
+      "url": "https://www.reddit.com/dev/api/",
+      "verdict": "freeish",
+      "card": "No for the free tier",
+      "autobill": "—",
+      "account": "Reddit account and registered app required",
+      "limits": "Rate-limited free access for non-commercial use; commercial access is priced",
+      "realcost": "Free for small non-commercial use. Commercial or high-volume access is a negotiated bill.",
+      "free_includes": [
+        "Rate-limited API access for non-commercial projects",
+        "Reading public posts and comments",
+        "Building personal tools and research scripts"
+      ],
+      "paid_locked": [
+        "Commercial use",
+        "High-volume access",
+        "Anything at the scale a real app needs"
+      ],
+      "short": "Free for small, non-commercial use under rate limits. Commercial and high-volume access is priced — which is what ended the third-party app ecosystem in 2023.",
+      "catch": "This is the site's thesis with a body count. The API was effectively free for years, third-party apps were built on it, and 2023 pricing shut them down within weeks. The free tier that remains is real, but it is sized for hobbies, not products.",
+      "worth": "Still genuinely useful for research and personal tools. Not a foundation to build a business on.",
+      "smart_moves": [
+        "Fine for a personal script or a research project — that's what the free tier is for",
+        "Don't architect anything commercial around it without pricing the commercial tier first",
+        "Cache aggressively; the rate limits are the binding constraint long before anything else"
+      ],
+      "free_score": 52,
+      "value_score": 6,
+      "get_summary": "In practice: a usable free tier for personal and research work, on a platform that has already demonstrated it will reprice.",
+      "drawbacks": [
+        "Commercial use requires paid access",
+        "Rate limits make real applications impractical on free",
+        "A demonstrated history of changing terms with little notice"
+      ],
+      "more_info": [
+        [
+          "What 2023 actually proved",
+          "Apollo, Reddit is Fun and others were long-established apps with paying users. New API pricing made them unviable and they shut down within weeks. Nothing about it was illegal or even hidden — which is the point. A free tier is a business decision that can be reversed, and building on one without a migration plan is a bet on someone else's roadmap."
+        ]
+      ]
+    },
+    {
+      "name": "X (Twitter) API",
+      "category": "data-apis",
+      "url": "https://developer.x.com",
+      "verdict": "notfree",
+      "card": "Yes",
+      "autobill": "Yes — billed per call",
+      "account": "Developer account required",
+      "limits": "No free tier for new developers",
+      "realcost": "Metered from the first call. The old free tier is closed to new signups.",
+      "free_includes": [
+        "Nothing for new developers"
+      ],
+      "paid_locked": [
+        "Reading posts",
+        "Posting",
+        "Search",
+        "Everything"
+      ],
+      "short": "No. The free tier is closed to new developers — X moved to pay-per-use in February 2026, so access is metered from your first call.",
+      "catch": "There's no deception, just a closed door. What makes it worth a listing is the trajectory: a famously open free API became $100/month, then $200, then tiers, then metered — inside three years. People still arrive expecting the old one.",
+      "worth": "Nothing at zero. Price it as a paid data source or use something else.",
+      "smart_moves": [
+        "If a tutorial shows a free tier, check its date — anything before 2026 describes a product that no longer exists",
+        "Academic access has been repeatedly restricted; don't assume a research exemption",
+        "For social data generally, Reddit's free tier and Mastodon's open API are what remain"
+      ],
+      "free_score": 4,
+      "value_score": 2,
+      "get_summary": "In practice: a paid data product. Budget for it or design around it.",
+      "drawbacks": [
+        "No free tier for new developers",
+        "Pricing has changed repeatedly and abruptly",
+        "Existing subscribers have been migrated to metered billing"
+      ],
+      "more_info": [
+        [
+          "The clearest free-tier death in tech",
+          "Until 2023 the API was free enough that an entire ecosystem of clients, research projects and bots ran on it. Then free access ended, paid tiers appeared and were repriced more than once, and in February 2026 the tiers themselves gave way to pay-per-use with no free option for new developers. If you want one example of why this site puts a date on every verdict, it is this one."
+        ]
+      ]
     }
   ],
   "deals": [

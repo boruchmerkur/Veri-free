@@ -29,6 +29,7 @@ CATS = {
     "money-finance": ("Finance", "'Free' financial apps always get paid somehow. Here's how, for each one."),
     "earn": ("Earn", "Legitimate ways to earn money online — verified, with the scams exposed."),
     "reviews": ("Reviews", "The review platforms themselves, rated — whose trust do they actually serve?"),
+    "data-apis": ("Data & APIs", "Datasets, dumps and developer APIs — which free tiers are real, and which ones died."),
     "leisure": ("Leisure", "Free things to do and the deal platforms behind the rest — museums, meetups, Groupon, and your library."),
 }
 
@@ -609,6 +610,7 @@ ICONS = {
     "money-finance": '<img src="/icons/money-finance.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
     "earn": '<img src="/icons/money-finance.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
     "reviews": '<img src="/icons/reviews.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
+    "data-apis": '<img src="/icons/software-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
     "leisure": '<img src="/icons/leisure.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
 }
 

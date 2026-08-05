@@ -20,7 +20,7 @@ whether an icon works — that's how it renders in the nav.
 import os
 import sys
 
-from PIL import Image
+from PIL import Image, ImageFilter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(HERE, "assets", "icons")
@@ -30,6 +30,7 @@ FILL = 0.55            # glyph's long edge as a share of the canvas
 PAPER = (242, 239, 233)  # #F2EFE9
 INK = (52, 83, 31)       # #34531F
 INK_AT = 165           # luminance at or below this is fully ink
+INK_HARD = 140         # strict cut used for the crop box (ignores paper texture)
 PAPER_AT = 225         # luminance at or above this is fully background
 
 
@@ -51,7 +52,14 @@ def conform(src, label=""):
     alpha = src.point(lambda v: 255 if v <= INK_AT else
                       (0 if v >= PAPER_AT else int(255 * (PAPER_AT - v) / span)))
 
-    box = alpha.getbbox()
+    # Crop from a STRICT mask, not the soft one. Generated art carries paper
+    # texture that dips just under the soft threshold, and a few stray specks
+    # in the corners blow the bbox out to the whole cell — which silently
+    # shrinks the glyph instead of failing. Median filter kills the specks;
+    # the hard cut ignores anything that isn't solid ink.
+    hard = src.point(lambda v: 255 if v <= INK_HARD else 0).filter(
+        ImageFilter.MedianFilter(3))
+    box = hard.getbbox()
     if not box:
         return None
     alpha = alpha.crop(box)

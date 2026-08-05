@@ -608,9 +608,9 @@ ICONS = {
     "entertainment": '<img src="/icons/entertainment.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
     "books-reading": '<img src="/icons/books-reading.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
     "money-finance": '<img src="/icons/money-finance.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
-    "earn": '<img src="/icons/money-finance.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
+    "earn": '<img src="/icons/earn.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
     "reviews": '<img src="/icons/reviews.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
-    "data-apis": '<img src="/icons/software-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
+    "data-apis": '<img src="/icons/data-apis.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
     "leisure": '<img src="/icons/leisure.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
 }
 

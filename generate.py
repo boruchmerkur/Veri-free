@@ -379,6 +379,36 @@ body.loc-ca .ca-badge{display:inline-flex}
 .safety .sf-row b{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);flex-shrink:0;width:118px;padding-top:3px}
 .safety .sf-src{border-top:1px solid var(--line);padding-top:11px;margin:14px 0 0;font-size:11.5px;color:var(--muted);font-style:italic}
 @media(max-width:560px){.safety .sf-row{display:block}.safety .sf-row b{width:auto;display:block;margin:0 0 2px}}
+/* /now/ — the stream */
+.streamwrap{padding-top:18px}
+.st-strip{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;padding:0 0 20px;border-bottom:2.5px solid var(--ink);margin-bottom:22px;font-size:14.5px;color:var(--muted)}
+.st-strip span:nth-child(2){flex:1;min-width:260px;max-width:70ch}
+.st-live{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.16em;color:#B3261E;border:1.5px solid #B3261E;border-radius:5px;padding:2px 7px}
+.st-when{font-family:"IBM Plex Mono",monospace;font-size:11.5px}
+.stream{columns:3;column-gap:20px}
+@media(max-width:980px){.stream{columns:2}}
+@media(max-width:620px){.stream{columns:1}}
+.st-card{break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;display:inline-block;width:100%;margin:0 0 20px;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);transition:border-color .12s}
+.st-card:hover{border-color:var(--ink)}
+.st-art{margin:0;line-height:0;background:var(--paper)}
+.st-art img{width:100%;height:auto;display:block}
+.st-body{padding:14px 16px 15px}
+.st-tags{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px}
+.st-tag{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.11em;color:var(--brand);border:1.5px solid var(--brand);border-radius:4px;padding:2px 6px}
+.st-card h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:18px;line-height:1.24;letter-spacing:-.01em;margin:0 0 8px}
+.st-card h3 a{color:var(--ink);text-decoration:none}
+.st-card h3 a:hover{color:var(--brand)}
+.st-vid{color:var(--brand);margin-right:6px;font-size:14px}
+.st-sum{font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 10px}
+.st-meta{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0}
+/* text-only items still have to carry the page, so they lead with type */
+.st-card.notart .st-body{padding:18px 18px 17px;border-left:4px solid var(--ink)}
+.st-card.notart h3{font-size:21px}
+.st-card.notart .st-sum{font-size:14.5px;color:var(--ink)}
+.st-card.lead{border-color:var(--ink);border-width:2.5px}
+.st-card.lead h3{font-size:25px}
+.st-card.lead .st-sum{font-size:15px}
+.st-foot{max-width:70ch;margin:14px 0 54px;font-size:12.5px;line-height:1.6;color:var(--muted);font-style:italic}
 /* house ad — sister studio */
 #hoad{position:fixed;left:0;right:0;bottom:0;z-index:900;display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--card);color:var(--ink);border-top:2px solid var(--ink);box-shadow:0 -2px 14px rgba(0,0,0,.07);transform:translateY(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);font-size:14px}
 #hoad.in{transform:none}
@@ -701,7 +731,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/now/">Now</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {HOUSE_AD}
 <script
@@ -913,6 +943,7 @@ def build():
            f'<div class="dropdown"><a href="/#categories">Categories</a>'
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
            f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
+           f'<a href="/now/">Now</a>'
            f'<a href="/deals/">Deals</a>'
            f'<a href="/free-in-real-life/">Real Life</a>'
            f'<a href="/compare/">Compare</a>'
@@ -1483,6 +1514,64 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         open(os.path.join(OUT, "deals", "index.html"), "w").write(p)
 
 
+    # ---------- /now/ — the stream ----------
+    snap_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "feed_snapshot.json")
+    stream = {}
+    if os.path.exists(snap_path):
+        stream = json.load(open(snap_path, encoding="utf-8"))
+    if stream.get("items"):
+        import datetime as _dt
+
+        def ago(iso):
+            if not iso:
+                return ""
+            try:
+                d = _dt.datetime.fromisoformat(iso)
+            except ValueError:
+                return ""
+            secs = (_dt.datetime.now(_dt.timezone.utc) - d).total_seconds()
+            if secs < 3600:
+                return f"{int(secs // 60)}m ago"
+            if secs < 86400:
+                return f"{int(secs // 3600)}h ago"
+            return f"{int(secs // 86400)}d ago"
+
+        def stream_card(it, lead=False):
+            img = ""
+            if it.get("image"):
+                img = (f'<div class="st-art"><img src="{esc(it["image"])}" alt="" loading="lazy" '
+                       f'referrerpolicy="no-referrer"></div>')
+            tags = "".join(f'<span class="st-tag">{esc(t)}</span>' for t in it.get("tags", []))
+            vid = '<span class="st-vid">▶</span>' if it.get("kind") == "video" else ""
+            cls = "st-card lead" if lead else "st-card"
+            if not it.get("image"):
+                cls += " notart"
+            return (f'<article class="{cls}">{img}'
+                    f'<div class="st-body"><div class="st-tags">{tags}</div>'
+                    f'<h3><a href="{esc(it["url"])}" target="_blank" rel="noopener nofollow">{vid}'
+                    f'{esc(it["title"])}</a></h3>'
+                    f'<p class="st-sum">{esc(it.get("summary", ""))}</p>'
+                    f'<p class="st-meta">{esc(it["source"])} · {esc(ago(it.get("date")))}</p>'
+                    f'</div></article>')
+
+        items = stream["items"]
+        cards = "".join(stream_card(it, lead=(i == 0)) for i, it in enumerate(items))
+        srcs = len({i["source"] for i in items})
+        now_body = f"""
+<main class="wrap streamwrap">
+<div class="st-strip"><span class="st-live">LIVE</span>
+<span>Price rises, dead free tiers, cancellations and enforcement — pulled from {srcs} sources and filtered to this site's beat.</span>
+<span class="st-when">Updated {esc(ago(stream.get("updated")))}</span></div>
+<div class="stream">{cards}</div>
+<p class="st-foot">Headlines and summaries belong to the publications linked. We select and label; we don't rewrite.
+Nothing here carries a Verified Free verdict — for those, start with the <a href="/#categories">categories</a>.</p>
+</main>"""
+        p = page_nav("What changed this week — Verified Free",
+                     "A filtered stream of price rises, dead free tiers, shutdowns and consumer enforcement.",
+                     "/now/", now_body)
+        os.makedirs(os.path.join(OUT, "now"), exist_ok=True)
+        open(os.path.join(OUT, "now", "index.html"), "w").write(p)
+
     # ---------- free in real life ----------
     irl = data.get("irl", [])
     if irl:
@@ -1793,7 +1882,7 @@ Verified Free
                 shutil.copy2(src_f, os.path.join(OUT, f))
             elif os.path.isdir(src_f):
                 shutil.copytree(src_f, os.path.join(OUT, f), dirs_exist_ok=True)
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/now/", f"{DOMAIN}/deals/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
     if comparisons:
         urls.extend(comp_urls[1:])  # skip /compare/ already added
     from datetime import date

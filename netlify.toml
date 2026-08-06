@@ -1,5 +1,5 @@
 [build]
-  command = "pip install pillow && python3 selfhost_favicons.py && python3 generate.py"
+  command = "pip install pillow && python3 selfhost_favicons.py && python3 feeds.py && python3 generate.py"
   publish = "site"
 
 [build.environment]

@@ -69,6 +69,15 @@ a{color:inherit}
 .nav-links{display:flex;gap:18px;align-items:center;height:52px}
 .nav-links a{font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);line-height:52px}
 .nav-links a:hover{color:var(--ink)}
+/* The nav row has never had a small-screen rule, so it simply overflowed the
+   page — adding a link made that visible. Let it scroll instead of pushing
+   the document wider than the viewport. */
+@media(max-width:820px){
+.nav-in{gap:12px}
+.nav-links{gap:15px;flex:1;min-width:0;overflow-x:auto;justify-content:flex-end;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{white-space:nowrap}
+}
 .dropdown{position:relative;height:52px;display:flex;align-items:center}
 .dropdown>a{line-height:52px}
 .dropdown>a::after{content:" ▾";font-size:11px}
@@ -132,15 +141,17 @@ a{color:inherit}
 @media(max-width:768px){.side-legend{display:none}}
 /* legacy hidden */
 .legend{display:none}
-.hero{padding:72px 0 40px;text-align:left}
-.hero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(42px,7.2vw,84px);line-height:.98;letter-spacing:-.02em;max-width:14ch}
+.hero{padding:26px 0 14px;text-align:left}
+.hero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(30px,3.8vw,46px);line-height:1;letter-spacing:-.02em;margin:0}
+.hero-top{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 13px}
+.hero-line{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:3px 26px;margin:9px 0 0}
 .hero h1 em{font-style:normal;color:var(--brand)}
 .hero h1 .amp{font-family:"Bricolage Grotesque",sans-serif;font-weight:300;font-style:italic;opacity:.5;font-size:.85em}
-.hero .tagline{font-family:"IBM Plex Mono",monospace;font-size:clamp(14px,2vw,18px);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin:8px 0 0;opacity:.7}
-.hero p.sub{margin:22px 0 0;font-size:18px;color:var(--muted);max-width:56ch}
+.hero .tagline{font-family:"IBM Plex Mono",monospace;font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin:0;opacity:.7}
+.hero p.sub{margin:0;font-size:16px;color:var(--muted);max-width:60ch}
 .hero p.sub strong{color:var(--ink);font-weight:600}
-.stats{font-family:"IBM Plex Mono",monospace;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:14px}
-.searchbar{margin:30px 0 8px;display:flex;align-items:center;gap:0;max-width:640px;border:2.5px solid var(--ink);border-radius:12px;background:var(--card);overflow:hidden}
+.stats{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0;white-space:nowrap}
+.searchbar{margin:15px 0 6px;display:flex;align-items:center;gap:0;max-width:640px;border:2.5px solid var(--ink);border-radius:12px;background:var(--card);overflow:hidden}
 .searchbar input{flex:1;border:0;outline:0;padding:16px 18px;font:400 17px "Public Sans",sans-serif;background:transparent;color:var(--ink)}
 .searchbar .kbd{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);padding:0 16px;white-space:nowrap}
 .count{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted);margin-top:10px}
@@ -477,7 +488,9 @@ footer{border-top:2.5px solid var(--ink);margin-top:30px}
 .foot-in a{color:var(--muted)}
 .foot-in a:hover{color:var(--ink)}
 :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
-@media(max-width:560px){.facts td.k{width:130px;white-space:normal}.hero{padding-top:52px}}
+@media(max-width:560px){.facts td.k{width:130px;white-space:normal}.hero{padding-top:20px}.stats{white-space:normal}}
+/* the "n verified" badge is clipped by the search bar below this width */
+@media(max-width:480px){.searchbar .kbd{display:none}}
 """
 
 FEEDBACK_JS = """<script>
@@ -987,10 +1000,10 @@ def build():
     home_body = f"""
 <header class="hero">
 <div class="wrap">
-<h1>Veri-<em>Free</em></h1>
-<p class="tagline">Very Free &amp; Easy</p>
+<div class="hero-top"><h1>Veri-<em>Free</em></h1><p class="tagline">Very Free &amp; Easy</p></div>
+<div class="hero-line">
 <p class="sub">We check every "free" offer on the internet and tell you what it really costs.</p>
-<p class="stats">{genuine} genuinely free &nbsp;·&nbsp; {squeeze} free-ish &nbsp;·&nbsp; {traps} traps &amp; fakes exposed</p>
+<p class="stats">{genuine} genuinely free &nbsp;·&nbsp; {squeeze} free-ish &nbsp;·&nbsp; {traps} traps &amp; fakes exposed</p></div>
 <div class="searchbar"><input id="q" type="search" aria-label="Search listings" placeholder="Search a tool, app, course, or service…" aria-label="Search listings"><span class="kbd">{len(listings)} verified</span></div>
 <p class="count" id="count"></p>
 <div class="vfilters">
@@ -1224,10 +1237,10 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                        f'<div class="hl-list">{hl_items}</div></div></section>') if hl_items else ""
         sc_strings = json.dumps(T["sc_js"], ensure_ascii=False)
         body_L = (f'<header class="hero"><div class="wrap">'
-                  f'<h1>Veri-<em>Free</em></h1>'
-                  f'<p class="tagline">{esc(T["tagline"])}</p>'
-                  f'<p class="sub">{T["sub"]}</p>'
-                  f'<p class="stats">{stats_L}</p>'
+                  f'<div class="hero-top"><h1>Veri-<em>Free</em></h1>'
+                  f'<p class="tagline">{esc(T["tagline"])}</p></div>'
+                  f'<div class="hero-line"><p class="sub">{T["sub"]}</p>'
+                  f'<p class="stats">{stats_L}</p></div>'
                   f'<div class="searchbar"><input id="q" type="search" aria-label="Search" placeholder="{esc(T["search_ph"])}">'
                   f'<span class="kbd">{T["verified"].replace("{n}", str(len(listings)))}</span></div>'
                   f'<p class="count" id="count"></p>'

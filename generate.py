@@ -399,6 +399,33 @@ body.loc-ca .ca-badge{display:inline-flex}
 .safety .sf-row b{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);flex-shrink:0;width:118px;padding-top:3px}
 .safety .sf-src{border-top:1px solid var(--line);padding-top:11px;margin:14px 0 0;font-size:11.5px;color:var(--muted);font-style:italic}
 @media(max-width:560px){.safety .sf-row{display:block}.safety .sf-row b{width:auto;display:block;margin:0 0 2px}}
+/* comparable free-tier spec */
+.freespec{margin:26px 0 0;border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--card)}
+.freespec h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px}
+.freespec table{width:100%;border-collapse:collapse}
+.freespec td{padding:7px 0;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}
+.freespec tr:last-child td{border-bottom:0}
+.freespec td.k{width:190px;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:9px}
+.freespec .fs-note{margin:12px 0 0;font-size:11.5px;color:var(--muted);font-style:italic;line-height:1.55}
+.sv{display:inline-block;font-weight:600;font-size:14px;border-left:3px solid var(--line);padding-left:9px}
+.sv.good{border-color:#0E7B47;color:#0E7B47}
+.sv.bad{border-color:#B3261E;color:#B3261E}
+.sv.mid{border-color:#A05E03;color:#A05E03}
+.sv.off{border-color:var(--line);color:var(--muted)}
+/* the category comparison grid */
+.cmp{padding:44px 0 10px;border-top:2.5px solid var(--ink);margin-top:40px}
+.cmp h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:25px;margin:0 0 6px}
+.cmp-lede{color:var(--muted);font-size:15px;max-width:66ch;margin:0 0 18px}
+.cmp-scroll{overflow-x:auto;border:1.5px solid var(--line);border-radius:12px}
+.cmp-table{border-collapse:collapse;width:100%;min-width:820px;background:var(--card)}
+.cmp-table th,.cmp-table td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+.cmp-table thead th{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--paper);position:sticky;top:0}
+.cmp-table tbody th{font-weight:700;font-size:14.5px;background:var(--card);position:sticky;left:0;border-right:1px solid var(--line)}
+.cmp-table tbody th a{color:var(--ink);text-decoration:none}
+.cmp-table tbody th a:hover{color:var(--brand)}
+.cmp-table tbody tr:last-child th,.cmp-table tbody tr:last-child td{border-bottom:0}
+.cmp-table .sv{font-size:13px;border-left-width:3px;padding-left:8px}
+@media(max-width:560px){.freespec td.k{width:auto;display:block;padding-bottom:0;border:0}.freespec td{display:block}.freespec tr{display:block;border-bottom:1px solid var(--line);padding:6px 0}}
 /* /now/ — the stream */
 .streamwrap{padding-top:18px}
 .st-strip{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;padding:0 0 20px;border-bottom:2.5px solid var(--ink);margin-bottom:22px;font-size:14.5px;color:var(--muted)}
@@ -600,6 +627,112 @@ def safety_faq(l):
     parts = [s["verdict"]] + [s[k] for _, k in SAFETY_ROWS if s.get(k)]
     return {"@type": "Question", "name": f"Is {l['name']} safe?",
             "acceptedAnswer": {"@type": "Answer", "text": " ".join(parts)}}
+
+
+# Comparable free-tier specs. Every listing in a category answers the SAME
+# questions in the SAME order, which is the only way a reader can scan across
+# them. Values stay qualitative on purpose — "Daily cap", not "45 messages per
+# 5 hours". Exact allowances change monthly and would make the whole grid a
+# lie within a release or two; the shape of the limit doesn't.
+SPEC_SCHEMA = {
+    "ai-tools": ["Card required", "Usage ceiling", "Model quality", "File uploads",
+                 "Image generation", "Web access", "Commercial use", "Runs offline",
+                 "Trains on your input"],
+    "data-apis": ["Card required", "Free ceiling", "API key needed", "Bulk download",
+                  "Commercial use", "Self-hostable", "Sleeps when idle"],
+    "learning": ["Card required", "Full course content", "Graded work", "Certificate",
+                 "Access expires", "Ads"],
+    "entertainment": ["Card required", "Account needed", "Ads", "Catalogue",
+                      "Downloads", "Simultaneous streams"],
+    "books-reading": ["Card required", "What you need", "Catalogue", "Waitlists",
+                      "Keep after leaving", "Offline reading"],
+}
+
+# Values worth colouring: green reads as "you get this", amber as "with a
+# string attached", red as "you don't".
+SPEC_GOOD = {"No", "Unlimited", "Yes", "Allowed", "None", "Current flagship",
+             "Full", "Everything", "Your own terms", "No ads", "Never"}
+SPEC_BAD = {"Yes — required", "Not allowed", "None", "Paid only", "No", "Trial only"}
+
+
+# Capability questions, where a "No" is scope rather than stinginess.
+# Claude not generating images isn't something withheld from the free tier,
+# so colouring it red would misread the whole grid.
+CAPABILITY = {"File uploads", "Image generation", "Web access", "Runs offline",
+              "Bulk download", "Self-hostable", "Downloads", "Offline reading",
+              "Graded work", "Certificate", "Simultaneous streams"}
+
+
+def spec_tone(label, value):
+    """Green/amber/red by meaning, which flips depending on the question asked."""
+    inverted = label in ("Card required", "Ads", "Access expires", "Waitlists",
+                         "Trains on your input", "Sleeps when idle", "API key needed")
+    v = value.split(" —")[0].strip()
+    if label in CAPABILITY:
+        # "Paid only" is a real cost, not mere absence, so it still earns amber.
+        if v in ("Paid only", "Partial", "Sometimes"):
+            return "mid"
+        if v in ("Yes", "Free", "Only this", "Full", "Everything",
+                 "Unlimited", "Your own terms"):
+            return "good"
+        return "off"
+    if v in ("No", "None", "Never", "No ads"):
+        return "good" if inverted else "bad"
+    if v in ("Yes", "Yes — required", "Always"):
+        return "bad" if inverted else "good"
+    if v in ("Unlimited", "Allowed", "Full", "Everything", "Current flagship",
+             "Your own terms", "Open weights"):
+        return "good"
+    if v in ("Not allowed", "Paid only", "Trial only", "Older only"):
+        return "bad"
+    return "mid"
+
+
+def spec_block(l):
+    schema = SPEC_SCHEMA.get(l["category"])
+    spec = l.get("free_spec")
+    if not schema or not spec:
+        return ""
+    rows = ""
+    for label in schema:
+        if label not in spec:
+            continue
+        v = spec[label]
+        rows += (f'<tr><td class="k">{esc(label)}</td>'
+                 f'<td><span class="sv {spec_tone(label, v)}">{esc(v)}</span></td></tr>')
+    if not rows:
+        return ""
+    ctitle = CATS[l["category"]][0]
+    return (f'<div class="freespec"><h2>What the free tier actually gives you</h2>'
+            f'<table>{rows}</table>'
+            f'<p class="fs-note">Same questions, same order, for every listing in '
+            f'<a href="/{l["category"]}/#compare">{esc(ctitle)}</a> — so you can compare them '
+            f'side by side. Deliberately no exact allowances: those change monthly, '
+            f'the shape of the limit doesn\'t.</p></div>')
+
+
+def spec_table(cat, rows):
+    """The payoff: every listing in the category, one grid."""
+    schema = SPEC_SCHEMA.get(cat)
+    have = [l for l in rows if l.get("free_spec")]
+    if not schema or len(have) < 2:
+        return ""
+    head = "".join(f"<th>{esc(h)}</th>" for h in schema)
+    body = ""
+    for l in have:
+        cells = ""
+        for label in schema:
+            v = l["free_spec"].get(label, "—")
+            cells += f'<td><span class="sv {spec_tone(label, v)}">{esc(v)}</span></td>'
+        body += (f'<tr><th scope="row"><a href="/{esc(l["slug"])}/">{esc(l["name"])}</a></th>'
+                 f'{cells}</tr>')
+    return (f'<section class="cmp" id="compare"><h2>Compare the free tiers</h2>'
+            f'<p class="cmp-lede">Every {esc(CATS[cat][0]).lower()} listing, answering the same '
+            f'questions. Values are deliberately qualitative — exact allowances change too '
+            f'often to publish honestly.</p>'
+            f'<div class="cmp-scroll"><table class="cmp-table">'
+            f'<thead><tr><th scope="col">Service</th>{head}</tr></thead>'
+            f'<tbody>{body}</tbody></table></div></section>')
 
 
 def ratings_row(l):
@@ -1393,6 +1526,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                 f'<h2 class="sechead">Every {esc(ctitle.lower())} listing, ranked by how free it really is</h2>'
                 f'<p class="seclede">{len(cl)} verified · {truly} truly free · sorted by Free Score.</p>'
                 f'<div class="grid">{cards}</div></section>'
+                + spec_table(cslug, cl)
                 + (ai_aside("en") if is_ai else "") + '</main>'
                 + ('<script src="/ai-widget.js" defer></script>' if is_ai else ''))
         cat_schema = json.dumps({"@context": "https://schema.org", "@graph": [
@@ -1523,6 +1657,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 {alts_html}
 {worth}
 {gets}
+{spec_block(l)}
 <div class="facts"><h2>Free facts</h2><table>{facts_rows}</table></div>
 <div class="catch"><h2>The catch</h2><p>{esc(l['catch'])}</p></div>
 {safety_box(l, checked)}

@@ -1535,6 +1535,17 @@
         "data": "By default, conversations may be used to improve the models. There is a setting to turn that off — find it before you paste anything confidential, medical, or belonging to an employer.",
         "scams": "OpenAI does not sell ChatGPT through third-party resellers. Paid “ChatGPT Pro” apps in app stores are wrappers around the free API, charging you for something you can use for nothing.",
         "account_risk": "Answers can be confidently wrong. For anything legal, medical or financial, treat it as a starting point, never the decision."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Rationed at peak",
+        "Model quality": "Current, rationed",
+        "File uploads": "Limited",
+        "Image generation": "Limited",
+        "Web access": "Yes",
+        "Commercial use": "Allowed",
+        "Runs offline": "No",
+        "Trains on your input": "Setting"
       }
     },
     {
@@ -1612,6 +1623,17 @@
         "data": "Whether consumer conversations are used to improve the models is a setting, and Anthropic has changed the default at least once. Open the privacy settings and read what it currently says rather than trusting any summary — including this one.",
         "scams": "There are no authorised resellers. Paid “Claude” apps from third parties are wrappers around the API.",
         "account_risk": "It can be confidently wrong, and it will sound just as certain either way. Verify anything that carries consequences."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Daily cap",
+        "Model quality": "Current flagship",
+        "File uploads": "Yes",
+        "Image generation": "No",
+        "Web access": "Yes",
+        "Commercial use": "Allowed",
+        "Runs offline": "No",
+        "Trains on your input": "Setting"
       }
     },
     {
@@ -1682,6 +1704,17 @@
         "praised": "The free tier gets capable models, generous limits, and tight integration with Gmail, Docs and Android. Convenience is what reviewers rate highly.",
         "complained": "Complaints split between inconsistency against rivals on harder tasks, and the Android assistant transition, where users describe losing behaviours the old Assistant had. Privacy questions recur, because conversations sit inside a Google account.",
         "takeaway": "Free the way Gmail is free — the cost is a data relationship, not a bill. Check the activity settings once, and the free tier is genuinely capable."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Daily cap",
+        "Model quality": "Current, rationed",
+        "File uploads": "Yes",
+        "Image generation": "Limited",
+        "Web access": "Yes",
+        "Commercial use": "Allowed",
+        "Runs offline": "No",
+        "Trains on your input": "Setting"
       }
     },
     {
@@ -1751,6 +1784,17 @@
         "praised": "Citations are the recurring compliment. Reviewers value being able to check the source, and the free tier answers with links rather than asking to be trusted.",
         "complained": "The daily cap on advanced searches is the main friction — users describe answers thinning noticeably once it's spent. Accuracy complaints, where a confident answer outruns the sources under it, appear steadily.",
         "takeaway": "The free tier's value is the citations, and the citations are also the check. Follow the links on anything that matters — and the cap will tell you when you've left the good tier."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Unlimited — basic search",
+        "Model quality": "Current, rationed",
+        "File uploads": "Limited",
+        "Image generation": "Limited",
+        "Web access": "Yes",
+        "Commercial use": "Allowed",
+        "Runs offline": "No",
+        "Trains on your input": "Setting"
       }
     },
     {
@@ -1800,7 +1844,18 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-hugging-face-actually-free"
+      "slug": "is-hugging-face-actually-free",
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Rationed at peak",
+        "Model quality": "Open weights",
+        "File uploads": "Yes",
+        "Image generation": "Yes",
+        "Web access": "No",
+        "Commercial use": "Your own terms",
+        "Runs offline": "Yes",
+        "Trains on your input": "No"
+      }
     },
     {
       "name": "Midjourney",
@@ -1862,7 +1917,18 @@
           "why": "Writing and analysis free daily — different strength, same price of zero"
         }
       ],
-      "slug": "is-midjourney-actually-free"
+      "slug": "is-midjourney-actually-free",
+      "free_spec": {
+        "Card required": "Yes",
+        "Usage ceiling": "None — paid only",
+        "Model quality": "Paid only",
+        "File uploads": "No",
+        "Image generation": "Only this",
+        "Web access": "No",
+        "Commercial use": "Not allowed",
+        "Runs offline": "No",
+        "Trains on your input": "Yes"
+      }
     },
     {
       "name": "Khan Academy",
@@ -1935,6 +2001,14 @@
         "data": "A registered US nonprofit. No advertising, and nothing is sold to you at any point. Children's accounts are covered by the applicable student-privacy commitments.",
         "scams": "Nothing to buy, so nothing to be sold. Sites charging for Khan Academy content are reselling free material.",
         "account_risk": "No card is ever needed. If something asks for one in Khan Academy's name, it isn't Khan Academy."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Yes",
+        "Graded work": "Yes",
+        "Certificate": "None offered",
+        "Access expires": "Never",
+        "Ads": "No"
       }
     },
     {
@@ -1987,6 +2061,14 @@
         "praised": "The recurring story is employment: people describing a path from zero to a paid developer job on this curriculum alone, with certifications that cost nothing and a forum that answers.",
         "complained": "Self-direction is the complaint. There's no instructor, no deadline, and no one to notice when you stop — reviewers who dropped out cite motivation, not content. Some find the projects jump in difficulty faster than the lessons prepare you for.",
         "takeaway": "The thing that makes bootcamps worth thousands is accountability, not material. This gives away the material; you supply the accountability."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Yes",
+        "Graded work": "Yes",
+        "Certificate": "Free",
+        "Access expires": "Never",
+        "Ads": "No"
       }
     },
     {
@@ -2032,7 +2114,15 @@
       ],
       "short_worth": null,
       "slug": "is-mit-opencourseware-actually-free",
-      "favicon_url": "https://www.mit.edu"
+      "favicon_url": "https://www.mit.edu",
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Yes",
+        "Graded work": "None offered",
+        "Certificate": "None offered",
+        "Access expires": "Never",
+        "Ads": "No"
+      }
     },
     {
       "name": "CS50 (Harvard)",
@@ -2080,7 +2170,15 @@
       ],
       "short_worth": null,
       "slug": "is-cs50-harvard-actually-free",
-      "favicon_url": "https://www.harvard.edu"
+      "favicon_url": "https://www.harvard.edu",
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Yes",
+        "Graded work": "Yes",
+        "Certificate": "Paid only",
+        "Access expires": "Never",
+        "Ads": "No"
+      }
     },
     {
       "name": "Duolingo",
@@ -2166,6 +2264,14 @@
         "data": "Free use is ad-supported, so learning and engagement data feeds advertising and product design.",
         "account_risk": "The mechanics are built to hold your attention — streaks, notifications, and an energy meter that gates free lessons. That's the actual cost, and it's worth naming.",
         "scams": "No trials that auto-bill and no hidden charges. Whatever else it does, it doesn't ambush you at checkout."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Yes",
+        "Graded work": "Yes",
+        "Certificate": "None offered",
+        "Access expires": "Never",
+        "Ads": "Yes"
       }
     },
     {
@@ -2245,6 +2351,14 @@
         "praised": "Course quality and the university branding are what reviewers rate — real institutions, real instructors, and the audit track genuinely does open the lectures.",
         "complained": "The consumer score is a billing score. Complaints centre on subscriptions that renewed unnoticed, refunds refused, and a signup flow that presents payment as the default path while “audit” is a small link. Certificate value is the other doubt.",
         "takeaway": "A 2.0 next to a 4.3 is the signature of a good product with a hostile checkout. Find the audit link before you find your card — and the financial-aid application, which is real and quietly generous."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Partial",
+        "Graded work": "Paid only",
+        "Certificate": "Paid only",
+        "Access expires": "Never",
+        "Ads": "No"
       }
     },
     {
@@ -2313,6 +2427,14 @@
         "praised": "Reviewers rate the source material: MIT, Harvard and peers, in full, on the free audit track. The absence of hard-sell tactics compared with rivals comes up repeatedly.",
         "complained": "The free track's expiry is the grievance — audit access closes on a schedule while paid access doesn't, so a course you paused is a course you lost. Graded work and certificates sitting behind the paywall is the other recurring note.",
         "takeaway": "The complaint isn't that the free tier is thin; it's that it's on a timer. Start when you actually have the weeks, not when you find the course."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Partial",
+        "Graded work": "Paid only",
+        "Certificate": "Paid only",
+        "Access expires": "On a schedule",
+        "Ads": "No"
       }
     },
     {
@@ -2368,6 +2490,14 @@
         "praised": "The interactive editor is what people credit: you write code in the browser from minute one, with immediate feedback, and the free basics genuinely teach syntax.",
         "complained": "The complaint is where the free tier stops. Projects, paths, quizzes and portfolio work are Pro features, so reviewers describe learning the grammar of a language without ever building anything with it.",
         "takeaway": "Free Codecademy is a good introduction that ends exactly where the useful part starts. If you finish it and want the rest, freeCodeCamp goes further for nothing."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Partial",
+        "Graded work": "Paid only",
+        "Certificate": "Paid only",
+        "Access expires": "Never",
+        "Ads": "No"
       }
     },
     {
@@ -2450,6 +2580,14 @@
         "account_risk": "The card is taken up front and the charge lands automatically at the end of the trial. Cancel on the day you sign up: access continues to the end of the trial either way, and this one step converts a trap into a genuinely free month.",
         "scams": "No fraud, and cancellation does work — but reviewers consistently describe having to hunt for it. Do it from the account settings on the website, not the app.",
         "data": "Nothing unusual. The exposure here is the recurring charge, not your information."
+      },
+      "free_spec": {
+        "Card required": "Yes",
+        "Full course content": "Trial only",
+        "Graded work": "None offered",
+        "Certificate": "None offered",
+        "Access expires": "End of trial",
+        "Ads": "No"
       }
     },
     {
@@ -2523,6 +2661,14 @@
         "praised": "The library is professionally produced and broad, and reviewers rate the business, software and career courses as genuinely useful rather than filler.",
         "complained": "Two patterns: the trial requires a card and converts to a monthly charge, and the subscription is bundled with LinkedIn Premium in a way people describe as hard to unpick when cancelling.",
         "takeaway": "Before you start any trial, check your public library card — a great many library systems include LinkedIn Learning free. Same catalog, no card, no clock, no cancellation to remember."
+      },
+      "free_spec": {
+        "Card required": "Yes",
+        "Full course content": "Trial only",
+        "Graded work": "None offered",
+        "Certificate": "Paid only",
+        "Access expires": "End of trial",
+        "Ads": "No"
       }
     },
     {
@@ -5879,7 +6025,15 @@
       "more_info": [],
       "short_worth": null,
       "slug": "is-google-digital-garage-actually-free",
-      "favicon_url": "https://www.google.com"
+      "favicon_url": "https://www.google.com",
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Yes",
+        "Graded work": "Yes",
+        "Certificate": "Free",
+        "Access expires": "Never",
+        "Ads": "No"
+      }
     },
     {
       "name": "Udemy",
@@ -5964,6 +6118,14 @@
         "data": "Nothing here auto-bills, which already puts it ahead of the trial platforms on this site.",
         "scams": "The marketplace risk is quality, not fraud: anyone can publish, so a course can be padded, outdated, or lifted from elsewhere. Read the recent reviews rather than the star average, and check when the course was last updated.",
         "account_risk": "There's a refund window on purchases — know its length before you buy, and don't pay a list price, because the permanent sale means one is always coming."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Partial",
+        "Graded work": "None offered",
+        "Certificate": "Paid only",
+        "Access expires": "Never",
+        "Ads": "No"
       }
     },
     {
@@ -6698,6 +6860,14 @@
         "download": "wikipedia.org and the official apps. The donation banners are genuine; donation solicitations arriving by email or text are often not.",
         "data": "The Wikimedia Foundation is a nonprofit and does not sell reader data. Reading without an account is normal and supported.",
         "account_risk": "The safety question here is accuracy, not security. Anyone can edit, contested topics attract edit wars, and vandalism is usually caught fast but not always. Follow the footnotes for anything that matters — that's what they're there for."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Yes",
+        "Graded work": "None offered",
+        "Certificate": "None offered",
+        "Access expires": "Never",
+        "Ads": "No"
       }
     },
     {
@@ -8902,7 +9072,18 @@
           "url": "https://play.google.com/store/apps/details?id=com.microsoft.copilot&hl=en_US&gl=US",
           "count": "2.4M"
         }
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Rationed at peak",
+        "Model quality": "Current, rationed",
+        "File uploads": "Limited",
+        "Image generation": "Yes",
+        "Web access": "Yes",
+        "Commercial use": "Allowed",
+        "Runs offline": "No",
+        "Trains on your input": "Setting"
+      }
     },
     {
       "name": "DeepSeek",
@@ -8964,6 +9145,17 @@
         "data": "The company is Chinese and its consumer service stores user data on servers in China under Chinese law. Several governments have restricted the app on official devices for that reason. This is a jurisdiction question, not an accusation — but it should decide what you type into it.",
         "scams": "The open-weight models are genuinely open and can be run locally, which is the way to use it if the jurisdiction concerns you.",
         "account_risk": "Treat anything you send as leaving your control. That's true of every hosted AI service; the variable here is which legal system it lands in."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Unlimited",
+        "Model quality": "Current flagship",
+        "File uploads": "Yes",
+        "Image generation": "No",
+        "Web access": "Yes",
+        "Commercial use": "Allowed",
+        "Runs offline": "Yes",
+        "Trains on your input": "Yes"
       }
     },
     {
@@ -9005,7 +9197,18 @@
           "It only answers from the sources you give it, with citations — which means far fewer invented facts, and it's actually checkable."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Daily cap",
+        "Model quality": "Current, rationed",
+        "File uploads": "Yes",
+        "Image generation": "No",
+        "Web access": "Limited",
+        "Commercial use": "Allowed",
+        "Runs offline": "No",
+        "Trains on your input": "No"
+      }
     },
     {
       "name": "Stable Diffusion",
@@ -9046,7 +9249,18 @@
           "Midjourney is easier and has no free tier at all; SD is free forever but you do the setup. If you generate regularly, local SD is the only path where volume costs nothing."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Your hardware",
+        "Model quality": "Open weights",
+        "File uploads": "Yes",
+        "Image generation": "Only this",
+        "Web access": "No",
+        "Commercial use": "Your own terms",
+        "Runs offline": "Yes",
+        "Trains on your input": "No"
+      }
     },
     {
       "name": "Character.AI",
@@ -9109,6 +9323,17 @@
         "account_risk": "The product is engineered for engagement, and the review record is full of people describing hours they didn't intend to spend. The company has faced lawsuits over harms to minors and has since restricted access for teenagers.",
         "scams": "No financial scam — the free tier is real. The cost is time, attention, and the data in the conversations.",
         "download": "The official apps and character.ai. Unofficial clients asking for your login are credential theft."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Unlimited",
+        "Model quality": "Mid-tier",
+        "File uploads": "No",
+        "Image generation": "Limited",
+        "Web access": "No",
+        "Commercial use": "Not allowed",
+        "Runs offline": "No",
+        "Trains on your input": "Yes"
       }
     },
     {
@@ -9151,7 +9376,18 @@
           "On a non-monetized channel, generally yes under their terms; monetized use needs a paid plan. Terms shift — check before publishing."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Daily cap",
+        "Model quality": "Current, rationed",
+        "File uploads": "No",
+        "Image generation": "No",
+        "Web access": "No",
+        "Commercial use": "Not allowed",
+        "Runs offline": "No",
+        "Trains on your input": "Yes"
+      }
     },
     {
       "name": "ElevenLabs",
@@ -9193,7 +9429,18 @@
           "Local open models (Piper, XTTS-class) are free and unlimited but a clear step down in naturalness. The gap is why the meter works."
         ]
       ],
-      "short_worth": null
+      "short_worth": null,
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Monthly quota",
+        "Model quality": "Current flagship",
+        "File uploads": "Limited",
+        "Image generation": "No",
+        "Web access": "No",
+        "Commercial use": "Attribution required",
+        "Runs offline": "No",
+        "Trains on your input": "Yes"
+      }
     },
     {
       "name": "Grok",
@@ -9248,7 +9495,18 @@
           "url": "https://play.google.com/store/apps/details?id=ai.x.grok&hl=en_US&gl=US",
           "count": "3.6M"
         }
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Rationed at peak",
+        "Model quality": "Current, rationed",
+        "File uploads": "Limited",
+        "Image generation": "Limited",
+        "Web access": "Yes",
+        "Commercial use": "Allowed",
+        "Runs offline": "No",
+        "Trains on your input": "Yes"
+      }
     },
     {
       "name": "Wikidata & Wikimedia dumps",
@@ -9294,7 +9552,16 @@
           "Dumps versus the API",
           "The API and query service are for exploring and for light live lookups; they are rate-limited as a courtesy to everyone else. If your job is bulk — building an index, training something, joining against your own data — take the dump. Downloading once is kinder and faster than a million polite requests."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Unlimited",
+        "API key needed": "No",
+        "Bulk download": "Yes",
+        "Commercial use": "Allowed",
+        "Self-hostable": "Yes",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "OpenStreetMap",
@@ -9340,7 +9607,16 @@
           "ODbL versus CC0",
           "OpenStreetMap is share-alike: if you build a derived database and distribute it, that derived database has to carry the same licence. Using OSM to draw a map in your product is fine and normal. Merging OSM into a proprietary dataset you then sell is where you need legal advice."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Rate limited",
+        "API key needed": "No",
+        "Bulk download": "Yes",
+        "Commercial use": "Share-alike",
+        "Self-hostable": "Yes",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "data.gov",
@@ -9386,7 +9662,16 @@
           "Treat the catalogue as an index, not a source",
           "data.gov catalogues what agencies publish; it doesn't host or maintain most of it. For anything going into production, find the agency's own endpoint and subscribe to its update notices, so a schema change doesn't quietly break you."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Unlimited",
+        "API key needed": "Sometimes",
+        "Bulk download": "Yes",
+        "Commercial use": "Allowed",
+        "Self-hostable": "Yes",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "OpenAlex",
@@ -9428,7 +9713,16 @@
           "It exists because the old one was bought",
           "OpenAlex was built after Microsoft Academic Graph was discontinued, on the view that the scholarly record shouldn't depend on one company's product roadmap. That origin is the argument for using it: it's structured to be forkable, because the data is CC0 and downloadable in full."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Rate limited",
+        "API key needed": "No",
+        "Bulk download": "Yes",
+        "Commercial use": "Allowed",
+        "Self-hostable": "Yes",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "Common Crawl",
@@ -9470,7 +9764,16 @@
           "The free thing that can still generate a bill",
           "This is the clearest example on the site of free data with an expensive shadow. Common Crawl charges nothing. Your cloud provider charges for every byte leaving its network. Process in-region, filter with the index first, and the bill stays near zero — do it naively and it won't."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Unlimited",
+        "API key needed": "No",
+        "Bulk download": "Yes",
+        "Commercial use": "Allowed",
+        "Self-hostable": "Yes",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "Hugging Face Datasets",
@@ -9514,7 +9817,16 @@
           "The platform's licence is not the data's licence",
           "This trips people constantly. Hugging Face being free to use tells you nothing about whether a given dataset may be used commercially — that is set by whoever uploaded it, on the dataset card. Non-commercial and research-only terms are common. Check per dataset, every time."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Rate limited",
+        "API key needed": "Sometimes",
+        "Bulk download": "Yes",
+        "Commercial use": "Varies by dataset",
+        "Self-hostable": "Yes",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "Open-Meteo",
@@ -9557,7 +9869,16 @@
           "Why 'no API key' is worth noticing",
           "Requiring a key isn't a technical necessity; it's the hook that attaches your usage to an account, and eventually to a card. A service that answers without one has given up that hook deliberately. It's the clearest signal in this category that the free tier is meant to be used rather than converted."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Rate limited",
+        "API key needed": "No",
+        "Bulk download": "Yes",
+        "Commercial use": "Non-commercial only",
+        "Self-hostable": "Yes",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "Supabase",
@@ -9601,7 +9922,16 @@
           "The pause rule, plainly",
           "A week without activity and the project suspends. You can restore it from the dashboard and the data is intact, but the first visitor after a quiet week meets an error rather than your app. For learning, prototyping and internal tools that's fine. For anything a stranger might load, it isn't."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Monthly quota",
+        "API key needed": "Yes",
+        "Bulk download": "Yes",
+        "Commercial use": "Allowed",
+        "Self-hostable": "Yes",
+        "Sleeps when idle": "Yes"
+      }
     },
     {
       "name": "Firebase",
@@ -9648,7 +9978,16 @@
           "Lock-in is the other price",
           "Firebase's database and auth aren't standards you can pick up and move. That is fine while you're small and it is the reason migrations off it are projects rather than afternoons. Weigh that at the start, when switching is still cheap."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Monthly quota",
+        "API key needed": "Yes",
+        "Bulk download": "Yes",
+        "Commercial use": "Allowed",
+        "Self-hostable": "No",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "Google Maps Platform",
@@ -9693,7 +10032,16 @@
           "What changed in 2025",
           "The long-standing flat monthly credit was replaced with per-service free caps. For small users the practical result is broadly similar; for anyone modelling costs, the arithmetic is different, so recalculate against the current SKU table rather than the figure you remember."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "Yes",
+        "Free ceiling": "Per-service caps",
+        "API key needed": "Yes",
+        "Bulk download": "No",
+        "Commercial use": "Allowed",
+        "Self-hostable": "No",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "Reddit API",
@@ -9736,7 +10084,16 @@
           "What 2023 actually proved",
           "Apollo, Reddit is Fun and others were long-established apps with paying users. New API pricing made them unviable and they shut down within weeks. Nothing about it was illegal or even hidden — which is the point. A free tier is a business decision that can be reversed, and building on one without a migration plan is a bet on someone else's roadmap."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free ceiling": "Rate limited",
+        "API key needed": "Yes",
+        "Bulk download": "No",
+        "Commercial use": "Not allowed",
+        "Self-hostable": "No",
+        "Sleeps when idle": "Never"
+      }
     },
     {
       "name": "X (Twitter) API",
@@ -9778,7 +10135,16 @@
           "The clearest free-tier death in tech",
           "Until 2023 the API was free enough that an entire ecosystem of clients, research projects and bots ran on it. Then free access ended, paid tiers appeared and were repriced more than once, and in February 2026 the tiers themselves gave way to pay-per-use with no free option for new developers. If you want one example of why this site puts a date on every verdict, it is this one."
         ]
-      ]
+      ],
+      "free_spec": {
+        "Card required": "Yes",
+        "Free ceiling": "None — paid only",
+        "API key needed": "Yes",
+        "Bulk download": "No",
+        "Commercial use": "Allowed",
+        "Self-hostable": "No",
+        "Sleeps when idle": "Never"
+      }
     }
   ],
   "deals": [

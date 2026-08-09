@@ -81,9 +81,18 @@ a{color:inherit}
 .dropdown{position:relative;height:52px;display:flex;align-items:center}
 .dropdown>a{line-height:52px}
 .dropdown>a::after{content:" ▾";font-size:11px}
-.dropdown-menu{display:none;position:absolute;top:52px;left:-12px;padding-top:0;z-index:30}
+/* Was display:none -> display:block on hover, which cannot be delayed. The
+   language trigger is ~50px wide and its menu is 230px right-aligned, so a
+   diagonal move toward an option left the hover area and the menu vanished.
+   visibility+opacity allows a grace period on the way out, and the padding-top
+   bridges the trigger to the panel so there is no dead row between them. */
+.dropdown-menu{visibility:hidden;opacity:0;position:absolute;top:52px;left:-12px;padding-top:6px;z-index:30;transition:opacity .12s ease}
 .dropdown-menu .dd-inner{background:var(--card);border:1.5px solid var(--line);border-radius:0 0 10px 10px;padding:6px 0;min-width:230px;box-shadow:0 6px 20px rgba(0,0,0,.08)}
-.dropdown:hover .dropdown-menu{display:block}
+/* Open state is driven only by JS. Hiding must never depend on a transition
+   finishing — under prefers-reduced-motion, or any context that does not run
+   transitions, a delayed visibility change never commits and the menu sticks
+   open. The close delay is a timer instead. */
+.dropdown.open .dropdown-menu{visibility:visible;opacity:1}
 .dropdown-menu a{display:flex;align-items:center;gap:10px;padding:9px 16px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);white-space:nowrap;line-height:1.4}
 .dropdown-menu a:hover{background:var(--paper);color:var(--brand)}
 .dropdown-menu a .dd-count{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted);opacity:.6}
@@ -677,6 +686,72 @@ def lang_switcher(current="en"):
     return (f'<div class="dropdown langdd"><a href="#" onclick="return false">\U0001F310 {current.upper()}</a>'
             f'<div class="dropdown-menu right"><div class="dd-inner">{items}</div></div></div>')
 
+# Hover alone left the language switcher unusable on touch, where there is no
+# hover at all and the trigger carried onclick="return false". Tap now opens
+# it; a second tap, an outside click, or Escape closes it. Links with a real
+# destination still navigate on the second interaction rather than being
+# swallowed.
+NAV_JS = """<script>
+(function(){
+  var dds=[].slice.call(document.querySelectorAll('.dropdown'));
+  if(!dds.length)return;
+  var fine=!(window.matchMedia&&window.matchMedia('(hover:none)').matches);
+  var timer=null;
+
+  function setOpen(d,on){
+    d.classList.toggle('open',on);
+    var a=d.querySelector(':scope > a');
+    if(a)a.setAttribute('aria-expanded',on?'true':'false');
+  }
+  function closeAll(except){
+    clearTimeout(timer);
+    dds.forEach(function(d){if(d!==except)setOpen(d,false);});
+  }
+
+  dds.forEach(function(d){
+    var a=d.querySelector(':scope > a');
+    if(!a)return;
+    a.setAttribute('aria-haspopup','true');
+    a.setAttribute('aria-expanded','false');
+
+    if(fine){
+      // Opening on enter and closing on a timer is what makes the diagonal
+      // move from a narrow trigger to a wide menu survivable.
+      d.addEventListener('mouseenter',function(){clearTimeout(timer);closeAll(d);setOpen(d,true);});
+      d.addEventListener('mouseleave',function(){
+        clearTimeout(timer);
+        timer=setTimeout(function(){setOpen(d,false);},320);
+      });
+    }
+
+    a.addEventListener('click',function(e){
+      var href=a.getAttribute('href')||'';
+      var open=d.classList.contains('open');
+      if(href==='#'||href===''||(!fine&&!open)){
+        e.preventDefault();
+        if(open){closeAll(null);}else{closeAll(d);setOpen(d,true);}
+      }
+    });
+
+    // Keyboard: opening on focus, closing when focus leaves the whole group.
+    d.addEventListener('focusin',function(){clearTimeout(timer);closeAll(d);setOpen(d,true);});
+    d.addEventListener('focusout',function(){
+      setTimeout(function(){
+        if(!d.contains(document.activeElement))setOpen(d,false);
+      },0);
+    });
+  });
+
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.dropdown'))closeAll(null);
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){closeAll(null);if(document.activeElement)document.activeElement.blur();}
+  });
+})();
+</script>"""
+
+
 # House ad for the sister studio. Rendered natively rather than via the shared
 # promo-bar.js so it needs no third-party script and no CSP loosening — the
 # existing policy already permits inline script and dreamsitedesign.com.
@@ -746,6 +821,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
 <span><a href="/now/">Now</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
+{NAV_JS}
 {HOUSE_AD}
 <script
   src="https://dreamsitedesign.com/credit.js"

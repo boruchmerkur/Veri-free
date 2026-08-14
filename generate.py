@@ -399,6 +399,18 @@ body.loc-ca .ca-badge{display:inline-flex}
 .safety .sf-row b{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);flex-shrink:0;width:118px;padding-top:3px}
 .safety .sf-src{border-top:1px solid var(--line);padding-top:11px;margin:14px 0 0;font-size:11.5px;color:var(--muted);font-style:italic}
 @media(max-width:560px){.safety .sf-row{display:block}.safety .sf-row b{width:auto;display:block;margin:0 0 2px}}
+/* coupon codes */
+.dcode{display:inline-flex;align-items:center;gap:0;margin:4px 0 14px;border:2px dashed var(--brand);border-radius:9px;background:#E4F2EA;cursor:pointer;user-select:none;transition:background .12s,border-color .12s}
+.dcode:hover,.dcode:focus-visible{background:var(--brand);border-style:solid}
+.dcode:hover .dc-val,.dcode:hover .dc-lbl,.dcode:hover .dc-act,.dcode:focus-visible .dc-val{color:var(--paper)}
+.dcode.copied{background:var(--brand);border-style:solid}
+.dcode.copied .dc-val,.dcode.copied .dc-lbl,.dcode.copied .dc-act{color:var(--paper)}
+.dc-lbl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);padding:0 9px 0 11px;opacity:.75}
+.dc-val{font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:700;letter-spacing:.08em;color:var(--brand);padding:8px 0}
+.dc-act{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);padding:0 11px 0 12px;opacity:.75}
+/* same-publisher disclosure, above the pitch rather than under it */
+.ddisc{margin:0 0 10px;font-size:12.5px;line-height:1.5;color:#A05E03;background:#F7EDDC;border-left:3px solid #A05E03;padding:7px 11px;border-radius:0 6px 6px 0}
+.ddisc::before{content:"Disclosure — ";font-weight:700}
 /* comparable free-tier spec */
 .freespec{margin:26px 0 0;border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--card)}
 .freespec h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px}
@@ -586,20 +598,59 @@ def feedback_form(l, vlabel):
 
 
 def deal_card(d, cta="Go to offer →"):
-    """Shared card for /deals/ and /free-in-real-life/."""
+    """Shared card for /deals/, /coupons/ and /free-in-real-life/."""
     st = d.get("status", "verified")
     badge_cls = "verified" if st == "verified" else "seasonal" if st == "seasonal" else "expired"
+    # Same-publisher disclosure goes ABOVE the pitch. On listing pages it is
+    # already its own line; here it used to sit as prose at the foot of the
+    # caveat, under the sales copy — which is the one place a disclosure is
+    # worth nothing.
+    disc = (f'<p class="ddisc">{esc(d["disclosure"])}</p>') if d.get("disclosure") else ""
+    code = ""
+    if d.get("code"):
+        code = (f'<div class="dcode" data-code="{esc(d["code"])}" role="button" tabindex="0" '
+                f'aria-label="Copy code {esc(d["code"])}">'
+                f'<span class="dc-lbl">Code</span><span class="dc-val">{esc(d["code"])}</span>'
+                f'<span class="dc-act">Copy</span></div>')
     return (f'<div class="deal">'
             f'<div class="dtop">{favicon(d["url"], override=d.get("favicon_url"))}<h3>{esc(d["name"])}</h3>'
             f'<span class="dbadge {badge_cls}">{st.upper()}</span></div>'
+            f'{disc}'
             f'<p class="dtype">{esc(d["type"])}</p>'
             f'<p>{esc(d["summary"])}</p>'
+            f'{code}'
             f'<p><b>Who qualifies:</b> {esc(d["who"])}</p>'
             f'<p><b>How to get it:</b> {esc(d["how"])}</p>'
             f'<p class="dlabel">What it\'s worth</p><p class="dworth">{esc(d["worth"])}</p>'
             f'<p class="dcav">{esc(d["caveat"])}</p>'
             f'<a class="dlink" href="{esc(d["url"])}" target="_blank" rel="noopener">{cta}</a>'
             f'</div>')
+
+
+COUPON_JS = """<script>
+(function(){
+  document.addEventListener('click',function(e){
+    var c=e.target.closest('.dcode');
+    if(!c)return;
+    var code=c.getAttribute('data-code'),act=c.querySelector('.dc-act');
+    function done(ok){act.textContent=ok?'Copied':'Select it';c.classList.add('copied');
+      setTimeout(function(){act.textContent='Copy';c.classList.remove('copied');},1600);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(code).then(function(){done(true);},function(){done(false);});
+    }else{
+      // No clipboard API (or an insecure context) — select the text so the
+      // reader can copy it themselves rather than silently doing nothing.
+      var r=document.createRange();r.selectNodeContents(c.querySelector('.dc-val'));
+      var s=getSelection();s.removeAllRanges();s.addRange(r);done(false);
+    }
+  });
+  document.addEventListener('keydown',function(e){
+    if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('dcode')){
+      e.preventDefault();e.target.click();
+    }
+  });
+})();
+</script>"""
 
 
 SAFETY_ROWS = [("Download", "download"), ("Your data", "data"),
@@ -952,9 +1003,10 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/now/">Now</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/now/">Now</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {NAV_JS}
+{COUPON_JS}
 {HOUSE_AD}
 <script
   src="https://dreamsitedesign.com/credit.js"
@@ -1167,6 +1219,7 @@ def build():
            f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
            f'<a href="/now/">Now</a>'
            f'<a href="/deals/">Deals</a>'
+           f'<a href="/coupons/">Coupons</a>'
            f'<a href="/free-in-real-life/">Real Life</a>'
            f'<a href="/compare/">Compare</a>'
            f'<a href="/methodology/">How we verify</a>'
@@ -1731,6 +1784,26 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 <div style="max-width:720px;padding-bottom:10px">{deal_cards}</div>
 {guarantee_section}
 <div style="padding-bottom:50px"></div></main>"""
+        # ---------- /coupons/ ----------
+        coded = [x for x in deals if x.get("code")]
+        if coded:
+            cards_c = "".join(deal_card(x) for x in coded)
+            coup_body = f"""
+<header class="pagehead wrap"><h1>Coupon Codes</h1>
+<p>Every code below has been checked and works at the time shown on its card. Click a code to copy it.</p></header>
+<main class="wrap"><div class="prose">
+<h2>Why this page is short</h2>
+<p>Coupon sites list thousands of codes because listing them costs nothing and a dead code still earns the click. We list a code only when we have confirmed it works, which means there will never be many. A short page of working codes beats a long one of expired ones — that is the same standard the verdicts are held to.</p>
+<p>If a code here has stopped working, tell us and it comes down: <a href="mailto:hello@veri-free.com">hello@veri-free.com</a>.</p>
+</div>
+<div style="max-width:720px;padding-bottom:10px">{cards_c}</div>
+<div style="padding-bottom:50px"></div></main>"""
+            p_c = page_nav("Verified Coupon Codes — Verified Free",
+                           "Coupon codes we have actually checked. Short by design: only codes confirmed to work.",
+                           "/coupons/", coup_body)
+            os.makedirs(os.path.join(OUT, "coupons"), exist_ok=True)
+            open(os.path.join(OUT, "coupons", "index.html"), "w").write(p_c)
+
         p = page_nav("Verified Deals & Discounts — Verified Free",
                  "Coupons and discounts that are actually real — verified, with the fine print included.",
                  "/deals/", deals_body)
@@ -2106,7 +2179,7 @@ Verified Free
                 shutil.copy2(src_f, os.path.join(OUT, f))
             elif os.path.isdir(src_f):
                 shutil.copytree(src_f, os.path.join(OUT, f), dirs_exist_ok=True)
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/now/", f"{DOMAIN}/deals/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/now/", f"{DOMAIN}/deals/", f"{DOMAIN}/coupons/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
     if comparisons:
         urls.extend(comp_urls[1:])  # skip /compare/ already added
     from datetime import date

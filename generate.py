@@ -1034,9 +1034,29 @@ function updateAllChip(){{
   var on=0;pills.forEach(function(p){{if(p.classList.contains('on'))on++}});
   var a=document.getElementById('catAll');
   if(!a)return;
-  a.classList.toggle('on',on===pills.length);
+  var allOn=(on===pills.length);
+  a.classList.toggle('on',allOn);
   a.classList.toggle('none',on===0);
+  // The chip is a button, so label it with what a click DOES rather than with
+  // what is selected. Saying "All" while a click cleared everything was the
+  // illogical part. The count carries the state instead.
+  var lbl=a.querySelector('.pl'), cnt=a.querySelector('.pc');
+  if(lbl)lbl.textContent=allOn?(a.getAttribute('data-none')||'None'):(a.getAttribute('data-all')||'All');
+  if(cnt){{
+    var shown=0;
+    document.querySelectorAll('.grid .card').forEach(function(c){{
+      if(c.offsetParent!==null)shown++;
+    }});
+    cnt.textContent=shown;
+  }}
+  a.setAttribute('title',allOn?(a.getAttribute('data-tip-on')||''):(a.getAttribute('data-tip-off')||''));
+  a.setAttribute('aria-pressed',allOn?'true':'false');
 }}
+document.addEventListener('keydown',function(e){{
+  if(e.target&&e.target.id==='catAll'&&(e.key==='Enter'||e.key===' ')){{
+    e.preventDefault();toggleAll();
+  }}
+}});
 function noneCats(){{
   document.querySelectorAll('.catbar .pill-toggle[data-cat]').forEach(function(p){{p.classList.remove('on')}});
   saveCats();applyCats();updateAllChip();
@@ -1084,8 +1104,12 @@ function toggleCat(el){{
       var c=p.getAttribute('data-cat');
       p.classList.toggle('on',saved.indexOf(c)>=0);
     }});
-    applyCats();updateAllChip();
+    applyCats();
   }}
+  // Always sync the chip, saved filters or not. Without this the default state
+  // renders the static label from the HTML — "All", while a click clears
+  // everything — which is the exact confusion this chip is meant to avoid.
+  updateAllChip();
 }})();
 function setLoc(loc){{
   document.body.className=document.body.className.replace(/loc-[a-z]+/g,'').trim();
@@ -1233,7 +1257,10 @@ def build():
         for cs in CAT_ORDER)
     CATBAR = (f'<div class="catbar"><div class="catbar-in">'
               f'<div class="catfilters">'
-              f'<span class="pill-toggle reset on" id="catAll" data-tip="Toggle every category on or off" onclick="toggleAll()">All<span class="pc">{len(listings)}</span></span>'
+              f'<span class="pill-toggle reset on" id="catAll" role="button" tabindex="0" aria-pressed="true"'
+              f' data-all="All" data-none="None" data-tip-on="Turn every category off"'
+              f' data-tip-off="Turn every category on" data-tip="Turn every category off"'
+              f' onclick="toggleAll()"><span class="pl">All</span><span class="pc">{len(listings)}</span></span>'
               f'{cat_pills}'
               f'</div>'
               f'<div class="loc-wrap"><button class="loc-pick" id="locbtn" onclick="document.getElementById(\'locmenu\').classList.toggle(\'open\')" title="Set your location">🌐 Global</button>'
@@ -1473,7 +1500,11 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                             f'onclick="toggleCat(this)">{ICONS[cs]}{esc(T["cats"][cs][0])}<span class="pc">{cat_counts.get(cs,0)}</span></span>')
         CATBAR_L = (f'<div class="catbar"><div class="catbar-in">'
                     f'<div class="catfilters">'
-                    f'<span class="pill-toggle reset on" id="catAll" data-tip="{esc(T["all_tip"])}" onclick="toggleAll()">{esc(T["filters"]["all"])}<span class="pc">{len(listings)}</span></span>'
+                    f'<span class="pill-toggle reset on" id="catAll" role="button" tabindex="0" aria-pressed="true"'
+                    f' data-all="{esc(T["filters"]["all"])}" data-none="{esc(T["none_lbl"])}"'
+                    f' data-tip-on="{esc(T["all_tip_on"])}" data-tip-off="{esc(T["all_tip_off"])}"'
+                    f' data-tip="{esc(T["all_tip_on"])}" onclick="toggleAll()">'
+                    f'<span class="pl">{esc(T["filters"]["all"])}</span><span class="pc">{len(listings)}</span></span>'
                     f'{cat_pills_L}'
                     f'</div>'
                     f'<div class="loc-wrap"><button class="loc-pick" id="locbtn" onclick="document.getElementById(\'locmenu\').classList.toggle(\'open\')" title="Set your location">\U0001F310 Global</button>'

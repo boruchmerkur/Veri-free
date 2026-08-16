@@ -45,6 +45,9 @@ L10N = {
   "nav": {"categories": "Categorías", "deals": "Ofertas", "compare": "Comparar", "method": "Cómo verificamos", "biz": "Para empresas",
           "dd_deals": "Ofertas verificadas", "dd_compare": "Comparativas", "dd_changed": "Qué cambió", "dd_buy": "Cuándo comprar"},
   "all_tip": "Activa o desactiva todas las categorías",
+  "none_lbl": "Ninguno",
+  "all_tip_on": "Desactivar todas las categorías",
+  "all_tip_off": "Activar todas las categorías",
   "card": {"you_get": "Incluye", "saves": "AHORRAS {v}", "pays_you": "TE PAGA {v}", "pays": "PAGA {v}", "costs_you": "TE CUESTA", "value": "valor de {v}"},
   "banner": "¿Prefieres español? Versión en español →",
   "verdicts": {
@@ -105,6 +108,9 @@ L10N = {
   "nav": {"categories": "Categorias", "deals": "Ofertas", "compare": "Comparar", "method": "Como verificamos", "biz": "Para empresas",
           "dd_deals": "Ofertas verificadas", "dd_compare": "Comparativos", "dd_changed": "O que mudou", "dd_buy": "Quando comprar"},
   "all_tip": "Ligue ou desligue todas as categorias",
+  "none_lbl": "Nenhum",
+  "all_tip_on": "Desligar todas as categorias",
+  "all_tip_off": "Ligar todas as categorias",
   "card": {"you_get": "Inclui", "saves": "ECONOMIZA {v}", "pays_you": "TE PAGA {v}", "pays": "PAGA {v}", "costs_you": "TE CUSTA", "value": "valor de {v}"},
   "banner": "Prefere português? Versão em português →",
   "verdicts": {
@@ -165,6 +171,9 @@ L10N = {
   "nav": {"categories": "Catégories", "deals": "Bons plans", "compare": "Comparer", "method": "Notre méthode", "biz": "Pour les entreprises",
           "dd_deals": "Offres vérifiées", "dd_compare": "Comparatifs", "dd_changed": "Ce qui a changé", "dd_buy": "Quand acheter"},
   "all_tip": "Activer ou désactiver toutes les catégories",
+  "none_lbl": "Aucune",
+  "all_tip_on": "Désactiver toutes les catégories",
+  "all_tip_off": "Activer toutes les catégories",
   "card": {"you_get": "Inclus", "saves": "ÉCONOMISEZ {v}", "pays_you": "VOUS PAIE {v}", "pays": "PAIE {v}", "costs_you": "VOUS COÛTE", "value": "valeur {v}"},
   "banner": "Vous préférez le français ? Version française →",
   "verdicts": {
@@ -225,6 +234,9 @@ L10N = {
   "nav": {"categories": "Kategorien", "deals": "Deals", "compare": "Vergleichen", "method": "So prüfen wir", "biz": "Für Unternehmen",
           "dd_deals": "Geprüfte Deals", "dd_compare": "Vergleiche", "dd_changed": "Was sich geändert hat", "dd_buy": "Wann kaufen"},
   "all_tip": "Alle Kategorien ein- oder ausschalten",
+  "none_lbl": "Keine",
+  "all_tip_on": "Alle Kategorien ausschalten",
+  "all_tip_off": "Alle Kategorien einschalten",
   "card": {"you_get": "Enthält", "saves": "SPART {v}", "pays_you": "ZAHLT DIR {v}", "pays": "ZAHLT {v}", "costs_you": "KOSTET DICH", "value": "{v} Wert"},
   "banner": "Lieber auf Deutsch? Deutsche Version →",
   "verdicts": {

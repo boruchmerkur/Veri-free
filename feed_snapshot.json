@@ -1,109 +1,219 @@
 {
- "updated": "2026-08-06T17:20:16.883771+00:00",
+ "updated": "2026-08-20T16:40:30.445859+00:00",
  "items": [
   {
-   "title": "OpenAI will no longer limit how many texts free accounts can send to ChatGPT",
-   "url": "https://www.engadget.com/2231807/openai-no-longer-limit-how-many-texts-free-accounts-send-chatgpt/",
-   "source": "Engadget",
+   "title": "The Pixel 11 Pro's HiLight feature is finally useful, thanks to this open-source app",
+   "url": "https://www.androidpolice.com/this-open-source-app-just-made-the-pixel-11s-new-feature-much-better/",
+   "source": "Android Police",
    "kind": "article",
-   "image": "https://www.engadget.com/img/gallery/openai-no-longer-limit-how-many-texts-free-accounts-send-chatgpt/l-intro-1786036091.jpg",
-   "summary": "There will still be limits on image generation, voice mode usage and other features.",
-   "date": "2026-08-06T17:01:56+00:00",
-   "score": 12,
+   "image": "https://static0.anpoimages.com/wordpress/wp-content/uploads/wm/2026/08/google-pixel-11-pro-xl-hilight-contact-color-picker-2.jpg",
+   "summary": "The Pixel 11 Pro's new feature is limited, but it doesn't have to be",
+   "date": "2026-08-20T15:13:45+00:00",
+   "score": 8,
    "tags": [
-    "FREE TIER"
+    "LICENSE"
    ]
   },
   {
-   "title": "Summer heat is coming for your PC’s performance. Here’s what actually helps",
-   "url": "https://www.pcworld.com/article/3202846/summer-heat-is-coming-for-your-pcs-performance-heres-what-actually-helps.html",
+   "title": "3 self-hosted tools that could replace paid services this weekend (August 21 - 23)",
+   "url": "https://www.howtogeek.com/self-hosted-tools-that-could-replace-paid-services-this-weekend-august-21-23/",
+   "source": "How-To Geek",
+   "kind": "article",
+   "image": "https://static0.howtogeekimages.com/wordpress/wp-content/uploads/wm/2026/07/geekom-it13-max-mini-pc-with-multi-port-usb-c-chargers-in-homelab-setup.jpg",
+   "summary": "These self-hosted tools could simplify your workflow and trim expenses.",
+   "date": "2026-08-20T15:00:13+00:00",
+   "score": 8,
+   "tags": [
+    "LICENSE"
+   ]
+  },
+  {
+   "title": "Most people jump straight to Jellyfin, but these 5 self-hosted services matter more",
+   "url": "https://www.xda-developers.com/self-hosted-services-to-set-up-before-media-server/",
+   "source": "XDA",
+   "kind": "article",
+   "image": "https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2026/08/plex-in-browser-on-pc.png",
+   "summary": "Your foundation should be in place before growing your media repository",
+   "date": "2026-08-20T14:30:15+00:00",
+   "score": 8,
+   "tags": [
+    "LICENSE"
+   ]
+  },
+  {
+   "title": "Peacock just raised prices again. Here’s how to pay less",
+   "url": "https://www.pcworld.com/article/3216242/peacock-raises-prices-but-you-can-still-get-a-deal.html",
    "source": "PCWorld",
    "kind": "article",
-   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3202846-0-36007700-1786023150-thermometer-4767444_1920.jpg?quality=50&strip=all",
-   "summary": "When heatwaves strike in summer, any chance to cool down is welcome — whether at the lake, in an ice-cream parlor, or at home in front of a fan. What’s a relief for us is also something your computer desperately needs as soon as the thermometer hits the 30-degrees Celsius mark. After all, the hotter the ambient air, the harder the cooling system in your PC or laptop has to work. This puts the fans under constant strain: They get louder, use more energy, and wear out much faster. That’s why you should put your computer through a heat check: This way, you can ensure that it continues to run at i",
-   "date": "2026-08-06T13:32:24+00:00",
+   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3216242-0-92456500-1787231743-peacock.jpg?quality=50&strip=all",
+   "summary": "Remember back in 2020 when Peacock cost just $5 per month? Those days are long gone. With a new round of price hikes , Peacock Premium now costs $13 per month or $130 per year, up from $11 or $110 per year previously. The Premium Plus now costs $20 per month or $200 per year, up from $17 per month or $170 per year. Peacock’s “Select” tier, which excludes live sports, movies, and Peacock originals, now costs $9 per month or $90 per year, up from $8 per month or $80 per year. But just because NBCUniversal wants more money for Peacock doesn’t mean you have to pay it. A spokesperson confirmed that",
+   "date": "2026-08-20T13:00:00+00:00",
+   "score": 28,
+   "tags": [
+    "PRICE CHANGE",
+    "FREE TIER",
+    "SUBSCRIPTION"
+   ]
+  },
+  {
+   "title": "Gmail offers fully encrypted email. But better alternatives exist",
+   "url": "https://www.pcworld.com/article/3203183/gmail-offers-fully-encrypted-email-but-better-alternatives-exist.html",
+   "source": "PCWorld",
+   "kind": "article",
+   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3203183-0-80523300-1787221832-gmail-pixabay-diedryreyes3456.jpg?quality=50&strip=all",
+   "summary": "Email that only your recipient can read—sounds like a great idea for sensitive messages, right? Especially if you could have that within Gmail. Technically, you can. Google does offer full end-to-end encryption (EE2E) for email, which blocks everyone but you and your recipient from reading its contents. Not even Google would be able to know what EE2E emails say, despite the data living on its servers. But I don’t recommend Gmail if you want to use EE2E for your email. For this protection, you should turn elsewhere. Other email providers have a better lock on this feature for users like you and",
+   "date": "2026-08-20T10:30:00+00:00",
    "score": 11,
    "tags": [
-    "SHUTTING DOWN",
-    "FREE PICK"
+    "FREE TIER",
+    "SUBSCRIPTION"
    ]
   },
   {
-   "title": "DeepSeek is preparing users for a big price hike",
-   "url": "https://www.androidauthority.com/deepseek-ai-models-price-increase-3695266/",
-   "source": "Android Authority",
-   "kind": "article",
-   "image": "https://www.androidauthority.com/wp-content/uploads/2025/01/Ollama-DeepSeek-on-Android.jpg",
-   "summary": "DeepSeek has reportedly advised clients to plan for an unspecified hike to its API rates in the future.",
-   "date": "2026-08-06T13:32:04+00:00",
+   "title": "FTC, Connecticut Secure $4 Million Settlement with Manchester City Nissan Over Deceptive Fees Allegations",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/08/ftc-connecticut-secure-4-million-settlement-manchester-city-nissan-over-deceptive-fees-allegations",
+   "source": "FTC",
+   "kind": "enforcement",
+   "image": "",
+   "summary": "The Federal Trade Commission and state of Connecticut today secured a $4 million settlement with a Manchester, Conn., auto dealer and its owners and managers resolving allegations the business was, among other things, double-charging for “certified pre-owned” vehicles and collecting other fees without consumer authorization.&nbsp; View Press Release",
+   "date": "2026-08-19T12:00:00+00:00",
    "score": 12,
    "tags": [
-    "PRICE CHANGE"
+    "ENFORCEMENT"
    ]
   },
   {
-   "title": "How to watch the NFL without cable—and spend as little as possible",
-   "url": "https://www.pcworld.com/article/3207289/how-to-watch-the-nfl-without-cable-and-spend-as-little-as-possible.html",
+   "title": "NordVPN review: More than just a VPN, it’s a privacy powerhouse",
+   "url": "https://www.pcworld.com/article/398777/nordvpn-review-3.html",
    "source": "PCWorld",
    "kind": "article",
-   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3207289-0-59218100-1786024922-paolo-aldrighetti-ASPPHH7MMIc-unsplash.jpg?quality=50&strip=all",
-   "summary": "I’m not going pretend that watching the NFL has gotten easier in the streaming age, but believe it or not, it’s still cheaper than cable. Between slimmer streaming TV packages, new standalone options, and possibly an antenna, there are more ways to get the football coverage you want without paying for what you don’t. As the 2026 NFL season gets closer, here’s how to plan ahead and avoid spending too much just to watch football: Option 1: Sports-centric streaming bundles The easiest way to get broad NFL coverage with minimal hassle is with a skinny sports bundle such as YouTube TV Sports , Dire",
-   "date": "2026-08-06T13:00:00+00:00",
-   "score": 10,
+   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/398777-0-60940300-1787138165-NordVPN-lead-image.webp",
+   "summary": "At a Glance Expert's Rating Pros Outstanding connection speeds Excellent streaming performance Loaded with privacy and security features Numerous independent audits Cons Expensive monthly plans and steep renewal prices Important features vary by platform and subscription tier Our Verdict NordVPN packs a lot into a single premium subscription: tons of country connections, excellent streaming site compatibility, a wealth of configuration options, and lightning-fast server speeds. It has grown beyond just a VPN, now offering a potent suite of privacy and security features that few competitors can",
+   "date": "2026-08-19T11:15:00+00:00",
+   "score": 13,
    "tags": [
     "SUBSCRIPTION",
-    "FREE PICK"
+    "CANCEL IT",
+    "SCAM"
    ]
   },
   {
-   "title": "Here's When ChatGPT Atlas Will Shut Down for Good",
-   "url": "https://lifehacker.com/tech/heres-when-chatgpt-atlas-will-shut-down?utm_medium=RSS",
+   "title": "This VPN protects unlimited devices, and a 3-year subscription is on sale for $84",
+   "url": "https://www.pcworld.com/article/3215170/this-vpn-protects-unlimited-devices-and-a-3-year-subscription-is-on-sale-for-84.html",
+   "source": "PCWorld",
+   "kind": "article",
+   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3215170-0-87899900-1787126467-Surfshark.jpg?quality=50&strip=all",
+   "summary": "TL;DR : Surfshark VPN protects unlimited devices with encryption and ad blocking, and a three-year subscription is on sale for $83.99 (reg. $430). Most VPNs cap how many devices you can protect, then charge more once you go over. Instead of choosing which of your devices isn’t going to be safe, just protect them all. Surfshark VPN has a three-year starter subscription that lets you connect unlimited devices, and it’s on sale for $83.99 (reg. $430). Surfshark has AES-256 encryption and a strict no-logs policy, so your browsing stays private and Surfshark records none of it. Connect to more than",
+   "date": "2026-08-19T08:00:00+00:00",
+   "score": 10,
+   "tags": [
+    "SUBSCRIPTION"
+   ]
+  },
+  {
+   "title": "Mojo is now open source",
+   "url": "https://www.modular.com/blog/mojo-open-source",
+   "source": "Hacker News",
+   "kind": "article",
+   "image": "",
+   "summary": "Article URL: https://www.modular.com/blog/mojo-open-source Comments URL: https://news.ycombinator.com/item?id=49348079 Points: 218 # Comments: 55",
+   "date": "2026-08-18T16:23:24+00:00",
+   "score": 8,
+   "tags": [
+    "LICENSE"
+   ]
+  },
+  {
+   "title": "lemon gets cease & desist from company selling subscriptions to car manuals",
+   "url": "https://www.youtube.com/watch?v=Awe6o9TemlQ",
+   "source": "Louis Rossmann",
+   "kind": "video",
+   "image": "https://i2.ytimg.com/vi/Awe6o9TemlQ/hqdefault.jpg",
+   "summary": "https://consumerrights.wiki/w/User:Louis/Car_service_manuals,_MVBER,_and_the_repair_information_gap",
+   "date": "2026-08-18T11:57:34+00:00",
+   "score": 10,
+   "tags": [
+    "SUBSCRIPTION"
+   ]
+  },
+  {
+   "title": "ChatGPT’s Computer History #Vergecast",
+   "url": "https://www.youtube.com/shorts/Y_CejZC7ShA",
+   "source": "The Verge",
+   "kind": "video",
+   "image": "https://i2.ytimg.com/vi/Y_CejZC7ShA/hqdefault.jpg",
+   "summary": "ChatGPT’s Computer History tracks your clicks and keystrokes. Amazon is trying to crush class action suits before they get started. Uber partners with Zipline on Eats drone deliveries. And everything announced at Disney’s D23. Here are today’s top headlines. Subscribe: http://goo.gl/G5RXGs Like The Verge on Facebook: https://goo.gl/2P1aGc Follow on Twitter: https://goo.gl/XTWX61 Follow on Instagram: https://goo.gl/7ZeLv Watch The Vergecast on YouTube: https://bit.ly/40RFRkg The Vergecast Podcast: https://bit.ly/3WQDexZ Decoder with Nilay Patel: http://apple.co/3v29nDc More about our podcasts: ",
+   "date": "2026-08-17T19:42:53+00:00",
+   "score": 9,
+   "tags": [
+    "ENFORCEMENT",
+    "PRIVACY"
+   ]
+  },
+  {
+   "title": "Bill Payment Firm Doxo to Pay $2.1 Million to Settle FTC Allegations It Deceived Consumers and Charged Them Add-On Fees",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/08/bill-payment-firm-doxo-pay-21-million-settle-ftc-allegations-it-deceived-consumers-charged-them-add",
+   "source": "FTC",
+   "kind": "enforcement",
+   "image": "",
+   "summary": "Online bill payment firm Doxo will pay $2.1 million to settle Federal Trade Commission allegations that the company and two of its co-founders used misleading search ads to impersonate consumers’ billers and misled consumers about millions of dollars in fees they tacked on to consumers’ bills. View Press Release",
+   "date": "2026-08-17T12:00:00+00:00",
+   "score": 12,
+   "tags": [
+    "ENFORCEMENT"
+   ]
+  },
+  {
+   "title": "What is a Homelab?",
+   "url": "https://www.youtube.com/watch?v=5bsI3M44NWo",
+   "source": "Techquickie",
+   "kind": "video",
+   "image": "https://i2.ytimg.com/vi/5bsI3M44NWo/hqdefault.jpg",
+   "summary": "Thanks to our sponsor Bitdefender! Try their powerful Scam Protection free for 90 days: https://bitdefend.me/90Linus #Bitdefender A homelab isn't a scary server rack humming in a basement - it's just a computer you own, quietly running the services you'd normally rent from the cloud. We break down what you can actually run on one, what hardware to run it on, and how to start without wrecking your power bill or getting hacked. Whether you want to kill your subscriptions, take back your data, or pick up real tech skills, this is where you start. Thanks to Riley’s favorite dad Jeff Geerling for h",
+   "date": "2026-08-15T18:07:42+00:00",
+   "score": 8,
+   "tags": [
+    "SUBSCRIPTION",
+    "SCAM"
+   ]
+  },
+  {
+   "title": "FTC Sends More than $23.8 Million to Drivers and Diners Harmed by Grubhub’s Deceptive Advertising Claims and Other Unlawful Conduct",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/08/ftc-sends-more-238-million-drivers-diners-harmed-grubhubs-deceptive-advertising-claims-other",
+   "source": "FTC",
+   "kind": "enforcement",
+   "image": "",
+   "summary": "The Federal Trade Commission is sending payments totaling more than&nbsp;$23.8 million to drivers harmed by Grubhub’s deceptive earnings claims and diners harmed by the company’s misleading and unlawful conduct. View Press Release",
+   "date": "2026-08-12T12:00:00+00:00",
+   "score": 12,
+   "tags": [
+    "ENFORCEMENT"
+   ]
+  },
+  {
+   "title": "The Best Way to Get Past an Article's Paywall",
+   "url": "https://lifehacker.com/how-to-bypass-a-paywall-to-read-an-article-for-free?utm_medium=RSS",
    "source": "Lifehacker",
    "kind": "article",
-   "image": "https://lifehacker.com/imagery/articles/01KZ9R7KC2QYXM1MW7GNMV9GHY/hero-image.jpg",
-   "summary": "OpenAI is sunsetting another one of its short-lived products.",
-   "date": "2026-08-05T20:45:00+00:00",
+   "image": "https://lifehacker.com/imagery/articles/01HF2GTD2GVD2SP033WMTR85N6/hero-image.jpg",
+   "summary": "Some tricks that used to work no longer do—but this one is pretty reliable.",
+   "date": "2026-08-11T19:30:00+00:00",
    "score": 12,
    "tags": [
-    "SHUTTING DOWN"
+    "PAYWALL"
    ]
   },
   {
-   "title": "Verizon’s Apple Music perk won’t dodge the price hike — here’s what you’ll pay",
-   "url": "https://www.androidauthority.com/verizon-apple-music-perk-price-hike-3694904/",
-   "source": "Android Authority",
-   "kind": "article",
-   "image": "https://www.androidauthority.com/wp-content/uploads/2026/05/motorola-moto-g-stylus-2026-apple-music.jpg",
-   "summary": "Following last month’s Apple Music price hikes, Verizon is raising prices on its perks, too.",
-   "date": "2026-08-05T17:33:16+00:00",
-   "score": 12,
+   "title": "FTC Stops Sprawling Credit Repair Scheme that Scammed Consumers Out of Nearly $200 Million",
+   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/08/ftc-stops-sprawling-credit-repair-scheme-scammed-consumers-out-nearly-200-million",
+   "source": "FTC",
+   "kind": "enforcement",
+   "image": "",
+   "summary": "Scheme allegedly deceptively posed as debt collectors and creditors, used false and misleading promises to collect illegal upfront fees and recurring charges At the request of the Federal Trade Commission, a federal court has temporarily halted a bogus credit repair scheme run by a sprawling network of 17 related companies and their principals. View Press Release",
+   "date": "2026-08-10T12:00:00+00:00",
+   "score": 17,
    "tags": [
-    "PRICE CHANGE"
-   ]
-  },
-  {
-   "title": "Google Assistant shutting down on Android and Wear OS in September",
-   "url": "https://9to5google.com/2026/08/04/google-assistant-september-2026-shutdown/",
-   "source": "9to5Google",
-   "kind": "article",
-   "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/04/Google-Assistant-UI-9.jpg?quality=82&strip=all&w=1600",
-   "summary": "As expected , Google Assistant is going away in 2026, and the company just provided a September 4 date for Android.",
-   "date": "2026-08-05T04:26:06+00:00",
-   "score": 12,
-   "tags": [
-    "SHUTTING DOWN"
-   ]
-  },
-  {
-   "title": "Apple Could Owe Some Users up to $5,000 Each in This Class Action Lawsuit",
-   "url": "https://lifehacker.com/tech/apple-could-owe-users-over-32-billion-in-this-class-action-lawsuit?utm_medium=RSS",
-   "source": "Lifehacker",
-   "kind": "article",
-   "image": "https://lifehacker.com/imagery/articles/01KZ71CAR5AHBCJ56ZXSNNF53D/hero-image.jpg",
-   "summary": "If you're an Illinois Apple user, you could be entitled to a big payout.",
-   "date": "2026-08-04T21:00:01+00:00",
-   "score": 12,
-   "tags": [
+    "SUBSCRIPTION",
     "ENFORCEMENT"
    ]
   },
@@ -123,19 +233,6 @@
    ]
   },
   {
-   "title": "WHOOP is giving members a one-year subscription to Natural Cycles",
-   "url": "https://www.androidauthority.com/whoop-natural-cycles-integration-3694512/",
-   "source": "Android Authority",
-   "kind": "article",
-   "image": "https://www.androidauthority.com/wp-content/uploads/2026/08/Whoop-Natural-Cycles-app.jpg",
-   "summary": "You can now use your WHOOP band to feed data directly into Natural Cycles.",
-   "date": "2026-08-04T18:05:38+00:00",
-   "score": 10,
-   "tags": [
-    "SUBSCRIPTION"
-   ]
-  },
-  {
    "title": "EFF Joins Call for FTC to Drop Its Disastrous AI Policy Proposal",
    "url": "https://www.eff.org/deeplinks/2026/08/eff-joins-comments-calling-ftc-drop-its-ai-policy-proposal",
    "source": "EFF",
@@ -145,33 +242,6 @@
    "date": "2026-08-03T22:17:56+00:00",
    "score": 12,
    "tags": [
-    "ENFORCEMENT"
-   ]
-  },
-  {
-   "title": "OnePlus 15 and more have fully sold out in the US following shutdown",
-   "url": "https://9to5google.com/2026/08/03/oneplus-15-sold-out-us-shutdown/",
-   "source": "9to5Google",
-   "kind": "article",
-   "image": "https://9to5google.com/wp-content/uploads/sites/4/2025/11/oneplus-15-review-13.jpg?quality=82&strip=all&w=1600",
-   "summary": "OnePlus has officially closed its doors in the US, but remaining stock was available for a little while. Now, for OnePlus 15 and most other products, US stock has dried up.",
-   "date": "2026-08-03T17:55:00+00:00",
-   "score": 12,
-   "tags": [
-    "SHUTTING DOWN"
-   ]
-  },
-  {
-   "title": "June oven's shutdown is the natural progression of Weber breaking the law with NO CONSEQUENCES!",
-   "url": "https://www.youtube.com/watch?v=OA9otrFCpjw",
-   "source": "Louis Rossmann",
-   "kind": "video",
-   "image": "https://i4.ytimg.com/vi/OA9otrFCpjw/hqdefault.jpg",
-   "summary": "https://consumerrights.wiki/w/Weber_terminates_June_Oven_app https://www.youtube.com/watch?v=HibW8CQK1js https://www.youtube.com/watch?v=cQ7unP3gRL8 https://www.ftc.gov/news-events/news/press-releases/2022/07/ftc-takes-action-against-weber-illegally-restricting-customers-right-repair",
-   "date": "2026-07-29T14:05:52+00:00",
-   "score": 18,
-   "tags": [
-    "SHUTTING DOWN",
     "ENFORCEMENT"
    ]
   },
@@ -200,73 +270,6 @@
    "tags": [
     "SHUTTING DOWN",
     "PRIVACY"
-   ]
-  },
-  {
-   "title": "A way to spot scams: how someone asks you to pay",
-   "url": "https://consumer.ftc.gov/%3Ca%20href%3D%22https%3A//consumer.ftc.gov/consumer-alerts/2026/07/way-spot-scams-how-someone-asks-you-pay%22%20hreflang%3D%22en%22%3Eview%3C/a%3E",
-   "source": "FTC Consumer",
-   "kind": "enforcement",
-   "image": "",
-   "summary": "Let’s say someone contacts you unexpectedly and says you have to pay to fix a problem, get a prize, or something else. But then they say the only&nbsp;way to pay is by&nbsp;bank transfer,&nbsp;wire transfer,&nbsp;cryptocurrency,&nbsp;payment app, or&nbsp;gift card. Well, reports to the FTC show that’s a scam.",
-   "date": "2026-07-22T16:00:00+00:00",
-   "score": 12,
-   "tags": [
-    "ENFORCEMENT",
-    "SCAM"
-   ]
-  },
-  {
-   "title": "FTC Returns Money to Consumers Harmed by Trend Deploy’s Deceptive Marketing",
-   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-returns-money-consumers-harmed-trend-deploys-deceptive-marketing",
-   "source": "FTC",
-   "kind": "enforcement",
-   "image": "",
-   "summary": "The Federal Trade Commission is sending more than $672,000 to consumers deceived by the operator of Trend Deploy, Frank Romero. The FTC is mailing 9,419 checks to affected consumers, who should cash their checks within 90 days, as indicated on the check. View Press Release",
-   "date": "2026-07-22T12:00:00+00:00",
-   "score": 12,
-   "tags": [
-    "ENFORCEMENT"
-   ]
-  },
-  {
-   "title": "Looking for a substance use disorder clinic? Scroll past paid ads",
-   "url": "https://consumer.ftc.gov/%3Ca%20href%3D%22https%3A//consumer.ftc.gov/consumer-alerts/2026/07/looking-substance-use-disorder-clinic-scroll-past-paid-ads%22%20hreflang%3D%22en%22%3Eview%3C/a%3E",
-   "source": "FTC Consumer",
-   "kind": "enforcement",
-   "image": "",
-   "summary": "If you’re searching online for a substance use disorder clinic, the last thing you need is a scam. Unfortunately, some dishonest businesses have used paid search results to trick people into contacting their clinics instead of the ones people were searching for. Here’s how it happened in a recent FTC case: You’re looking for help with a substance use disorder. So you search online using the name of a clinic in your town.",
-   "date": "2026-07-20T07:43:38+00:00",
-   "score": 9,
-   "tags": [
-    "ENFORCEMENT",
-    "SCAM"
-   ]
-  },
-  {
-   "title": "FTC Approves Final Order Against TruHeight for Deceptive and Unsubstantiated Advertising of Supplements for Kids and Teens",
-   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-approves-final-order-against-truheight-deceptive-unsubstantiated-advertising-supplements-kids",
-   "source": "FTC",
-   "kind": "enforcement",
-   "image": "",
-   "summary": "The Federal Trade Commission finalized an order with Vanilla Chip LLC—which does business as TruHeight—and its two principals requiring them to pay $750,000, while barring them from making false or unsupported health claims and using fake or incentivized consumer reviews. View Press Release",
-   "date": "2026-07-15T12:00:00+00:00",
-   "score": 12,
-   "tags": [
-    "ENFORCEMENT"
-   ]
-  },
-  {
-   "title": "FTC Secures Major Settlement with Caremark, Resolving Antitrust Case Against Second Drug Middleman",
-   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-secures-major-settlement-caremark-resolving-antitrust-case-against-second-drug-middleman",
-   "source": "FTC",
-   "kind": "enforcement",
-   "image": "",
-   "summary": "Settlement will drive down patients’ out-of-pocket costs, increase transparency and ensure community pharmacies are treated fairly The Federal Trade Commission secured a settlement agreement with one of the nation’s largest pharmacy benefit managers (PBMs) and its affiliated entities, marking yet another important victory in the Commission’s fight to lower healthcare costs for Americans. View Press Release",
-   "date": "2026-07-14T12:00:00+00:00",
-   "score": 12,
-   "tags": [
-    "ENFORCEMENT"
    ]
   },
   {

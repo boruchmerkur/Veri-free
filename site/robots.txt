@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://veri-free.com/sitemap.xml

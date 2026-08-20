@@ -1,5 +1,5 @@
 {
-  "checked": "July 2026",
+  "checked": "August 2026",
   "listings": [
     {
       "name": "LibreOffice",
@@ -507,7 +507,7 @@
           "source": "Google Play",
           "score": "4.8/5",
           "url": "https://play.google.com/store/apps/details?id=com.canva.editor&hl=en_US&gl=US",
-          "count": "26M"
+          "count": "27M"
         }
       ],
       "sentiment": {
@@ -589,7 +589,7 @@
           "source": "Google Play",
           "score": "4.6/5",
           "url": "https://play.google.com/store/apps/details?id=notion.id&hl=en_US&gl=US",
-          "count": "380K"
+          "count": "385K"
         }
       ],
       "sentiment": {
@@ -672,7 +672,7 @@
     {
       "name": "Zoom",
       "category": "software-tools",
-      "url": "https://zoom.us",
+      "url": "https://www.zoom.com",
       "verdict": "freeish",
       "card": "No",
       "autobill": "—",
@@ -828,13 +828,13 @@
           "source": "App Store",
           "score": "4.1/5",
           "url": "https://apps.apple.com/us/app/id618783545",
-          "count": "49K"
+          "count": "50K"
         },
         {
           "source": "Google Play",
           "score": "4.6/5",
           "url": "https://play.google.com/store/apps/details?id=com.Slack&hl=en_US&gl=US",
-          "count": "207K"
+          "count": "211K"
         }
       ],
       "sentiment": {
@@ -983,7 +983,7 @@
           "source": "App Store",
           "score": "4.8/5",
           "url": "https://apps.apple.com/us/app/id327630330",
-          "count": "874K"
+          "count": "885K"
         },
         {
           "source": "Google Play",
@@ -1120,7 +1120,7 @@
           "source": "App Store",
           "score": "4.6/5",
           "url": "https://apps.apple.com/us/app/id1437005085",
-          "count": "84K"
+          "count": "94K"
         },
         {
           "source": "Google Play",
@@ -1514,13 +1514,13 @@
           "source": "App Store",
           "score": "4.8/5",
           "url": "https://apps.apple.com/us/app/id6448311069",
-          "count": "9.0M"
+          "count": "9.5M"
         },
         {
           "source": "Google Play",
           "score": "4.8/5",
           "url": "https://play.google.com/store/apps/details?id=com.openai.chatgpt&hl=en_US&gl=US",
-          "count": "51M"
+          "count": "53M"
         }
       ],
       "sentiment": {
@@ -1602,13 +1602,13 @@
           "source": "App Store",
           "score": "4.7/5",
           "url": "https://apps.apple.com/us/app/id6473753684",
-          "count": "215K"
+          "count": "238K"
         },
         {
           "source": "Google Play",
           "score": "4.5/5",
           "url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US&gl=US",
-          "count": "644K"
+          "count": "661K"
         }
       ],
       "sentiment": {
@@ -1696,7 +1696,7 @@
           "source": "Google Play",
           "score": "4.6/5",
           "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.bard&hl=en_US&gl=US",
-          "count": "41M"
+          "count": "42M"
         }
       ],
       "sentiment": {
@@ -1770,13 +1770,13 @@
           "source": "App Store",
           "score": "4.8/5",
           "url": "https://apps.apple.com/us/app/id1668000334",
-          "count": "491K"
+          "count": "497K"
         },
         {
           "source": "Google Play",
           "score": "4.6/5",
           "url": "https://play.google.com/store/apps/details?id=ai.perplexity.app.android&hl=en_US&gl=US",
-          "count": "2.0M"
+          "count": "2.1M"
         }
       ],
       "sentiment": {
@@ -1980,11 +1980,11 @@
           "source": "App Store",
           "score": "4.6/5",
           "url": "https://apps.apple.com/us/app/id469863705",
-          "count": "109K"
+          "count": "110K"
         },
         {
           "source": "Google Play",
-          "score": "4.2/5",
+          "score": "4.1/5",
           "url": "https://play.google.com/store/apps/details?id=org.khanacademy.android&hl=en_US&gl=US",
           "count": "173K"
         }
@@ -2127,7 +2127,7 @@
     {
       "name": "CS50 (Harvard)",
       "category": "learning",
-      "url": "https://cs50.harvard.edu",
+      "url": "https://cs50.harvard.edu/x/",
       "verdict": "truly",
       "card": "No",
       "autobill": "—",
@@ -2249,7 +2249,7 @@
           "source": "Google Play",
           "score": "4.7/5",
           "url": "https://play.google.com/store/apps/details?id=com.duolingo&hl=en_US&gl=US",
-          "count": "47M"
+          "count": "49M"
         }
       ],
       "sentiment": {
@@ -2337,7 +2337,7 @@
           "source": "App Store",
           "score": "4.8/5",
           "url": "https://apps.apple.com/us/app/id736535961",
-          "count": "173K"
+          "count": "174K"
         },
         {
           "source": "Google Play",
@@ -2653,7 +2653,7 @@
           "source": "Google Play",
           "score": "4.8/5",
           "url": "https://play.google.com/store/apps/details?id=com.linkedin.android.learning&hl=en_US&gl=US",
-          "count": "182K"
+          "count": "183K"
         }
       ],
       "sentiment": {
@@ -2728,11 +2728,11 @@
           "source": "App Store",
           "score": "4.7/5",
           "url": "https://apps.apple.com/us/app/id544007664",
-          "count": "48M"
+          "count": "49M"
         },
         {
           "source": "Google Play",
-          "score": "3.9/5",
+          "score": "3.8/5",
           "url": "https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=en_US&gl=US",
           "count": "171M"
         }
@@ -2799,7 +2799,7 @@
           "source": "Google Play",
           "score": "4.9/5",
           "url": "https://play.google.com/store/apps/details?id=com.tubitv&hl=en_US&gl=US",
-          "count": "2.5M"
+          "count": "2.6M"
         }
       ],
       "sentiment": {
@@ -2869,7 +2869,7 @@
           "source": "Google Play",
           "score": "3.7/5",
           "url": "https://play.google.com/store/apps/details?id=tv.pluto.android&hl=en_US&gl=US",
-          "count": "802K"
+          "count": "804K"
         }
       ],
       "sentiment": {
@@ -2944,7 +2944,7 @@
           "source": "App Store",
           "score": "4.8/5",
           "url": "https://apps.apple.com/us/app/id324684580",
-          "count": "41M"
+          "count": "42M"
         },
         {
           "source": "Google Play",
@@ -3160,7 +3160,7 @@
           "source": "Google Play",
           "score": "4.7/5",
           "url": "https://play.google.com/store/apps/details?id=com.hoopladigital.android&hl=en_US&gl=US",
-          "count": "216K"
+          "count": "217K"
         }
       ],
       "sentiment": {
@@ -3249,7 +3249,7 @@
           "source": "Google Play",
           "score": "4.7/5",
           "url": "https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient&hl=en_US&gl=US",
-          "count": "5.5M"
+          "count": "5.6M"
         }
       ],
       "sentiment": {
@@ -3421,13 +3421,13 @@
           "source": "App Store",
           "score": "4.9/5",
           "url": "https://apps.apple.com/us/app/id1076402606",
-          "count": "4.4M"
+          "count": "4.5M"
         },
         {
           "source": "Google Play",
           "score": "4.8/5",
           "url": "https://play.google.com/store/apps/details?id=com.overdrive.mobile.android.libby&hl=en_US&gl=US",
-          "count": "720K"
+          "count": "729K"
         }
       ],
       "sentiment": {
@@ -3549,11 +3549,11 @@
           "source": "App Store",
           "score": "4.5/5",
           "url": "https://apps.apple.com/us/app/id1163273965",
-          "count": "764"
+          "count": "768"
         },
         {
           "source": "Google Play",
-          "score": "4.5/5",
+          "score": "4.6/5",
           "url": "https://play.google.com/store/apps/details?id=org.sefaria.sefaria&hl=en_US&gl=US",
           "count": "4.1K"
         }
@@ -3946,7 +3946,7 @@
           "source": "Google Play",
           "score": "4.2/5",
           "url": "https://play.google.com/store/apps/details?id=com.robinhood.android&hl=en_US&gl=US",
-          "count": "531K"
+          "count": "537K"
         }
       ],
       "sentiment": {
@@ -4061,7 +4061,7 @@
           "source": "Google Play",
           "score": "4.5/5",
           "url": "https://play.google.com/store/apps/details?id=com.truebill&hl=en_US&gl=US",
-          "count": "136K"
+          "count": "138K"
         }
       ],
       "sentiment": {
@@ -5203,7 +5203,7 @@
           "source": "Google Play",
           "score": "4.6/5",
           "url": "https://play.google.com/store/apps/details?id=com.whatsapp&hl=en_US&gl=US",
-          "count": "240M"
+          "count": "242M"
         }
       ],
       "sentiment": {
@@ -5269,11 +5269,11 @@
           "source": "App Store",
           "score": "4.0/5",
           "url": "https://apps.apple.com/us/app/id686449807",
-          "count": "276K"
+          "count": "277K"
         },
         {
           "source": "Google Play",
-          "score": "3.9/5",
+          "score": "3.8/5",
           "url": "https://play.google.com/store/apps/details?id=org.telegram.messenger&hl=en_US&gl=US",
           "count": "17M"
         }
@@ -5351,15 +5351,15 @@
         },
         {
           "source": "App Store",
-          "score": "4.7/5",
+          "score": "4.8/5",
           "url": "https://apps.apple.com/us/app/id1137397744",
-          "count": "30K"
+          "count": "31K"
         },
         {
           "source": "Google Play",
           "score": "4.7/5",
           "url": "https://play.google.com/store/apps/details?id=com.x8bit.bitwarden&hl=en_US&gl=US",
-          "count": "167K"
+          "count": "172K"
         }
       ],
       "sentiment": {
@@ -5643,7 +5643,7 @@
           "source": "Google Play",
           "score": "4.0/5",
           "url": "https://play.google.com/store/apps/details?id=com.venmo&hl=en_US&gl=US",
-          "count": "913K"
+          "count": "916K"
         }
       ],
       "sentiment": {
@@ -5798,13 +5798,13 @@
           "source": "App Store",
           "score": "4.7/5",
           "url": "https://apps.apple.com/us/app/id363590051",
-          "count": "7.0M"
+          "count": "7.1M"
         },
         {
           "source": "Google Play",
-          "score": "3.9/5",
+          "score": "4.1/5",
           "url": "https://play.google.com/store/apps/details?id=com.netflix.mediaclient&hl=en_US&gl=US",
-          "count": "15M"
+          "count": "16M"
         }
       ],
       "sentiment": {
@@ -5886,38 +5886,35 @@
       "name": "Peacock",
       "category": "entertainment",
       "url": "https://www.peacocktv.com",
-      "verdict": "freeish",
-      "card": "No",
-      "autobill": "—",
-      "account": "Required",
-      "limits": "Limited free catalog; most content behind paid tiers",
-      "realcost": "An account. A small free catalog exists but shrinks steadily.",
-      "free_score": 42,
-      "value_score": 4,
-      "short": "Sort of — barely. Peacock launched with a meaningful free tier, but it's been hollowed out over time. A small selection of shows and movies remains free with ads, but current NBC shows and the catalog's depth require a paid plan.",
-      "catch": "The free tier exists to get the app installed; the content that drove the install increasingly lives behind the subscription. It's a shrinking free sample of a paid service.",
+      "verdict": "notfree",
+      "card": "Yes",
+      "autobill": "Yes — monthly or annual",
+      "account": "Required, with payment",
+      "limits": "No free tier for new customers since January 2023",
+      "realcost": "A paid plan. The cheapest tier is ad-supported and still billed monthly.",
+      "free_score": 4,
+      "value_score": 0,
+      "short": "No, not any more. Peacock launched with a real free tier and closed it to new customers in January 2023. Accounts already on it were grandfathered, but anyone signing up today pays.",
+      "catch": "The catch is that the free tier's reputation outlived it. Peacock spent years known as the free streamer, so people still arrive expecting one — and the signup flow has no free option to find. Occasional free access still exists through third-party bundles, not from Peacock directly.",
       "free_includes": [
-        "A limited catalog of shows and movies with ads, no card needed",
-        "Some next-day NBC content",
-        "Select live sports clips"
+        "Nothing for a new customer — the free tier is closed to new signups"
       ],
       "paid_locked": [
-        "Current-season full episodes of most shows",
-        "The deep catalog and originals",
-        "Live sports and events",
-        "Download and offline viewing"
+        "The entire catalogue",
+        "Next-day NBC episodes",
+        "Live sport"
       ],
       "drawbacks": [
-        "The free catalog is small and shrinking",
-        "Most content people search for requires payment",
-        "Ads on free content with no way to remove them without paying"
+        "No free tier available to new customers",
+        "Even the cheapest paid tier carries ads",
+        "Free access now only via third-party bundles, which come and go"
       ],
-      "get_summary": "In practice: a handful of free shows and clips — enough to browse, rarely enough to stay.",
-      "worth": "Paid Peacock plans start around $8/month; the free tier is a lobby, not a living room.",
+      "get_summary": "In practice: a paid streaming service that used to be a free one, and is still remembered as the free one.",
+      "worth": "Nothing at zero for a new signup. Price it as a paid streaming service, or check whether a carrier or retailer bundle you already pay for includes it.",
       "smart_moves": [
-        "Check if the specific show you want is in the free tier before creating an account",
-        "Tubi often has a deeper free catalog than Peacock's free tier",
-        "If subscribing, watch for promotional pricing — Peacock frequently discounts the first year"
+        "Check your mobile carrier and broadband bundles before subscribing — Peacock is a common included extra",
+        "If you were grandfathered onto the old free tier, don't cancel it; you cannot get it back",
+        "For genuinely free ad-supported streaming, Tubi, Pluto TV and The Roku Channel have no paid tier at all"
       ],
       "more_info": [],
       "free_alternatives": [
@@ -5945,9 +5942,20 @@
           "source": "Google Play",
           "score": "4.6/5",
           "url": "https://play.google.com/store/apps/details?id=com.peacocktv.peacockandroid&hl=en_US&gl=US",
-          "count": "624K"
+          "count": "629K"
         }
-      ]
+      ],
+      "sentiment": {
+        "split": "App Store 4.7/5 · Google Play 4.6/5 — app scores that say nothing about the tier question.",
+        "praised": "Subscribers rate the breadth well — next-day NBC, live sport and the film catalogue are the draw, and playback quality gets few complaints.",
+        "complained": "Two threads dominate. Repeated price rises, and the lingering free tier: reviewers describe arriving to claim the free plan they remember and finding no way to select one.",
+        "takeaway": "The reviews are of a paid service. If you came here looking for the free Peacock, the honest answer is that it closed to new customers in January 2023."
+      },
+      "safety": {
+        "verdict": "Legitimate and safe — NBCUniversal's own service. The risk is sites promising free access it doesn't offer.",
+        "scams": "Because the free tier is remembered but gone, “free Peacock” offers are now a common lure for phishing and card-harvesting pages. Peacock has no free signup path; anything presenting one is not Peacock.",
+        "account_risk": "Bundles through a carrier or retailer are real, but check them on your provider's own site rather than by following an emailed link."
+      }
     },
     {
       "name": "The Roku Channel",
@@ -5992,7 +6000,7 @@
     {
       "name": "Google Digital Garage",
       "category": "learning",
-      "url": "https://learndigital.withgoogle.com",
+      "url": "https://skillshop.withgoogle.com/",
       "verdict": "truly",
       "card": "No",
       "autobill": "—",
@@ -6001,8 +6009,8 @@
       "realcost": "Nothing. Google's free training courses.",
       "free_score": 97,
       "value_score": 7,
-      "short": "Yes — Google's Digital Garage offers free courses on digital marketing, data, career development, and AI, with free certificates on completion. No card, no trial, no premium tier.",
-      "catch": "Google wants digitally literate businesses that spend on Google Ads. The courses are the cultivation; the ad revenue is the harvest. The education itself is genuine and genuinely free.",
+      "short": "Yes. The Digital Garage courses now live on Google Skillshop and remain free — no card, no trial, and the certificates cost nothing either.",
+      "catch": "Google folded Digital Garage into Skillshop, its unified training hub — same courses, same price of nothing, different front door. Google wants digitally literate businesses that spend on Google Ads: the courses are the cultivation, the ad revenue is the harvest. The education is genuine and genuinely free.",
       "free_includes": [
         "Courses on digital marketing, data analytics, AI, and career skills",
         "Free certificates on completion",
@@ -6104,7 +6112,7 @@
           "source": "Google Play",
           "score": "4.4/5",
           "url": "https://play.google.com/store/apps/details?id=com.udemy.android&hl=en_US&gl=US",
-          "count": "510K"
+          "count": "511K"
         }
       ],
       "sentiment": {
@@ -6189,7 +6197,7 @@
           "source": "Google Play",
           "score": "4.3/5",
           "url": "https://play.google.com/store/apps/details?id=com.discord&hl=en_US&gl=US",
-          "count": "6.9M"
+          "count": "7.0M"
         }
       ],
       "sentiment": {
@@ -6255,7 +6263,7 @@
           "source": "Google Play",
           "score": "4.6/5",
           "url": "https://play.google.com/store/apps/details?id=com.reddit.frontpage&hl=en_US&gl=US",
-          "count": "4.7M"
+          "count": "4.8M"
         }
       ],
       "sentiment": {
@@ -6323,7 +6331,7 @@
           "source": "Google Play",
           "score": "3.6/5",
           "url": "https://play.google.com/store/apps/details?id=com.plexapp.android&hl=en_US&gl=US",
-          "count": "482K"
+          "count": "484K"
         }
       ],
       "sentiment": {
@@ -6500,7 +6508,7 @@
           "source": "Google Play",
           "score": "4.2/5",
           "url": "https://play.google.com/store/apps/details?id=com.shopify.mobile&hl=en_US&gl=US",
-          "count": "70K"
+          "count": "71K"
         }
       ],
       "sentiment": {
@@ -6777,7 +6785,7 @@
           "source": "App Store",
           "score": "4.7/5",
           "url": "https://apps.apple.com/us/app/id905953485",
-          "count": "691K"
+          "count": "696K"
         },
         {
           "source": "Google Play",
@@ -6846,7 +6854,7 @@
           "source": "Google Play",
           "score": "4.3/5",
           "url": "https://play.google.com/store/apps/details?id=org.wikipedia&hl=en_US&gl=US",
-          "count": "694K"
+          "count": "693K"
         }
       ],
       "sentiment": {
@@ -7105,7 +7113,7 @@
     {
       "name": "Anchor (Spotify for Podcasters)",
       "category": "entertainment",
-      "url": "https://podcasters.spotify.com",
+      "url": "https://creators.spotify.com",
       "verdict": "truly",
       "card": "No",
       "autobill": "—",
@@ -7394,7 +7402,7 @@
           "source": "Google Play",
           "score": "4.3/5",
           "url": "https://play.google.com/store/apps/details?id=com.fiverr.fiverr&hl=en_US&gl=US",
-          "count": "360K"
+          "count": "361K"
         }
       ],
       "legitimacy": {
@@ -7490,7 +7498,7 @@
     {
       "name": "\"Make Money Online\" Courses",
       "category": "earn",
-      "url": "https://www.ftc.gov/business-guidance/resources/business-opportunity-rule",
+      "url": "https://consumer.ftc.gov/articles/job-scams",
       "verdict": "fake",
       "card": "Often",
       "autobill": "Often",
@@ -7619,7 +7627,7 @@
           "source": "Google Play",
           "score": "4.2/5",
           "url": "https://play.google.com/store/apps/details?id=com.prodege.swagbucksmobile&hl=en_US&gl=US",
-          "count": "449K"
+          "count": "450K"
         }
       ],
       "legitimacy": {
@@ -7644,7 +7652,7 @@
     {
       "name": "MLMs / Network Marketing",
       "category": "earn",
-      "url": "https://www.ftc.gov/business-guidance/guidance/business-guidance-concerning-multi-level-marketing",
+      "url": "https://consumer.ftc.gov/articles/multi-level-marketing-businesses-and-pyramid-schemes",
       "verdict": "fake",
       "card": "Usually",
       "autobill": "Often",
@@ -7851,7 +7859,7 @@
           "source": "Google Play",
           "score": "4.6/5",
           "url": "https://play.google.com/store/apps/details?id=com.yelp.android&hl=en_US&gl=US",
-          "count": "652K"
+          "count": "653K"
         }
       ]
     },
@@ -7946,7 +7954,7 @@
           "source": "Google Play",
           "score": "4.7/5",
           "url": "https://play.google.com/store/apps/details?id=com.glassdoor.app&hl=en_US&gl=US",
-          "count": "697K"
+          "count": "707K"
         }
       ]
     },
@@ -8095,7 +8103,7 @@
           "source": "Google Play",
           "score": "3.9/5",
           "url": "https://play.google.com/store/apps/details?id=com.meetup&hl=en_US&gl=US",
-          "count": "234K"
+          "count": "235K"
         }
       ]
     },
@@ -8151,7 +8159,7 @@
           "source": "Google Play",
           "score": "4.9/5",
           "url": "https://play.google.com/store/apps/details?id=com.eventbrite.attendee&hl=en_US&gl=US",
-          "count": "272K"
+          "count": "278K"
         }
       ]
     },
@@ -8684,7 +8692,7 @@
           "source": "Google Play",
           "score": "4.7/5",
           "url": "https://play.google.com/store/apps/details?id=com.indeed.android.jobsearch&hl=en_US&gl=US",
-          "count": "13M"
+          "count": "14M"
         }
       ]
     },
@@ -8735,7 +8743,7 @@
           "source": "App Store",
           "score": "4.8/5",
           "url": "https://apps.apple.com/us/app/id288429040",
-          "count": "642K"
+          "count": "643K"
         },
         {
           "source": "Google Play",
@@ -8923,11 +8931,11 @@
           "source": "App Store",
           "score": "4.7/5",
           "url": "https://apps.apple.com/us/app/id892355414",
-          "count": "4.3K"
+          "count": "4.4K"
         },
         {
           "source": "Google Play",
-          "score": "2.9/5",
+          "score": "2.8/5",
           "url": "https://play.google.com/store/apps/details?id=com.innologica.inoreader&hl=en_US&gl=US",
           "count": "9.6K"
         }
@@ -9134,9 +9142,9 @@
         },
         {
           "source": "Google Play",
-          "score": "4.1/5",
+          "score": "4.0/5",
           "url": "https://play.google.com/store/apps/details?id=com.deepseek.chat&hl=en_US&gl=US",
-          "count": "313K"
+          "count": "318K"
         }
       ],
       "safety": {
@@ -9306,7 +9314,7 @@
       "external_ratings": [
         {
           "source": "Google Play",
-          "score": "2.0/5",
+          "score": "2.1/5",
           "url": "https://play.google.com/store/apps/details?id=ai.character.app&hl=en_US&gl=US",
           "count": "2.4M"
         }
@@ -9493,7 +9501,7 @@
           "source": "Google Play",
           "score": "4.8/5",
           "url": "https://play.google.com/store/apps/details?id=ai.x.grok&hl=en_US&gl=US",
-          "count": "3.6M"
+          "count": "3.7M"
         }
       ],
       "free_spec": {
@@ -10720,6 +10728,22 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-08-11",
+      "item": "Link audit",
+      "change": "Six listing links repaired",
+      "from": "—",
+      "to": "—",
+      "detail": "Checked all 161 outbound listing links. Two FTC guidance pages had 404'd after a site restructure, and four products had moved domain: Anchor to Spotify for Creators, zoom.us to zoom.com, CS50 to its course page, and Google Digital Garage into Skillshop. The Digital Garage courses remain free."
+    },
+    {
+      "date": "2026-08-11",
+      "item": "Peacock",
+      "change": "Free tier confirmed closed to new customers",
+      "from": "Free-ish",
+      "to": "Not Free",
+      "detail": "Peacock stopped offering its free ad-supported tier to new customers in January 2023; existing accounts were grandfathered. Our listing still described the free tier as available, which was wrong for anyone signing up today. Re-verified and re-graded, free score 42 to 4."
+    },
     {
       "date": "2026-03-01",
       "item": "Adobe",

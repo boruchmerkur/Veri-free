@@ -438,6 +438,37 @@ body.loc-ca .ca-badge{display:inline-flex}
 .cmp-table tbody tr:last-child th,.cmp-table tbody tr:last-child td{border-bottom:0}
 .cmp-table .sv{font-size:13px;border-left-width:3px;padding-left:8px}
 @media(max-width:560px){.freespec td.k{width:auto;display:block;padding-bottom:0;border:0}.freespec td{display:block}.freespec tr{display:block;border-bottom:1px solid var(--line);padding:6px 0}}
+/* homepage: thin, prominent find bar — the product, one band deep */
+.hero.slim{padding:20px 0 12px}
+.hero.slim .hero-top{align-items:baseline;gap:6px 14px}
+.hero.slim .sub{margin:0;font-size:15px;color:var(--muted);flex-basis:100%}
+@media(min-width:900px){.hero.slim .sub{flex-basis:auto}}
+/* Deliberately NOT sticky. .site-header is already sticky at top:0, so a
+   second sticky band would pin on top of the nav — and the header's height
+   is not fixed (the wrapping category bar runs ~300px on a phone), so there
+   is no honest `top` value to offset by. Prominence comes from the rules. */
+.findbar{background:var(--paper);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink)}
+.findbar-in{display:flex;align-items:center;gap:12px 16px;padding:10px 22px;flex-wrap:wrap}
+.findbar .searchbar{margin:0;flex:1 1 300px;min-width:0;border-width:2px;border-radius:10px}
+.findbar .searchbar input{padding:9px 13px;font-size:15px}
+.findbar .vfilters{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.findbar .vfilter{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.03em;padding:6px 11px;border-radius:99px;border:1.5px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all .12s}
+.findbar .vfilter i{font-style:normal;opacity:.6;margin-left:4px}
+.findbar .vfilter:hover{border-color:var(--ink);color:var(--ink)}
+.findbar .vfilter.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.findbar .vfilter.on i{opacity:.75}
+.findbar-jump{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.05em;text-decoration:none;color:var(--brand);white-space:nowrap;margin-left:auto}
+.findbar-jump:hover{text-decoration:underline}
+/* homepage stream slice */
+.homestream{padding:26px 0 6px}
+.hs-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 16px}
+.hs-head h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;margin:0}
+.hs-when{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+.hs-all{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.05em;text-decoration:none;color:var(--brand);margin-left:auto;white-space:nowrap}
+.hs-all:hover{text-decoration:underline}
+.verdicts-head{padding:34px 0 4px;border-top:2.5px solid var(--ink);margin-top:26px}
+.verdicts-head h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;margin:0}
+.verdicts-head p{margin:6px 0 0;color:var(--muted);font-size:15.5px}
 /* /now/ — the stream */
 .streamwrap{padding-top:18px}
 .st-strip{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;padding:0 0 20px;border-bottom:2.5px solid var(--ink);margin-bottom:22px;font-size:14.5px;color:var(--muted)}
@@ -595,6 +626,43 @@ def feedback_form(l, vlabel):
             f'<p class="vfb-err" style="display:none"></p></div>'
             f'<p class="vfb-ty" style="display:none">Thank you — that goes to a human, and if it '
             f'checks out the page gets re-verified.</p></form>')
+
+
+import datetime as _dt
+
+
+def ago(iso):
+    if not iso:
+        return ""
+    try:
+        d = _dt.datetime.fromisoformat(iso)
+    except ValueError:
+        return ""
+    secs = (_dt.datetime.now(_dt.timezone.utc) - d).total_seconds()
+    if secs < 3600:
+        return f"{int(secs // 60)}m ago"
+    if secs < 86400:
+        return f"{int(secs // 3600)}h ago"
+    return f"{int(secs // 86400)}d ago"
+
+
+def stream_card(it, lead=False):
+    img = ""
+    if it.get("image"):
+        img = (f'<div class="st-art"><img src="{esc(it["image"])}" alt="" loading="lazy" '
+               f'referrerpolicy="no-referrer"></div>')
+    tags = "".join(f'<span class="st-tag">{esc(t)}</span>' for t in it.get("tags", []))
+    vid = '<span class="st-vid">▶</span>' if it.get("kind") == "video" else ""
+    cls = "st-card lead" if lead else "st-card"
+    if not it.get("image"):
+        cls += " notart"
+    return (f'<article class="{cls}">{img}'
+            f'<div class="st-body"><div class="st-tags">{tags}</div>'
+            f'<h3><a href="{esc(it["url"])}" target="_blank" rel="noopener nofollow">{vid}'
+            f'{esc(it["title"])}</a></h3>'
+            f'<p class="st-sum">{esc(it.get("summary", ""))}</p>'
+            f'<p class="st-meta">{esc(it["source"])} · {esc(ago(it.get("date")))}</p>'
+            f'</div></article>')
 
 
 def deal_card(d, cta="Go to offer →"):
@@ -1286,23 +1354,43 @@ def build():
         hl_items += f'<div class="hl-item"><span class="hl-date">{esc(h["date"])}</span><a href="{esc(h["link"])}">{esc(h["title"])}</a></div>'
     headlines_html = f'<section class="headlines"><div class="wrap"><h2>In the news</h2><div class="hl-list">{hl_items}</div></div></section>' if hl_items else ""
 
+    snap_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "feed_snapshot.json")
+    stream = json.load(open(snap_path, encoding="utf-8")) if os.path.exists(snap_path) else {}
+    forever_n = sum(1 for l in listings if l["verdict"] == "forever")
+
+    # The stream leads the homepage, but only a slice of it: /now/ keeps the
+    # full run, so the two pages don't compete for the same content.
+    home_stream = ""
+    if stream.get("items"):
+        si = stream["items"][:10]
+        home_stream = (
+            '<section class="homestream"><div class="wrap">'
+            '<div class="hs-head"><h2>What changed this week</h2>'
+            f'<span class="hs-when">Updated {esc(ago(stream.get("updated")))}</span>'
+            '<a class="hs-all" href="/now/">All changes →</a></div>'
+            '<div class="stream">'
+            + "".join(stream_card(it, lead=(i == 0)) for i, it in enumerate(si))
+            + '</div></div></section>')
+
     home_body = f"""
-<header class="hero">
+<header class="hero slim">
 <div class="wrap">
-<div class="hero-top"><h1>Veri-<em>Free</em></h1><p class="tagline">Very Free &amp; Easy</p></div>
-<div class="hero-line">
-<p class="sub">We check every "free" offer on the internet and tell you what it really costs.</p>
-<p class="stats">{genuine} genuinely free &nbsp;·&nbsp; {squeeze} free-ish &nbsp;·&nbsp; {traps} traps &amp; fakes exposed</p></div>
-<div class="searchbar"><input id="q" type="search" aria-label="Search listings" placeholder="Search a tool, app, course, or service…" aria-label="Search listings"><span class="kbd">{len(listings)} verified</span></div>
-<p class="count" id="count"></p>
+<div class="hero-top"><h1>Veri-<em>Free</em></h1><p class="tagline">Very Free &amp; Easy</p>
+<p class="sub">We check every "free" offer and tell you what it really costs.</p></div>
+</div></header>
+<div class="findbar"><div class="wrap findbar-in">
+<div class="searchbar"><input id="q" type="search" placeholder="Search {len(listings)} verified free things…" aria-label="Search listings"><span class="kbd">{len(listings)} verified</span></div>
 <div class="vfilters">
 <button class="vfilter on" data-v="all">All</button>
-<button class="vfilter" data-v="truly">Truly Free</button>
-<button class="vfilter" data-v="forever">Free Forever</button>
-<button class="vfilter" data-v="freeish">Free-ish</button>
-<button class="vfilter" data-v="trap,fake,notfree">Traps &amp; Fakes</button>
+<button class="vfilter" data-v="truly">Truly free <i>{genuine}</i></button>
+<button class="vfilter" data-v="forever">Free forever <i>{forever_n}</i></button>
+<button class="vfilter" data-v="freeish">Free-ish <i>{squeeze}</i></button>
+<button class="vfilter" data-v="trap,fake,notfree">Traps &amp; fakes <i>{traps}</i></button>
 </div>
-</div></header>
+<a class="findbar-jump" href="#categories">Browse all →</a>
+</div></div>
+<p class="count" id="count"></p>
+{home_stream}
 <div class="side-legend closed" id="sidepanel">
 <div class="sl-tab" title="Verdict definitions and sorting" onclick="document.getElementById('sidepanel').classList.toggle('closed')">Guide</div>
 <div class="sl-body">
@@ -1318,6 +1406,8 @@ def build():
 </div>
 </div>
 <main class="wrap" id="categories">
+<div class="verdicts-head"><h2>Every verdict</h2>
+<p>{len(listings)} things checked against one rubric — {genuine} genuinely free, {traps} exposed as traps or fakes.</p></div>
 {sections}
 <p class="noresults" id="noresults">Nothing by that name yet. <a href="mailto:hello@veri-free.com">Suggest it</a> and we'll verify it.</p>
 </main>
@@ -1843,45 +1933,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 
 
     # ---------- /now/ — the stream ----------
-    snap_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "feed_snapshot.json")
-    stream = {}
-    if os.path.exists(snap_path):
-        stream = json.load(open(snap_path, encoding="utf-8"))
     if stream.get("items"):
-        import datetime as _dt
-
-        def ago(iso):
-            if not iso:
-                return ""
-            try:
-                d = _dt.datetime.fromisoformat(iso)
-            except ValueError:
-                return ""
-            secs = (_dt.datetime.now(_dt.timezone.utc) - d).total_seconds()
-            if secs < 3600:
-                return f"{int(secs // 60)}m ago"
-            if secs < 86400:
-                return f"{int(secs // 3600)}h ago"
-            return f"{int(secs // 86400)}d ago"
-
-        def stream_card(it, lead=False):
-            img = ""
-            if it.get("image"):
-                img = (f'<div class="st-art"><img src="{esc(it["image"])}" alt="" loading="lazy" '
-                       f'referrerpolicy="no-referrer"></div>')
-            tags = "".join(f'<span class="st-tag">{esc(t)}</span>' for t in it.get("tags", []))
-            vid = '<span class="st-vid">▶</span>' if it.get("kind") == "video" else ""
-            cls = "st-card lead" if lead else "st-card"
-            if not it.get("image"):
-                cls += " notart"
-            return (f'<article class="{cls}">{img}'
-                    f'<div class="st-body"><div class="st-tags">{tags}</div>'
-                    f'<h3><a href="{esc(it["url"])}" target="_blank" rel="noopener nofollow">{vid}'
-                    f'{esc(it["title"])}</a></h3>'
-                    f'<p class="st-sum">{esc(it.get("summary", ""))}</p>'
-                    f'<p class="st-meta">{esc(it["source"])} · {esc(ago(it.get("date")))}</p>'
-                    f'</div></article>')
-
         items = stream["items"]
         cards = "".join(stream_card(it, lead=(i == 0)) for i, it in enumerate(items))
         srcs = len({i["source"] for i in items})

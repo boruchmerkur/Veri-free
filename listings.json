@@ -10153,6 +10153,283 @@
         "Self-hostable": "No",
         "Sleeps when idle": "Never"
       }
+    },
+    {
+      "name": "IRS Free File",
+      "category": "money-finance",
+      "url": "https://www.irs.gov/filing/irs-free-file-do-your-taxes-for-free",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "With the provider you pick",
+      "limits": "Income cap — 2025 adjusted gross income of $89,000 or less",
+      "realcost": "Nothing for federal filing if you're under the cap. State returns vary by provider.",
+      "free_includes": [
+        "Guided federal tax preparation and e-filing, free",
+        "Real commercial tax software, provided through the IRS partnership",
+        "Free state returns from some providers",
+        "Fillable Forms for any income, if you're happy doing it yourself"
+      ],
+      "paid_locked": [
+        "State returns with some providers",
+        "Anything outside the partnership's scope"
+      ],
+      "short": "Yes, genuinely — if your income qualifies. IRS Free File is a partnership between the IRS and tax software companies giving free federal filing to taxpayers under the income cap. It is the answer to every listing on this site that advertises free filing and then charges mid-return.",
+      "catch": "Two real ones. The cap is on adjusted gross income and it moves each year, so check before assuming. And you must enter through the IRS site — going to the same company directly lands you in their commercial product, where the free version has much narrower rules. That single click is the entire difference.",
+      "worth": "$40–130, which is what the same return costs once a commercial product decides your situation isn't simple.",
+      "smart_moves": [
+        "Always start at irs.gov/freefile, never at the provider's own site — the free tier there is a different, stingier product",
+        "Compare providers inside the tool: state returns are free with some and charged by others",
+        "Over the cap? Free Fillable Forms has no income limit — no hand-holding, but no bill either",
+        "IRS Direct File, the government's own filing tool, is not available for the 2026 season"
+      ],
+      "free_score": 92,
+      "value_score": 9,
+      "get_summary": "In practice: the free federal filing that the advertised free filing keeps failing to be.",
+      "drawbacks": [
+        "Income cap excludes higher earners from the guided software",
+        "State filing isn't free with every provider",
+        "The entry point matters — arriving via the company's own site loses the offer"
+      ],
+      "more_info": [
+        [
+          "Why the entry point decides whether it's free",
+          "Free File providers run two products: the IRS-partnership version with generous eligibility, and their own commercial 'free edition' with narrow rules that pushes upgrades. They look similar. Entering through irs.gov is what puts you in the first one, and it is the most valuable click in this entire category."
+        ],
+        [
+          "What happened to Direct File",
+          "The IRS built its own free filing tool, piloted it in 2024 and expanded it to 25 states in 2025. It was discontinued ahead of the 2026 filing season with no relaunch date. Free File, the older public-private partnership, is unaffected and still running — which is why this listing points there."
+        ]
+      ]
+    },
+    {
+      "name": "Jellyfin",
+      "category": "entertainment",
+      "url": "https://jellyfin.org",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "Local only, on your own server",
+      "limits": "None imposed by anyone — your hardware is the limit",
+      "realcost": "Nothing. Volunteer-run, open source, no company behind it.",
+      "free_includes": [
+        "A full media server for your own films, shows and music",
+        "Remote streaming from anywhere — no pass, no subscription",
+        "Apps for phones, tablets, TVs and consoles",
+        "Live TV and DVR with a tuner, hardware transcoding included"
+      ],
+      "paid_locked": [
+        "Nothing at all"
+      ],
+      "short": "Yes, entirely. Jellyfin is a free, open-source media server with no paid tier, no account with a company, and nothing gated — including the remote streaming that Plex started charging for in 2025.",
+      "catch": "The catch is effort, not money. You set it up yourself, and reaching it from outside your home means dealing with your own network. Nobody is on call when it breaks.",
+      "worth": "Directly replaces a Plex Pass or Remote Watch Pass, and the hardware transcoding that sits behind Plex's paywall is simply included.",
+      "smart_moves": [
+        "This is the answer to Plex's 2025 change: remote playback of your own files, with nothing to pay",
+        "Use Tailscale or a VPN for remote access rather than opening ports — easier and safer",
+        "Its clients are less polished than Plex's; try one on your TV before migrating a big library"
+      ],
+      "free_score": 99,
+      "value_score": 8,
+      "get_summary": "In practice: everything Plex does with your own media, minus the subscription that arrived in 2025.",
+      "drawbacks": [
+        "Setup and maintenance are yours",
+        "TV apps are rougher than Plex's",
+        "No official support — community forums only"
+      ],
+      "more_info": [
+        [
+          "Why it exists",
+          "Jellyfin was forked from Emby when that project moved to a proprietary licence. It is run by volunteers with no company, no funding round and nothing to monetise later — which is the structural reason it cannot do what Plex did in 2025. There is no one to decide that remote streaming should now cost money."
+        ]
+      ]
+    },
+    {
+      "name": "Anki",
+      "category": "learning",
+      "url": "https://apps.ankiweb.net",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "Only for syncing",
+      "limits": "Free on desktop and Android; the iPhone and iPad app is paid",
+      "realcost": "Nothing, unless you want it on an iPhone — that app is a one-off $24.99.",
+      "free_includes": [
+        "The full desktop app on Windows, macOS and Linux",
+        "AnkiDroid on Android, free and full-featured",
+        "AnkiWeb sync across devices, free",
+        "Every shared deck, and unlimited cards"
+      ],
+      "paid_locked": [
+        "AnkiMobile for iPhone and iPad — a one-time purchase, not a subscription"
+      ],
+      "short": "Free on desktop, Android and the web, with unlimited cards and free syncing. The one exception is iOS, where the official app costs a one-off $24.99 — and that purchase funds the whole project.",
+      "catch": "The catch is one platform. Everything is free except the iPhone app, and there is no free official iOS client. It's a one-time payment rather than a subscription, and it is what pays for the free versions everyone else uses.",
+      "worth": "Paid flashcard apps run $5–15/month. Anki is $0 forever on most platforms, or $24.99 once on iOS.",
+      "smart_moves": [
+        "On Android, AnkiDroid is free and does everything — no reason to pay anything",
+        "iPhone users can study free at ankiweb.net in the browser rather than buying the app",
+        "Download shared decks before building your own; the medical and language decks are enormous"
+      ],
+      "free_score": 82,
+      "value_score": 9,
+      "get_summary": "In practice: the spaced-repetition tool serious learners use, free everywhere except one platform.",
+      "drawbacks": [
+        "The interface is dated and the options are overwhelming at first",
+        "No free official iOS app",
+        "Shared decks vary wildly in quality"
+      ],
+      "more_info": [
+        [
+          "An honest paid app",
+          "It is worth naming what this is not. There is no subscription, no upsell inside the free versions, no ads, and no feature held hostage. One platform's app costs money once, and it funds development for everyone else. Compared with almost everything else on this site, that is a straightforward arrangement."
+        ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Full course content": "Yes",
+        "Graded work": "Yes",
+        "Certificate": "None offered",
+        "Access expires": "Never",
+        "Ads": "No"
+      }
+    },
+    {
+      "name": "Internet Archive",
+      "category": "books-reading",
+      "url": "https://archive.org",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "Only to borrow",
+      "limits": "Lending is limited per title; everything else is open",
+      "realcost": "Nothing. A nonprofit library funded by donations and grants.",
+      "free_includes": [
+        "Millions of public-domain books, films, concerts and recordings",
+        "The Wayback Machine — the web as it used to be",
+        "Free borrowing of scanned books, with waits",
+        "Software, radio and TV archives you cannot get anywhere else"
+      ],
+      "paid_locked": [
+        "Nothing"
+      ],
+      "short": "Yes. A nonprofit digital library with no paid tier — millions of public-domain works, the Wayback Machine, and a lending library of scanned books. Free to use and free to search.",
+      "catch": "No catch on price. The uncertainty is legal: publishers won their case against the Archive's lending programme, so what is borrowable has narrowed and may narrow further. Public-domain material and the Wayback Machine are unaffected.",
+      "worth": "Irreplaceable rather than merely cheap — much of what it holds exists nowhere else.",
+      "smart_moves": [
+        "The Wayback Machine settles arguments: it shows what a page said before it was quietly edited",
+        "Public-domain texts here have no lending limits at all — only in-copyright scans do",
+        "Donate if you use it heavily; it runs on donations and it is the memory of the web"
+      ],
+      "free_score": 97,
+      "value_score": 9,
+      "get_summary": "In practice: a library, an archive of the web, and a media collection — none of it charged for.",
+      "drawbacks": [
+        "Scan quality varies enormously",
+        "The lending catalogue has thinned after litigation",
+        "Search and navigation are functional rather than pleasant"
+      ],
+      "more_info": [
+        [
+          "Its most underused feature",
+          "The Wayback Machine is the reason this site can prove what a company's pricing page said last year. If you ever need to show that a free tier existed before it quietly disappeared, that is where the evidence lives."
+        ]
+      ]
+    },
+    {
+      "name": "Ollama",
+      "category": "ai-tools",
+      "url": "https://ollama.com",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "Your own hardware — RAM decides which models you can run",
+      "realcost": "Nothing. Open source, and the models are downloaded, not rented.",
+      "free_includes": [
+        "Run open-weight models locally with one command",
+        "No usage caps, no message limits, no queue",
+        "Fully offline once a model is downloaded",
+        "An API on your own machine for building against"
+      ],
+      "paid_locked": [
+        "Nothing — hosted services sell convenience, not capability"
+      ],
+      "short": "Yes, completely. Ollama runs open-weight AI models on your own computer: no account, no key, no cap, and nothing leaves your machine.",
+      "catch": "The catch is hardware. Small models run on an ordinary laptop; the good ones want serious RAM and a decent GPU, and without them you'll get slow answers from a weaker model than the free hosted chatbots give you.",
+      "worth": "Unlimited private inference against $20/month subscriptions — provided your machine can keep up.",
+      "smart_moves": [
+        "Start with a small model to check your hardware before downloading a 40GB one",
+        "This is the only entry in this category where your conversations genuinely never leave your computer",
+        "Pair it with an open-weight model from Hugging Face; the weights and the runner are both free"
+      ],
+      "free_score": 100,
+      "value_score": 8,
+      "get_summary": "In practice: unlimited, private, offline AI — bounded by your hardware rather than by anyone's plan.",
+      "drawbacks": [
+        "Needs real RAM and ideally a GPU",
+        "Local models lag the best hosted ones",
+        "Command-line first; the polish isn't there"
+      ],
+      "more_info": [
+        [
+          "The only free tier nobody can withdraw",
+          "Every other listing in this category is someone's free tier, which means someone can change it — and this site exists because they do. A model on your own disk cannot be rate-limited, repriced or discontinued. That is a different kind of free from all the rest."
+        ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Usage ceiling": "Your hardware",
+        "Model quality": "Open weights",
+        "File uploads": "Yes",
+        "Image generation": "Limited",
+        "Web access": "No",
+        "Commercial use": "Your own terms",
+        "Runs offline": "Yes",
+        "Trains on your input": "No"
+      }
+    },
+    {
+      "name": "VSCodium",
+      "category": "software-tools",
+      "url": "https://vscodium.com",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed",
+      "limits": "None",
+      "realcost": "Nothing. Community builds of Microsoft's own open-source code.",
+      "free_includes": [
+        "The VS Code editor, built from source without Microsoft's telemetry",
+        "Every language and extension workflow developers expect",
+        "Builds for Windows, macOS and Linux",
+        "No account prompts and no branding"
+      ],
+      "paid_locked": [
+        "Nothing"
+      ],
+      "short": "Yes. VSCodium is VS Code compiled from the same open-source repository with Microsoft's telemetry and branding removed. Same editor, no tracking, no account.",
+      "catch": "One practical wrinkle: it uses a different extension marketplace, because Microsoft's is licensed for their own builds only. Most extensions are there; a few Microsoft-published ones aren't.",
+      "worth": "The same as VS Code — which is to say free — with the telemetry difference being the entire point.",
+      "smart_moves": [
+        "Pick this over VS Code if the default telemetry is the thing that bothers you",
+        "Check your must-have extensions in the Open VSX registry before switching",
+        "Settings and keybindings transfer straight across from VS Code"
+      ],
+      "free_score": 100,
+      "value_score": 8,
+      "get_summary": "In practice: the same editor most developers already use, with the data collection compiled out.",
+      "drawbacks": [
+        "A different extension marketplace with some gaps",
+        "Some Microsoft extensions are licensed against use here",
+        "Updates trail the official builds slightly"
+      ],
+      "more_info": [
+        [
+          "What the difference actually is",
+          "VS Code's source is open, but the build Microsoft ships adds telemetry, their marketplace and a proprietary licence. VSCodium is the same source compiled without those. If you are happy with VS Code, nothing here is an upgrade — it only matters if you would rather not send usage data to Microsoft."
+        ]
+      ]
     }
   ],
   "deals": [

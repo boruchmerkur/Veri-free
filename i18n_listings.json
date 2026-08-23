@@ -160,7 +160,13 @@
     "Firebase": "Base de datos, autenticación y hosting a pequeña escala",
     "Google Maps Platform": "Un margen mensual gratuito por servicio — con tarjeta desde el primer día",
     "Reddit API": "Acceso gratuito y limitado para uso no comercial",
-    "X (Twitter) API": "Nada. El nivel gratuito está cerrado para nuevos desarrolladores"
+    "X (Twitter) API": "Nada. El nivel gratuito está cerrado para nuevos desarrolladores",
+    "IRS Free File": "Declaración federal guiada y gratuita si tus ingresos no superan el tope",
+    "Jellyfin": "Un servidor multimedia completo, sin suscripción ni acceso remoto de pago",
+    "Anki": "Tarjetas ilimitadas y sincronización gratis — salvo la app de iPhone",
+    "Internet Archive": "Millones de obras de dominio público y la Wayback Machine",
+    "Ollama": "Modelos de IA en tu propio equipo — sin límites y sin conexión",
+    "VSCodium": "El editor VS Code compilado sin la telemetría de Microsoft"
   },
   "pt": {
     "LibreOffice": "A suíte completa: Writer, Calc, Impress, Draw, Base",
@@ -323,7 +329,13 @@
     "Firebase": "Base de dados, autenticação e alojamento em pequena escala",
     "Google Maps Platform": "Uma margem mensal gratuita por serviço — com cartão desde o primeiro dia",
     "Reddit API": "Acesso gratuito e limitado para uso não comercial",
-    "X (Twitter) API": "Nada. O nível gratuito está fechado a novos programadores"
+    "X (Twitter) API": "Nada. O nível gratuito está fechado a novos programadores",
+    "IRS Free File": "Declaração federal guiada e gratuita se a sua renda ficar abaixo do limite",
+    "Jellyfin": "Um servidor de mídia completo, sem assinatura nem acesso remoto pago",
+    "Anki": "Cartões ilimitados e sincronização grátis — exceto o app de iPhone",
+    "Internet Archive": "Milhões de obras de domínio público e a Wayback Machine",
+    "Ollama": "Modelos de IA no seu próprio computador — sem limites e offline",
+    "VSCodium": "O editor VS Code compilado sem a telemetria da Microsoft"
   },
   "fr": {
     "LibreOffice": "La suite complète : Writer, Calc, Impress, Draw, Base",
@@ -486,7 +498,13 @@
     "Firebase": "Base de données, authentification et hébergement à petite échelle",
     "Google Maps Platform": "Un quota mensuel gratuit par service — carte bancaire dès le premier jour",
     "Reddit API": "Accès gratuit et limité pour un usage non commercial",
-    "X (Twitter) API": "Rien. L'offre gratuite est fermée aux nouveaux développeurs"
+    "X (Twitter) API": "Rien. L'offre gratuite est fermée aux nouveaux développeurs",
+    "IRS Free File": "Déclaration fédérale guidée et gratuite sous plafond de revenus",
+    "Jellyfin": "Un serveur multimédia complet, sans abonnement ni accès distant payant",
+    "Anki": "Cartes illimitées et synchronisation gratuites — sauf l'app iPhone",
+    "Internet Archive": "Des millions d'œuvres du domaine public et la Wayback Machine",
+    "Ollama": "Des modèles d'IA sur votre machine — sans limite et hors ligne",
+    "VSCodium": "L'éditeur VS Code compilé sans la télémétrie de Microsoft"
   },
   "de": {
     "LibreOffice": "Die komplette Suite: Writer, Calc, Impress, Draw, Base",
@@ -649,6 +667,12 @@
     "Firebase": "Datenbank, Authentifizierung und Hosting im kleinen Rahmen",
     "Google Maps Platform": "Ein monatliches Gratis-Kontingent je Dienst — Karte ab dem ersten Tag",
     "Reddit API": "Kostenloser, limitierter Zugang für nicht-kommerzielle Nutzung",
-    "X (Twitter) API": "Nichts. Die Gratis-Stufe ist für neue Entwickler geschlossen"
+    "X (Twitter) API": "Nichts. Die Gratis-Stufe ist für neue Entwickler geschlossen",
+    "IRS Free File": "Kostenlose geführte Bundessteuererklärung unterhalb der Einkommensgrenze",
+    "Jellyfin": "Ein vollwertiger Medienserver ohne Abo und ohne bezahlten Fernzugriff",
+    "Anki": "Unbegrenzte Karten und Sync gratis — außer der iPhone-App",
+    "Internet Archive": "Millionen gemeinfreier Werke und die Wayback Machine",
+    "Ollama": "KI-Modelle auf dem eigenen Rechner — ohne Limits und offline",
+    "VSCodium": "Der VS-Code-Editor, kompiliert ohne Microsofts Telemetrie"
   }
 }

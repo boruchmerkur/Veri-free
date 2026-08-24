@@ -453,6 +453,16 @@ body.loc-ca .ca-badge{display:inline-flex}
 /* tighter page heads — the h1 and one line, then the content */
 .pagehead.tight{padding:34px 0 6px}
 .pagehead.tight p{margin:10px 0 14px;font-size:16.5px}
+/* "we checked this" — the door back into our own verdicts */
+.st-ours{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 10px;padding:8px 11px;border:1.5px solid var(--line);border-radius:9px;background:var(--paper);text-decoration:none;transition:border-color .12s,background .12s}
+.st-ours:hover{border-color:var(--ink);background:var(--card)}
+.so-lbl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.so-name{font-weight:700;font-size:13.5px;color:var(--ink)}
+.so-verdict{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1.5px solid;margin-left:auto;white-space:nowrap}
+.so-verdict.v-truly{color:#0E7B47;border-color:#0E7B47;background:#E4F2EA}
+.so-verdict.v-forever{color:#0A6E8A;border-color:#0A6E8A;background:#E2EFF4}
+.so-verdict.v-freeish{color:#A05E03;border-color:#A05E03;background:#F7EDDC}
+.so-verdict.v-trap,.so-verdict.v-fake,.so-verdict.v-notfree{color:#B3261E;border-color:#B3261E;background:#F9E3E1}
 /* homepage: thin, prominent find bar — the product, one band deep */
 .hero.slim{padding:20px 0 12px}
 .hero.slim .hero-top{align-items:baseline;gap:6px 14px}
@@ -661,7 +671,55 @@ def ago(iso):
     return f"{int(secs // 86400)}d ago"
 
 
-def stream_card(it, lead=False):
+# Names that would match constantly on unrelated stories, or whose listing is
+# about something narrower than the word. Matching these would send a reader to
+# a verdict that has nothing to do with what they just read.
+MATCH_SKIP = {"Claude", "Wave Accounting", "Signal", "Plex", "Etsy", "Indeed",
+              "Meetup (free events)", "Eventbrite (free events)", "Free Museum Days",
+              "Free Community Events (Library, Parks & Rec)", "The Old Reader"}
+
+# Story language -> the listing it actually concerns.
+MATCH_ALIAS = {
+    "OpenAI": "ChatGPT", "Twitter": "X (Twitter) API", "Prime Video": "Amazon Prime Video",
+    "Disney Plus": "Disney+", "Google Assistant": "Google Drive & Gmail",
+    "AnkiDroid": "Anki", "AnkiMobile": "Anki", "Wayback Machine": "Internet Archive",
+    "Plex Pass": "Plex", "Amazon Kindle": "Kindle Unlimited",
+}
+
+
+def build_match_index(listings):
+    """-> [(compiled_pattern, listing)], longest name first so the most
+    specific listing wins ('Reddit API' before 'Reddit')."""
+    import re as _re
+    by = {l["name"]: l for l in listings}
+    pairs = []
+    for l in listings:
+        if l["name"] in MATCH_SKIP:
+            continue
+        base = _re.sub(r"\s*\(.*?\)", "", l["name"]).strip()
+        if len(base) < 5:
+            continue
+        pairs.append((base, l))
+    for alias, target in MATCH_ALIAS.items():
+        if target in by:
+            pairs.append((alias, by[target]))
+    # Longest name first so the most specific listing wins ("Reddit API" before
+    # "Reddit"), then alphabetically — without the second key, equal-length
+    # names tie-break on list order and the same story matches a different
+    # listing depending on how the listings happen to be sorted that build.
+    pairs.sort(key=lambda p: (-len(p[0]), p[0].lower()))
+    return [(_re.compile(r"\b" + _re.escape(n) + r"\b", _re.I), l) for n, l in pairs]
+
+
+def match_listing(it, index):
+    hay = it.get("title", "") + " " + it.get("summary", "")
+    for pat, l in index:
+        if pat.search(hay):
+            return l
+    return None
+
+
+def stream_card(it, lead=False, match=None):
     img = ""
     if it.get("image"):
         img = (f'<div class="st-art"><img src="{esc(it["image"])}" alt="" loading="lazy" '
@@ -671,11 +729,22 @@ def stream_card(it, lead=False):
     cls = "st-card lead" if lead else "st-card"
     if not it.get("image"):
         cls += " notart"
+    # The whole reason a news feed belongs on this site: when a story is about
+    # something we've graded, the card is a door into our verdict rather than
+    # only a door out to the publisher.
+    ours = ""
+    if match:
+        label = VERDICTS[match["verdict"]][0]
+        ours = (f'<a class="st-ours" href="/{esc(match["slug"])}/">'
+                f'<span class="so-lbl">We checked this</span>'
+                f'<span class="so-name">{esc(match["name"])}</span>'
+                f'<span class="so-verdict v-{match["verdict"]}">{esc(label)}</span></a>')
     return (f'<article class="{cls}">{img}'
             f'<div class="st-body"><div class="st-tags">{tags}</div>'
             f'<h3><a href="{esc(it["url"])}" target="_blank" rel="noopener nofollow">{vid}'
             f'{esc(it["title"])}</a></h3>'
             f'<p class="st-sum">{esc(it.get("summary", ""))}</p>'
+            f'{ours}'
             f'<p class="st-meta">{esc(it["source"])} · {esc(ago(it.get("date")))}</p>'
             f'</div></article>')
 
@@ -1372,6 +1441,7 @@ def build():
     snap_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "feed_snapshot.json")
     stream = json.load(open(snap_path, encoding="utf-8")) if os.path.exists(snap_path) else {}
     forever_n = sum(1 for l in listings if l["verdict"] == "forever")
+    match_index = build_match_index(listings)
 
     # The stream leads the homepage, but only a slice of it: /now/ keeps the
     # full run, so the two pages don't compete for the same content.
@@ -1384,7 +1454,8 @@ def build():
             f'<span class="hs-when">Updated {esc(ago(stream.get("updated")))}</span>'
             '<a class="hs-all" href="/now/">All changes →</a></div>'
             '<div class="stream">'
-            + "".join(stream_card(it, lead=(i == 0)) for i, it in enumerate(si))
+            + "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
+                        for i, it in enumerate(si))
             + '</div></div></section>')
 
     home_body = f"""
@@ -1950,7 +2021,8 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
     # ---------- /now/ — the stream ----------
     if stream.get("items"):
         items = stream["items"]
-        cards = "".join(stream_card(it, lead=(i == 0)) for i, it in enumerate(items))
+        cards = "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
+                        for i, it in enumerate(items))
         srcs = len({i["source"] for i in items})
         now_body = f"""
 <main class="wrap streamwrap">

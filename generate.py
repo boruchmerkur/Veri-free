@@ -876,8 +876,10 @@ SPEC_SCHEMA = {
                   "Commercial use", "Self-hostable", "Sleeps when idle"],
     "learning": ["Card required", "Full course content", "Graded work", "Certificate",
                  "Access expires", "Ads"],
-    "entertainment": ["Card required", "Account needed", "Ads", "Catalogue",
-                      "Downloads", "Simultaneous streams"],
+    # Not "Simultaneous streams" — the category holds Reddit and two media
+    # servers, and a column three members cannot answer is a hole in the grid.
+    "entertainment": ["Card required", "Account needed", "Ads", "Free catalogue",
+                      "Offline downloads"],
     "books-reading": ["Card required", "What you need", "Catalogue", "Waitlists",
                       "Keep after leaving", "Offline reading"],
 }

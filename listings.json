@@ -2742,6 +2742,13 @@
         "praised": "Nobody disputes the value: essentially every subject, taught or performed by someone, at no cash cost, on every device.",
         "complained": "Ad load dominates the negative reviews — frequency and length, and the fact that both have grown. The blocking of ad-blockers, recommendation quality, and interface changes make up most of the rest.",
         "takeaway": "The rating gap tracks the ad experience, not the content. Free here means ad-funded and profile-funded — an honest trade, but one that's been getting steadily more expensive in attention."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Optional",
+        "Ads": "Yes",
+        "Free catalogue": "Full",
+        "Offline downloads": "Paid only"
       }
     },
     {
@@ -2813,6 +2820,13 @@
         "download": "tubitv.com or the official apps. “Free movie” sites that look similar are usually the pirated kind — this one is the licensed one.",
         "data": "Watching without an account is possible. If you make one, viewing data feeds ad targeting, which is what pays for the catalog.",
         "scams": "Nothing to cancel, because there's nothing to buy. If you are ever asked for a card, you're not on Tubi."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Optional",
+        "Ads": "Yes",
+        "Free catalogue": "Full",
+        "Offline downloads": "No"
       }
     },
     {
@@ -2883,6 +2897,13 @@
         "download": "pluto.tv or the official apps.",
         "data": "No signup required to watch. Advertising is the entire business model, so viewing data supports ad targeting.",
         "scams": "No card is ever requested. Any “Pluto TV” prompt asking for payment details is not Pluto TV."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Optional",
+        "Ads": "Yes",
+        "Free catalogue": "Full",
+        "Offline downloads": "No"
       }
     },
     {
@@ -2958,6 +2979,13 @@
         "praised": "The catalog, the recommendations and the cross-device playback are rated as well as anything in this category. On desktop the free tier is close to a full player.",
         "complained": "The consumer score is a billing and support score: renewals people didn't expect, refunds refused, and no reachable human. Free-tier complaints concentrate on mobile — the shuffle restrictions and the ad breaks between them.",
         "takeaway": "Read the two numbers as two products. The app people rate at 4.8 is the one you use; the company people rate at 1.4 is the one you'd have to email. On free, you'll only ever meet the first."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Yes",
+        "Ads": "Yes",
+        "Free catalogue": "Full",
+        "Offline downloads": "Paid only"
       }
     },
     {
@@ -3036,6 +3064,13 @@
         "praised": "Subscribers rate the catalog and the simulcast speed highly; for licensed anime in English-speaking markets it remains the deepest library there is.",
         "complained": "The free tier is the story. Reviewers describe years of gradual erosion — more ads, delayed episodes, shrinking availability — ending with the ad-supported tier being switched off entirely on 1 January 2026. Account and billing complaints follow the usual subscription pattern.",
         "takeaway": "This listing exists as a record of how a free tier ends: not with an announcement, but by degrees. Some older Crunchyroll titles still surface on Tubi and Pluto TV, which are still genuinely free."
+      },
+      "free_spec": {
+        "Card required": "Yes",
+        "Account needed": "Yes",
+        "Ads": "Paid to remove",
+        "Free catalogue": "None",
+        "Offline downloads": "Yes"
       }
     },
     {
@@ -3102,6 +3137,13 @@
         "download": "kanopy.com or the official apps; you sign in with a library card or university login.",
         "data": "Your library or institution authenticates you and pays per view. No card is taken and there are no ads.",
         "scams": "Nothing to buy inside it. The only limit is the monthly credit allowance your library sets."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Library card",
+        "Ads": "No",
+        "Free catalogue": "Library-rationed",
+        "Offline downloads": "Yes"
       }
     },
     {
@@ -3174,6 +3216,13 @@
         "download": "hoopladigital.com or the official apps, with a library card.",
         "data": "Your library authenticates the borrow and pays per loan — which is why the monthly cap exists.",
         "scams": "No card, no upsell, no subscription. Every title is licensed, so nothing here is a legal grey area."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Library card",
+        "Ads": "No",
+        "Free catalogue": "Library-rationed",
+        "Offline downloads": "Yes"
       }
     },
     {
@@ -3257,6 +3306,13 @@
         "praised": "The catalog and the bundling are what subscribers rate — video arriving alongside shipping benefits makes the whole package feel worth it.",
         "complained": "Two complaints recur, and both are commercial. Trials that auto-billed after 30 days without a warning people noticed, and the introduction of ads into a tier that had been ad-free, with an extra charge to remove them again.",
         "takeaway": "The app is fine; the clock is the product. If you start the trial, put the cancellation date in your calendar the same hour — and know that “paid” here still means ads unless you pay twice."
+      },
+      "free_spec": {
+        "Card required": "Yes",
+        "Account needed": "Yes",
+        "Ads": "Paid to remove",
+        "Free catalogue": "None",
+        "Offline downloads": "Yes"
       }
     },
     {
@@ -3314,6 +3370,14 @@
         "download": "gutenberg.org. Mirror sites exist and most are legitimate, but the main site is the one to trust by default.",
         "data": "No account, no email, no tracking required to read or download.",
         "scams": "Public-domain titles from here are frequently resold on ebook stores at full price. That's legal, and it's also a reason to check here first for anything written before roughly the 1930s."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "What you need": "Nothing",
+        "Catalogue": "Public domain",
+        "Waitlists": "No",
+        "Keep after leaving": "Yes",
+        "Offline reading": "Yes"
       }
     },
     {
@@ -3364,6 +3428,14 @@
         "download": "standardebooks.org. Files are plain EPUB and can be checked like any other file.",
         "data": "No signup, no email required, nothing collected to read.",
         "scams": "Everything here is public domain, which means it is legal to download, keep and share. Anyone selling these exact editions is selling free files."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "What you need": "Nothing",
+        "Catalogue": "Public domain",
+        "Waitlists": "No",
+        "Keep after leaving": "Yes",
+        "Offline reading": "Yes"
       }
     },
     {
@@ -3441,6 +3513,14 @@
         "download": "The official app stores, or libbyapp.com in a browser.",
         "data": "Your library card authenticates you. Reading data is subject to library privacy practices, which are among the strongest of anything on this site — libraries have a long institutional habit of not keeping borrowing records.",
         "scams": "Nothing is sold to you inside the app. If a site asks you to pay for “Libby”, it isn't Libby."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "What you need": "Library card",
+        "Catalogue": "Current titles",
+        "Waitlists": "Yes",
+        "Keep after leaving": "No",
+        "Offline reading": "Yes"
       }
     },
     {
@@ -3498,6 +3578,14 @@
         "download": "openlibrary.org. Loans open in your browser or as time-limited files; nothing needs installing.",
         "data": "An Internet Archive account is needed to borrow. No card, no payment, and no advertising.",
         "scams": "Nothing predatory here at all. The uncertainty around it is legal and institutional — publishers won their case against the Internet Archive's lending programme, and the lending catalog has thinned as a result. That's a question about what will still be borrowable next year, not about your safety in borrowing today."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "What you need": "Free account",
+        "Catalogue": "Mixed",
+        "Waitlists": "Yes",
+        "Keep after leaving": "No",
+        "Offline reading": "Yes"
       }
     },
     {
@@ -3563,6 +3651,14 @@
         "download": "sefaria.org and the official apps.",
         "data": "No account needed to read. An account syncs your notes and reading history across devices, and that's its only purpose.",
         "scams": "Nothing is upsold. The organisation runs on donations, and the text database is published for anyone to build on."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "What you need": "Nothing",
+        "Catalogue": "Public domain",
+        "Waitlists": "No",
+        "Keep after leaving": "Yes",
+        "Offline reading": "Yes"
       }
     },
     {
@@ -3653,6 +3749,14 @@
         "account_risk": "The trial requires a card and converts to a monthly charge. Set the cancellation reminder the same hour you start it.",
         "data": "Books claimed with trial credits stay in your library after cancelling — that part of the offer is real and worth taking.",
         "scams": "No deception in the billing, but understand what you own: purchased audiobooks are licensed to your account, not owned outright, and an account closure takes the library with it."
+      },
+      "free_spec": {
+        "Card required": "Yes",
+        "What you need": "Paid subscription",
+        "Catalogue": "Current titles",
+        "Waitlists": "No",
+        "Keep after leaving": "Trial credits only",
+        "Offline reading": "Yes"
       }
     },
     {
@@ -3716,7 +3820,15 @@
         }
       ],
       "slug": "is-kindle-unlimited-actually-free",
-      "favicon_url": "https://www.amazon.com"
+      "favicon_url": "https://www.amazon.com",
+      "free_spec": {
+        "Card required": "Yes",
+        "What you need": "Paid subscription",
+        "Catalogue": "Mixed",
+        "Waitlists": "No",
+        "Keep after leaving": "No",
+        "Offline reading": "Yes"
+      }
     },
     {
       "name": "Credit Karma",
@@ -5812,6 +5924,13 @@
         "praised": "Reliability and the original catalog are the consistent compliments — playback quality and the recommendation engine rate well across both stores.",
         "complained": "Price rises, password-sharing enforcement, and shows cancelled after a season dominate recent reviews. The Android score also carries app-specific complaints about downloads and playback.",
         "takeaway": "None of this is a free-tier debate, because there isn't one. Netflix tested free plans in a few markets years ago and ended them; anything promising free Netflix today is phishing or piracy."
+      },
+      "free_spec": {
+        "Card required": "Yes",
+        "Account needed": "Yes",
+        "Ads": "Paid to remove",
+        "Free catalogue": "None",
+        "Offline downloads": "Yes"
       }
     },
     {
@@ -5880,6 +5999,13 @@
         "praised": "The library is the whole argument — Disney, Pixar, Marvel, Star Wars and National Geographic in one place — and family-account controls rate well.",
         "complained": "Repeated price increases, the shift of the cheaper tier to ad-supported, and password-sharing enforcement drive the negative reviews. App reviewers cite playback and profile bugs on TV devices.",
         "takeaway": "There has never been a free ad-supported tier here, and the launch free trials ended in 2019. Bundles are the only genuine saving — “free Disney+” offers are not offers."
+      },
+      "free_spec": {
+        "Card required": "Yes",
+        "Account needed": "Yes",
+        "Ads": "Paid to remove",
+        "Free catalogue": "None",
+        "Offline downloads": "Yes"
       }
     },
     {
@@ -5956,7 +6082,14 @@
         "scams": "Because the free tier is remembered but gone, “free Peacock” offers are now a common lure for phishing and card-harvesting pages. Peacock has no free signup path; anything presenting one is not Peacock.",
         "account_risk": "Bundles through a carrier or retailer are real, but check them on your provider's own site rather than by following an emailed link."
       },
-      "verified": "2026-08"
+      "verified": "2026-08",
+      "free_spec": {
+        "Card required": "Yes",
+        "Account needed": "Yes",
+        "Ads": "Paid to remove",
+        "Free catalogue": "None",
+        "Offline downloads": "Yes"
+      }
     },
     {
       "name": "The Roku Channel",
@@ -5996,7 +6129,14 @@
       "more_info": [],
       "short_worth": null,
       "slug": "is-the-roku-channel-actually-free",
-      "favicon_url": "https://www.roku.com"
+      "favicon_url": "https://www.roku.com",
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Optional",
+        "Ads": "Yes",
+        "Free catalogue": "Full",
+        "Offline downloads": "No"
+      }
     },
     {
       "name": "Google Digital Garage",
@@ -6279,6 +6419,13 @@
         "data": "Ad-funded: browsing and engagement power targeted advertising. Posts are public and indexed by search engines, essentially forever.",
         "scams": "Investment, crypto and “work from home” pitches arriving by DM after you post are a constant. Subreddit moderators cannot vet a private message, and no legitimate opportunity starts with one.",
         "account_risk": "Anything you post is permanent in practice, even after deletion. Reddit accounts have been de-anonymised from post history more than once — keep the identifying details out."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Optional",
+        "Ads": "Yes",
+        "Free catalogue": "Full",
+        "Offline downloads": "No"
       }
     },
     {
@@ -6349,7 +6496,14 @@
         "account_risk": "Sharing your server with others shares access to your files — set library permissions deliberately. And note the 2025 change: remote playback of your own media now requires a paid pass, so a setup that used to work from anywhere may stop.",
         "scams": "Plex itself is legitimate and licensed. What people put on their own servers is their own business — and their own legal exposure."
       },
-      "verified": "2026-08"
+      "verified": "2026-08",
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Yes",
+        "Ads": "Yes",
+        "Free catalogue": "Your own files",
+        "Offline downloads": "Paid only"
+      }
     },
     {
       "name": "Google Meet",
@@ -7154,7 +7308,14 @@
       ],
       "short_worth": null,
       "slug": "is-anchor-spotify-for-podcasters-actually-free",
-      "favicon_url": "https://www.spotify.com"
+      "favicon_url": "https://www.spotify.com",
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Yes",
+        "Ads": "No",
+        "Free catalogue": "Your own files",
+        "Offline downloads": "Yes"
+      }
     },
     {
       "name": "Prolific",
@@ -8603,7 +8764,15 @@
         ]
       ],
       "short_worth": null,
-      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free."
+      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free.",
+      "free_spec": {
+        "Card required": "No",
+        "What you need": "Nothing",
+        "Catalogue": "Publisher's own",
+        "Waitlists": "No",
+        "Keep after leaving": "Yes",
+        "Offline reading": "Yes"
+      }
     },
     {
       "name": "The Rebbe's Letters",
@@ -8641,7 +8810,15 @@
         ]
       ],
       "short_worth": null,
-      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free."
+      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free.",
+      "free_spec": {
+        "Card required": "No",
+        "What you need": "Nothing",
+        "Catalogue": "Publisher's own",
+        "Waitlists": "No",
+        "Keep after leaving": "Yes",
+        "Offline reading": "Yes"
+      }
     },
     {
       "name": "Indeed",
@@ -10247,7 +10424,14 @@
           "Jellyfin was forked from Emby when that project moved to a proprietary licence. It is run by volunteers with no company, no funding round and nothing to monetise later — which is the structural reason it cannot do what Plex did in 2025. There is no one to decide that remote streaming should now cost money."
         ]
       ],
-      "verified": "2026-08"
+      "verified": "2026-08",
+      "free_spec": {
+        "Card required": "No",
+        "Account needed": "Your own server",
+        "Ads": "No",
+        "Free catalogue": "Your own files",
+        "Offline downloads": "Yes"
+      }
     },
     {
       "name": "Anki",
@@ -10341,7 +10525,15 @@
           "The Wayback Machine is the reason this site can prove what a company's pricing page said last year. If you ever need to show that a free tier existed before it quietly disappeared, that is where the evidence lives."
         ]
       ],
-      "verified": "2026-08"
+      "verified": "2026-08",
+      "free_spec": {
+        "Card required": "No",
+        "What you need": "Free account",
+        "Catalogue": "Mixed",
+        "Waitlists": "Yes",
+        "Keep after leaving": "Yes",
+        "Offline reading": "Yes"
+      }
     },
     {
       "name": "Ollama",

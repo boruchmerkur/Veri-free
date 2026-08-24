@@ -667,7 +667,8 @@
         "praised": "Multiplayer editing in the browser is where every reviewer lands: no installs, no version files, no handoff exports. It became the category standard on merit.",
         "complained": "The complaints are about pricing and the ceiling, not the tool. Successive plan changes have reshaped what a free team gets, and the shared-project cap arrives fast for anyone working with others.",
         "takeaway": "Excellent product, on a free tier that has been narrowed more than once. Solo practice stays free indefinitely; team work hits the wall almost immediately — which is the design, not an accident."
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "Zoom",
@@ -677,7 +678,7 @@
       "card": "No",
       "autobill": "—",
       "account": "Required to host",
-      "limits": "40-minute cap on meetings — including 1-on-1 calls",
+      "limits": "40-minute cap on meetings, set by the host's plan",
       "realcost": "Your meeting dies at minute 40.",
       "free_includes": [
         "Unlimited number of meetings",
@@ -692,7 +693,7 @@
         "Admin and scheduling features"
       ],
       "short": "Sort of. The free tier is real and permanent — but per Zoom's own support pages, almost all meetings hosted by a free account end at 40 minutes, and that now includes one-on-one calls.",
-      "catch": "The 40-minute wall exists purely to make you upgrade, and it's harsher than most people remember: 1-on-1 calls used to be unlimited, and they aren't anymore. The free workaround is ending and rejoining with the same link — undignified, but it works.",
+      "catch": "The 40-minute wall exists purely to make you upgrade, and it follows the host: if a free user starts the call, everyone on it hits the wall. Zoom has moved this line before — one-to-one calls were once exempt and reporting since has been inconsistent, so check before you rely on it for a long conversation. The free workaround is ending and rejoining with the same link.",
       "worth": "A paid seat costs real money monthly; free is workable if you play the clock.",
       "smart_moves": [
         "Schedule with a reusable link; near minute 38, everyone leaves and rejoins for a fresh 40",
@@ -758,9 +759,10 @@
       "sentiment": {
         "split": "Trustpilot 1.6/5 from consumers · G2 4.5/5 from business users",
         "praised": "Business reviewers rate reliability and call quality highly — the product works, which is why it won the market.",
-        "complained": "Consumer complaints concentrate on billing and support: unexpected renewals, difficulty reaching a human, and the 40-minute cap now applying to one-on-one calls that used to be unlimited.",
+        "complained": "Consumer complaints concentrate on billing and support: unexpected renewals, difficulty reaching a human, and the 40-minute cap arriving in calls people expected to run longer.",
         "takeaway": "A near-five-star product with a near-one-star billing experience. Read the split as: the software is fine, watch the subscription."
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "Slack",
@@ -770,7 +772,7 @@
       "card": "No",
       "autobill": "—",
       "account": "Required",
-      "limits": "90-day visible history; data deleted after 1 year",
+      "limits": "90 days of visible message history",
       "realcost": "Your own chat history, held behind the paid tier.",
       "free_includes": [
         "Unlimited members in a workspace",
@@ -786,7 +788,7 @@
         "Message exports beyond public channels"
       ],
       "short": "Sort of. Free Slack works fine day to day — until you search for something from four months ago and find it's been hidden behind the upgrade wall.",
-      "catch": "Your older messages aren't deleted right away; they're withheld — pay and the last year reappears. But on the free plan anything older than one year is permanently erased, so the archive you think you're keeping is quietly evaporating.",
+      "catch": "Your older messages aren't deleted the moment they age out — they're withheld, and upgrading brings them back. But on the free plan the archive you think you're building is one you cannot read past 90 days, which for a team's institutional memory amounts to much the same thing.",
       "worth": "Slack Pro is $7.25 per user per month — your own history is what it sells back.",
       "smart_moves": [
         "Export public-channel history regularly — free-plan admins can, and day 91 is too late",
@@ -842,7 +844,8 @@
         "praised": "Reliability, search, and the integration ecosystem are the consistent compliments — there's a reason most teams standardised on it.",
         "complained": "The free plan's 90-day visible history dominates the grievances: teams discover their institutional memory has aged out of view, and the only fix is a per-seat subscription. Notification volume is the runner-up.",
         "takeaway": "Product complaints are minor; the free-tier complaint is structural. On the free plan you are renting visibility into your own archive — and after a year the older messages are gone for good."
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "Grammarly",
@@ -997,7 +1000,8 @@
         "praised": "Sync reliability is the steady compliment — files land where they should, across machines, without drama. That is why it's still a default for many teams.",
         "complained": "Consumer complaints are commercial rather than technical: renewals charged without a warning people registered, refusals of refunds, and the 2GB free tier turning every sync into an upgrade prompt once it fills.",
         "takeaway": "A 1.7 sitting next to a 4.4 usually means a good product with an aggressive subscription. Treat the free tier as a shared folder rather than storage, and diary any trial before it renews."
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "Google Drive & Gmail",
@@ -4478,7 +4482,8 @@
         "praised": "Simplicity is the compliment across every source: a board, lists, cards — learnable in a minute, and the free tier holds real teams for years.",
         "complained": "The Android score carries app complaints — sync delays and a mobile experience reviewers find heavier than the web. The ten-board workspace ceiling and small attachment limits are the free-tier grievances, alongside the sense that development attention moved to Atlassian's bigger products.",
         "takeaway": "Rare among the “free forever” tools in that the ceiling is generously placed and clearly marked. If ten boards isn't enough, the problem is probably your board sprawl, not the plan."
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "Calendly",

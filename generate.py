@@ -1738,21 +1738,38 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         headlines_L = (f'<section class="headlines"><div class="wrap"><h2>{esc(T["news"])}</h2>'
                        f'<div class="hl-list">{hl_items}</div></div></section>') if hl_items else ""
         sc_strings = json.dumps(T["sc_js"], ensure_ascii=False)
-        body_L = (f'<header class="hero"><div class="wrap">'
+        # Same shape as the English landing: thin head, one find bar, the
+        # stream, then the verdicts.
+        home_stream_L = ""
+        if stream.get("items"):
+            si_L = stream["items"][:10]
+            home_stream_L = (
+                '<section class="homestream"><div class="wrap">'
+                f'<div class="hs-head"><h2>{esc(T["changed_h"])}</h2>'
+                f'<a class="hs-all" href="/now/">{esc(T["changed_all"])}</a></div>'
+                '<div class="stream">'
+                + "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
+                          for i, it in enumerate(si_L))
+                + '</div></div></section>')
+        body_L = (f'<header class="hero slim"><div class="wrap">'
                   f'<div class="hero-top"><h1>Veri-<em>Free</em></h1>'
-                  f'<p class="tagline">{esc(T["tagline"])}</p></div>'
-                  f'<div class="hero-line"><p class="sub">{T["sub"]}</p>'
-                  f'<p class="stats">{stats_L}</p></div>'
+                  f'<p class="tagline">{esc(T["tagline"])}</p>'
+                  f'<p class="sub">{T["sub"]}</p></div>'
+                  f'</div></header>'
+                  f'<div class="findbar"><div class="wrap findbar-in">'
                   f'<div class="searchbar"><input id="q" type="search" aria-label="Search" placeholder="{esc(T["search_ph"])}">'
                   f'<span class="kbd">{T["verified"].replace("{n}", str(len(listings)))}</span></div>'
-                  f'<p class="count" id="count"></p>'
                   f'<div class="vfilters">'
                   f'<button class="vfilter on" data-v="all">{esc(T["filters"]["all"])}</button>'
                   f'<button class="vfilter" data-v="truly">{esc(T["filters"]["truly"])}</button>'
                   f'<button class="vfilter" data-v="forever">{esc(T["filters"]["forever"])}</button>'
                   f'<button class="vfilter" data-v="freeish">{esc(T["filters"]["freeish"])}</button>'
                   f'<button class="vfilter" data-v="trap,fake,notfree">{esc(T["filters"]["traps"])}</button>'
-                  f'</div></div></header>'
+                  f'</div>'
+                  f'<a class="findbar-jump" href="#categories">{esc(T["browse_all"])}</a>'
+                  f'</div></div>'
+                  f'<p class="count" id="count"></p>'
+                  f'{home_stream_L}'
                   f'<div class="side-legend closed" id="sidepanel">'
                   f'<div class="sl-tab" onclick="document.getElementById(\'sidepanel\').classList.toggle(\'closed\')">{esc(T["guide"])}</div>'
                   f'<div class="sl-body"><h2>{esc(T["verdicts_h"])}</h2>{legend_side_L}'
@@ -1762,7 +1779,10 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                   f'<button class="sortbtn" data-sort="value">{esc(T["sort_value"])}</button>'
                   f'<button class="sortbtn" data-sort="name">{esc(T["sort_az"])}</button>'
                   f'</div></div></div>'
-                  f'<main class="wrap" id="categories">{sections_L}'
+                  f'<main class="wrap" id="categories">'
+                  f'<div class="verdicts-head"><h2>{esc(T["verdicts_all_h"])}</h2>'
+                  f'<p>{esc(T["verdicts_all_p"].replace("{n}", str(len(listings))).replace("{g}", str(genuine)).replace("{t}", str(traps)))}</p></div>'
+                  f'{sections_L}'
                   f'<p class="noresults" id="noresults">{T["noresults"]}</p></main>'
                   f'{headlines_L}'
                   f'<section class="sitecheck"><div class="wrap">'

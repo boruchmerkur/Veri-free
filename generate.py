@@ -453,6 +453,11 @@ body.loc-ca .ca-badge{display:inline-flex}
 /* tighter page heads — the h1 and one line, then the content */
 .pagehead.tight{padding:34px 0 6px}
 .pagehead.tight p{margin:10px 0 14px;font-size:16.5px}
+/* per-listing verification age */
+.checked .ck-date{font-weight:600}
+.checked .ck-date.fresh{color:var(--ink)}
+.checked .ck-flag{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin-left:7px;color:var(--muted);cursor:help}
+.checked .ck-flag.due{color:#A05E03;border-color:#A05E03;background:#F7EDDC}
 /* "we checked this" — the door back into our own verdicts */
 .st-ours{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 10px;padding:8px 11px;border:1.5px solid var(--line);border-radius:9px;background:var(--paper);text-decoration:none;transition:border-color .12s,background .12s}
 .st-ours:hover{border-color:var(--ink);background:var(--card)}
@@ -717,6 +722,32 @@ def match_listing(it, index):
         if pat.search(hay):
             return l
     return None
+
+
+VERIFY_STALE_MONTHS = 6
+
+
+def verified_line(l, site_checked):
+    """The date a listing's facts were last checked, not the date the file was
+    rebuilt. Peacock carried a site-wide "July 2026" while stating something
+    that stopped being true in January 2023 — a global date cannot catch that,
+    because it moves whether or not anyone looked.
+    """
+    v = l.get("verified")
+    if not v:
+        return (f'<span class="ck-date">Last checked: {esc(site_checked)}</span>'
+                f'<span class="ck-flag" title="No individual re-verification recorded for this '
+                f'listing — the date shown is the site-wide pass.">site-wide date</span>')
+    try:
+        y, m = (int(x) for x in v.split("-")[:2])
+    except ValueError:
+        return f'<span class="ck-date">Last checked: {esc(v)}</span>'
+    today = _dt.date.today()
+    months = (today.year - y) * 12 + (today.month - m)
+    label = _dt.date(y, m, 1).strftime("%B %Y")
+    stale = ('<span class="ck-flag due">re-verify due</span>'
+             if months >= VERIFY_STALE_MONTHS else "")
+    return f'<span class="ck-date fresh">Checked: {esc(label)}</span>{stale}'
 
 
 def stream_card(it, lead=False, match=None):
@@ -1923,7 +1954,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 {safety_box(l, checked)}
 {plays}
 {more}
-<p class="checked">Last checked: {esc(checked)} · Verdict: {vlabel} — {esc(vdef.lower())}</p>
+<p class="checked">{verified_line(l, checked)} · Verdict: {vlabel} — {esc(vdef.lower())}</p>
 {disc}
 {'<div class="ca-badge avail">🍁 Canada</div><p class="ca-note">'+esc(l["canada"])+'</p>' if l.get("canada") else ""}
 {ratings_row(l)}
@@ -2361,6 +2392,9 @@ Verified Free
     open(os.path.join(OUT, "404.html"), "w").write(page_nav("Not found — Verified Free", "Page not found.", "/404.html", body404))
 
     print(f"Built {len(listings)} listings, {len(CATS)} categories → {OUT}")
+    _v = [l for l in listings if l.get("verified")]
+    print(f"  individually verified: {len(_v)}/{len(listings)} "
+          f"({len(listings) - len(_v)} on the site-wide date)")
 
 if __name__ == "__main__":
     build()

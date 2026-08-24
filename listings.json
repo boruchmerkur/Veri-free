@@ -5955,7 +5955,8 @@
         "verdict": "Legitimate and safe — NBCUniversal's own service. The risk is sites promising free access it doesn't offer.",
         "scams": "Because the free tier is remembered but gone, “free Peacock” offers are now a common lure for phishing and card-harvesting pages. Peacock has no free signup path; anything presenting one is not Peacock.",
         "account_risk": "Bundles through a carrier or retailer are real, but check them on your provider's own site rather than by following an emailed link."
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "The Roku Channel",
@@ -6041,7 +6042,8 @@
         "Certificate": "Free",
         "Access expires": "Never",
         "Ads": "No"
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "Udemy",
@@ -6346,7 +6348,8 @@
         "data": "Plex accounts sync library metadata and watch state to Plex's servers, and the free ad-supported catalog is ad-targeted. Your media files themselves stay on your own server.",
         "account_risk": "Sharing your server with others shares access to your files — set library permissions deliberately. And note the 2025 change: remote playback of your own media now requires a paid pass, so a setup that used to work from anywhere may stop.",
         "scams": "Plex itself is legitimate and licensed. What people put on their own servers is their own business — and their own legal exposure."
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "Google Meet",
@@ -10200,7 +10203,8 @@
           "What happened to Direct File",
           "The IRS built its own free filing tool, piloted it in 2024 and expanded it to 25 states in 2025. It was discontinued ahead of the 2026 filing season with no relaunch date. Free File, the older public-private partnership, is unaffected and still running — which is why this listing points there."
         ]
-      ]
+      ],
+      "verified": "2026-08"
     },
     {
       "name": "Jellyfin",
@@ -10242,7 +10246,8 @@
           "Why it exists",
           "Jellyfin was forked from Emby when that project moved to a proprietary licence. It is run by volunteers with no company, no funding round and nothing to monetise later — which is the structural reason it cannot do what Plex did in 2025. There is no one to decide that remote streaming should now cost money."
         ]
-      ]
+      ],
+      "verified": "2026-08"
     },
     {
       "name": "Anki",
@@ -10292,7 +10297,8 @@
         "Certificate": "None offered",
         "Access expires": "Never",
         "Ads": "No"
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "Internet Archive",
@@ -10334,7 +10340,8 @@
           "Its most underused feature",
           "The Wayback Machine is the reason this site can prove what a company's pricing page said last year. If you ever need to show that a free tier existed before it quietly disappeared, that is where the evidence lives."
         ]
-      ]
+      ],
+      "verified": "2026-08"
     },
     {
       "name": "Ollama",
@@ -10387,7 +10394,8 @@
         "Commercial use": "Your own terms",
         "Runs offline": "Yes",
         "Trains on your input": "No"
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "VSCodium",
@@ -10429,7 +10437,8 @@
           "What the difference actually is",
           "VS Code's source is open, but the build Microsoft ships adds telemetry, their marketplace and a proprietary licence. VSCodium is the same source compiled without those. If you are happy with VS Code, nothing here is an upgrade — it only matters if you would rather not send usage data to Microsoft."
         ]
-      ]
+      ],
+      "verified": "2026-08"
     }
   ],
   "deals": [

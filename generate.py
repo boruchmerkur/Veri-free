@@ -438,6 +438,21 @@ body.loc-ca .ca-badge{display:inline-flex}
 .cmp-table tbody tr:last-child th,.cmp-table tbody tr:last-child td{border-bottom:0}
 .cmp-table .sv{font-size:13px;border-left-width:3px;padding-left:8px}
 @media(max-width:560px){.freespec td.k{width:auto;display:block;padding-bottom:0;border:0}.freespec td{display:block}.freespec tr{display:block;border-bottom:1px solid var(--line);padding:6px 0}}
+/* Folded page rationale. The reasoning behind a page is worth keeping and
+   worth reading once — it is not worth 130 words of the first screen every
+   time. Available in one click, invisible otherwise. */
+.pagenote{max-width:720px;margin:0 0 20px;border-left:3px solid var(--line);padding:0 0 0 14px}
+.pagenote>summary{cursor:pointer;list-style:none;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:3px 0}
+.pagenote>summary::-webkit-details-marker{display:none}
+.pagenote>summary::after{content:" +";font-weight:700}
+.pagenote[open]>summary::after{content:" −"}
+.pagenote>summary:hover{color:var(--brand)}
+.pagenote .pn-body{padding:8px 0 4px;font-size:14.5px;line-height:1.65;color:var(--muted);max-width:68ch}
+.pagenote .pn-body p{margin:0 0 11px}
+.pagenote .pn-body p:last-child{margin:0}
+/* tighter page heads — the h1 and one line, then the content */
+.pagehead.tight{padding:34px 0 6px}
+.pagehead.tight p{margin:10px 0 14px;font-size:16.5px}
 /* homepage: thin, prominent find bar — the product, one band deep */
 .hero.slim{padding:20px 0 12px}
 .hero.slim .hero-top{align-items:baseline;gap:6px 14px}
@@ -1896,12 +1911,12 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                              f'<p style="color:var(--muted);margin-bottom:6px">Not free — but a real safety net. These retailers stand behind what they sell, so an honest buyer is never stuck with something that failed, didn\'t fit, or disappointed. One principle makes them work: <strong>use them in good faith.</strong> A return guarantee is protection for genuine dissatisfaction, not a free rental service. Wearing something once and sending it back — "wardrobing" — is return fraud; it raises prices for everyone and gets policies tightened or memberships revoked. Buy with confidence, return with honesty.</p>'
                              f'{guarantee_cards}</div>') if guarantee_deals else ""
         deals_body = f"""
-<header class="pagehead wrap"><h1>Verified Deals &amp; Discounts</h1>
-<p>The same trust layer, applied to savings. Every deal below has been checked — who qualifies, what you actually get, and what the fine print hides. No expired codes, no fake discounts.</p></header>
-<main class="wrap"><div class="prose">
-<h2>How we verify deals</h2>
+<header class="pagehead tight wrap"><h1>Verified Deals &amp; Discounts</h1>
+<p>Every deal checked — who qualifies, what you get, and what the fine print hides.</p></header>
+<main class="wrap">
+<details class="pagenote"><summary>How we verify deals</summary><div class="pn-body">
 <p>Each deal is stamped <span class="dbadge verified">VERIFIED</span> (confirmed working), <span class="dbadge seasonal">SEASONAL</span> (real but periodic — watch for it), or <span class="dbadge expired">EXPIRED</span> (was real, no longer available). We check terms and eligibility directly, and publish the caveat alongside the savings, because a discount that surprises you at renewal isn\'t a deal — it\'s a trap with a fuse.</p>
-</div>
+</div></details>
 <div style="max-width:720px;padding-bottom:10px">{deal_cards}</div>
 {guarantee_section}
 <div style="padding-bottom:50px"></div></main>"""
@@ -1910,13 +1925,13 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         if coded:
             cards_c = "".join(deal_card(x) for x in coded)
             coup_body = f"""
-<header class="pagehead wrap"><h1>Coupon Codes</h1>
-<p>Every code below has been checked and works at the time shown on its card. Click a code to copy it.</p></header>
-<main class="wrap"><div class="prose">
-<h2>Why this page is short</h2>
-<p>Coupon sites list thousands of codes because listing them costs nothing and a dead code still earns the click. We list a code only when we have confirmed it works, which means there will never be many. A short page of working codes beats a long one of expired ones — that is the same standard the verdicts are held to.</p>
+<header class="pagehead tight wrap"><h1>Coupon Codes</h1>
+<p>Codes we have actually checked. Click one to copy it.</p></header>
+<main class="wrap">
+<details class="pagenote"><summary>Why this page is short</summary><div class="pn-body">
+<p>Coupon sites list thousands of codes because listing them costs nothing and a dead code still earns the click. We list a code only when we have confirmed it works, which means there will never be many. A short page of working codes beats a long one of expired ones — the same standard the verdicts are held to.</p>
 <p>If a code here has stopped working, tell us and it comes down: <a href="mailto:hello@veri-free.com">hello@veri-free.com</a>.</p>
-</div>
+</div></details>
 <div style="max-width:720px;padding-bottom:10px">{cards_c}</div>
 <div style="padding-bottom:50px"></div></main>"""
             p_c = page_nav("Verified Coupon Codes — Verified Free",
@@ -1986,14 +2001,14 @@ Nothing here carries a Verified Free verdict — for those, start with the <a hr
                 {"@type": "ListItem", "position": 2, "name": "Free in Real Life",
                  "item": f"{DOMAIN}/free-in-real-life/"}]}]}, ensure_ascii=False)
         irl_body = f"""
-<header class="pagehead wrap"><h1>Free in Real Life</h1>
-<p>The same trust layer, off the internet. Standing programmes only — things that are true all year, not this week's circular.</p></header>
-<main class="wrap"><div class="prose">
-<h2>What's here, and what isn't</h2>
+<header class="pagehead tight wrap"><h1>Free in Real Life</h1>
+<p>Standing programmes only — free things that are true all year, not this week's circular.</p></header>
+<main class="wrap">
+<details class="pagenote"><summary>What's here, and what isn't</summary><div class="pn-body">
 <p>Everything below is a <strong>standing programme</strong>: published dates, a public policy, or a federal entitlement. Those can be verified once and stay verified, which is the only way a "last checked" date means anything.</p>
 <p>What we deliberately don't list: weekly store circulars, flash sales, free-sample-of-the-day sites, and sweepstakes. Those change daily and by zip code, so any page claiming to have checked them is guessing — and that corner of the web is already wall-to-wall affiliate spam with dead links. We'd rather cover less and be right.</p>
 <p>Where a thing genuinely varies by location — kids-eat-free nights, library passes — we say so and tell you how to check yours, instead of printing a national list that's wrong in half the country.</p>
-</div>
+</div></details>
 <div class="irl-wrap">{sections}</div>
 <div style="padding-bottom:50px"></div></main>"""
         p = page_nav("Free in Real Life — Verified Free",

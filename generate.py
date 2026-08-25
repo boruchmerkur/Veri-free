@@ -1188,7 +1188,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/now/">Now</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/now/">Now</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {NAV_JS}
 {COUPON_JS}
@@ -1429,6 +1429,7 @@ def build():
            f'<a href="/now/">Now</a>'
            f'<a href="/deals/">Deals</a>'
            f'<a href="/coupons/">Coupons</a>'
+           f'<a href="/free-consultations/">Consultations</a>'
            f'<a href="/free-in-real-life/">Real Life</a>'
            f'<a href="/compare/">Compare</a>'
            f'<a href="/methodology/">How we verify</a>'
@@ -2064,6 +2065,26 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
             os.makedirs(os.path.join(OUT, "coupons"), exist_ok=True)
             open(os.path.join(OUT, "coupons", "index.html"), "w").write(p_c)
 
+        # ---------- /free-consultations/ ----------
+        consults = [x for x in deals if x.get("consultation")]
+        if consults:
+            cards_x = "".join(deal_card(x, cta="Book it →") for x in consults)
+            cons_body = f"""
+<header class="pagehead tight wrap"><h1>Free Consultations</h1>
+<p>Expert time you can book without paying for it — verified, with the catch stated.</p></header>
+<main class="wrap">
+<details class="pagenote"><summary>What counts as free here</summary><div class="pn-body">
+<p>A free consultation is only free if you can leave without owing anything and without having been sold to under pressure. Everything below meets that: government-funded advisers, volunteer professionals, or a business offering a genuine front door.</p>
+<p>What we don't list: "free quotes" that are sales calls, timeshare-style presentations where the free hour is the price of admission to a pitch, and anything that needs a card to book. Where a consultation is the front door to a paid service, the card says so.</p>
+</div></details>
+<div style="max-width:720px;padding-bottom:10px">{cards_x}</div>
+<div style="padding-bottom:50px"></div></main>"""
+            p_x = page_nav("Free Consultations — Verified Free",
+                           "Free expert time — business mentoring, legal answers, tax help and design advice — each verified and with the catch stated.",
+                           "/free-consultations/", cons_body)
+            os.makedirs(os.path.join(OUT, "free-consultations"), exist_ok=True)
+            open(os.path.join(OUT, "free-consultations", "index.html"), "w").write(p_x)
+
         p = page_nav("Verified Deals & Discounts — Verified Free",
                  "Coupons and discounts that are actually real — verified, with the fine print included.",
                  "/deals/", deals_body)
@@ -2402,7 +2423,7 @@ Verified Free
                 shutil.copy2(src_f, os.path.join(OUT, f))
             elif os.path.isdir(src_f):
                 shutil.copytree(src_f, os.path.join(OUT, f), dirs_exist_ok=True)
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/now/", f"{DOMAIN}/deals/", f"{DOMAIN}/coupons/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/now/", f"{DOMAIN}/deals/", f"{DOMAIN}/coupons/", f"{DOMAIN}/free-consultations/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
     if comparisons:
         urls.extend(comp_urls[1:])  # skip /compare/ already added
     from datetime import date

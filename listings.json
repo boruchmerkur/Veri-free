@@ -10806,7 +10806,8 @@
       "how": "Enter your zip code at score.org/find-mentor, fill out a request form, and get matched with a mentor in your industry",
       "worth": "Business consulting runs $150–400/hour. SCORE mentors provide ongoing guidance — the equivalent of thousands in advisory fees, free, indefinitely.",
       "caveat": "Mentor quality varies — they're volunteers with real experience, but expertise ranges. You can request a different mentor at any time. US-based businesses only.",
-      "favicon_url": "https://www.score.org/find-mentor"
+      "favicon_url": "https://www.score.org/find-mentor",
+      "consultation": true
     },
     {
       "name": "SBA Small Business Development Centers (SBDCs)",
@@ -10819,7 +10820,8 @@
       "how": "Find your local SBDC at sba.gov and schedule an appointment — virtual or in-person",
       "worth": "Professional business consulting at $0, covering areas where private consultants charge $100–300/hour. Advisors have real industry and academic credentials.",
       "caveat": "Availability varies by location and demand. Sessions focus on advising, not doing the work for you. Some locations have waiting lists during peak times.",
-      "favicon_url": "https://www.sba.gov/local-assistance/resource-partners/small-business-development-centers-sbdc"
+      "favicon_url": "https://www.sba.gov/local-assistance/resource-partners/small-business-development-centers-sbdc",
+      "consultation": true
     },
     {
       "name": "ABA Free Legal Answers",
@@ -10832,7 +10834,8 @@
       "how": "Create an account at abafreelegalanswers.org, verify income eligibility, and submit your legal question",
       "worth": "A single hour of legal advice runs $200–500+. This provides targeted written guidance from a licensed attorney at $0.",
       "caveat": "Civil questions only — no criminal, immigration (separate federal portal exists), or ongoing representation. Answers are brief legal guidance, not full legal representation. Income eligibility requirements apply.",
-      "favicon_url": "https://abafreelegalanswers.org"
+      "favicon_url": "https://abafreelegalanswers.org",
+      "consultation": true
     },
     {
       "name": "VITA Free Tax Preparation",
@@ -10845,7 +10848,8 @@
       "how": "Find a VITA site near you using the IRS locator tool at irs.gov or by calling 800-906-9887",
       "worth": "Tax preparation fees run $150–500+ depending on complexity. VITA covers the same service at $0, done by a trained, IRS-certified human.",
       "caveat": "Seasonal — operates January through mid-April at most sites. Some locations serve year-round. Bring all tax documents. Wait times can be long during peak season.",
-      "favicon_url": "https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers"
+      "favicon_url": "https://www.irs.gov/individuals/free-tax-return-preparation-for-qualifying-taxpayers",
+      "consultation": true
     },
     {
       "name": "Apple Store Free Sessions (Today at Apple)",
@@ -10858,7 +10862,8 @@
       "how": "Browse and register at apple.com/today or walk into any Apple Store",
       "worth": "Creative workshops and tech support at $0 in a beautifully designed space. Private tutoring in these subjects runs $50–100/hour.",
       "caveat": "Workshops teach Apple's ecosystem (iPhone photography, GarageBand, etc.) — genuine education, but inside Apple's world. One-on-one Genius Bar support for repairs may lead to paid service recommendations.",
-      "favicon_url": "https://www.apple.com/today/"
+      "favicon_url": "https://www.apple.com/today/",
+      "consultation": true
     },
     {
       "name": "HubSpot Free Business Courses & Certifications",
@@ -10912,7 +10917,8 @@
       "caveat": "The consultation is genuinely free and the code is real; if the studio ever stops honouring it, this listing comes down. The consultation is advice, not deliverables — hired work is quoted separately.",
       "favicon_url": "https://dreamsitedesign.com",
       "code": "VERIFREEDREAM",
-      "disclosure": "DreamSite Design and Verified Free share an owner. Listed on the same rubric as every other deal here."
+      "disclosure": "DreamSite Design and Verified Free share an owner. Listed on the same rubric as every other deal here.",
+      "consultation": true
     },
     {
       "name": "The Library Card Stack",

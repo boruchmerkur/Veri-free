@@ -411,6 +411,16 @@ body.loc-ca .ca-badge{display:inline-flex}
 /* same-publisher disclosure, above the pitch rather than under it */
 .ddisc{margin:0 0 10px;font-size:12.5px;line-height:1.5;color:#A05E03;background:#F7EDDC;border-left:3px solid #A05E03;padding:7px 11px;border-radius:0 6px 6px 0}
 .ddisc::before{content:"Disclosure — ";font-weight:700}
+/* common questions */
+.faqs{margin:26px 0 0}
+.faqs h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 10px}
+.faq-q{border-bottom:1px solid var(--line)}
+.faq-q>summary{cursor:pointer;list-style:none;padding:11px 0;font-weight:600;font-size:15.5px;line-height:1.4;display:flex;gap:10px;align-items:baseline}
+.faq-q>summary::-webkit-details-marker{display:none}
+.faq-q>summary::before{content:"+";font-family:"IBM Plex Mono",monospace;color:var(--brand);font-weight:700;flex-shrink:0}
+.faq-q[open]>summary::before{content:"−"}
+.faq-q>summary:hover{color:var(--brand)}
+.faq-a{padding:0 0 13px 22px;font-size:14.5px;line-height:1.65;color:var(--muted);max-width:70ch}
 /* comparable free-tier spec */
 .freespec{margin:26px 0 0;border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--card)}
 .freespec h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px}
@@ -952,6 +962,55 @@ def spec_tone(label, value):
     if v in ("Not allowed", "Paid only", "Trial only", "Older only"):
         return "bad"
     return "mid"
+
+
+def faq_pairs(l):
+    """Question/answer pairs built from fields every listing already has.
+
+    These are the query families the pages never answered in words: people
+    search "does X need a credit card", "X free plan limits" and "free
+    alternative to X" far more than they search the phrasing we happened to
+    use. Rendered visibly as well as in schema — Google restricted FAQ rich
+    results, so the value is the page actually containing the answer, not the
+    markup.
+    """
+    n = l["name"]
+    out = [(f"Is {n} actually free?", l["short"])]
+    if l.get("safety"):
+        s = l["safety"]
+        out.append((f"Is {n} safe?", " ".join(
+            [s["verdict"]] + [s[k] for _, k in SAFETY_ROWS if s.get(k)])))
+    card = (l.get("card") or "").strip()
+    if card:
+        neg = card.lower().startswith(("no", "—"))
+        out.append((f"Does {n} require a credit card?",
+                    (f"No — {n} does not ask for a card to use the free version. " if neg
+                     else f"Yes. {n} asks for a card: {card}. ")
+                    + f"Auto-billing: {l.get('autobill') or '—'}."))
+    if l.get("limits"):
+        out.append((f"What are the limits of {n}'s free plan?",
+                    f"{l['limits']}. {l.get('catch','')}".strip()))
+    if l.get("free_alternatives"):
+        alts = ", ".join(a["name"] for a in l["free_alternatives"])
+        out.append((f"What is a free alternative to {n}?",
+                    f"{alts}. " + " ".join(f"{a['name']}: {a['why']}"
+                                           for a in l["free_alternatives"])))
+    if l.get("smart_moves"):
+        out.append((f"How do I use {n} without paying?",
+                    " ".join(l["smart_moves"])))
+    if l.get("realcost"):
+        out.append((f"What does {n} really cost?", l["realcost"]))
+    return out
+
+
+def faq_block(l):
+    pairs = faq_pairs(l)[1:]          # the first is already the page's answer
+    if not pairs:
+        return ""
+    items = "".join(
+        f'<details class="faq-q"><summary>{esc(q)}</summary>'
+        f'<div class="faq-a">{esc(a)}</div></details>' for q, a in pairs)
+    return f'<div class="faqs"><h2>Common questions</h2>{items}</div>'
 
 
 def spec_block(l):
@@ -1927,22 +1986,15 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         facts_rows = "".join(f'<tr><td class="k">{k}</td><td>{esc(v)}</td></tr>' for k, v in [
             ("Verdict", vlabel), ("Card required", l["card"]), ("Auto-bills", l["autobill"]),
             ("Account", l["account"]), ("Limits", l["limits"]), ("The real cost", l["realcost"])])
-        faq_qs = [{"@type": "Question",
-                   "name": f"Is {l['name']} actually free?",
-                   "acceptedAnswer": {"@type": "Answer", "text": l["short"]}}]
-        # safety sits second: it's the other question people type, and rich
-        # results favour the questions that lead.
-        sq = safety_faq(l)
-        if sq:
-            faq_qs.append(sq)
+        # Schema and the visible block come from the same source, so the page
+        # always contains the answer it claims in markup.
+        faq_qs = [{"@type": "Question", "name": q,
+                   "acceptedAnswer": {"@type": "Answer", "text": a}}
+                  for q, a in faq_pairs(l)]
         if l.get("catch"):
             faq_qs.append({"@type": "Question",
                            "name": f"What's the catch with {l['name']}?",
                            "acceptedAnswer": {"@type": "Answer", "text": l["catch"]}})
-        if l.get("realcost"):
-            faq_qs.append({"@type": "Question",
-                           "name": f"What does {l['name']} really cost?",
-                           "acceptedAnswer": {"@type": "Answer", "text": l["realcost"]}})
         if l.get("free_includes"):
             faq_qs.append({"@type": "Question",
                            "name": f"What do you get free with {l['name']}?",
@@ -2007,6 +2059,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 <div class="catch"><h2>The catch</h2><p>{esc(l['catch'])}</p></div>
 {safety_box(l, checked)}
 {plays}
+{faq_block(l)}
 {more}
 <p class="checked">{verified_line(l, checked)} · Verdict: {vlabel} — {esc(vdef.lower())}</p>
 {disc}

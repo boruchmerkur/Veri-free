@@ -5501,12 +5501,12 @@
       "card": "No",
       "autobill": "—",
       "account": "Required",
-      "limits": "WordPress ads on your site; no custom domain",
+      "limits": "WordPress ads on your site; no custom domain; 1GB storage; no plugins",
       "realcost": "An account. Your site advertises WordPress until you pay.",
       "free_score": 50,
       "value_score": 5,
-      "short": "Sort of. WordPress.com's free plan hosts a real blog or site — but with WordPress ads on your pages, a .wordpress.com address, limited storage, and no plugins or custom themes.",
-      "catch": "The free tier is a live demo of the WordPress experience, designed to make the limitations visible enough that you upgrade. The self-hosted WordPress.org software (different product) is genuinely free with no such limits.",
+      "short": "Sort of — and the name is doing a lot of work. WordPress.com is Automattic's hosted service, not the free WordPress software. Its free plan plants WordPress ads on your pages, gives you a .wordpress.com address, and blocks plugins and custom themes.",
+      "catch": "The free tier is a live demo of the WordPress experience, built to make its limits visible enough that you upgrade — and free storage was quietly cut from 3GB to 1GB. Worth knowing before you judge WordPress by it: the self-hosted WordPress.org software is a different product, genuinely free, with none of these restrictions.",
       "free_includes": [
         "A hosted blog or website with basic themes",
         "A .wordpress.com subdomain",
@@ -5539,7 +5539,15 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-wordpress-com-actually-free"
+      "slug": "is-wordpress-com-actually-free",
+      "free_alternatives": [
+        {
+          "name": "WordPress.org (self-hosted)",
+          "slug": "is-wordpress-org-self-hosted-actually-free",
+          "why": "The actual free software — no ads, no subdomain, no plugin limits"
+        }
+      ],
+      "verified": "2026-08"
     },
     {
       "name": "TurboTax Free Edition",
@@ -10636,6 +10644,61 @@
         ]
       ],
       "verified": "2026-08"
+    },
+    {
+      "name": "WordPress.org (self-hosted)",
+      "category": "software-tools",
+      "url": "https://wordpress.org/download/",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None needed to download",
+      "limits": "None on the software — you supply the hosting",
+      "realcost": "The software is free. Hosting and a domain are not, and that is the whole difference from WordPress.com.",
+      "free_includes": [
+        "The complete WordPress software, GPLv2, free to download",
+        "Every plugin and theme, including commercial use of the software itself",
+        "No ads on your site, ever, and no platform branding",
+        "Your own database and files — you can move hosts or leave entirely"
+      ],
+      "paid_locked": [
+        "Nothing in the software. Hosting, a domain and premium plugins are separate purchases."
+      ],
+      "short": "Yes — the software itself is free, and always has been. WordPress.org is the GPL-licensed application that powers a large share of the web. What costs money is hosting it: a server and a domain, typically a few dollars a month from any host.",
+      "catch": "The catch is that “free software” and “free website” are different things, and this is the confusion the whole WordPress question rests on. Nobody charges you for WordPress. Somebody will charge you to run it. Budget for hosting, a domain, and the hours to maintain updates and backups yourself.",
+      "worth": "A site with no platform ads, no subdomain and no plugin restrictions — the things WordPress.com charges to remove — for the price of hosting alone.",
+      "smart_moves": [
+        "This is the answer to “is WordPress free” for most people: the software is, the hosting isn't",
+        "Many hosts offer one-click installs, so you never touch the download",
+        "You own the database — exporting and moving hosts is a real option, unlike hosted builders",
+        "Wanting zero cost with zero setup? That is WordPress.com's free plan, with its ads and subdomain"
+      ],
+      "free_score": 96,
+      "value_score": 9,
+      "get_summary": "In practice: free, unrestricted website software that you pay someone else to run.",
+      "drawbacks": [
+        "Hosting and a domain are real recurring costs",
+        "Updates, backups and security are your responsibility",
+        "The plugin ecosystem is where paid upsells live"
+      ],
+      "more_info": [
+        [
+          "WordPress.org vs WordPress.com, plainly",
+          "They share a name and almost nothing else. WordPress.org is the free software you install anywhere; WordPress.com is a hosted service from Automattic that runs that software for you and sells plans. If you searched “is WordPress free” and got a confusing answer, this is why: one is free and needs hosting, the other is hosted and needs a plan for anything serious."
+        ],
+        [
+          "What GPLv2 actually gives you",
+          "The licence lets you use, modify and redistribute the software, including commercially. It is the reason no one can revoke your copy or start charging you for it — a guarantee no hosted free tier on this site can make."
+        ]
+      ],
+      "free_alternatives": [
+        {
+          "name": "WordPress.com",
+          "slug": "is-wordpress-com-actually-free",
+          "why": "Hosted for you at no cost, if you accept its ads and subdomain"
+        }
+      ],
+      "verified": "2026-08"
     }
   ],
   "deals": [
@@ -11217,6 +11280,14 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-08-20",
+      "item": "WordPress",
+      "change": "Split into .com and .org; free storage cut recorded",
+      "from": "—",
+      "to": "—",
+      "detail": "Search data showed people asking 'is WordPress free' and landing on a page about WordPress.com only. The .org/.com distinction is the answer, so each now has its own verdict: the software Truly Free, the hosted service Free-ish. Also records that WordPress.com's free storage dropped from 3GB to 1GB."
+    },
     {
       "date": "2026-08-11",
       "item": "Link audit",

@@ -166,7 +166,8 @@
     "Anki": "Tarjetas ilimitadas y sincronización gratis — salvo la app de iPhone",
     "Internet Archive": "Millones de obras de dominio público y la Wayback Machine",
     "Ollama": "Modelos de IA en tu propio equipo — sin límites y sin conexión",
-    "VSCodium": "El editor VS Code compilado sin la telemetría de Microsoft"
+    "VSCodium": "El editor VS Code compilado sin la telemetría de Microsoft",
+    "WordPress.org (self-hosted)": "El software completo bajo licencia GPL — el alojamiento lo pones tú"
   },
   "pt": {
     "LibreOffice": "A suíte completa: Writer, Calc, Impress, Draw, Base",
@@ -335,7 +336,8 @@
     "Anki": "Cartões ilimitados e sincronização grátis — exceto o app de iPhone",
     "Internet Archive": "Milhões de obras de domínio público e a Wayback Machine",
     "Ollama": "Modelos de IA no seu próprio computador — sem limites e offline",
-    "VSCodium": "O editor VS Code compilado sem a telemetria da Microsoft"
+    "VSCodium": "O editor VS Code compilado sem a telemetria da Microsoft",
+    "WordPress.org (self-hosted)": "O software completo sob licença GPL — a hospedagem é por sua conta"
   },
   "fr": {
     "LibreOffice": "La suite complète : Writer, Calc, Impress, Draw, Base",
@@ -504,7 +506,8 @@
     "Anki": "Cartes illimitées et synchronisation gratuites — sauf l'app iPhone",
     "Internet Archive": "Des millions d'œuvres du domaine public et la Wayback Machine",
     "Ollama": "Des modèles d'IA sur votre machine — sans limite et hors ligne",
-    "VSCodium": "L'éditeur VS Code compilé sans la télémétrie de Microsoft"
+    "VSCodium": "L'éditeur VS Code compilé sans la télémétrie de Microsoft",
+    "WordPress.org (self-hosted)": "Le logiciel complet sous licence GPL — l'hébergement reste à votre charge"
   },
   "de": {
     "LibreOffice": "Die komplette Suite: Writer, Calc, Impress, Draw, Base",
@@ -673,6 +676,7 @@
     "Anki": "Unbegrenzte Karten und Sync gratis — außer der iPhone-App",
     "Internet Archive": "Millionen gemeinfreier Werke und die Wayback Machine",
     "Ollama": "KI-Modelle auf dem eigenen Rechner — ohne Limits und offline",
-    "VSCodium": "Der VS-Code-Editor, kompiliert ohne Microsofts Telemetrie"
+    "VSCodium": "Der VS-Code-Editor, kompiliert ohne Microsofts Telemetrie",
+    "WordPress.org (self-hosted)": "Die komplette Software unter GPL — das Hosting stellst du selbst"
   }
 }

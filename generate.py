@@ -136,7 +136,11 @@ a{color:inherit}
 .sortbar{display:none}
 /* side legend */
 .side-legend{position:fixed;top:100px;right:0;z-index:15;transition:transform .25s ease}
-.side-legend.closed{transform:translateX(calc(100% - 32px))}
+/* Fully off-screen, not 100%-minus-32px. The tab is absolutely positioned at
+   left:-32px, i.e. OUTSIDE the panel, so it stays visible on its own — the
+   32px allowance just left a strip of the panel body showing at the right
+   edge, with chips half-cut. */
+.side-legend.closed{transform:translateX(100%)}
 .side-legend .sl-tab{position:absolute;left:-32px;top:0;width:32px;height:100px;background:var(--ink);color:var(--paper);border-radius:6px 0 0 6px;cursor:pointer;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .side-legend .sl-body{background:var(--card);border:1.5px solid var(--line);border-right:0;border-radius:10px 0 0 10px;padding:14px 16px;width:240px;box-shadow:-4px 0 16px rgba(0,0,0,.06);max-height:calc(100vh - 120px);overflow-y:auto}
 .side-legend h2{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}

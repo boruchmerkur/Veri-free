@@ -916,6 +916,13 @@ SPEC_SCHEMA = {
                   "Commercial use", "Self-hostable", "Sleeps when idle"],
     "learning": ["Card required", "Full course content", "Graded work", "Certificate",
                  "Access expires", "Ads"],
+    # Business holds CRMs, schedulers, builders and one-off free tools, so the
+    # columns have to be answerable by a QR generator and a CRM alike. These
+    # are the four things that actually decide whether business software is
+    # free to you: a clock, someone else's logo on your work, whether you can
+    # take the work with you, and whether you may sell what you make.
+    "business": ["Card required", "Free plan or trial", "Their branding",
+                 "Export your work", "Commercial use", "Time limit"],
     # Not "Simultaneous streams" — the category holds Reddit and two media
     # servers, and a column three members cannot answer is a hole in the grid.
     "entertainment": ["Card required", "Account needed", "Ads", "Free catalogue",
@@ -935,6 +942,7 @@ SPEC_BAD = {"Yes — required", "Not allowed", "None", "Paid only", "No", "Trial
 # Claude not generating images isn't something withheld from the free tier,
 # so colouring it red would misread the whole grid.
 CAPABILITY = {"File uploads", "Image generation", "Web access", "Runs offline",
+              "Export your work",
               "Bulk download", "Self-hostable", "Downloads", "Offline reading",
               "Graded work", "Certificate", "Simultaneous streams"}
 
@@ -942,7 +950,8 @@ CAPABILITY = {"File uploads", "Image generation", "Web access", "Runs offline",
 def spec_tone(label, value):
     """Green/amber/red by meaning, which flips depending on the question asked."""
     inverted = label in ("Card required", "Ads", "Access expires", "Waitlists",
-                         "Trains on your input", "Sleeps when idle", "API key needed")
+                         "Trains on your input", "Sleeps when idle", "API key needed",
+                         "Their branding", "Time limit")
     v = value.split(" —")[0].strip()
     if label in CAPABILITY:
         # "Paid only" is a real cost, not mere absence, so it still earns amber.
@@ -952,6 +961,13 @@ def spec_tone(label, value):
                  "Unlimited", "Your own terms"):
             return "good"
         return "off"
+    # Always good regardless of the question — putting these in the No/None
+    # bucket made "Free plan" render red, because that bucket flips on
+    # inverted labels and "Free plan or trial" is not an inverted question.
+    if v in ("Free plan", "No account needed"):
+        return "good"
+    if v in ("Trial only", "Trial clock", "On free tier"):
+        return "bad"
     if v in ("No", "None", "Never", "No ads"):
         return "good" if inverted else "bad"
     if v in ("Yes", "Yes — required", "Always"):

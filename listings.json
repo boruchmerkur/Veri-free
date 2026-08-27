@@ -4320,6 +4320,14 @@
         "praised": "The free CRM is rated as genuinely complete rather than crippled — contacts, deals, email tracking and forms, with no seat limit and no expiry. Onboarding and documentation rate well.",
         "complained": "The consumer score is about contracts. Reviewers describe annual commitments that don't cancel mid-term, steep step-ups between tiers, and pricing that scales with contact count in ways they didn't model. HubSpot branding on free tools is the other gripe.",
         "takeaway": "The best free CRM available, and the most carefully engineered funnel entrance in business software. Both are true. Stay on free deliberately, and read any annual contract before you sign it."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Free plan",
+        "Their branding": "On free tier",
+        "Export your work": "Yes",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
       }
     },
     {
@@ -4407,6 +4415,14 @@
         "praised": "Marketers still rate the platform's ease of use and templates well — it's the reason people started here.",
         "complained": "The complaint pattern is the shrinking free tier: reviewers describe repeated cuts (2,000 contacts, then 500, now 250) and sudden bills when a list crosses the line. The word that recurs is 'bait'.",
         "takeaway": "The negative reviews aren't about the software failing — they're about the free plan shrinking underneath people who built on it. That's a different kind of failure."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Free plan",
+        "Their branding": "On free tier",
+        "Export your work": "Yes",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
       }
     },
     {
@@ -4483,7 +4499,15 @@
         "complained": "The Android score carries app complaints — sync delays and a mobile experience reviewers find heavier than the web. The ten-board workspace ceiling and small attachment limits are the free-tier grievances, alongside the sense that development attention moved to Atlassian's bigger products.",
         "takeaway": "Rare among the “free forever” tools in that the ceiling is generously placed and clearly marked. If ten boards isn't enough, the problem is probably your board sprawl, not the plan."
       },
-      "verified": "2026-08"
+      "verified": "2026-08",
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Free plan",
+        "Their branding": "No",
+        "Export your work": "Yes",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
+      }
     },
     {
       "name": "Calendly",
@@ -4546,6 +4570,14 @@
         "praised": "It removes the email back-and-forth, and reviewers rate the calendar integrations and the polish of the booking page. The free tier is a working product, not a demo.",
         "complained": "The single-event-type limit is what reviewers run into: enough for one offer, one short of any real service menu. Branding on the free booking page and gated integrations follow.",
         "takeaway": "Excellent tool with a fence placed with real precision. If you only ever book one kind of meeting, free is permanent; the moment you have two, that's the bill."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Free plan",
+        "Their branding": "On free tier",
+        "Export your work": "Limited",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
       }
     },
     {
@@ -4609,6 +4641,14 @@
         "praised": "Reviewers describe it replacing meetings outright: record the screen, send the link, done — with transcripts and viewer notifications that make async work feel accountable.",
         "complained": "The five-minute recording cap and the 25-video library are the complaints, and they arrive exactly when the habit forms. Since Atlassian's acquisition, reviewers watch the free tier's terms nervously.",
         "takeaway": "Both free limits are placed where dependence begins, which is the design rather than an oversight. Download anything you'd hate to lose — a video library you don't control is not an archive."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Free plan",
+        "Their branding": "On free tier",
+        "Export your work": "Yes",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
       }
     },
     {
@@ -4657,7 +4697,15 @@
       ],
       "short_worth": null,
       "slug": "is-google-business-profile-actually-free",
-      "favicon_url": "https://www.google.com"
+      "favicon_url": "https://www.google.com",
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Free plan",
+        "Their branding": "No",
+        "Export your work": "Limited",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
+      }
     },
     {
       "name": "PageSpeed Insights",
@@ -4705,7 +4753,15 @@
       ],
       "short_worth": null,
       "slug": "is-pagespeed-insights-actually-free",
-      "favicon_url": "https://www.google.com"
+      "favicon_url": "https://www.google.com",
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "No account needed",
+        "Their branding": "No",
+        "Export your work": "Yes",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
+      }
     },
     {
       "name": "Qualys SSL Labs",
@@ -4752,7 +4808,15 @@
       ],
       "short_worth": null,
       "slug": "is-qualys-ssl-labs-actually-free",
-      "favicon_url": "https://www.qualys.com"
+      "favicon_url": "https://www.qualys.com",
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "No account needed",
+        "Their branding": "No",
+        "Export your work": "Limited",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
+      }
     },
     {
       "name": "QR Code Generator (qr-code-generator.com)",
@@ -4813,6 +4877,14 @@
         "data": "A dynamic QR code routes every scan through the provider's server, so they can see the scans and change where the code points. That's the feature — and the reason it stops resolving when you stop paying.",
         "scams": "No fraud and no card taken, but the trap is real: a dynamic code printed on your menu, flyer or packaging goes dead when the trial ends, after your customers already have it. Static codes made on the same site keep working forever.",
         "account_risk": "Before printing anything, confirm you generated a static code. If a QR code provider ever needs a subscription to keep your code alive, your print run is their hostage."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Trial only",
+        "Their branding": "No",
+        "Export your work": "Limited",
+        "Commercial use": "Allowed",
+        "Time limit": "Trial clock"
       }
     },
     {
@@ -4861,7 +4933,15 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-qrcode-monkey-actually-free"
+      "slug": "is-qrcode-monkey-actually-free",
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "No account needed",
+        "Their branding": "No",
+        "Export your work": "Yes",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
+      }
     },
     {
       "name": "\"Free\" Logo Makers (Looka, Tailor Brands & co.)",
@@ -4921,6 +5001,14 @@
         "verdict": "Real companies, not fraud — but the price arrives after your effort, by design.",
         "scams": "Nothing is stolen from you. You design free, fall for the result, and meet the bill at download. Reviewers of Tailor Brands specifically report signups that looked monthly arriving as annual subscriptions, so read the term before entering a card.",
         "account_risk": "Check the licence, not just the price. Cheaper tiers often deliver low-resolution files without the full commercial rights you'd need to put the logo on products or trademark it."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Free plan",
+        "Their branding": "No",
+        "Export your work": "Paid only",
+        "Commercial use": "Paid only",
+        "Time limit": "None"
       }
     },
     {
@@ -4971,7 +5059,15 @@
         ]
       ],
       "short_worth": null,
-      "slug": "is-unsplash-actually-free"
+      "slug": "is-unsplash-actually-free",
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "No account needed",
+        "Their branding": "No",
+        "Export your work": "Yes",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
+      }
     },
     {
       "name": "Adobe Stock Free Trial",
@@ -5027,7 +5123,15 @@
         }
       ],
       "slug": "is-adobe-stock-free-trial-actually-free",
-      "favicon_url": "https://www.adobe.com"
+      "favicon_url": "https://www.adobe.com",
+      "free_spec": {
+        "Card required": "Yes",
+        "Free plan or trial": "Trial only",
+        "Their branding": "No",
+        "Export your work": "Yes",
+        "Commercial use": "Allowed",
+        "Time limit": "Trial clock"
+      }
     },
     {
       "name": "Photopea",
@@ -6686,6 +6790,14 @@
         "praised": "Merchants rate the platform itself well: reliable checkout, a deep app ecosystem, and the fastest route from idea to a working store.",
         "complained": "The consumer score is a store-owner score. Complaints centre on the trial converting to a real monthly bill, apps that each carry their own subscription until the true cost is several times the plan, and payment holds. Store closures with limited recourse recur.",
         "takeaway": "Nothing here is free beyond the trial, and the plan price is the smallest part of the real number. Budget for the apps before you budget for the plan — that's where the surprise lives."
+      },
+      "free_spec": {
+        "Card required": "Yes",
+        "Free plan or trial": "Trial only",
+        "Their branding": "No",
+        "Export your work": "Limited",
+        "Commercial use": "Paid only",
+        "Time limit": "Trial clock"
       }
     },
     {
@@ -6755,6 +6867,14 @@
         "praised": "Design quality is the consistent compliment — the templates look professional without a designer, and hosting, security and updates are handled.",
         "complained": "Complaints are commercial and structural: annual plans that renew automatically, refunds refused after renewal, and content that can't be exported cleanly to another platform. Reviewers describe realising too late how much their site is locked in.",
         "takeaway": "A genuinely good builder with no free tier at all — the trial is the whole free offer. Before committing, check what you can export, because that's the cost of leaving rather than the cost of joining."
+      },
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Trial only",
+        "Their branding": "On free tier",
+        "Export your work": "Limited",
+        "Commercial use": "Paid only",
+        "Time limit": "Trial clock"
       }
     },
     {
@@ -6803,7 +6923,15 @@
         }
       ],
       "short_worth": null,
-      "slug": "is-godaddy-website-builder-actually-free"
+      "slug": "is-godaddy-website-builder-actually-free",
+      "free_spec": {
+        "Card required": "Yes",
+        "Free plan or trial": "Trial only",
+        "Their branding": "On free tier",
+        "Export your work": "Limited",
+        "Commercial use": "Paid only",
+        "Time limit": "Trial clock"
+      }
     },
     {
       "name": "LastPass",
@@ -8736,7 +8864,15 @@
         ]
       ],
       "favicon_url": "https://checkmysite.pro",
-      "disclosure": "Shares an owner with Verified Free. The verdict rests on a fact anyone can check in ten seconds — there is no paid tier."
+      "disclosure": "Shares an owner with Verified Free. The verdict rests on a fact anyone can check in ten seconds — there is no paid tier.",
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "No account needed",
+        "Their branding": "No",
+        "Export your work": "Yes",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
+      }
     },
     {
       "name": "Beis Moshiach",

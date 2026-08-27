@@ -662,18 +662,25 @@ import datetime as _dt
 
 
 def ago(iso):
+    """Absolute date, wrapped in <time> so the browser can age it.
+
+    This used to return "2h ago" computed at BUILD time, which then froze into
+    static HTML. Between deploys the page kept insisting a week-old story was
+    an hour old — a live page is the one place a relative timestamp cannot be
+    baked. The absolute date is always true; feed.js turns it into "3d ago" at
+    view time, and without JS the reader still sees a real date.
+    """
     if not iso:
         return ""
     try:
         d = _dt.datetime.fromisoformat(iso)
     except ValueError:
         return ""
-    secs = (_dt.datetime.now(_dt.timezone.utc) - d).total_seconds()
-    if secs < 3600:
-        return f"{int(secs // 60)}m ago"
-    if secs < 86400:
-        return f"{int(secs // 3600)}h ago"
-    return f"{int(secs // 86400)}d ago"
+    if not d.tzinfo:
+        d = d.replace(tzinfo=_dt.timezone.utc)
+    return (f'<time class="ts" datetime="{esc(d.isoformat())}">'
+            f'{d.strftime("%b %-d") if os.name != "nt" else d.strftime("%b %d").replace(" 0", " ")}'
+            f'</time>')
 
 
 # Names that would match constantly on unrelated stories, or whose listing is
@@ -776,7 +783,7 @@ def stream_card(it, lead=False, match=None):
             f'{esc(it["title"])}</a></h3>'
             f'<p class="st-sum">{esc(it.get("summary", ""))}</p>'
             f'{ours}'
-            f'<p class="st-meta">{esc(it["source"])} · {esc(ago(it.get("date")))}</p>'
+            f'<p class="st-meta">{esc(it["source"])} · {ago(it.get("date"))}</p>'
             f'</div></article>')
 
 
@@ -808,6 +815,29 @@ def deal_card(d, cta="Go to offer →"):
             f'<p class="dcav">{esc(d["caveat"])}</p>'
             f'<a class="dlink" href="{esc(d["url"])}" target="_blank" rel="noopener">{cta}</a>'
             f'</div>')
+
+
+FEED_JS = """<script>
+(function(){
+  var els=document.querySelectorAll("time.ts[datetime]");
+  if(!els.length)return;
+  function rel(d){
+    var s=(Date.now()-d.getTime())/1000;
+    if(s<60)return "just now";
+    if(s<3600)return Math.floor(s/60)+"m ago";
+    if(s<86400)return Math.floor(s/3600)+"h ago";
+    if(s<2592000)return Math.floor(s/86400)+"d ago";
+    return null;                       // older than a month: keep the date
+  }
+  els.forEach(function(el){
+    var d=new Date(el.getAttribute("datetime"));
+    if(isNaN(d))return;
+    el.title=d.toLocaleString();
+    var r=rel(d);
+    if(r)el.textContent=r;             // no match keeps the absolute date
+  });
+})();
+</script>"""
 
 
 COUPON_JS = """<script>
@@ -1192,6 +1222,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 </div></footer>
 {NAV_JS}
 {COUPON_JS}
+{FEED_JS}
 {HOUSE_AD}
 <script
   src="https://dreamsitedesign.com/credit.js"
@@ -1485,7 +1516,7 @@ def build():
         home_stream = (
             '<section class="homestream"><div class="wrap">'
             '<div class="hs-head"><h2>What changed this week</h2>'
-            f'<span class="hs-when">Updated {esc(ago(stream.get("updated")))}</span>'
+            f'<span class="hs-when">Updated {ago(stream.get("updated"))}</span>'
             '<a class="hs-all" href="/now/">All changes →</a></div>'
             '<div class="stream">'
             + "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
@@ -2102,7 +2133,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 <main class="wrap streamwrap">
 <div class="st-strip"><span class="st-live">LIVE</span>
 <span>Price rises, dead free tiers, cancellations and enforcement — pulled from {srcs} sources and filtered to this site's beat.</span>
-<span class="st-when">Updated {esc(ago(stream.get("updated")))}</span></div>
+<span class="st-when">Updated {ago(stream.get("updated"))}</span></div>
 <div class="stream">{cards}</div>
 <p class="st-foot">Headlines and summaries belong to the publications linked. We select and label; we don't rewrite.
 Nothing here carries a Verified Free verdict — for those, start with the <a href="/#categories">categories</a>.</p>

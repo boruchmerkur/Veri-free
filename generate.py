@@ -1000,6 +1000,27 @@ def faq_pairs(l):
                     " ".join(l["smart_moves"])))
     if l.get("realcost"):
         out.append((f"What does {n} really cost?", l["realcost"]))
+        # "why is blender free", "warum ist obs kostenlos", "why is hubspot crm
+        # free" — a family with real volume that no page answered as a
+        # question, even though realcost is exactly the answer.
+        out.append((f"Why is {n} free?",
+                    f"{l['realcost']} {l.get('worth', '')}".strip()))
+    # "is trello still free", "is coursera not free anymore" — people asking
+    # whether a tier they remember survived. That is this site's whole subject.
+    when = l.get("verified") or ""
+    asof = (_dt.date(int(when.split("-")[0]), int(when.split("-")[1]), 1).strftime("%B %Y")
+            if re.match(r"^\d{4}-\d{2}", when) else None)
+    stamp = f"As of our {asof} check" if asof else "As of our last check"
+    v = l["verdict"]
+    if v in ("truly", "forever"):
+        still = f"{stamp}, yes. {l['short']}"
+    elif v == "freeish":
+        still = f"{stamp}, partly — and the free tier is squeezed. {l['short']}"
+    else:
+        still = f"{stamp}, no. {l['short']}"
+    out.append((f"Is {n} still free?",
+                still + " Free tiers change without notice, which is why every "
+                        "page here carries the date it was checked."))
     return out
 
 

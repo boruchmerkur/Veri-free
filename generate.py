@@ -1318,7 +1318,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/now/">Now</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {NAV_JS}
 {COUPON_JS}
@@ -1557,7 +1557,6 @@ def build():
            f'<div class="dropdown"><a href="/#categories">Categories</a>'
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
            f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
-           f'<a href="/now/">Now</a>'
            f'<a href="/deals/">Deals</a>'
            f'<a href="/coupons/">Coupons</a>'
            f'<a href="/free-consultations/">Consultations</a>'
@@ -1612,12 +1611,12 @@ def build():
     # full run, so the two pages don't compete for the same content.
     home_stream = ""
     if stream.get("items"):
-        si = stream["items"][:10]
+        si = stream["items"][:16]
         home_stream = (
             '<section class="homestream"><div class="wrap">'
             '<div class="hs-head"><h2>What changed this week</h2>'
             f'<span class="hs-when">Updated {ago(stream.get("updated"))}</span>'
-            '<a class="hs-all" href="/now/">All changes →</a></div>'
+            '</div>'
             '<div class="stream">'
             + "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
                         for i, it in enumerate(si))
@@ -1629,18 +1628,6 @@ def build():
 <div class="hero-top"><h1>Veri-<em>Free</em></h1><p class="tagline">Very Free &amp; Easy</p>
 <p class="sub">We check every "free" offer and tell you what it really costs.</p></div>
 </div></header>
-<div class="findbar"><div class="wrap findbar-in">
-<div class="searchbar"><input id="q" type="search" placeholder="Search {len(listings)} verified free things…" aria-label="Search listings"><span class="kbd">{len(listings)} verified</span></div>
-<div class="vfilters">
-<button class="vfilter on" data-v="all">All</button>
-<button class="vfilter" data-v="truly">Truly free <i>{genuine}</i></button>
-<button class="vfilter" data-v="forever">Free forever <i>{forever_n}</i></button>
-<button class="vfilter" data-v="freeish">Free-ish <i>{squeeze}</i></button>
-<button class="vfilter" data-v="trap,fake,notfree">Traps &amp; fakes <i>{traps}</i></button>
-</div>
-<a class="findbar-jump" href="#categories">Browse all →</a>
-</div></div>
-<p class="count" id="count"></p>
 {home_stream}
 <div class="side-legend closed" id="sidepanel">
 <div class="sl-tab" title="Verdict definitions and sorting" onclick="document.getElementById('sidepanel').classList.toggle('closed')">Guide</div>
@@ -1656,9 +1643,20 @@ def build():
 </div>
 </div>
 </div>
+<div class="findbar"><div class="wrap findbar-in">
+<div class="searchbar"><input id="q" type="search" placeholder="Search {len(listings)} verified free things…" aria-label="Search listings"><span class="kbd">{len(listings)} verified</span></div>
+<div class="vfilters">
+<button class="vfilter on" data-v="all">All</button>
+<button class="vfilter" data-v="truly">Truly free <i>{genuine}</i></button>
+<button class="vfilter" data-v="forever">Free forever <i>{forever_n}</i></button>
+<button class="vfilter" data-v="freeish">Free-ish <i>{squeeze}</i></button>
+<button class="vfilter" data-v="trap,fake,notfree">Traps &amp; fakes <i>{traps}</i></button>
+</div>
+</div></div>
 <main class="wrap" id="categories">
 <div class="verdicts-head"><h2>Every verdict</h2>
-<p>{len(listings)} things checked against one rubric — {genuine} genuinely free, {traps} exposed as traps or fakes.</p></div>
+<p>{len(listings)} things checked against one rubric — {genuine} genuinely free, {traps} exposed as traps or fakes. Search and filter them above.</p>
+<p class="count" id="count"></p></div>
 {sections}
 <p class="noresults" id="noresults">Nothing by that name yet. <a href="mailto:hello@veri-free.com">Suggest it</a> and we'll verify it.</p>
 </main>
@@ -1874,11 +1872,11 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         # stream, then the verdicts.
         home_stream_L = ""
         if stream.get("items"):
-            si_L = stream["items"][:10]
+            si_L = stream["items"][:16]
             home_stream_L = (
                 '<section class="homestream"><div class="wrap">'
                 f'<div class="hs-head"><h2>{esc(T["changed_h"])}</h2>'
-                f'<a class="hs-all" href="/now/">{esc(T["changed_all"])}</a></div>'
+                f'</div>'
                 '<div class="stream">'
                 + "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
                           for i, it in enumerate(si_L))
@@ -1888,19 +1886,6 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                   f'<p class="tagline">{esc(T["tagline"])}</p>'
                   f'<p class="sub">{T["sub"]}</p></div>'
                   f'</div></header>'
-                  f'<div class="findbar"><div class="wrap findbar-in">'
-                  f'<div class="searchbar"><input id="q" type="search" aria-label="Search" placeholder="{esc(T["search_ph"])}">'
-                  f'<span class="kbd">{T["verified"].replace("{n}", str(len(listings)))}</span></div>'
-                  f'<div class="vfilters">'
-                  f'<button class="vfilter on" data-v="all">{esc(T["filters"]["all"])}</button>'
-                  f'<button class="vfilter" data-v="truly">{esc(T["filters"]["truly"])}</button>'
-                  f'<button class="vfilter" data-v="forever">{esc(T["filters"]["forever"])}</button>'
-                  f'<button class="vfilter" data-v="freeish">{esc(T["filters"]["freeish"])}</button>'
-                  f'<button class="vfilter" data-v="trap,fake,notfree">{esc(T["filters"]["traps"])}</button>'
-                  f'</div>'
-                  f'<a class="findbar-jump" href="#categories">{esc(T["browse_all"])}</a>'
-                  f'</div></div>'
-                  f'<p class="count" id="count"></p>'
                   f'{home_stream_L}'
                   f'<div class="side-legend closed" id="sidepanel">'
                   f'<div class="sl-tab" onclick="document.getElementById(\'sidepanel\').classList.toggle(\'closed\')">{esc(T["guide"])}</div>'
@@ -1911,8 +1896,19 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                   f'<button class="sortbtn" data-sort="value">{esc(T["sort_value"])}</button>'
                   f'<button class="sortbtn" data-sort="name">{esc(T["sort_az"])}</button>'
                   f'</div></div></div>'
+                  f'<div class="findbar"><div class="wrap findbar-in">'
+                  f'<div class="searchbar"><input id="q" type="search" aria-label="Search" placeholder="{esc(T["search_ph"])}">'
+                  f'<span class="kbd">{T["verified"].replace("{n}", str(len(listings)))}</span></div>'
+                  f'<div class="vfilters">'
+                  f'<button class="vfilter on" data-v="all">{esc(T["filters"]["all"])}</button>'
+                  f'<button class="vfilter" data-v="truly">{esc(T["filters"]["truly"])}</button>'
+                  f'<button class="vfilter" data-v="forever">{esc(T["filters"]["forever"])}</button>'
+                  f'<button class="vfilter" data-v="freeish">{esc(T["filters"]["freeish"])}</button>'
+                  f'<button class="vfilter" data-v="trap,fake,notfree">{esc(T["filters"]["traps"])}</button>'
+                  f'</div></div></div>'
                   f'<main class="wrap" id="categories">'
                   f'<div class="verdicts-head"><h2>{esc(T["verdicts_all_h"])}</h2>'
+                  f'<p class="count" id="count"></p>'
                   f'<p>{esc(T["verdicts_all_p"].replace("{n}", str(len(listings))).replace("{g}", str(genuine)).replace("{t}", str(traps)))}</p></div>'
                   f'{sections_L}'
                   f'<p class="noresults" id="noresults">{T["noresults"]}</p></main>'
@@ -2216,27 +2212,6 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         os.makedirs(os.path.join(OUT, "deals"))
         open(os.path.join(OUT, "deals", "index.html"), "w").write(p)
 
-
-    # ---------- /now/ — the stream ----------
-    if stream.get("items"):
-        items = stream["items"]
-        cards = "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
-                        for i, it in enumerate(items))
-        srcs = len({i["source"] for i in items})
-        now_body = f"""
-<main class="wrap streamwrap">
-<div class="st-strip"><span class="st-live">LIVE</span>
-<span>Price rises, dead free tiers, cancellations and enforcement — pulled from {srcs} sources and filtered to this site's beat.</span>
-<span class="st-when">Updated {ago(stream.get("updated"))}</span></div>
-<div class="stream">{cards}</div>
-<p class="st-foot">Headlines and summaries belong to the publications linked. We select and label; we don't rewrite.
-Nothing here carries a Verified Free verdict — for those, start with the <a href="/#categories">categories</a>.</p>
-</main>"""
-        p = page_nav("What changed this week — Verified Free",
-                     "A filtered stream of price rises, dead free tiers, shutdowns and consumer enforcement.",
-                     "/now/", now_body)
-        os.makedirs(os.path.join(OUT, "now"), exist_ok=True)
-        open(os.path.join(OUT, "now", "index.html"), "w").write(p)
 
     # ---------- free in real life ----------
     irl = data.get("irl", [])
@@ -2548,7 +2523,7 @@ Verified Free
                 shutil.copy2(src_f, os.path.join(OUT, f))
             elif os.path.isdir(src_f):
                 shutil.copytree(src_f, os.path.join(OUT, f), dirs_exist_ok=True)
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/now/", f"{DOMAIN}/deals/", f"{DOMAIN}/coupons/", f"{DOMAIN}/free-consultations/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/coupons/", f"{DOMAIN}/free-consultations/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
     if comparisons:
         urls.extend(comp_urls[1:])  # skip /compare/ already added
     from datetime import date

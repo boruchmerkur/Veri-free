@@ -1,72 +1,266 @@
 {
- "updated": "2026-08-20T16:40:30.445859+00:00",
+ "updated": "2026-08-28T16:42:46.883161+00:00",
  "items": [
   {
-   "title": "The Pixel 11 Pro's HiLight feature is finally useful, thanks to this open-source app",
-   "url": "https://www.androidpolice.com/this-open-source-app-just-made-the-pixel-11s-new-feature-much-better/",
-   "source": "Android Police",
-   "kind": "article",
-   "image": "https://static0.anpoimages.com/wordpress/wp-content/uploads/wm/2026/08/google-pixel-11-pro-xl-hilight-contact-color-picker-2.jpg",
-   "summary": "The Pixel 11 Pro's new feature is limited, but it doesn't have to be",
-   "date": "2026-08-20T15:13:45+00:00",
-   "score": 8,
-   "tags": [
-    "LICENSE"
-   ]
-  },
-  {
-   "title": "3 self-hosted tools that could replace paid services this weekend (August 21 - 23)",
-   "url": "https://www.howtogeek.com/self-hosted-tools-that-could-replace-paid-services-this-weekend-august-21-23/",
+   "title": "I replaced Excel with this open-source alternative for a week—I wasn't ready for the difference",
+   "url": "https://www.howtogeek.com/microsoft-excel-replaced-with-onlyoffice-spreadsheet/",
    "source": "How-To Geek",
    "kind": "article",
-   "image": "https://static0.howtogeekimages.com/wordpress/wp-content/uploads/wm/2026/07/geekom-it13-max-mini-pc-with-multi-port-usb-c-chargers-in-homelab-setup.jpg",
-   "summary": "These self-hosted tools could simplify your workflow and trim expenses.",
-   "date": "2026-08-20T15:00:13+00:00",
+   "image": "https://static0.howtogeekimages.com/wordpress/wp-content/uploads/wm/2026/08/laptop-screen-with-onlyoffice-spreadsheet-displaying-the-a-table-containing-rows-of-sales-data.jpg",
+   "summary": "Many of ONLYOFFICE's core spreadsheet tools worked, but even basic Excel workflows became increasingly frustrating to reproduce.",
+   "date": "2026-08-28T16:30:13+00:00",
    "score": 8,
    "tags": [
     "LICENSE"
    ]
   },
   {
-   "title": "Most people jump straight to Jellyfin, but these 5 self-hosted services matter more",
-   "url": "https://www.xda-developers.com/self-hosted-services-to-set-up-before-media-server/",
+   "title": "I tried Cloudflare Tunnel, Tailscale, and WireGuard for remote access—this self-hosted hybrid won me over",
+   "url": "https://www.howtogeek.com/i-tried-cloudflare-tunnel-tailscale-and-wireguard-for-remote-accessone-was-clearly-better-for-my-setup/",
+   "source": "How-To Geek",
+   "kind": "article",
+   "image": "https://static0.howtogeekimages.com/wordpress/wp-content/uploads/wm/2026/08/cloudflare-tunnel-vs-wireguard-vs-tailscale.png",
+   "summary": "The obvious answer worked fine but the less obvious one was much harder to give up!",
+   "date": "2026-08-28T16:00:13+00:00",
+   "score": 8,
+   "tags": [
+    "LICENSE"
+   ]
+  },
+  {
+   "title": "Apple TV raises prices, but there's a smarter way to pay",
+   "url": "https://www.howtogeek.com/apple-tv-raises-prices-but-theres-a-smarter-way-to-pay/",
+   "source": "How-To Geek",
+   "kind": "article",
+   "image": "https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2025/11/apple-tv-logo-centered-with-curved-film-strips-surrounding-it.png",
+   "summary": "Ad-free streaming, five-member sharing, and a strong library still make the price hike easier to swallow.",
+   "date": "2026-08-28T15:23:13+00:00",
+   "score": 12,
+   "tags": [
+    "PRICE CHANGE"
+   ]
+  },
+  {
+   "title": "Price increases suddenly hit Apple TV and Apple One",
+   "url": "https://www.engadget.com/2246336/price-increases-suddenly-hit-apple-tv-and-apple-one/",
+   "source": "Engadget",
+   "kind": "article",
+   "image": "https://www.engadget.com/img/gallery/price-increases-suddenly-hit-apple-tv-and-apple-one/l-intro-1787927378.jpg",
+   "summary": "You might have to pay a bit more to catch the end of the latest Ted Lasso season.",
+   "date": "2026-08-28T14:37:58+00:00",
+   "score": 12,
+   "tags": [
+    "PRICE CHANGE"
+   ]
+  },
+  {
+   "title": "Apple TV is raising its subscription prices again",
+   "url": "https://techcrunch.com/2026/08/28/apple-tv-is-raising-its-subscription-prices-again/",
+   "source": "TechCrunch",
+   "kind": "article",
+   "image": "",
+   "summary": "Now, Apple TV subscriptions will cost $14.99 per month, up from its previous price of $12.99 per month.",
+   "date": "2026-08-28T14:36:48+00:00",
+   "score": 10,
+   "tags": [
+    "SUBSCRIPTION"
+   ]
+  },
+  {
+   "title": "Apple TV follows Apple Music with a price hike of its own",
+   "url": "https://www.androidauthority.com/apple-tv-prices-3704392/",
+   "source": "Android Authority",
+   "kind": "article",
+   "image": "https://www.androidauthority.com/wp-content/uploads/2021/10/iPad-Mini-2021-Apple-TV.jpg",
+   "summary": "Now 50% higher than last summer!",
+   "date": "2026-08-28T14:32:41+00:00",
+   "score": 12,
+   "tags": [
+    "PRICE CHANGE"
+   ]
+  },
+  {
+   "title": "My ISP's limitations vanished the moment I flashed my router with open-source firmware",
+   "url": "https://www.xda-developers.com/isps-limitations-vanished-flashed-router-with-open-source-firmware/",
    "source": "XDA",
    "kind": "article",
-   "image": "https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2026/08/plex-in-browser-on-pc.png",
-   "summary": "Your foundation should be in place before growing your media repository",
-   "date": "2026-08-20T14:30:15+00:00",
+   "image": "https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2026/08/tp-link-archer-c6-router.jpeg",
+   "summary": "The limitations were real. They just weren't the ISP's.",
+   "date": "2026-08-28T14:00:15+00:00",
    "score": 8,
    "tags": [
     "LICENSE"
    ]
   },
   {
-   "title": "Peacock just raised prices again. Here’s how to pay less",
-   "url": "https://www.pcworld.com/article/3216242/peacock-raises-prices-but-you-can-still-get-a-deal.html",
-   "source": "PCWorld",
+   "title": "Apple TV now costs $14.99 a month after its fourth price hike in four years",
+   "url": "https://www.theverge.com/tech/986130/apple-tv-plus-price-hike",
+   "source": "The Verge",
    "kind": "article",
-   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3216242-0-92456500-1787231743-peacock.jpg?quality=50&strip=all",
-   "summary": "Remember back in 2020 when Peacock cost just $5 per month? Those days are long gone. With a new round of price hikes , Peacock Premium now costs $13 per month or $130 per year, up from $11 or $110 per year previously. The Premium Plus now costs $20 per month or $200 per year, up from $17 per month or $170 per year. Peacock’s “Select” tier, which excludes live sports, movies, and Peacock originals, now costs $9 per month or $90 per year, up from $8 per month or $80 per year. But just because NBCUniversal wants more money for Peacock doesn’t mean you have to pay it. A spokesperson confirmed that",
-   "date": "2026-08-20T13:00:00+00:00",
-   "score": 28,
+   "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/Severance_Photo_021019.jpg?quality=90&strip=all&crop=0,0,100,100",
+   "summary": "Apple raised the price of its streaming service for new and current subscribers on Friday, bumping it up from $12.99 per month to $14.99, Deadline and Variety are reporting. An annual subscription now costs $119, up from $99. Apple also increased the cost of its individual Apple One subscription, which includes Apple TV and Apple's […]",
+   "date": "2026-08-28T13:47:36+00:00",
+   "score": 17,
    "tags": [
     "PRICE CHANGE",
-    "FREE TIER",
     "SUBSCRIPTION"
    ]
   },
   {
-   "title": "Gmail offers fully encrypted email. But better alternatives exist",
-   "url": "https://www.pcworld.com/article/3203183/gmail-offers-fully-encrypted-email-but-better-alternatives-exist.html",
-   "source": "PCWorld",
+   "title": "Get your Windows license refund",
+   "url": "https://en.refund4freedom.org/",
+   "source": "Hacker News",
    "kind": "article",
-   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3203183-0-80523300-1787221832-gmail-pixabay-diedryreyes3456.jpg?quality=50&strip=all",
-   "summary": "Email that only your recipient can read—sounds like a great idea for sensitive messages, right? Especially if you could have that within Gmail. Technically, you can. Google does offer full end-to-end encryption (EE2E) for email, which blocks everyone but you and your recipient from reading its contents. Not even Google would be able to know what EE2E emails say, despite the data living on its servers. But I don’t recommend Gmail if you want to use EE2E for your email. For this protection, you should turn elsewhere. Other email providers have a better lock on this feature for users like you and",
-   "date": "2026-08-20T10:30:00+00:00",
-   "score": 11,
+   "image": "",
+   "summary": "Article URL: https://en.refund4freedom.org/ Comments URL: https://news.ycombinator.com/item?id=49478340 Points: 261 # Comments: 87",
+   "date": "2026-08-28T13:42:40+00:00",
+   "score": 10,
    "tags": [
-    "FREE TIER",
-    "SUBSCRIPTION"
+    "CANCEL IT"
+   ]
+  },
+  {
+   "title": "Did you spot a scam? Here’s what to do next",
+   "url": "https://consumer.ftc.gov/%3Ca%20href%3D%22https%3A//consumer.ftc.gov/consumer-alerts/2026/08/did-you-spot-scam-heres-what-do-next%22%20hreflang%3D%22en%22%3Eview%3C/a%3E",
+   "source": "FTC Consumer",
+   "kind": "enforcement",
+   "image": "",
+   "summary": "Many people experience fraud but never report it, and scammers count on you staying silent. Your story — especially when you share it with friends, family, and the FTC — is a powerful tool in the fight against fraud. Here’s why your report matters.",
+   "date": "2026-08-28T07:20:17+00:00",
+   "score": 12,
+   "tags": [
+    "ENFORCEMENT",
+    "SCAM"
+   ]
+  },
+  {
+   "title": "Buried in Meta’s $18B settlement is a legal pass on kids’ data",
+   "url": "https://techcrunch.com/2026/08/27/buried-in-metas-18b-settlement-is-a-legal-pass-on-kids-data/",
+   "source": "TechCrunch",
+   "kind": "article",
+   "image": "",
+   "summary": "Meta’s settlement with 29 states allows it to retain certain data from children under 13 to train and test age-detection models, highlighting a privacy trade-off built into the deal.",
+   "date": "2026-08-27T20:04:26+00:00",
+   "score": 12,
+   "tags": [
+    "ENFORCEMENT"
+   ]
+  },
+  {
+   "title": "Panic passes Trump tariff refunds back to the Playdate customers who paid them",
+   "url": "https://arstechnica.com/gaming/2026/08/panic-refunds-illegal-tariffs-customers-paid-on-its-playdate-gaming-handheld/",
+   "source": "Ars Technica",
+   "kind": "article",
+   "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/playdate-500x500.jpeg",
+   "summary": "\"It just felt like the right thing to do.\"",
+   "date": "2026-08-27T14:53:17+00:00",
+   "score": 10,
+   "tags": [
+    "CANCEL IT"
+   ]
+  },
+  {
+   "title": "The ‘cheap smartphone era is over’ and price hikes are ‘permanent,’ bleak forecast reveals",
+   "url": "https://9to5google.com/2026/08/26/smartphone-price-hikes-forecast/",
+   "source": "9to5Google",
+   "kind": "article",
+   "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/08/Pixel-11-Pro-XL-and-iPhone-17-Pro-Max-design-2.jpg?quality=82&strip=all&w=1600",
+   "summary": "According to the latest analyst forecasts, higher smartphone prices won’t be changing anytime soon amid a record-setting drop in shipments.",
+   "date": "2026-08-26T21:05:00+00:00",
+   "score": 12,
+   "tags": [
+    "PRICE CHANGE"
+   ]
+  },
+  {
+   "title": "Android phones could soon gain the power to shut down, restart, or put your PC to sleep remotely",
+   "url": "https://www.androidauthority.com/phone-link-remote-shutdown-restart-sleep-3703529/",
+   "source": "Android Authority",
+   "kind": "article",
+   "image": "https://www.androidauthority.com/wp-content/uploads/2025/07/microsoft-phone-link-to-windows-on-Android-scaled.jpg",
+   "summary": "Phone Link's next trick could be remotely controlling PC power management with your Android phone.",
+   "date": "2026-08-26T19:29:03+00:00",
+   "score": 12,
+   "tags": [
+    "SHUTTING DOWN"
+   ]
+  },
+  {
+   "title": "Meta's proposed $18B settlement in teen harm case throws YouTube and TikTok under the bus, too",
+   "url": "https://www.theregister.com/legal/2026/08/26/metas-proposed-18b-settlement-in-teen-harm-case-throws-youtube-and-tiktok-under-the-bus-too/5292665",
+   "source": "The Register",
+   "kind": "article",
+   "image": "https://image.theregister.com/?imageId=259975&width=800",
+   "summary": "Zuckercorp ties $5.3B of its payout to rivals playing along",
+   "date": "2026-08-26T16:41:04+00:00",
+   "score": 12,
+   "tags": [
+    "ENFORCEMENT"
+   ]
+  },
+  {
+   "title": "EFF Statement on Meta Settlement",
+   "url": "https://www.eff.org/deeplinks/2026/08/eff-statement-meta-settlement",
+   "source": "EFF",
+   "kind": "article",
+   "image": "https://www.eff.org/files/banner_library/ageverificationbanner-3.png",
+   "summary": "Under this settlement , young users will now have less access to Meta products, and a lesser ability to exercise their rights to speak, access information and art and culture, associate and form communities, and play. The settlement also embeds age assurance into every product, mandating the collection of even more personal information from users of all ages; this enshrines Meta's harmful surveillance into law, and it will compromise users' privacy and anonymity while increasing their exposure to data breaches and government data requests. And the data minimization and security measures don’t ",
+   "date": "2026-08-26T16:34:41+00:00",
+   "score": 12,
+   "tags": [
+    "ENFORCEMENT"
+   ]
+  },
+  {
+   "title": "Galaxy S27 Ultra’s major redesign detailed in new renders, price hike rumored",
+   "url": "https://9to5google.com/2026/08/25/samsung-galaxy-s27-ultra-redesign-renders/",
+   "source": "9to5Google",
+   "kind": "article",
+   "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/08/galaxy-s27-ultra-onl-2.webp?w=1600",
+   "summary": "Samsung’s new Galaxy S27 Ultra is getting a massive redesign and, thanks to the latest leak, we’ve got a better look at what to expect, but we’re also now bracing for a major price hike.",
+   "date": "2026-08-25T14:00:00+00:00",
+   "score": 12,
+   "tags": [
+    "PRICE CHANGE"
+   ]
+  },
+  {
+   "title": "Amazon’s price hikes #Vergecast",
+   "url": "https://www.youtube.com/shorts/bSeISuhcGWQ",
+   "source": "The Verge",
+   "kind": "video",
+   "image": "https://i3.ytimg.com/vi/bSeISuhcGWQ/hqdefault.jpg",
+   "summary": "Amazon’s price hikes. Netflix considers opening its app to other streamers. Humanoid robots smash Usain Bolt’s 100-meter record. Here are today’s top headlines. Subscribe: http://goo.gl/G5RXGs Like The Verge on Facebook: https://goo.gl/2P1aGc Follow on Twitter: https://goo.gl/XTWX61 Follow on Instagram: https://goo.gl/7ZeLv Watch The Vergecast on YouTube: https://bit.ly/40RFRkg The Vergecast Podcast: https://bit.ly/3WQDexZ Decoder with Nilay Patel: http://apple.co/3v29nDc More about our podcasts: https://www.theverge.com/podcasts Read More: http://www.theverge.com Community guidelines: http://",
+   "date": "2026-08-24T20:57:25+00:00",
+   "score": 12,
+   "tags": [
+    "PRICE CHANGE"
+   ]
+  },
+  {
+   "title": "YouTube Premium is getting another price hike for some users all around the world",
+   "url": "https://9to5google.com/2026/08/21/youtube-premium-price-hike-europe-other-regions/",
+   "source": "9to5Google",
+   "kind": "article",
+   "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/05/youtube-premium.jpg?quality=82&strip=all&w=1600",
+   "summary": "Hot on the heels of a US price hike earlier this year, YouTube Premimum is getting a higher price in countries all over the world, Google is confirming to users.",
+   "date": "2026-08-21T15:25:00+00:00",
+   "score": 12,
+   "tags": [
+    "PRICE CHANGE"
+   ]
+  },
+  {
+   "title": "Galaxy Tab S12 series reportedly gets a price hike, but it’s not as bad as it could be",
+   "url": "https://9to5google.com/2026/08/20/samsung-galaxy-tab-s12-price-leaks/",
+   "source": "9to5Google",
+   "kind": "article",
+   "image": "https://9to5google.com/wp-content/uploads/sites/4/2025/09/galaxy-tab-s11-2.jpg?quality=82&strip=all&w=1600",
+   "summary": "As with everything else, Samsung’s upcoming Galaxy Tab S12 series will be more expensive, but it could be a whole lot worse.",
+   "date": "2026-08-20T17:05:00+00:00",
+   "score": 12,
+   "tags": [
+    "PRICE CHANGE"
    ]
   },
   {
@@ -83,47 +277,6 @@
    ]
   },
   {
-   "title": "NordVPN review: More than just a VPN, it’s a privacy powerhouse",
-   "url": "https://www.pcworld.com/article/398777/nordvpn-review-3.html",
-   "source": "PCWorld",
-   "kind": "article",
-   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/398777-0-60940300-1787138165-NordVPN-lead-image.webp",
-   "summary": "At a Glance Expert's Rating Pros Outstanding connection speeds Excellent streaming performance Loaded with privacy and security features Numerous independent audits Cons Expensive monthly plans and steep renewal prices Important features vary by platform and subscription tier Our Verdict NordVPN packs a lot into a single premium subscription: tons of country connections, excellent streaming site compatibility, a wealth of configuration options, and lightning-fast server speeds. It has grown beyond just a VPN, now offering a potent suite of privacy and security features that few competitors can",
-   "date": "2026-08-19T11:15:00+00:00",
-   "score": 13,
-   "tags": [
-    "SUBSCRIPTION",
-    "CANCEL IT",
-    "SCAM"
-   ]
-  },
-  {
-   "title": "This VPN protects unlimited devices, and a 3-year subscription is on sale for $84",
-   "url": "https://www.pcworld.com/article/3215170/this-vpn-protects-unlimited-devices-and-a-3-year-subscription-is-on-sale-for-84.html",
-   "source": "PCWorld",
-   "kind": "article",
-   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3215170-0-87899900-1787126467-Surfshark.jpg?quality=50&strip=all",
-   "summary": "TL;DR : Surfshark VPN protects unlimited devices with encryption and ad blocking, and a three-year subscription is on sale for $83.99 (reg. $430). Most VPNs cap how many devices you can protect, then charge more once you go over. Instead of choosing which of your devices isn’t going to be safe, just protect them all. Surfshark VPN has a three-year starter subscription that lets you connect unlimited devices, and it’s on sale for $83.99 (reg. $430). Surfshark has AES-256 encryption and a strict no-logs policy, so your browsing stays private and Surfshark records none of it. Connect to more than",
-   "date": "2026-08-19T08:00:00+00:00",
-   "score": 10,
-   "tags": [
-    "SUBSCRIPTION"
-   ]
-  },
-  {
-   "title": "Mojo is now open source",
-   "url": "https://www.modular.com/blog/mojo-open-source",
-   "source": "Hacker News",
-   "kind": "article",
-   "image": "",
-   "summary": "Article URL: https://www.modular.com/blog/mojo-open-source Comments URL: https://news.ycombinator.com/item?id=49348079 Points: 218 # Comments: 55",
-   "date": "2026-08-18T16:23:24+00:00",
-   "score": 8,
-   "tags": [
-    "LICENSE"
-   ]
-  },
-  {
    "title": "lemon gets cease & desist from company selling subscriptions to car manuals",
    "url": "https://www.youtube.com/watch?v=Awe6o9TemlQ",
    "source": "Louis Rossmann",
@@ -134,20 +287,6 @@
    "score": 10,
    "tags": [
     "SUBSCRIPTION"
-   ]
-  },
-  {
-   "title": "ChatGPT’s Computer History #Vergecast",
-   "url": "https://www.youtube.com/shorts/Y_CejZC7ShA",
-   "source": "The Verge",
-   "kind": "video",
-   "image": "https://i2.ytimg.com/vi/Y_CejZC7ShA/hqdefault.jpg",
-   "summary": "ChatGPT’s Computer History tracks your clicks and keystrokes. Amazon is trying to crush class action suits before they get started. Uber partners with Zipline on Eats drone deliveries. And everything announced at Disney’s D23. Here are today’s top headlines. Subscribe: http://goo.gl/G5RXGs Like The Verge on Facebook: https://goo.gl/2P1aGc Follow on Twitter: https://goo.gl/XTWX61 Follow on Instagram: https://goo.gl/7ZeLv Watch The Vergecast on YouTube: https://bit.ly/40RFRkg The Vergecast Podcast: https://bit.ly/3WQDexZ Decoder with Nilay Patel: http://apple.co/3v29nDc More about our podcasts: ",
-   "date": "2026-08-17T19:42:53+00:00",
-   "score": 9,
-   "tags": [
-    "ENFORCEMENT",
-    "PRIVACY"
    ]
   },
   {
@@ -191,33 +330,6 @@
    ]
   },
   {
-   "title": "The Best Way to Get Past an Article's Paywall",
-   "url": "https://lifehacker.com/how-to-bypass-a-paywall-to-read-an-article-for-free?utm_medium=RSS",
-   "source": "Lifehacker",
-   "kind": "article",
-   "image": "https://lifehacker.com/imagery/articles/01HF2GTD2GVD2SP033WMTR85N6/hero-image.jpg",
-   "summary": "Some tricks that used to work no longer do—but this one is pretty reliable.",
-   "date": "2026-08-11T19:30:00+00:00",
-   "score": 12,
-   "tags": [
-    "PAYWALL"
-   ]
-  },
-  {
-   "title": "FTC Stops Sprawling Credit Repair Scheme that Scammed Consumers Out of Nearly $200 Million",
-   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/08/ftc-stops-sprawling-credit-repair-scheme-scammed-consumers-out-nearly-200-million",
-   "source": "FTC",
-   "kind": "enforcement",
-   "image": "",
-   "summary": "Scheme allegedly deceptively posed as debt collectors and creditors, used false and misleading promises to collect illegal upfront fees and recurring charges At the request of the Federal Trade Commission, a federal court has temporarily halted a bogus credit repair scheme run by a sprawling network of 17 related companies and their principals. View Press Release",
-   "date": "2026-08-10T12:00:00+00:00",
-   "score": 17,
-   "tags": [
-    "SUBSCRIPTION",
-    "ENFORCEMENT"
-   ]
-  },
-  {
    "title": "Developers: Beware of Ad Libraries that Betray Your Users’ Location Privacy",
    "url": "https://www.eff.org/deeplinks/2026/07/developers-beware-ad-libraries-betray-your-users-location-privacy",
    "source": "EFF",
@@ -240,19 +352,6 @@
    "image": "https://www.eff.org/files/banner_library/icon-2026-ai-robot-v2.png",
    "summary": "The Federal Trade Commission (FTC) in July issued a proposed policy statement “concerning the suppression of accuracy in artificial intelligence systems. ” We urge the FTC to withdraw this misguided proposal and instead focus on its core strengths and mission to protect consumers. The new proposed policy builds on, and directly references, the Trump administration’s “Preventing Woke AI in the Federal Government” executive order—a nightmare for civil liberties that seeks to strong-arm AI companies into modifying their models to conform with the its ideological agenda. In recently filed comments",
    "date": "2026-08-03T22:17:56+00:00",
-   "score": 12,
-   "tags": [
-    "ENFORCEMENT"
-   ]
-  },
-  {
-   "title": "FTC and States Act Against Hims & Hers for Deceptive and Unlawful Privacy Practices",
-   "url": "https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-states-act-against-hims-hers-deceptive-unlawful-privacy-practices",
-   "source": "FTC",
-   "kind": "enforcement",
-   "image": "",
-   "summary": "Complaint alleges telehealth provider shared consumers’ sensitive health information with third-party advertising platforms despite promising patient privacy The Federal Trade Commission, joined by Utah and California, by and through Los Angeles County Counsel, today sued Hims &amp; Hers alleging that the telehealth provider shared consumers’ sensitive health information about medical conditions with third-party advertising platforms despite claiming its services maintain consumers’ privacy and deceives users about its billing and cancellation pract View Press Release",
-   "date": "2026-07-29T12:00:00+00:00",
    "score": 12,
    "tags": [
     "ENFORCEMENT"
@@ -287,20 +386,6 @@
    ]
   },
   {
-   "title": "Google's New Remote Attestation Scheme is As Bad As Its Old One",
-   "url": "https://www.eff.org/deeplinks/2026/07/googles-new-remote-attestation-scheme-every-bit-terrible-its-old-remote",
-   "source": "EFF",
-   "kind": "article",
-   "image": "https://www.eff.org/files/banner_library/mobile-privacy-knight-2_0.png",
-   "summary": "Google owes its existence to the open web, but today, its technological “innovations” have much to do with locking users into a “walled garden.” The latest of these is “ reCAPTCHA Mobile Verification ,” an experimental initiative that will let companies block users if they are running independent, \"de-googled\" versions of Android. These “indie Android” versions are favored by people who want to protect their privacy and their attention by blocking trackers and ads. Worse, this is just the latest in a line of similarly user-hostile measures. Long before “agentic AI,” we had the idea that softwa",
-   "date": "2026-07-09T09:15:49+00:00",
-   "score": 9,
-   "tags": [
-    "PRICE CHANGE",
-    "ALTERNATIVE"
-   ]
-  },
-  {
    "title": "CFPB Reaches Settlement with FirstCash, Inc. and Its Subsidiaries for Military Lending Act Violations",
    "url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-reaches-settlement-with-firstcash-inc-and-its-subsidiaries-for-military-lending-act-violations/",
    "source": "CFPB",
@@ -314,5 +399,7 @@
    ]
   }
  ],
- "errors": []
+ "errors": [
+  "PCWorld: TimeoutError"
+ ]
 }

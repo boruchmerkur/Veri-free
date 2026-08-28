@@ -1328,7 +1328,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/all/">All verdicts</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/all/">Every verdict</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {NAV_JS}
 {COUPON_JS}
@@ -1577,7 +1577,7 @@ def build():
            f'<div class="dropdown"><a href="/#categories">Categories</a>'
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
            f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
-           f'<a href="/all/">All verdicts</a>'
+           f'<a href="/all/">Every verdict</a>'
            f'<a href="/deals/">Deals</a>'
            f'<a href="/coupons/">Coupons</a>'
            f'<a href="/free-consultations/">Consultations</a>'
@@ -1640,9 +1640,6 @@ def build():
         si = stream["items"][:16]
         home_stream = (
             '<section class="homestream"><div class="wrap">'
-            '<div class="hs-head"><h2>What changed this week</h2>'
-            f'<span class="hs-when">Updated {ago(stream.get("updated"))}</span>'
-            '</div>'
             '<div class="stream">'
             + "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
                         for i, it in enumerate(si))
@@ -1878,8 +1875,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
             si_L = stream["items"][:16]
             home_stream_L = (
                 '<section class="homestream"><div class="wrap">'
-                f'<div class="hs-head"><h2>{esc(T["changed_h"])}</h2>'
-                f'</div>'
+
                 '<div class="stream">'
                 + "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
                           for i, it in enumerate(si_L))
@@ -2249,7 +2245,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 {sections}
 <p class="noresults" id="noresults">Nothing by that name yet. <a href="mailto:hello@veri-free.com">Suggest it</a> and we'll verify it.</p>
 </main>"""
-    p_all = page_nav(f"Every Verdict — all {len(listings)} checked — Verified Free",
+    p_all = page_nav(f"All {len(listings)} ‘free’ offers, checked — Verified Free",
                      f"All {len(listings)} listings, searchable and filterable by verdict and category.",
                      "/all/", all_body)
     os.makedirs(os.path.join(OUT, "all"), exist_ok=True)

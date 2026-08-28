@@ -67,14 +67,14 @@ a{color:inherit}
 .logo{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px;letter-spacing:.14em;text-decoration:none;border:2px solid var(--ink);padding:4px 10px;border-radius:5px;display:inline-flex;gap:0;align-items:center}
 .logo b{color:var(--brand)}
 .nav-links{display:flex;gap:18px;align-items:center;height:52px}
-.nav-links a{font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);line-height:52px}
+.nav-links a{flex:0 0 auto;white-space:nowrap;font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);line-height:52px}
 .nav-links a:hover{color:var(--ink)}
 /* The nav row has never had a small-screen rule, so it simply overflowed the
    page — adding a link made that visible. Let it scroll instead of pushing
    the document wider than the viewport. */
-@media(max-width:820px){
+@media(max-width:1080px){
 .nav-in{gap:12px}
-.nav-links{gap:15px;flex:1;min-width:0;overflow-x:auto;justify-content:flex-end;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+.nav-links{gap:15px;flex:1;min-width:0;overflow-x:auto;justify-content:flex-start;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-links a{white-space:nowrap}
 }
@@ -465,7 +465,7 @@ body.loc-ca .ca-badge{display:inline-flex}
 .pagenote .pn-body p{margin:0 0 11px}
 .pagenote .pn-body p:last-child{margin:0}
 /* tighter page heads — the h1 and one line, then the content */
-.pagehead.tight{padding:34px 0 6px}
+.pagehead.tight{padding-top:34px;padding-bottom:6px}
 .pagehead.tight p{margin:10px 0 14px;font-size:16.5px}
 /* per-listing verification age */
 .checked .ck-date{font-weight:600}
@@ -482,6 +482,12 @@ body.loc-ca .ca-badge{display:inline-flex}
 .so-verdict.v-forever{color:#0A6E8A;border-color:#0A6E8A;background:#E2EFF4}
 .so-verdict.v-freeish{color:#A05E03;border-color:#A05E03;background:#F7EDDC}
 .so-verdict.v-trap,.so-verdict.v-fake,.so-verdict.v-notfree{color:#B3261E;border-color:#B3261E;background:#F9E3E1}
+/* landing: category chips as a browse row, above the feed */
+.browsebar{border-bottom:1px solid var(--line);padding:14px 0 4px}
+.browsebar .catbar{border-bottom:0;background:transparent;min-height:0}
+.browsebar .catbar-in{padding-top:0}
+.bb-k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);flex-shrink:0}
+.bb-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0}
 /* landing handoff into the directory */
 .handoff{padding:34px 0 46px}
 .handoff-card{display:block;max-width:720px;border:2.5px solid var(--ink);border-radius:14px;padding:22px 26px;background:var(--card);text-decoration:none;transition:background .12s,transform .12s}
@@ -606,7 +612,7 @@ body.loc-ca .ca-badge{display:inline-flex}
 .related{padding:10px 0 50px;border-top:1px solid var(--line);margin-top:44px}
 .related h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:22px 0 16px}
 /* category + method pages */
-.pagehead{padding:56px 0 8px}
+.pagehead{padding-top:56px;padding-bottom:8px}
 .pagehead h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(34px,5.5vw,56px);letter-spacing:-.015em;line-height:1.02}
 .pagehead p{margin:14px 0 22px;color:var(--muted);font-size:17.5px;max-width:58ch}
 .prose{max-width:680px;padding:8px 0 60px}
@@ -1609,6 +1615,11 @@ def build():
               f'</div></div>')
 
     NAV = '<header class="site-header">' + NAV + CATBAR + '</header>'
+    # The landing has no grid for the chips to filter, so they sit as a
+    # browse row above the feed instead of jammed under the nav where they
+    # read as nav overflow. There they navigate to the category pages.
+    NAV_NOCAT = '<header class="site-header">' + NAV.split('<header class="site-header">')[1].replace(CATBAR, '')
+
 
     # Build an OG image URL from favicon as fallback
     OG_IMG = f"{DOMAIN}/og.png"
@@ -1649,6 +1660,10 @@ def build():
 <div class="hero-top"><h1>Veri-<em>Free</em></h1><p class="tagline">Very Free &amp; Easy</p>
 <p class="sub">We check every "free" offer and tell you what it really costs.</p></div>
 </div></header>
+<div class="browsebar">
+<div class="wrap"><span class="bb-k">Browse by category</span></div>
+{CATBAR}
+</div>
 {home_stream}
 <section class="handoff"><div class="wrap">
 <a class="handoff-card" href="/all/">
@@ -1751,9 +1766,10 @@ window.addEventListener('scroll',function(){{document.getElementById('btt').clas
 })();
 </script>"""
 
-    home = page_nav("Verified Free — Is it actually free? We checked.",
+    home = page("Verified Free — Is it actually free? We checked.",
                 "Verified Free: verified rankings of how free the internet's 'free' offers really are.",
-                "/", home_body + BANNER_JS, extra_head=home_extra + ALT_LINKS)
+                "/", home_body + BANNER_JS, extra_head=home_extra + ALT_LINKS
+                ).replace('<!--NAV-->', NAV_NOCAT)
     open(os.path.join(OUT, "index.html"), "w").write(home)
 
     # ---------- localized homepages (/es/ /pt/ /fr/ /de/) ----------

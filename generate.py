@@ -482,12 +482,6 @@ body.loc-ca .ca-badge{display:inline-flex}
 .so-verdict.v-forever{color:#0A6E8A;border-color:#0A6E8A;background:#E2EFF4}
 .so-verdict.v-freeish{color:#A05E03;border-color:#A05E03;background:#F7EDDC}
 .so-verdict.v-trap,.so-verdict.v-fake,.so-verdict.v-notfree{color:#B3261E;border-color:#B3261E;background:#F9E3E1}
-/* landing: category chips as a browse row, above the feed */
-.browsebar{border-bottom:1px solid var(--line);padding:14px 0 4px}
-.browsebar .catbar{border-bottom:0;background:transparent;min-height:0}
-.browsebar .catbar-in{padding-top:0}
-.bb-k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);flex-shrink:0}
-.bb-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0}
 /* landing handoff into the directory */
 .handoff{padding:34px 0 46px}
 .handoff-card{display:block;max-width:720px;border:2.5px solid var(--ink);border-radius:14px;padding:22px 26px;background:var(--card);text-decoration:none;transition:background .12s,transform .12s}
@@ -1660,10 +1654,6 @@ def build():
 <div class="hero-top"><h1>Veri-<em>Free</em></h1><p class="tagline">Very Free &amp; Easy</p>
 <p class="sub">We check every "free" offer and tell you what it really costs.</p></div>
 </div></header>
-<div class="browsebar">
-<div class="wrap"><span class="bb-k">Browse by category</span></div>
-{CATBAR}
-</div>
 {home_stream}
 <section class="handoff"><div class="wrap">
 <a class="handoff-card" href="/all/">

@@ -482,6 +482,16 @@ body.loc-ca .ca-badge{display:inline-flex}
 .so-verdict.v-forever{color:#0A6E8A;border-color:#0A6E8A;background:#E2EFF4}
 .so-verdict.v-freeish{color:#A05E03;border-color:#A05E03;background:#F7EDDC}
 .so-verdict.v-trap,.so-verdict.v-fake,.so-verdict.v-notfree{color:#B3261E;border-color:#B3261E;background:#F9E3E1}
+/* landing handoff into the directory */
+.handoff{padding:34px 0 46px}
+.handoff-card{display:block;max-width:720px;border:2.5px solid var(--ink);border-radius:14px;padding:22px 26px;background:var(--card);text-decoration:none;transition:background .12s,transform .12s}
+.handoff-card:hover{background:var(--paper);transform:translateY(-2px)}
+.ho-k{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.ho-h{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(21px,2.5vw,28px);letter-spacing:-.015em;color:var(--ink);margin:6px 0 10px;line-height:1.15}
+.ho-n{display:block;font-size:14.5px;color:var(--muted);line-height:1.6}
+.ho-n b{color:var(--ink)}
+.handoff .ho-go{display:inline-block;margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--brand)}
+.handoff-card:hover .ho-go{text-decoration:underline}
 /* homepage: thin, prominent find bar — the product, one band deep */
 .hero.slim{padding:20px 0 12px}
 .hero.slim .hero-top{align-items:baseline;gap:6px 14px}
@@ -1318,7 +1328,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/all/">All verdicts</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {NAV_JS}
 {COUPON_JS}
@@ -1357,8 +1367,13 @@ function updateAllChip(){{
   // what is selected. Saying "All" while a click cleared everything was the
   // illogical part. The count carries the state instead.
   var lbl=a.querySelector('.pl'), cnt=a.querySelector('.pc');
-  if(lbl)lbl.textContent=allOn?(a.getAttribute('data-none')||'None'):(a.getAttribute('data-all')||'All');
-  if(cnt){{
+  // Off the directory the chip is a doorway, not a toggle, so it keeps saying
+  // "All" — offering to clear a selection that isn't on screen would be a lie.
+  if(lbl)lbl.textContent=(!hasGrid())?(a.getAttribute('data-all')||'All')
+        :(allOn?(a.getAttribute('data-none')||'None'):(a.getAttribute('data-all')||'All'));
+  // Only meaningful where the grid exists. Elsewhere the server-rendered
+  // total stands, rather than counting zero cards and reporting "None 0".
+  if(cnt&&document.querySelector('.grid .card')){{
     var shown=0;
     document.querySelectorAll('.grid .card').forEach(function(c){{
       if(c.offsetParent!==null)shown++;
@@ -1381,7 +1396,12 @@ function resetCats(){{
   document.querySelectorAll('.catbar .pill-toggle[data-cat]').forEach(function(p){{p.classList.add('on')}});
   saveCats();applyCats();updateAllChip();
 }}
+function hasGrid(){{return !!document.querySelector('[data-section][data-cat]')}}
 function toggleAll(){{
+  if(!hasGrid()){{
+    window.location=(document.documentElement.getAttribute('data-langbase')||'')+'/all/';
+    return;
+  }}
   var pills=document.querySelectorAll('.catbar .pill-toggle[data-cat]');
   var allOn=true;pills.forEach(function(p){{if(!p.classList.contains('on'))allOn=false}});
   if(allOn)noneCats();else resetCats();
@@ -1557,6 +1577,7 @@ def build():
            f'<div class="dropdown"><a href="/#categories">Categories</a>'
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
            f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
+           f'<a href="/all/">All verdicts</a>'
            f'<a href="/deals/">Deals</a>'
            f'<a href="/coupons/">Coupons</a>'
            f'<a href="/free-consultations/">Consultations</a>'
@@ -1629,37 +1650,13 @@ def build():
 <p class="sub">We check every "free" offer and tell you what it really costs.</p></div>
 </div></header>
 {home_stream}
-<div class="side-legend closed" id="sidepanel">
-<div class="sl-tab" title="Verdict definitions and sorting" onclick="document.getElementById('sidepanel').classList.toggle('closed')">Guide</div>
-<div class="sl-body">
-<h2>Verdicts</h2>
-{legend_side}
-<div class="sl-divider"></div>
-<h2>Sort</h2>
-<div class="sl-sorts">
-<button class="sortbtn active" data-sort="free">Most free</button>
-<button class="sortbtn" data-sort="value">Highest value</button>
-<button class="sortbtn" data-sort="name">A–Z</button>
-</div>
-</div>
-</div>
-<div class="findbar"><div class="wrap findbar-in">
-<div class="searchbar"><input id="q" type="search" placeholder="Search {len(listings)} verified free things…" aria-label="Search listings"><span class="kbd">{len(listings)} verified</span></div>
-<div class="vfilters">
-<button class="vfilter on" data-v="all">All</button>
-<button class="vfilter" data-v="truly">Truly free <i>{genuine}</i></button>
-<button class="vfilter" data-v="forever">Free forever <i>{forever_n}</i></button>
-<button class="vfilter" data-v="freeish">Free-ish <i>{squeeze}</i></button>
-<button class="vfilter" data-v="trap,fake,notfree">Traps &amp; fakes <i>{traps}</i></button>
-</div>
-</div></div>
-<main class="wrap" id="categories">
-<div class="verdicts-head"><h2>Every verdict</h2>
-<p>{len(listings)} things checked against one rubric — {genuine} genuinely free, {traps} exposed as traps or fakes. Search and filter them above.</p>
-<p class="count" id="count"></p></div>
-{sections}
-<p class="noresults" id="noresults">Nothing by that name yet. <a href="mailto:hello@veri-free.com">Suggest it</a> and we'll verify it.</p>
-</main>
+<section class="handoff"><div class="wrap">
+<a class="handoff-card" href="/all/">
+<span class="ho-k">The verdicts</span>
+<span class="ho-h">All {len(listings)}, checked against one rubric</span>
+<span class="ho-n"><b>{genuine}</b> truly free · <b>{forever_n}</b> free forever · <b>{squeeze}</b> free-ish · <b>{traps}</b> traps &amp; fakes</span>
+<span class="ho-go">Search and filter them →</span></a>
+</div></section>
 {headlines_html}
 <section class="sitecheck"><div class="wrap">
 <div class="sc-head">
@@ -2213,6 +2210,45 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         open(os.path.join(OUT, "deals", "index.html"), "w").write(p)
 
 
+    # ---------- /all/ — the directory ----------
+    all_body = f"""
+<header class="pagehead tight wrap"><h1>Every verdict</h1>
+<p>{len(listings)} things checked against one rubric — {genuine} genuinely free, {traps} exposed as traps or fakes.</p></header>
+<div class="side-legend closed" id="sidepanel">
+<div class="sl-tab" title="Verdict definitions and sorting" onclick="document.getElementById('sidepanel').classList.toggle('closed')">Guide</div>
+<div class="sl-body">
+<h2>Verdicts</h2>
+{legend_side}
+<div class="sl-divider"></div>
+<h2>Sort</h2>
+<div class="sl-sorts">
+<button class="sortbtn active" data-sort="free">Most free</button>
+<button class="sortbtn" data-sort="value">Highest value</button>
+<button class="sortbtn" data-sort="name">A–Z</button>
+</div>
+</div>
+</div>
+<div class="findbar"><div class="wrap findbar-in">
+<div class="searchbar"><input id="q" type="search" placeholder="Search {len(listings)} verified free things…" aria-label="Search listings"><span class="kbd">{len(listings)} verified</span></div>
+<div class="vfilters">
+<button class="vfilter on" data-v="all">All</button>
+<button class="vfilter" data-v="truly">Truly free <i>{genuine}</i></button>
+<button class="vfilter" data-v="forever">Free forever <i>{forever_n}</i></button>
+<button class="vfilter" data-v="freeish">Free-ish <i>{squeeze}</i></button>
+<button class="vfilter" data-v="trap,fake,notfree">Traps &amp; fakes <i>{traps}</i></button>
+</div>
+<p class="count" id="count"></p>
+</div></div>
+<main class="wrap" id="categories">
+{sections}
+<p class="noresults" id="noresults">Nothing by that name yet. <a href="mailto:hello@veri-free.com">Suggest it</a> and we'll verify it.</p>
+</main>"""
+    p_all = page_nav(f"Every Verdict — all {len(listings)} checked — Verified Free",
+                     f"All {len(listings)} listings, searchable and filterable by verdict and category.",
+                     "/all/", all_body)
+    os.makedirs(os.path.join(OUT, "all"), exist_ok=True)
+    open(os.path.join(OUT, "all", "index.html"), "w").write(p_all)
+
     # ---------- free in real life ----------
     irl = data.get("irl", [])
     if irl:
@@ -2523,7 +2559,7 @@ Verified Free
                 shutil.copy2(src_f, os.path.join(OUT, f))
             elif os.path.isdir(src_f):
                 shutil.copytree(src_f, os.path.join(OUT, f), dirs_exist_ok=True)
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/coupons/", f"{DOMAIN}/free-consultations/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
+    urls = [f"{DOMAIN}/", f"{DOMAIN}/all/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/coupons/", f"{DOMAIN}/free-consultations/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
     if comparisons:
         urls.extend(comp_urls[1:])  # skip /compare/ already added
     from datetime import date

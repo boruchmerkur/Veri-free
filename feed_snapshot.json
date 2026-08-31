@@ -1,69 +1,183 @@
 {
- "updated": "2026-08-28T16:42:46.883161+00:00",
+ "updated": "2026-08-31T17:04:50.356504+00:00",
  "items": [
   {
-   "title": "I replaced Excel with this open-source alternative for a week—I wasn't ready for the difference",
-   "url": "https://www.howtogeek.com/microsoft-excel-replaced-with-onlyoffice-spreadsheet/",
-   "source": "How-To Geek",
+   "title": "I capped CPU and RAM on my Docker containers, and my entire self-hosted homelab became reliable",
+   "url": "https://www.xda-developers.com/capped-cpu-ram-docker-containers-self-hosted-homelab-became-reliable/",
+   "source": "XDA",
    "kind": "article",
-   "image": "https://static0.howtogeekimages.com/wordpress/wp-content/uploads/wm/2026/08/laptop-screen-with-onlyoffice-spreadsheet-displaying-the-a-table-containing-rows-of-sales-data.jpg",
-   "summary": "Many of ONLYOFFICE's core spreadsheet tools worked, but even basic Excel workflows became increasingly frustrating to reproduce.",
-   "date": "2026-08-28T16:30:13+00:00",
+   "image": "https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2026/08/homelab-server-beszel-dashboard-hero.jpeg",
+   "summary": "The server didn't need to be stronger, just fairer.",
+   "date": "2026-08-31T17:00:16+00:00",
    "score": 8,
    "tags": [
     "LICENSE"
    ]
   },
   {
-   "title": "I tried Cloudflare Tunnel, Tailscale, and WireGuard for remote access—this self-hosted hybrid won me over",
-   "url": "https://www.howtogeek.com/i-tried-cloudflare-tunnel-tailscale-and-wireguard-for-remote-accessone-was-clearly-better-for-my-setup/",
-   "source": "How-To Geek",
+   "title": "Privacy on the Map (Part 2): Progress, Pitfalls, and the Fight for Enforceable Location Data Protections",
+   "url": "https://www.eff.org/deeplinks/2026/08/privacy-map-part-2-progress-pitfalls-and-fight-enforceable-location-data",
+   "source": "EFF",
    "kind": "article",
-   "image": "https://static0.howtogeekimages.com/wordpress/wp-content/uploads/wm/2026/08/cloudflare-tunnel-vs-wireguard-vs-tailscale.png",
-   "summary": "The obvious answer worked fine but the less obvious one was much harder to give up!",
-   "date": "2026-08-28T16:00:13+00:00",
-   "score": 8,
+   "image": "",
+   "summary": "Regulating commercial location tracking has reached a turning point. Last year, we published our rubric for what comprehensive and protective location privacy laws should look like, outlining the baseline standards states should meet to shield individuals from pervasive location surveillance. Since then, state lawmakers across the country have begun responding to calls like these, with Connecticut , Maryland , New Jersey , Oregon , and Virginia enacting new consumer privacy restraints on an industry that profits off our physical movements. Yet, even as these states move the ball forward to res",
+   "date": "2026-08-31T16:49:34+00:00",
+   "score": 9,
    "tags": [
+    "ENFORCEMENT",
+    "PRIVACY"
+   ]
+  },
+  {
+   "title": "OpenClaw is yesterday’s hype and today’s AI blueprint",
+   "url": "https://www.pcworld.com/article/3223720/openclaw-is-yesterdays-hype-and-todays-ai-blueprint.html",
+   "source": "PCWorld",
+   "kind": "article",
+   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3223720-0-23962600-1788191879-Openclaw-2-0.jpg?quality=50&strip=all",
+   "summary": "Remember OpenClaw? A humble AI tool that lived on your computer and did your bidding while you slept, OpenClaw went from zero to hero in the early weeks of 2026, blowing people’s minds with its impressive — and scary — agentic AI abilities while inspiring “claw” clones left and right. Roughly eight months after its astonishing debut, the OpenClaw hype has largely faded, and not even the release of OpenClaw 2.0 , complete with bolstered security and easier user onboarding, is likely to vault OpenClaw back into the limelight. But while OpenClaw isn’t on everyone’s lips anymore, the arrival of it",
+   "date": "2026-08-31T15:57:42+00:00",
+   "score": 9,
+   "tags": [
+    "SUBSCRIPTION",
     "LICENSE"
    ]
   },
   {
-   "title": "Apple TV raises prices, but there's a smarter way to pay",
-   "url": "https://www.howtogeek.com/apple-tv-raises-prices-but-theres-a-smarter-way-to-pay/",
-   "source": "How-To Geek",
-   "kind": "article",
-   "image": "https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2025/11/apple-tv-logo-centered-with-curved-film-strips-surrounding-it.png",
-   "summary": "Ad-free streaming, five-member sharing, and a strong library still make the price hike easier to swallow.",
-   "date": "2026-08-28T15:23:13+00:00",
-   "score": 12,
-   "tags": [
-    "PRICE CHANGE"
-   ]
-  },
-  {
-   "title": "Price increases suddenly hit Apple TV and Apple One",
-   "url": "https://www.engadget.com/2246336/price-increases-suddenly-hit-apple-tv-and-apple-one/",
-   "source": "Engadget",
-   "kind": "article",
-   "image": "https://www.engadget.com/img/gallery/price-increases-suddenly-hit-apple-tv-and-apple-one/l-intro-1787927378.jpg",
-   "summary": "You might have to pay a bit more to catch the end of the latest Ted Lasso season.",
-   "date": "2026-08-28T14:37:58+00:00",
-   "score": 12,
-   "tags": [
-    "PRICE CHANGE"
-   ]
-  },
-  {
-   "title": "Apple TV is raising its subscription prices again",
-   "url": "https://techcrunch.com/2026/08/28/apple-tv-is-raising-its-subscription-prices-again/",
+   "title": "Meeting note-taker Circleback adds a free tier to attract more customers",
+   "url": "https://techcrunch.com/2026/08/31/meeting-notetaker-circleback-adds-a-free-tier-to-attract-more-customers/",
    "source": "TechCrunch",
    "kind": "article",
    "image": "",
-   "summary": "Now, Apple TV subscriptions will cost $14.99 per month, up from its previous price of $12.99 per month.",
-   "date": "2026-08-28T14:36:48+00:00",
+   "summary": "Circleback is also introducing new pricing plans starting from $14 per month.",
+   "date": "2026-08-31T12:56:46+00:00",
+   "score": 12,
+   "tags": [
+    "FREE TIER"
+   ]
+  },
+  {
+   "title": "This is your last chance to buy the Switch 2 before the price hike",
+   "url": "https://www.tomsguide.com/gaming/nintendo/you-have-less-than-24-hours-to-buy-a-switch-2-before-its-price-increases",
+   "source": "Tom's Guide",
+   "kind": "article",
+   "image": "https://cdn.mos.cms.futurecdn.net/rnwVH5F7Rp4PfBRgCbhfNa-1280-80.jpg",
+   "summary": "Today is your last day to buy a Switch 2 before Nintendo increases its price. Here are the stores that still have stock and aren't overcharging for the console.",
+   "date": "2026-08-31T12:00:00+00:00",
+   "score": 12,
+   "tags": [
+    "PRICE CHANGE"
+   ]
+  },
+  {
+   "title": "Meta’s $18 billion payout isn’t enough to save our kids",
+   "url": "https://www.pcworld.com/article/3223024/metas-18-billion-payout-isnt-enough-to-save-our-kids.html",
+   "source": "PCWorld",
+   "kind": "article",
+   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3223024-0-44159400-1788177627-shutterstock_2564867453.jpg?quality=50&strip=all",
+   "summary": "I’m not a parent, but I’m looking at the Meta settlement wondering if our kids are any safer. If you haven’t heard already, Meta agreed last Wednesday to settle a lawsuit over Facebook and Instagram’s affect on children. Brought by 47 states, Washington D.C., and several U.S. territories, the suit alleged that Meta purposely made its platforms addictive to kids, ultimately causing negative mental health outcomes like anxiety, depression, and even suicide. Four states (California, Colorado, Kentucky, and New Jersey) also alleged that Meta violated state consumer protection laws. Welcome to Safe",
+   "date": "2026-08-31T12:00:00+00:00",
+   "score": 12,
+   "tags": [
+    "ENFORCEMENT",
+    "PRIVACY",
+    "SCAM"
+   ]
+  },
+  {
+   "title": "Today only: Get GPT, Claude, Gemini, and more for life for $80",
+   "url": "https://www.pcworld.com/article/3221610/today-only-get-gpt-claude-gemini-and-more-for-life-for-80.html",
+   "source": "PCWorld",
+   "kind": "article",
+   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3221610-0-95004400-1788076880-1minAI_fd9ca7.jpg?quality=50&strip=all",
+   "summary": "TL;DR : 1min.AI puts writing, image, audio, video, and PDF AI tools in one app, and a lifetime Advanced Business Plan is only $79.99 today. Running separate subscriptions for all your different AI models could cost you hundreds every year. Instead of paying individually for GPT, Gemini, Claude, and all the rest, get them for life through 1min.AI . This new AI platform gives you access to dozens of the most popular AI models, and for today only, it’s just $79.99 (reg. $540). One login gets you a wide range of top AI models, including GPT-5.5 Pro, Claude 4.6 Sonnet, and Gemini 3.1 Pro, so you’re",
+   "date": "2026-08-30T08:00:00+00:00",
+   "score": 8,
+   "tags": [
+    "SUBSCRIPTION",
+    "ALTERNATIVE"
+   ]
+  },
+  {
+   "title": "For 2 days, a Microsoft Office lifetime license is just $50",
+   "url": "https://www.pcworld.com/article/3221633/for-2-days-a-microsoft-office-lifetime-license-is-just-50.html",
+   "source": "PCWorld",
+   "kind": "article",
+   "image": "https://www.pcworld.com/wp-content/uploads/2026/08/3221633-0-70737600-1788076881-mso-2024-Pro-Plus-3.jpg?quality=50&strip=all",
+   "summary": "TL;DR: Get Word, Excel, PowerPoint, and the rest of Office 2024 Pro Plus for life for $49.97 (reg. $249.99) through September 1. Paying monthly for software you’ll use indefinitely doesn’t make sense. That’s why more people are cancelling Microsoft 365 in favor of lifetime licenses like this one for Microsoft Office 2024 , and it’s even on sale for $49.97 (reg. $249.99). Your one-time payment gets you Word, Excel, PowerPoint, Outlook, OneNote, and Access. There’s no subscription, so you can keep working without worrying about how much you’re paying just to be productive. This version sticks to",
+   "date": "2026-08-30T08:00:00+00:00",
+   "score": 8,
+   "tags": [
+    "SUBSCRIPTION",
+    "ALTERNATIVE"
+   ]
+  },
+  {
+   "title": "SLOP FILTER TIME!",
+   "url": "https://www.youtube.com/watch?v=b0OuoDtkpBA",
+   "source": "TechLinked",
+   "kind": "video",
+   "image": "https://i3.ytimg.com/vi/b0OuoDtkpBA/hqdefault.jpg",
+   "summary": "Traditional carriers track your data. Cape protects it with built-in privacy features like IMSI rotation and last-mile encrypted texting. Use code TECHLINKED and get 33% off your first 6 months: https://cape.co/techlinked App Download Links: Apple: https://lmg.gg/CapeIOS Google: https://lmg.gg/CapeAndroid Cape is also now available on the Accrescent App Store: https://accrescent.app/ NEWS SOURCES: https://lmg.gg/4zAv1 ► SHOP OUR PRODUCTS: https://lttstore.com ► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane ► GET A VPN: https://www.piavpn.com/TechLinked ► LISTEN TO THE TECH ",
+   "date": "2026-08-28T23:30:32+00:00",
+   "score": 8,
+   "tags": [
+    "CANCEL IT",
+    "PRIVACY"
+   ]
+  },
+  {
+   "title": "Doxxing Safety Part II: Incident Response",
+   "url": "https://www.eff.org/deeplinks/2026/08/doxxing-safety-part-ii-incident-response",
+   "source": "EFF",
+   "kind": "article",
+   "image": "https://www.eff.org/files/banner_library/communityprivacy-kittens.jpg",
+   "summary": "Doxxing, also known as the deliberate sharing of personal information to harass or endanger someone, is a tricky thing to protect against. It often happens by some ill-intentioned person accessing publicly available information, then sharing that information more widely in the hopes it will intimidate their target or worse. This guide is a followup from a previous post that describes a methodology for you to clean up your digital footprint and get a firm entry into the art of open source intelligence. There's a slight bit of repetition here, but with a slant towards using those now-familiar to",
+   "date": "2026-08-28T19:02:37+00:00",
+   "score": 21,
+   "tags": [
+    "SUBSCRIPTION",
+    "SHUTTING DOWN",
+    "LICENSE"
+   ]
+  },
+  {
+   "title": "Apple One and Apple TV subscription prices increase by up to 20 percent",
+   "url": "https://arstechnica.com/gadgets/2026/08/apple-one-and-apple-tv-subscription-prices-increase-by-up-to-20-percent/",
+   "source": "Ars Technica",
+   "kind": "article",
+   "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/04/silo-500x500.jpg",
+   "summary": "Annual Apple TV subscriptions get the biggest bump.",
+   "date": "2026-08-28T17:23:53+00:00",
    "score": 10,
    "tags": [
     "SUBSCRIPTION"
+   ]
+  },
+  {
+   "title": "Everything to know about SteamOS",
+   "url": "https://www.youtube.com/watch?v=qz9DvI-NY6k",
+   "source": "Techquickie",
+   "kind": "video",
+   "image": "https://i2.ytimg.com/vi/qz9DvI-NY6k/hqdefault.jpg",
+   "summary": "Secure your business with ThreatLocker today using our link: https://www.threatlocker.com/ltt and learn more about how ThreatLocker can help your business safely integrate AI agenic tools here: https://www.threatlocker.com/blog/applying-threatlocker-to-agentic-ai-tools For years, SteamOS only came on a handheld Valve blessed, while your gaming PC stayed stuck with Windows. Then Valve launched the Steam Machine - and quietly unlocked SteamOS 3.8 for any PC, completely free. We break down what actually makes SteamOS tick, walk through the gloriously janky install process (yes, you'll be editing ",
+   "date": "2026-08-28T17:00:41+00:00",
+   "score": 9,
+   "tags": [
+    "LICENSE",
+    "FREE PICK"
+   ]
+  },
+  {
+   "title": "Sony's job listings tell me Playstations are getting more ads 🤦",
+   "url": "https://www.youtube.com/watch?v=KkKaUKHNQ4c",
+   "source": "Louis Rossmann",
+   "kind": "video",
+   "image": "https://i4.ytimg.com/vi/KkKaUKHNQ4c/hqdefault.jpg",
+   "summary": "https://consumerrights.wiki/w/User:Louis/Sony_PlayStation_advertising_expansion https://youtu.be/ua_QL9YysHQ https://www.youtube.com/watch?v=VIhdqHsoTDM",
+   "date": "2026-08-28T17:00:36+00:00",
+   "score": 10,
+   "tags": [
+    "ADS ADDED"
    ]
   },
   {
@@ -77,46 +191,6 @@
    "score": 12,
    "tags": [
     "PRICE CHANGE"
-   ]
-  },
-  {
-   "title": "My ISP's limitations vanished the moment I flashed my router with open-source firmware",
-   "url": "https://www.xda-developers.com/isps-limitations-vanished-flashed-router-with-open-source-firmware/",
-   "source": "XDA",
-   "kind": "article",
-   "image": "https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2026/08/tp-link-archer-c6-router.jpeg",
-   "summary": "The limitations were real. They just weren't the ISP's.",
-   "date": "2026-08-28T14:00:15+00:00",
-   "score": 8,
-   "tags": [
-    "LICENSE"
-   ]
-  },
-  {
-   "title": "Apple TV now costs $14.99 a month after its fourth price hike in four years",
-   "url": "https://www.theverge.com/tech/986130/apple-tv-plus-price-hike",
-   "source": "The Verge",
-   "kind": "article",
-   "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/Severance_Photo_021019.jpg?quality=90&strip=all&crop=0,0,100,100",
-   "summary": "Apple raised the price of its streaming service for new and current subscribers on Friday, bumping it up from $12.99 per month to $14.99, Deadline and Variety are reporting. An annual subscription now costs $119, up from $99. Apple also increased the cost of its individual Apple One subscription, which includes Apple TV and Apple's […]",
-   "date": "2026-08-28T13:47:36+00:00",
-   "score": 17,
-   "tags": [
-    "PRICE CHANGE",
-    "SUBSCRIPTION"
-   ]
-  },
-  {
-   "title": "Get your Windows license refund",
-   "url": "https://en.refund4freedom.org/",
-   "source": "Hacker News",
-   "kind": "article",
-   "image": "",
-   "summary": "Article URL: https://en.refund4freedom.org/ Comments URL: https://news.ycombinator.com/item?id=49478340 Points: 261 # Comments: 87",
-   "date": "2026-08-28T13:42:40+00:00",
-   "score": 10,
-   "tags": [
-    "CANCEL IT"
    ]
   },
   {
@@ -134,68 +208,16 @@
    ]
   },
   {
-   "title": "Buried in Meta’s $18B settlement is a legal pass on kids’ data",
-   "url": "https://techcrunch.com/2026/08/27/buried-in-metas-18b-settlement-is-a-legal-pass-on-kids-data/",
-   "source": "TechCrunch",
-   "kind": "article",
-   "image": "",
-   "summary": "Meta’s settlement with 29 states allows it to retain certain data from children under 13 to train and test age-detection models, highlighting a privacy trade-off built into the deal.",
-   "date": "2026-08-27T20:04:26+00:00",
-   "score": 12,
-   "tags": [
-    "ENFORCEMENT"
-   ]
-  },
-  {
-   "title": "Panic passes Trump tariff refunds back to the Playdate customers who paid them",
-   "url": "https://arstechnica.com/gaming/2026/08/panic-refunds-illegal-tariffs-customers-paid-on-its-playdate-gaming-handheld/",
-   "source": "Ars Technica",
-   "kind": "article",
-   "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/playdate-500x500.jpeg",
-   "summary": "\"It just felt like the right thing to do.\"",
-   "date": "2026-08-27T14:53:17+00:00",
-   "score": 10,
-   "tags": [
-    "CANCEL IT"
-   ]
-  },
-  {
    "title": "The ‘cheap smartphone era is over’ and price hikes are ‘permanent,’ bleak forecast reveals",
    "url": "https://9to5google.com/2026/08/26/smartphone-price-hikes-forecast/",
    "source": "9to5Google",
    "kind": "article",
    "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/08/Pixel-11-Pro-XL-and-iPhone-17-Pro-Max-design-2.jpg?quality=82&strip=all&w=1600",
-   "summary": "According to the latest analyst forecasts, higher smartphone prices won’t be changing anytime soon amid a record-setting drop in shipments.",
+   "summary": "According to the latest analyst forecasts, higher smartphone prices won’t be changing anytime soon amid a record-setting drop in shipments. more…",
    "date": "2026-08-26T21:05:00+00:00",
    "score": 12,
    "tags": [
     "PRICE CHANGE"
-   ]
-  },
-  {
-   "title": "Android phones could soon gain the power to shut down, restart, or put your PC to sleep remotely",
-   "url": "https://www.androidauthority.com/phone-link-remote-shutdown-restart-sleep-3703529/",
-   "source": "Android Authority",
-   "kind": "article",
-   "image": "https://www.androidauthority.com/wp-content/uploads/2025/07/microsoft-phone-link-to-windows-on-Android-scaled.jpg",
-   "summary": "Phone Link's next trick could be remotely controlling PC power management with your Android phone.",
-   "date": "2026-08-26T19:29:03+00:00",
-   "score": 12,
-   "tags": [
-    "SHUTTING DOWN"
-   ]
-  },
-  {
-   "title": "Meta's proposed $18B settlement in teen harm case throws YouTube and TikTok under the bus, too",
-   "url": "https://www.theregister.com/legal/2026/08/26/metas-proposed-18b-settlement-in-teen-harm-case-throws-youtube-and-tiktok-under-the-bus-too/5292665",
-   "source": "The Register",
-   "kind": "article",
-   "image": "https://image.theregister.com/?imageId=259975&width=800",
-   "summary": "Zuckercorp ties $5.3B of its payout to rivals playing along",
-   "date": "2026-08-26T16:41:04+00:00",
-   "score": 12,
-   "tags": [
-    "ENFORCEMENT"
    ]
   },
   {
@@ -217,47 +239,8 @@
    "source": "9to5Google",
    "kind": "article",
    "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/08/galaxy-s27-ultra-onl-2.webp?w=1600",
-   "summary": "Samsung’s new Galaxy S27 Ultra is getting a massive redesign and, thanks to the latest leak, we’ve got a better look at what to expect, but we’re also now bracing for a major price hike.",
+   "summary": "Samsung’s new Galaxy S27 Ultra is getting a massive redesign and, thanks to the latest leak, we’ve got a better look at what to expect, but we’re also now bracing for a major price hike. more…",
    "date": "2026-08-25T14:00:00+00:00",
-   "score": 12,
-   "tags": [
-    "PRICE CHANGE"
-   ]
-  },
-  {
-   "title": "Amazon’s price hikes #Vergecast",
-   "url": "https://www.youtube.com/shorts/bSeISuhcGWQ",
-   "source": "The Verge",
-   "kind": "video",
-   "image": "https://i3.ytimg.com/vi/bSeISuhcGWQ/hqdefault.jpg",
-   "summary": "Amazon’s price hikes. Netflix considers opening its app to other streamers. Humanoid robots smash Usain Bolt’s 100-meter record. Here are today’s top headlines. Subscribe: http://goo.gl/G5RXGs Like The Verge on Facebook: https://goo.gl/2P1aGc Follow on Twitter: https://goo.gl/XTWX61 Follow on Instagram: https://goo.gl/7ZeLv Watch The Vergecast on YouTube: https://bit.ly/40RFRkg The Vergecast Podcast: https://bit.ly/3WQDexZ Decoder with Nilay Patel: http://apple.co/3v29nDc More about our podcasts: https://www.theverge.com/podcasts Read More: http://www.theverge.com Community guidelines: http://",
-   "date": "2026-08-24T20:57:25+00:00",
-   "score": 12,
-   "tags": [
-    "PRICE CHANGE"
-   ]
-  },
-  {
-   "title": "YouTube Premium is getting another price hike for some users all around the world",
-   "url": "https://9to5google.com/2026/08/21/youtube-premium-price-hike-europe-other-regions/",
-   "source": "9to5Google",
-   "kind": "article",
-   "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/05/youtube-premium.jpg?quality=82&strip=all&w=1600",
-   "summary": "Hot on the heels of a US price hike earlier this year, YouTube Premimum is getting a higher price in countries all over the world, Google is confirming to users.",
-   "date": "2026-08-21T15:25:00+00:00",
-   "score": 12,
-   "tags": [
-    "PRICE CHANGE"
-   ]
-  },
-  {
-   "title": "Galaxy Tab S12 series reportedly gets a price hike, but it’s not as bad as it could be",
-   "url": "https://9to5google.com/2026/08/20/samsung-galaxy-tab-s12-price-leaks/",
-   "source": "9to5Google",
-   "kind": "article",
-   "image": "https://9to5google.com/wp-content/uploads/sites/4/2025/09/galaxy-tab-s11-2.jpg?quality=82&strip=all&w=1600",
-   "summary": "As with everything else, Samsung’s upcoming Galaxy Tab S12 series will be more expensive, but it could be a whole lot worse.",
-   "date": "2026-08-20T17:05:00+00:00",
    "score": 12,
    "tags": [
     "PRICE CHANGE"
@@ -274,19 +257,6 @@
    "score": 12,
    "tags": [
     "ENFORCEMENT"
-   ]
-  },
-  {
-   "title": "lemon gets cease & desist from company selling subscriptions to car manuals",
-   "url": "https://www.youtube.com/watch?v=Awe6o9TemlQ",
-   "source": "Louis Rossmann",
-   "kind": "video",
-   "image": "https://i2.ytimg.com/vi/Awe6o9TemlQ/hqdefault.jpg",
-   "summary": "https://consumerrights.wiki/w/User:Louis/Car_service_manuals,_MVBER,_and_the_repair_information_gap",
-   "date": "2026-08-18T11:57:34+00:00",
-   "score": 10,
-   "tags": [
-    "SUBSCRIPTION"
    ]
   },
   {
@@ -358,34 +328,6 @@
    ]
   },
   {
-   "title": "Hundreds of Drone-as-First-Responder Programs Could Soon Be Launched Across the Country",
-   "url": "https://www.eff.org/deeplinks/2026/07/hundreds-drone-first-responder-programs-could-soon-be-launched-across-country",
-   "source": "EFF",
-   "kind": "article",
-   "image": "https://www.eff.org/files/banner_library/drone-police-by-shelby-criswell.png",
-   "summary": "Police departments across the country are lining up to launch drone-as-first-responder (DFR) programs, and hundreds have cleared a necessary hurdle toward making deployment a reality, expanding aerial surveillance and data collection even in areas patrol officers typically can't reach. As of February 2026, over 1,000 public safety agencies —including police, fire, and other emergency management agencies—had received Federal Aviation Administration (FAA) waivers needed to automate drone operations and launch a DFR program, according to a recent Freedom of Information Act (FOIA) release listing ",
-   "date": "2026-07-23T22:00:00+00:00",
-   "score": 9,
-   "tags": [
-    "SHUTTING DOWN",
-    "PRIVACY"
-   ]
-  },
-  {
-   "title": "Sony Nerfs Videogame Ownership",
-   "url": "https://www.eff.org/deeplinks/2026/07/sony-nerfs-videogame-ownership",
-   "source": "EFF",
-   "kind": "article",
-   "image": "https://www.eff.org/files/banner_library/videogame.png",
-   "summary": "Legal intern Suzanne Castillo co-authored of this post. Playstation’s decision to kill physical game discs is the latest attack on our diminishing rights to access and engage with culture digitally. Rent-seeking corporations and negligent lawmakers share the blame — and they can do better. We’ve seen the same playbook used in the move to digital distribution of film, TV, and music: draw in customers with the convenience of a digital download, then limit physical access and move the goalpost on what it actually means to “own” a piece of media. The end goal is to turn the customer into a renter ",
-   "date": "2026-07-13T17:30:45+00:00",
-   "score": 11,
-   "tags": [
-    "SUBSCRIPTION",
-    "SHUTTING DOWN"
-   ]
-  },
-  {
    "title": "CFPB Reaches Settlement with FirstCash, Inc. and Its Subsidiaries for Military Lending Act Violations",
    "url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-reaches-settlement-with-firstcash-inc-and-its-subsidiaries-for-military-lending-act-violations/",
    "source": "CFPB",
@@ -399,7 +341,5 @@
    ]
   }
  ],
- "errors": [
-  "PCWorld: TimeoutError"
- ]
+ "errors": []
 }

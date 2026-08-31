@@ -36,14 +36,14 @@ a{color:inherit}
 .logo{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px;letter-spacing:.14em;text-decoration:none;border:2px solid var(--ink);padding:4px 10px;border-radius:5px;display:inline-flex;gap:0;align-items:center}
 .logo b{color:var(--brand)}
 .nav-links{display:flex;gap:18px;align-items:center;height:52px}
-.nav-links a{font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);line-height:52px}
+.nav-links a{flex:0 0 auto;white-space:nowrap;font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);line-height:52px}
 .nav-links a:hover{color:var(--ink)}
 /* The nav row has never had a small-screen rule, so it simply overflowed the
    page — adding a link made that visible. Let it scroll instead of pushing
    the document wider than the viewport. */
-@media(max-width:820px){
+@media(max-width:1080px){
 .nav-in{gap:12px}
-.nav-links{gap:15px;flex:1;min-width:0;overflow-x:auto;justify-content:flex-end;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+.nav-links{gap:15px;flex:1;min-width:0;overflow-x:auto;justify-content:flex-start;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-links a{white-space:nowrap}
 }
@@ -105,7 +105,11 @@ a{color:inherit}
 .sortbar{display:none}
 /* side legend */
 .side-legend{position:fixed;top:100px;right:0;z-index:15;transition:transform .25s ease}
-.side-legend.closed{transform:translateX(calc(100% - 32px))}
+/* Fully off-screen, not 100%-minus-32px. The tab is absolutely positioned at
+   left:-32px, i.e. OUTSIDE the panel, so it stays visible on its own — the
+   32px allowance just left a strip of the panel body showing at the right
+   edge, with chips half-cut. */
+.side-legend.closed{transform:translateX(100%)}
 .side-legend .sl-tab{position:absolute;left:-32px;top:0;width:32px;height:100px;background:var(--ink);color:var(--paper);border-radius:6px 0 0 6px;cursor:pointer;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .side-legend .sl-body{background:var(--card);border:1.5px solid var(--line);border-right:0;border-radius:10px 0 0 10px;padding:14px 16px;width:240px;box-shadow:-4px 0 16px rgba(0,0,0,.06);max-height:calc(100vh - 120px);overflow-y:auto}
 .side-legend h2{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
@@ -380,6 +384,16 @@ body.loc-ca .ca-badge{display:inline-flex}
 /* same-publisher disclosure, above the pitch rather than under it */
 .ddisc{margin:0 0 10px;font-size:12.5px;line-height:1.5;color:#A05E03;background:#F7EDDC;border-left:3px solid #A05E03;padding:7px 11px;border-radius:0 6px 6px 0}
 .ddisc::before{content:"Disclosure — ";font-weight:700}
+/* common questions */
+.faqs{margin:26px 0 0}
+.faqs h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 10px}
+.faq-q{border-bottom:1px solid var(--line)}
+.faq-q>summary{cursor:pointer;list-style:none;padding:11px 0;font-weight:600;font-size:15.5px;line-height:1.4;display:flex;gap:10px;align-items:baseline}
+.faq-q>summary::-webkit-details-marker{display:none}
+.faq-q>summary::before{content:"+";font-family:"IBM Plex Mono",monospace;color:var(--brand);font-weight:700;flex-shrink:0}
+.faq-q[open]>summary::before{content:"−"}
+.faq-q>summary:hover{color:var(--brand)}
+.faq-a{padding:0 0 13px 22px;font-size:14.5px;line-height:1.65;color:var(--muted);max-width:70ch}
 /* comparable free-tier spec */
 .freespec{margin:26px 0 0;border:1.5px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--card)}
 .freespec h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px}
@@ -407,6 +421,77 @@ body.loc-ca .ca-badge{display:inline-flex}
 .cmp-table tbody tr:last-child th,.cmp-table tbody tr:last-child td{border-bottom:0}
 .cmp-table .sv{font-size:13px;border-left-width:3px;padding-left:8px}
 @media(max-width:560px){.freespec td.k{width:auto;display:block;padding-bottom:0;border:0}.freespec td{display:block}.freespec tr{display:block;border-bottom:1px solid var(--line);padding:6px 0}}
+/* Folded page rationale. The reasoning behind a page is worth keeping and
+   worth reading once — it is not worth 130 words of the first screen every
+   time. Available in one click, invisible otherwise. */
+.pagenote{max-width:720px;margin:0 0 20px;border-left:3px solid var(--line);padding:0 0 0 14px}
+.pagenote>summary{cursor:pointer;list-style:none;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:3px 0}
+.pagenote>summary::-webkit-details-marker{display:none}
+.pagenote>summary::after{content:" +";font-weight:700}
+.pagenote[open]>summary::after{content:" −"}
+.pagenote>summary:hover{color:var(--brand)}
+.pagenote .pn-body{padding:8px 0 4px;font-size:14.5px;line-height:1.65;color:var(--muted);max-width:68ch}
+.pagenote .pn-body p{margin:0 0 11px}
+.pagenote .pn-body p:last-child{margin:0}
+/* tighter page heads — the h1 and one line, then the content */
+.pagehead.tight{padding-top:34px;padding-bottom:6px}
+.pagehead.tight p{margin:10px 0 14px;font-size:16.5px}
+/* per-listing verification age */
+.checked .ck-date{font-weight:600}
+.checked .ck-date.fresh{color:var(--ink)}
+.checked .ck-flag{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin-left:7px;color:var(--muted);cursor:help}
+.checked .ck-flag.due{color:#A05E03;border-color:#A05E03;background:#F7EDDC}
+/* "we checked this" — the door back into our own verdicts */
+.st-ours{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 10px;padding:8px 11px;border:1.5px solid var(--line);border-radius:9px;background:var(--paper);text-decoration:none;transition:border-color .12s,background .12s}
+.st-ours:hover{border-color:var(--ink);background:var(--card)}
+.so-lbl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.so-name{font-weight:700;font-size:13.5px;color:var(--ink)}
+.so-verdict{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1.5px solid;margin-left:auto;white-space:nowrap}
+.so-verdict.v-truly{color:#0E7B47;border-color:#0E7B47;background:#E4F2EA}
+.so-verdict.v-forever{color:#0A6E8A;border-color:#0A6E8A;background:#E2EFF4}
+.so-verdict.v-freeish{color:#A05E03;border-color:#A05E03;background:#F7EDDC}
+.so-verdict.v-trap,.so-verdict.v-fake,.so-verdict.v-notfree{color:#B3261E;border-color:#B3261E;background:#F9E3E1}
+/* landing handoff into the directory */
+.handoff{padding:34px 0 46px}
+.handoff-card{display:block;max-width:720px;border:2.5px solid var(--ink);border-radius:14px;padding:22px 26px;background:var(--card);text-decoration:none;transition:background .12s,transform .12s}
+.handoff-card:hover{background:var(--paper);transform:translateY(-2px)}
+.ho-k{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.ho-h{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(21px,2.5vw,28px);letter-spacing:-.015em;color:var(--ink);margin:6px 0 10px;line-height:1.15}
+.ho-n{display:block;font-size:14.5px;color:var(--muted);line-height:1.6}
+.ho-n b{color:var(--ink)}
+.handoff .ho-go{display:inline-block;margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--brand)}
+.handoff-card:hover .ho-go{text-decoration:underline}
+/* homepage: thin, prominent find bar — the product, one band deep */
+.hero.slim{padding:20px 0 12px}
+.hero.slim .hero-top{align-items:baseline;gap:6px 14px}
+.hero.slim .sub{margin:0;font-size:15px;color:var(--muted);flex-basis:100%}
+@media(min-width:900px){.hero.slim .sub{flex-basis:auto}}
+/* Deliberately NOT sticky. .site-header is already sticky at top:0, so a
+   second sticky band would pin on top of the nav — and the header's height
+   is not fixed (the wrapping category bar runs ~300px on a phone), so there
+   is no honest `top` value to offset by. Prominence comes from the rules. */
+.findbar{background:var(--paper);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink)}
+.findbar-in{display:flex;align-items:center;gap:12px 16px;padding:10px 22px;flex-wrap:wrap}
+.findbar .searchbar{margin:0;flex:1 1 300px;min-width:0;border-width:2px;border-radius:10px}
+.findbar .searchbar input{padding:9px 13px;font-size:15px}
+.findbar .vfilters{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.findbar .vfilter{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.03em;padding:6px 11px;border-radius:99px;border:1.5px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all .12s}
+.findbar .vfilter i{font-style:normal;opacity:.6;margin-left:4px}
+.findbar .vfilter:hover{border-color:var(--ink);color:var(--ink)}
+.findbar .vfilter.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.findbar .vfilter.on i{opacity:.75}
+.findbar-jump{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.05em;text-decoration:none;color:var(--brand);white-space:nowrap;margin-left:auto}
+.findbar-jump:hover{text-decoration:underline}
+/* homepage stream slice */
+.homestream{padding:26px 0 6px}
+.hs-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 16px}
+.hs-head h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;margin:0}
+.hs-when{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+.hs-all{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.05em;text-decoration:none;color:var(--brand);margin-left:auto;white-space:nowrap}
+.hs-all:hover{text-decoration:underline}
+.verdicts-head{padding:34px 0 4px;border-top:2.5px solid var(--ink);margin-top:26px}
+.verdicts-head h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.015em;margin:0}
+.verdicts-head p{margin:6px 0 0;color:var(--muted);font-size:15.5px}
 /* /now/ — the stream */
 .streamwrap{padding-top:18px}
 .st-strip{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;padding:0 0 20px;border-bottom:2.5px solid var(--ink);margin-bottom:22px;font-size:14.5px;color:var(--muted)}
@@ -490,7 +575,7 @@ body.loc-ca .ca-badge{display:inline-flex}
 .related{padding:10px 0 50px;border-top:1px solid var(--line);margin-top:44px}
 .related h2{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:22px 0 16px}
 /* category + method pages */
-.pagehead{padding:56px 0 8px}
+.pagehead{padding-top:56px;padding-bottom:8px}
 .pagehead h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(34px,5.5vw,56px);letter-spacing:-.015em;line-height:1.02}
 .pagehead p{margin:14px 0 22px;color:var(--muted);font-size:17.5px;max-width:58ch}
 .prose{max-width:680px;padding:8px 0 60px}
@@ -512,11 +597,11 @@ footer{border-top:2.5px solid var(--ink);margin-top:30px}
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "name": "Ocio — Verified Free", "url": "https://veri-free.com/es/leisure/", "inLanguage": "es", "description": "Planes gratis y las plataformas de ofertas — museos, quedadas, Groupon y tu biblioteca."}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veri-free.com/es/"}, {"@type": "ListItem", "position": 2, "name": "Ocio", "item": "https://veri-free.com/es/leisure/"}]}]}</script><link rel="alternate" hreflang="en" href="https://veri-free.com/leisure/"><link rel="alternate" hreflang="es" href="https://veri-free.com/es/leisure/"><link rel="alternate" hreflang="pt-BR" href="https://veri-free.com/pt/leisure/"><link rel="alternate" hreflang="fr" href="https://veri-free.com/fr/leisure/"><link rel="alternate" hreflang="de" href="https://veri-free.com/de/leisure/"><link rel="alternate" hreflang="x-default" href="https://veri-free.com/leisure/">
 </head>
 <body>
-<header class="site-header"><nav class="nav"><div class="wrap nav-in"><a class="logo" href="/es/">VERIFIED·<b>FREE</b></a><div class="nav-links"><div class="dropdown"><a href="/es/#categories">Categorías</a><div class="dropdown-menu"><div class="dd-inner"><a href="/es/software-tools/"><span class="cicon"><img src="/icons/software-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Software<span class="dd-count">42</span></a><a href="/es/business/"><span class="cicon"><img src="/icons/business.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Negocios<span class="dd-count">17</span></a><a href="/es/entertainment/"><span class="cicon"><img src="/icons/entertainment.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Streaming<span class="dd-count">15</span></a><a href="/es/ai-tools/"><span class="cicon"><img src="/icons/ai-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>IA<span class="dd-count">14</span></a><a href="/es/money-finance/"><span class="cicon"><img src="/icons/money-finance.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Finanzas<span class="dd-count">13</span></a><a href="/es/learning/"><span class="cicon"><img src="/icons/learning.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Aprendizaje<span class="dd-count">13</span></a><a href="/es/data-apis/"><span class="cicon"><img src="/icons/data-apis.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Datos y APIs<span class="dd-count">12</span></a><a href="/es/earn/"><span class="cicon"><img src="/icons/earn.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Ganar<span class="dd-count">12</span></a><a href="/es/books-reading/"><span class="cicon"><img src="/icons/books-reading.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Libros<span class="dd-count">9</span></a><a href="/es/leisure/"><span class="cicon"><img src="/icons/leisure.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Ocio<span class="dd-count">8</span></a><a href="/es/reviews/"><span class="cicon"><img src="/icons/reviews.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Reseñas<span class="dd-count">6</span></a><div class="sep"></div><a href="/deals/">Ofertas verificadas</a><a href="/compare/">Comparativas</a><a href="/changelog/">Qué cambió</a><a href="/when-to-buy/">Cuándo comprar</a></div></div></div><a href="/deals/">Ofertas</a><a href="/compare/">Comparar</a><a href="/methodology/">Cómo verificamos</a><a href="/submit/">Para empresas</a><div class="dropdown langdd"><a href="#" onclick="return false">🌐 ES</a><div class="dropdown-menu right"><div class="dd-inner"><a href="/">English</a><a href="/es/" class="cur">Español</a><a href="/pt/">Português</a><a href="/fr/">Français</a><a href="/de/">Deutsch</a></div></div></div></div></div></nav><div class="catbar"><div class="catbar-in"><div class="catfilters"><span class="pill-toggle reset on" id="catAll" role="button" tabindex="0" aria-pressed="true" data-all="Todo" data-none="Ninguno" data-tip-on="Desactivar todas las categorías" data-tip-off="Activar todas las categorías" data-tip="Desactivar todas las categorías" onclick="toggleAll()"><span class="pl">Todo</span><span class="pc">161</span></span><span class="pill-toggle on" data-cat="software-tools" data-tip="Editores, ofimática, VPN, almacenamiento, creadores de webs — las apps que todos dicen que son gratis." onclick="toggleCat(this)"><img src="/icons/software-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy">Software<span class="pc">42</span></span><span class="pill-toggle on" data-cat="business" data-tip="Las herramientas gratis que las empresas usan como puerta de entrada — verificamos si la puerta es real." onclick="toggleCat(this)"><img src="/icons/business.png" alt="" class="caticon" width="16" height="16" loading="lazy">Negocios<span class="pc">17</span></span><span class="pill-toggle on" data-cat="entertainment" data-tip="Cine, música y TV — gratis con anuncios, gratis con carné de biblioteca, o una prueba con mecha." onclick="toggleCat(this)"><img src="/icons/entertainment.png" alt="" class="caticon" width="16" height="16" loading="lazy">Streaming<span class="pc">15</span></span><span class="pill-toggle on" data-cat="ai-tools" data-tip="Chatbots, generadores de imágenes y hubs de modelos — qué niveles gratuitos son reales." onclick="toggleCat(this)"><img src="/icons/ai-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy">IA<span class="pc">14</span></span><span class="pill-toggle on" data-cat="money-finance" data-tip="Las apps financieras “gratis” siempre cobran de algún modo. Aquí te decimos cómo, una por una." onclick="toggleCat(this)"><img src="/icons/money-finance.png" alt="" class="caticon" width="16" height="16" loading="lazy">Finanzas<span class="pc">13</span></span><span class="pill-toggle on" data-cat="learning" data-tip="Cursos, certificados y apps de idiomas — dónde está realmente el muro de pago." onclick="toggleCat(this)"><img src="/icons/learning.png" alt="" class="caticon" width="16" height="16" loading="lazy">Aprendizaje<span class="pc">13</span></span><span class="pill-toggle on" data-cat="data-apis" data-tip="Conjuntos de datos, volcados y APIs para desarrolladores — qué niveles gratuitos son reales y cuáles murieron." onclick="toggleCat(this)"><img src="/icons/data-apis.png" alt="" class="caticon" width="16" height="16" loading="lazy">Datos y APIs<span class="pc">12</span></span><span class="pill-toggle on" data-cat="earn" data-tip="Formas legítimas de ganar dinero online — verificadas, con las estafas al descubierto." onclick="toggleCat(this)"><img src="/icons/earn.png" alt="" class="caticon" width="16" height="16" loading="lazy">Ganar<span class="pc">12</span></span><span class="pill-toggle on" data-cat="books-reading" data-tip="Ebooks y audiolibros — las bibliotecas gratuitas y las membresías disfrazadas." onclick="toggleCat(this)"><img src="/icons/books-reading.png" alt="" class="caticon" width="16" height="16" loading="lazy">Libros<span class="pc">9</span></span><span class="pill-toggle on" data-cat="leisure" data-tip="Planes gratis y las plataformas de ofertas — museos, quedadas, Groupon y tu biblioteca." onclick="toggleCat(this)"><img src="/icons/leisure.png" alt="" class="caticon" width="16" height="16" loading="lazy">Ocio<span class="pc">8</span></span><span class="pill-toggle on" data-cat="reviews" data-tip="Las propias plataformas de reseñas, evaluadas — ¿a quién sirve su confianza?" onclick="toggleCat(this)"><img src="/icons/reviews.png" alt="" class="caticon" width="16" height="16" loading="lazy">Reseñas<span class="pc">6</span></span></div><div class="loc-wrap"><button class="loc-pick" id="locbtn" onclick="document.getElementById('locmenu').classList.toggle('open')" title="Set your location">🌐 Global</button><div class="loc-menu" id="locmenu"><a onclick="setLoc('global')">🌐 Global</a><a onclick="setLoc('ca')">🍁 Canada</a><a onclick="setLoc('us')">🇺🇸 United States</a></div></div></div></div></header>
+<header class="site-header"><nav class="nav"><div class="wrap nav-in"><a class="logo" href="/es/">VERIFIED·<b>FREE</b></a><div class="nav-links"><div class="dropdown"><a href="/es/#categories">Categorías</a><div class="dropdown-menu"><div class="dd-inner"><a href="/es/software-tools/"><span class="cicon"><img src="/icons/software-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Software<span class="dd-count">44</span></a><a href="/es/business/"><span class="cicon"><img src="/icons/business.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Negocios<span class="dd-count">17</span></a><a href="/es/entertainment/"><span class="cicon"><img src="/icons/entertainment.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Streaming<span class="dd-count">16</span></a><a href="/es/ai-tools/"><span class="cicon"><img src="/icons/ai-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>IA<span class="dd-count">15</span></a><a href="/es/money-finance/"><span class="cicon"><img src="/icons/money-finance.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Finanzas<span class="dd-count">14</span></a><a href="/es/learning/"><span class="cicon"><img src="/icons/learning.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Aprendizaje<span class="dd-count">14</span></a><a href="/es/data-apis/"><span class="cicon"><img src="/icons/data-apis.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Datos y APIs<span class="dd-count">12</span></a><a href="/es/earn/"><span class="cicon"><img src="/icons/earn.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Ganar<span class="dd-count">12</span></a><a href="/es/books-reading/"><span class="cicon"><img src="/icons/books-reading.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Libros<span class="dd-count">10</span></a><a href="/es/leisure/"><span class="cicon"><img src="/icons/leisure.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Ocio<span class="dd-count">8</span></a><a href="/es/reviews/"><span class="cicon"><img src="/icons/reviews.png" alt="" class="caticon" width="16" height="16" loading="lazy"></span>Reseñas<span class="dd-count">6</span></a><div class="sep"></div><a href="/deals/">Ofertas verificadas</a><a href="/compare/">Comparativas</a><a href="/changelog/">Qué cambió</a><a href="/when-to-buy/">Cuándo comprar</a></div></div></div><a href="/deals/">Ofertas</a><a href="/compare/">Comparar</a><a href="/methodology/">Cómo verificamos</a><a href="/submit/">Para empresas</a><div class="dropdown langdd"><a href="#" onclick="return false">🌐 ES</a><div class="dropdown-menu right"><div class="dd-inner"><a href="/">English</a><a href="/es/" class="cur">Español</a><a href="/pt/">Português</a><a href="/fr/">Français</a><a href="/de/">Deutsch</a></div></div></div></div></div></nav><div class="catbar"><div class="catbar-in"><div class="catfilters"><span class="pill-toggle reset on" id="catAll" role="button" tabindex="0" aria-pressed="true" data-all="Todo" data-none="Ninguno" data-tip-on="Desactivar todas las categorías" data-tip-off="Activar todas las categorías" data-tip="Desactivar todas las categorías" onclick="toggleAll()"><span class="pl">Todo</span><span class="pc">168</span></span><span class="pill-toggle on" data-cat="software-tools" data-tip="Editores, ofimática, VPN, almacenamiento, creadores de webs — las apps que todos dicen que son gratis." onclick="toggleCat(this)"><img src="/icons/software-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy">Software<span class="pc">44</span></span><span class="pill-toggle on" data-cat="business" data-tip="Las herramientas gratis que las empresas usan como puerta de entrada — verificamos si la puerta es real." onclick="toggleCat(this)"><img src="/icons/business.png" alt="" class="caticon" width="16" height="16" loading="lazy">Negocios<span class="pc">17</span></span><span class="pill-toggle on" data-cat="entertainment" data-tip="Cine, música y TV — gratis con anuncios, gratis con carné de biblioteca, o una prueba con mecha." onclick="toggleCat(this)"><img src="/icons/entertainment.png" alt="" class="caticon" width="16" height="16" loading="lazy">Streaming<span class="pc">16</span></span><span class="pill-toggle on" data-cat="ai-tools" data-tip="Chatbots, generadores de imágenes y hubs de modelos — qué niveles gratuitos son reales." onclick="toggleCat(this)"><img src="/icons/ai-tools.png" alt="" class="caticon" width="16" height="16" loading="lazy">IA<span class="pc">15</span></span><span class="pill-toggle on" data-cat="money-finance" data-tip="Las apps financieras “gratis” siempre cobran de algún modo. Aquí te decimos cómo, una por una." onclick="toggleCat(this)"><img src="/icons/money-finance.png" alt="" class="caticon" width="16" height="16" loading="lazy">Finanzas<span class="pc">14</span></span><span class="pill-toggle on" data-cat="learning" data-tip="Cursos, certificados y apps de idiomas — dónde está realmente el muro de pago." onclick="toggleCat(this)"><img src="/icons/learning.png" alt="" class="caticon" width="16" height="16" loading="lazy">Aprendizaje<span class="pc">14</span></span><span class="pill-toggle on" data-cat="data-apis" data-tip="Conjuntos de datos, volcados y APIs para desarrolladores — qué niveles gratuitos son reales y cuáles murieron." onclick="toggleCat(this)"><img src="/icons/data-apis.png" alt="" class="caticon" width="16" height="16" loading="lazy">Datos y APIs<span class="pc">12</span></span><span class="pill-toggle on" data-cat="earn" data-tip="Formas legítimas de ganar dinero online — verificadas, con las estafas al descubierto." onclick="toggleCat(this)"><img src="/icons/earn.png" alt="" class="caticon" width="16" height="16" loading="lazy">Ganar<span class="pc">12</span></span><span class="pill-toggle on" data-cat="books-reading" data-tip="Ebooks y audiolibros — las bibliotecas gratuitas y las membresías disfrazadas." onclick="toggleCat(this)"><img src="/icons/books-reading.png" alt="" class="caticon" width="16" height="16" loading="lazy">Libros<span class="pc">10</span></span><span class="pill-toggle on" data-cat="leisure" data-tip="Planes gratis y las plataformas de ofertas — museos, quedadas, Groupon y tu biblioteca." onclick="toggleCat(this)"><img src="/icons/leisure.png" alt="" class="caticon" width="16" height="16" loading="lazy">Ocio<span class="pc">8</span></span><span class="pill-toggle on" data-cat="reviews" data-tip="Las propias plataformas de reseñas, evaluadas — ¿a quién sirve su confianza?" onclick="toggleCat(this)"><img src="/icons/reviews.png" alt="" class="caticon" width="16" height="16" loading="lazy">Reseñas<span class="pc">6</span></span></div><div class="loc-wrap"><button class="loc-pick" id="locbtn" onclick="document.getElementById('locmenu').classList.toggle('open')" title="Set your location">🌐 Global</button><div class="loc-menu" id="locmenu"><a onclick="setLoc('global')">🌐 Global</a><a onclick="setLoc('ca')">🍁 Canada</a><a onclick="setLoc('us')">🇺🇸 United States</a></div></div></div></div></header>
 <header class="pagehead wrap"><h1>Ocio</h1><p>Planes gratis y las plataformas de ofertas — museos, quedadas, Groupon y tu biblioteca.</p></header><main class="wrap"><section data-section data-cat="leisure"><h2 class="sechead">Todos los listados de Ocio, ordenados por lo gratis que son de verdad</h2><p class="seclede">8 verificados · 2 realmente gratis · ordenados por Free Score.</p><div class="grid"><a class="card" href="/is-free-community-events-library-parks-rec-actually-free/" data-search="free community events (library, parks &amp; rec) leisure truly free" data-free="100" data-value="9" data-name="free community events (library, parks &amp; rec)"><div class="row"><img class="fav" width="28" height="28" src="https://www.google.com/s2/favicons?domain=www.google.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="pill" data-tip="Sin tarjeta, sin muro de registro, sin trampa importante. Úsalo y listo." style="color:#0E7B47;border-color:#0E7B47;background:#E4F2EA">Realmente gratis</span><span class="chip" data-tip="Free Score 100/100 — how genuinely free this is. Higher means fewer strings." style="color:#0E7B47;border-color:#0E7B47">100</span></div><h3>Free Community Events (Library, Parks &amp; Rec)</h3><p class="cost"><b>Incluye</b>Charlas de autores, conciertos, noches de cine y talleres — gratis</p></a><a class="card" href="/is-free-museum-days-actually-free/" data-search="free museum days leisure truly free" data-free="95" data-value="9" data-name="free museum days"><div class="row"><img class="fav" width="28" height="28" src="https://www.google.com/s2/favicons?domain=www.google.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="pill" data-tip="Sin tarjeta, sin muro de registro, sin trampa importante. Úsalo y listo." style="color:#0E7B47;border-color:#0E7B47;background:#E4F2EA">Realmente gratis</span><span class="chip" data-tip="Free Score 95/100 — how genuinely free this is. Higher means fewer strings." style="color:#0E7B47;border-color:#0E7B47">95</span></div><h3>Free Museum Days</h3><p class="cost"><b>Incluye</b>Los museos Smithsonian — gratis todos los días, siempre</p><span class="vtag saves" data-tip="What the paid equivalent costs — money this free option keeps in your pocket">AHORRAS $60</span></a><a class="card" href="/is-eventbrite-free-events-actually-free/" data-search="eventbrite (free events) leisure free forever" data-free="80" data-value="7" data-name="eventbrite (free events)"><div class="row"><img class="fav" width="28" height="28" src="https://www.google.com/s2/favicons?domain=www.eventbrite.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="pill" data-tip="Un plan gratuito permanente y real. Registro y límites razonables — pero sin reloj y sin tarjeta." style="color:#0A6E8A;border-color:#0A6E8A;background:#E2EFF4">Gratis para siempre</span><span class="chip" data-tip="Free Score 80/100 — how genuinely free this is. Higher means fewer strings." style="color:#0A6E8A;border-color:#0A6E8A">80</span></div><h3>Eventbrite (free events)</h3><p class="cost"><b>Incluye</b>Explorar y filtrar miles de eventos locales gratuitos</p></a><a class="card" href="/is-meetup-free-events-actually-free/" data-search="meetup (free events) leisure free-ish" data-free="70" data-value="7" data-name="meetup (free events)"><div class="row"><img class="fav" width="28" height="28" src="https://www.google.com/s2/favicons?domain=www.meetup.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="pill" data-tip="Existe un nivel gratuito, pero está diseñado para empujarte a pagar." style="color:#A05E03;border-color:#A05E03;background:#F7EDDC">Casi gratis</span><span class="chip" data-tip="Free Score 70/100 — how genuinely free this is. Higher means fewer strings." style="color:#0A6E8A;border-color:#0A6E8A">70</span></div><h3>Meetup (free events)</h3><p class="cost"><b>Incluye</b>Unirte a grupos ilimitados y confirmar asistencia gratis</p><span class="vtag" data-tip="The price of the paid tier this free plan gives you a slice of">valor de $0</span></a><a class="card" href="/is-house-sitting-home-exchange-actually-free/" data-search="house sitting &amp; home exchange leisure free-ish" data-free="62" data-value="7" data-name="house sitting &amp; home exchange"><div class="row"><img class="fav" width="28" height="28" src="https://www.google.com/s2/favicons?domain=www.trustedhousesitters.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="pill" data-tip="Existe un nivel gratuito, pero está diseñado para empujarte a pagar." style="color:#A05E03;border-color:#A05E03;background:#F7EDDC">Casi gratis</span><span class="chip" data-tip="Free Score 62/100 — how genuinely free this is. Higher means fewer strings." style="color:#0A6E8A;border-color:#0A6E8A">62</span></div><h3>House Sitting &amp; Home Exchange</h3><p class="cost"><b>Incluye</b>Alojamiento gratis en todo el mundo a cambio de cuidar mascotas o casas</p><span class="vtag" data-tip="The price of the paid tier this free plan gives you a slice of">valor de ~$150/yr membership</span></a><a class="card" href="/is-groupon-actually-free/" data-search="groupon leisure free-ish" data-free="55" data-value="6" data-name="groupon"><div class="row"><img class="fav" width="28" height="28" src="https://www.google.com/s2/favicons?domain=www.groupon.com&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="pill" data-tip="Existe un nivel gratuito, pero está diseñado para empujarte a pagar." style="color:#A05E03;border-color:#A05E03;background:#F7EDDC">Casi gratis</span><span class="chip" data-tip="Free Score 55/100 — how genuinely free this is. Higher means fewer strings." style="color:#A05E03;border-color:#A05E03">55</span></div><h3>Groupon</h3><p class="cost"><b>Incluye</b>Descuentos genuinos del 30–56% en servicios locales que comprarías de todos modos</p></a><a class="card" href="/is-timeshare-free-stay-presentations-actually-free/" data-search="timeshare &#x27;free stay&#x27; presentations leisure free-ish" data-free="30" data-value="3" data-name="timeshare &#x27;free stay&#x27; presentations"><div class="row"><img class="fav" width="28" height="28" src="https://www.google.com/s2/favicons?domain=consumer.ftc.gov&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="pill" data-tip="Existe un nivel gratuito, pero está diseñado para empujarte a pagar." style="color:#A05E03;border-color:#A05E03;background:#F7EDDC">Casi gratis</span><span class="chip" data-tip="Free Score 30/100 — how genuinely free this is. Higher means fewer strings." style="color:#C2410C;border-color:#C2410C">30</span></div><h3>Timeshare &#x27;Free Stay&#x27; Presentations</h3><p class="cost"><b>Incluye</b>Las noches gratis o la estadía en el resort, si asistes a la presentación</p><span class="vtag" data-tip="The price of the paid tier this free plan gives you a slice of">valor de $200</span></a><a class="card" href="/is-free-vacation-prizes-sweepstakes-actually-free/" data-search="&quot;free vacation&quot; prizes &amp; sweepstakes leisure fake free" data-free="2" data-value="0" data-name="&quot;free vacation&quot; prizes &amp; sweepstakes"><div class="row"><img class="fav" width="28" height="28" src="https://www.google.com/s2/favicons?domain=consumer.ftc.gov&amp;sz=128" alt="" loading="lazy" referrerpolicy="no-referrer"><span class="pill" data-tip="Se anuncia como gratis. No lo es — pagas con dinero, datos o ancho de banda." style="color:#B3261E;border-color:#B3261E;background:#F9E3E1">Falso gratis</span><span class="chip" data-tip="Free Score 2/100 — how genuinely free this is. Higher means fewer strings." style="color:#B3261E;border-color:#B3261E">2</span></div><h3>&quot;Free Vacation&quot; Prizes &amp; Sweepstakes</h3><p class="cost"><b>Incluye</b>Nada. Las vacaciones no existen.</p></a></div></section></main>
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/now/">Now</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/all/">Every verdict</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 <script>
 (function(){
@@ -601,6 +686,27 @@ footer{border-top:2.5px solid var(--ink);margin-top:30px}
   });
 })();
 </script>
+<script>
+(function(){
+  var els=document.querySelectorAll("time.ts[datetime]");
+  if(!els.length)return;
+  function rel(d){
+    var s=(Date.now()-d.getTime())/1000;
+    if(s<60)return "just now";
+    if(s<3600)return Math.floor(s/60)+"m ago";
+    if(s<86400)return Math.floor(s/3600)+"h ago";
+    if(s<2592000)return Math.floor(s/86400)+"d ago";
+    return null;                       // older than a month: keep the date
+  }
+  els.forEach(function(el){
+    var d=new Date(el.getAttribute("datetime"));
+    if(isNaN(d))return;
+    el.title=d.toLocaleString();
+    var r=rel(d);
+    if(r)el.textContent=r;             // no match keeps the absolute date
+  });
+})();
+</script>
 <div id="hoad" hidden>
 <span class="ho-lbl">From the studio behind this site</span>
 <a class="ho-msg" href="https://dreamsitedesign.com/?ref=veri-free" rel="noopener">dreamsitedesign.com <span class="ho-pitch">— websites built to be found by Google and AI</span></a>
@@ -662,8 +768,13 @@ function updateAllChip(){
   // what is selected. Saying "All" while a click cleared everything was the
   // illogical part. The count carries the state instead.
   var lbl=a.querySelector('.pl'), cnt=a.querySelector('.pc');
-  if(lbl)lbl.textContent=allOn?(a.getAttribute('data-none')||'None'):(a.getAttribute('data-all')||'All');
-  if(cnt){
+  // Off the directory the chip is a doorway, not a toggle, so it keeps saying
+  // "All" — offering to clear a selection that isn't on screen would be a lie.
+  if(lbl)lbl.textContent=(!hasGrid())?(a.getAttribute('data-all')||'All')
+        :(allOn?(a.getAttribute('data-none')||'None'):(a.getAttribute('data-all')||'All'));
+  // Only meaningful where the grid exists. Elsewhere the server-rendered
+  // total stands, rather than counting zero cards and reporting "None 0".
+  if(cnt&&document.querySelector('.grid .card')){
     var shown=0;
     document.querySelectorAll('.grid .card').forEach(function(c){
       if(c.offsetParent!==null)shown++;
@@ -686,7 +797,12 @@ function resetCats(){
   document.querySelectorAll('.catbar .pill-toggle[data-cat]').forEach(function(p){p.classList.add('on')});
   saveCats();applyCats();updateAllChip();
 }
+function hasGrid(){return !!document.querySelector('[data-section][data-cat]')}
 function toggleAll(){
+  if(!hasGrid()){
+    window.location=(document.documentElement.getAttribute('data-langbase')||'')+'/all/';
+    return;
+  }
   var pills=document.querySelectorAll('.catbar .pill-toggle[data-cat]');
   var allOn=true;pills.forEach(function(p){if(!p.classList.contains('on'))allOn=false});
   if(allOn)noneCats();else resetCats();

@@ -1631,6 +1631,9 @@ def build():
     snap_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "feed_snapshot.json")
     stream = json.load(open(snap_path, encoding="utf-8")) if os.path.exists(snap_path) else {}
     forever_n = sum(1 for l in listings if l["verdict"] == "forever")
+    # `genuine` is truly+forever, which is right for prose and WRONG for the
+    # "Truly free" filter button — that button filters to truly alone.
+    truly_n = sum(1 for l in listings if l["verdict"] == "truly")
     match_index = build_match_index(listings)
 
     # The stream leads the homepage, but only a slice of it: /now/ keeps the
@@ -2215,7 +2218,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
     # ---------- /all/ — the directory ----------
     all_body = f"""
 <header class="pagehead tight wrap"><h1>Every verdict</h1>
-<p>{len(listings)} things checked against one rubric — {genuine} genuinely free, {traps} exposed as traps or fakes.</p></header>
+<p>All {len(listings)}, from the genuinely free to the outright fake. Search by name, or filter to the verdict you care about.</p></header>
 <div class="side-legend closed" id="sidepanel">
 <div class="sl-tab" title="Verdict definitions and sorting" onclick="document.getElementById('sidepanel').classList.toggle('closed')">Guide</div>
 <div class="sl-body">
@@ -2234,7 +2237,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 <div class="searchbar"><input id="q" type="search" placeholder="Search {len(listings)} verified free things…" aria-label="Search listings"><span class="kbd">{len(listings)} verified</span></div>
 <div class="vfilters">
 <button class="vfilter on" data-v="all">All</button>
-<button class="vfilter" data-v="truly">Truly free <i>{genuine}</i></button>
+<button class="vfilter" data-v="truly">Truly free <i>{truly_n}</i></button>
 <button class="vfilter" data-v="forever">Free forever <i>{forever_n}</i></button>
 <button class="vfilter" data-v="freeish">Free-ish <i>{squeeze}</i></button>
 <button class="vfilter" data-v="trap,fake,notfree">Traps &amp; fakes <i>{traps}</i></button>

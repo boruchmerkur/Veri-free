@@ -1,0 +1,42 @@
+functionsDirectory = "C:\\Users\\BoruchMerkur\\Projects\\Veri-free\\netlify\\functions"
+functionsDirectoryOrigin = "config"
+plugins = []
+redirects = []
+
+[build]
+edge_functions = "C:\\Users\\BoruchMerkur\\Projects\\Veri-free\\netlify\\edge-functions"
+publish = "C:\\Users\\BoruchMerkur\\Projects\\Veri-free\\site"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "pip install pillow && python3 selfhost_favicons.py && python3 feeds.py && python3 generate.py"
+functions = "C:\\Users\\BoruchMerkur\\Projects\\Veri-free\\netlify\\functions"
+
+[build.environment]
+LILY_SITE = "verifiedfree"
+PYTHON_VERSION = "3.11"
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[functions]
+
+[functions."*"]
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://dreamsitedesign.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://dreamsitedesign.com; frame-ancestors 'self' https://dreamsitedesign.com https://*.dreamsitedesign.com"
+Strict-Transport-Security = "max-age=31536000; includeSubDomains"

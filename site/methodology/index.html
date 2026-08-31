@@ -840,6 +840,14 @@ function toggleCat(el){
     var active=[];
     document.querySelectorAll('.catbar .pill-toggle[data-cat]').forEach(function(p){if(p.classList.contains('on'))active.push(p.getAttribute('data-cat'))});
     var all=document.querySelectorAll('.catbar .pill-toggle[data-cat]').length;
+    // Never persist an empty selection. "None" is a momentary action — a way
+    // to clear before picking one or two — and nobody's standing preference is
+    // "show me nothing". Storing [] blanked every page on the site until the
+    // visitor happened to click All again, with no clue why.
+    if(!active.length){
+      document.cookie=KEY+'=;path=/;max-age=0;SameSite=Lax';
+      return;
+    }
     var val=active.length===all?null:active;
     document.cookie=KEY+'='+encodeURIComponent(JSON.stringify(val||active))+';path=/;max-age=31536000;SameSite=Lax';
   };
@@ -852,9 +860,26 @@ function toggleCat(el){
       var c=s.getAttribute('data-cat');
       s.style.display=(showAll||active.indexOf(c)>=0)?'':'none';
     });
+    // An empty page with no explanation reads as a broken site. Say what
+    // happened and offer the way out, rather than leaving a void under the
+    // filters.
+    var host=document.getElementById('categories');
+    if(!host||!pills.length)return;
+    var msg=document.getElementById('catempty');
+    if(!active.length){
+      if(!msg){
+        msg=document.createElement('p');
+        msg.id='catempty';msg.className='noresults';msg.style.display='block';
+        msg.innerHTML='No categories selected. <a href="#" onclick="resetCats();return false">Show everything</a>';
+        host.insertBefore(msg,host.firstChild);
+      }
+      msg.style.display='block';
+    }else if(msg){msg.style.display='none'}
   };
   var saved=getSaved();
-  if(saved){
+  // saved can be [], and [] is truthy in JS — the check that let a stored
+  // "None" survive reloads. Require an actual selection.
+  if(saved&&saved.length){
     document.querySelectorAll('.catbar .pill-toggle[data-cat]').forEach(function(p){
       var c=p.getAttribute('data-cat');
       p.classList.toggle('on',saved.indexOf(c)>=0);

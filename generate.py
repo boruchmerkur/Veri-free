@@ -744,15 +744,26 @@ def build_match_index(listings):
     # names tie-break on list order and the same story matches a different
     # listing depending on how the listings happen to be sorted that build.
     pairs.sort(key=lambda p: (-len(p[0]), p[0].lower()))
-    return [(_re.compile(r"\b" + _re.escape(n) + r"\b", _re.I), l) for n, l in pairs]
+    # The name is carried alongside the pattern so the browser can run the same
+    # match against items that arrive from /api/feed after the page was built.
+    return [(n, _re.compile(r"\b" + _re.escape(n) + r"\b", _re.I), l) for n, l in pairs]
 
 
 def match_listing(it, index):
     hay = it.get("title", "") + " " + it.get("summary", "")
-    for pat, l in index:
+    for _name, pat, l in index:
         if pat.search(hay):
             return l
     return None
+
+
+def match_index_json(index):
+    """The same index, flattened for the browser: [name, slug, verdict, label].
+
+    Order is preserved, so the client walks longest-name-first exactly as the
+    build does and lands on the same listing for the same story."""
+    return json.dumps([[n, l["slug"], l["verdict"], VERDICTS[l["verdict"]][0]]
+                       for n, _p, l in index], ensure_ascii=False, separators=(",", ":"))
 
 
 VERIFY_STALE_MONTHS = 6
@@ -842,8 +853,8 @@ def deal_card(d, cta="Go to offer →"):
 
 
 FEED_JS = """<script>
-(function(){
-  var els=document.querySelectorAll("time.ts[datetime]");
+window.vfAgeTimes=function(root){
+  var els=(root||document).querySelectorAll("time.ts[datetime]");
   if(!els.length)return;
   function rel(d){
     var s=(Date.now()-d.getTime())/1000;
@@ -860,6 +871,79 @@ FEED_JS = """<script>
     var r=rel(d);
     if(r)el.textContent=r;             // no match keeps the absolute date
   });
+};
+window.vfAgeTimes();
+</script>"""
+
+
+# The feed used to be frozen into the HTML at build time, so it only moved when
+# someone ran feeds.py and deployed. /api/feed does the same collection live
+# behind a 30-minute CDN cache; this swaps its results in once they arrive.
+# The baked snapshot is still what renders first, so the page is complete with
+# JavaScript off and never shows an empty slot while the fetch is in flight.
+LIVEFEED_JS = """<script>
+(function(){
+  var host=document.querySelector(".homestream .stream");
+  if(!host||!window.fetch)return;
+  var esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
+
+  function matchOf(it){
+    var idx=window.VF_MATCH||[],hay=(it.title||"")+" "+(it.summary||"");
+    for(var i=0;i<idx.length;i++){
+      var name=idx[i][0];
+      // \\b around an escaped literal, same test the build runs in Python
+      var re=new RegExp("\\\\b"+name.replace(/[.*+?^${}()|[\\]\\\\]/g,"\\\\$&")+"\\\\b","i");
+      if(re.test(hay))return idx[i];
+    }
+    return null;
+  }
+
+  function card(it,lead){
+    var cls="st-card"+(lead?" lead":"")+(it.image?"":" notart");
+    var art=it.image?'<div class="st-art"><img src="'+esc(it.image)+'" alt="" '+
+      'loading="lazy" referrerpolicy="no-referrer"></div>':"";
+    var tags=(it.tags||[]).map(function(t){
+      return '<span class="st-tag">'+esc(t)+"</span>";}).join("");
+    var vid=it.kind==="video"?'<span class="st-vid">&#9654;</span>':"";
+    var m=matchOf(it),ours="";
+    if(m){
+      ours='<a class="st-ours" href="/'+esc(m[1])+'/">'+
+           '<span class="so-lbl">We checked this</span>'+
+           '<span class="so-name">'+esc(m[0])+"</span>"+
+           '<span class="so-verdict v-'+esc(m[2])+'">'+esc(m[3])+"</span></a>";
+    }
+    var when="";
+    if(it.date){
+      var d=new Date(it.date);
+      if(!isNaN(d)){
+        when='<time class="ts" datetime="'+esc(d.toISOString())+'">'+
+             esc(d.toLocaleDateString(undefined,{month:"short",day:"numeric"}))+"</time>";
+      }
+    }
+    return '<article class="'+cls+'">'+art+
+      '<div class="st-body"><div class="st-tags">'+tags+"</div>"+
+      "<h3><a href=\\""+esc(it.url)+"\\" target=\\"_blank\\" rel=\\"noopener nofollow\\">"+
+      vid+esc(it.title)+"</a></h3>"+
+      '<p class="st-sum">'+esc(it.summary||"")+"</p>"+ours+
+      '<p class="st-meta">'+esc(it.source)+" &middot; "+when+"</p></div></article>";
+  }
+
+  fetch("/api/feed",{headers:{Accept:"application/json"}})
+    .then(function(r){return r.ok?r.json():null;})
+    .then(function(d){
+      if(!d||!d.items||!d.items.length)return;
+      // Only replace if the live pull is actually newer than what was baked.
+      // A stale-while-revalidate hit can be older than a fresh deploy, and
+      // swapping backwards would make the page regress on reload.
+      var baked=window.VF_SNAP_UPDATED?Date.parse(window.VF_SNAP_UPDATED):0;
+      var live=Date.parse(d.updated||"");
+      if(baked&&live&&live<=baked)return;
+      host.innerHTML=d.items.slice(0,16).map(function(it,i){
+        return card(it,i===0);}).join("");
+      if(window.vfAgeTimes)window.vfAgeTimes(host);
+    })
+    .catch(function(){});   // offline or blocked: the baked snapshot stands
 })();
 </script>"""
 
@@ -1675,7 +1759,12 @@ def build():
             '<div class="stream">'
             + "".join(stream_card(it, lead=(i == 0), match=match_listing(it, match_index))
                         for i, it in enumerate(si))
-            + '</div></div></section>')
+            + '</div></div></section>'
+            # What the browser needs to refresh this slice from /api/feed: the
+            # timestamp it is replacing, and the listing names to match against.
+            + f'<script>window.VF_SNAP_UPDATED={json.dumps(stream.get("updated") or "")};'
+              f'window.VF_MATCH={match_index_json(match_index)};</script>'
+            + LIVEFEED_JS)
 
     home_body = f"""
 <header class="hero slim">
@@ -1715,7 +1804,10 @@ def build():
 const q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')],
 secs=[...document.querySelectorAll('[data-section]')],nores=document.getElementById('noresults'),
 count=document.getElementById('count');
-q.addEventListener('input',()=>{{
+// The homepage carries this block but no longer has the search field — the
+// directory moved to /all/. Without the guard q is null, the throw aborts the
+// rest of this script tag, and everything below it silently stops running.
+if(q)q.addEventListener('input',()=>{{
 const v=q.value.trim().toLowerCase();let shown=0;
 cards.forEach(c=>{{const hit=!v||c.dataset.search.includes(v);c.style.display=hit?'':'none';if(hit)shown++;}});
 secs.forEach(s=>{{const any=[...s.querySelectorAll('.card')].some(c=>c.style.display!=='none');s.style.display=any?'':'none';}});

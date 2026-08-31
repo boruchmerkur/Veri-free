@@ -687,8 +687,8 @@ footer{border-top:2.5px solid var(--ink);margin-top:30px}
 })();
 </script>
 <script>
-(function(){
-  var els=document.querySelectorAll("time.ts[datetime]");
+window.vfAgeTimes=function(root){
+  var els=(root||document).querySelectorAll("time.ts[datetime]");
   if(!els.length)return;
   function rel(d){
     var s=(Date.now()-d.getTime())/1000;
@@ -705,7 +705,8 @@ footer{border-top:2.5px solid var(--ink);margin-top:30px}
     var r=rel(d);
     if(r)el.textContent=r;             // no match keeps the absolute date
   });
-})();
+};
+window.vfAgeTimes();
 </script>
 <div id="hoad" hidden>
 <span class="ho-lbl">From the studio behind this site</span>

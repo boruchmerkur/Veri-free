@@ -5086,41 +5086,48 @@
       "card": "Yes",
       "autobill": "Yes",
       "account": "Required",
-      "limits": "10 standard assets in 30 days, then billed monthly",
-      "realcost": "Auto-converts to a paid monthly subscription; the price of forgetting is steep.",
-      "free_score": 18,
+      "limits": "10 standard assets in 30 days, then an annual commitment billed monthly",
+      "realcost": "Converts to an annual plan billed monthly. Cancelling after the first 14 days costs half of what is left on the year.",
+      "free_score": 14,
       "value_score": 4,
       "short": "No. The '10 free images' require a card and enroll you in a subscription that bills automatically at day 30 — around thirty dollars a month for the standard plan. The images are the bait; the billing date is the business.",
-      "catch": "One genuine sweetener mirrors Audible: assets licensed during the trial remain licensed after you cancel. Played precisely — download ten, calendar the exit — it's a real haul. Played asleep, it's the most expensive stock subscription you never meant to have.",
+      "catch": "One genuine sweetener mirrors Audible: assets licensed during the trial stay licensed after you cancel. The trap is the plan you are signed into while you take them. The trial's default is not a monthly subscription — it is an annual commitment billed monthly, and Adobe's own terms say a fee of “half your remaining annual commitment” applies if you cancel more than 14 days in. Played precisely — download ten, cancel before day 30 — it is a real haul at no cost. Played asleep, leaving is not a matter of stopping payments; it is a matter of buying out most of a year.",
       "free_includes": [
         "10 standard stock assets during the 30-day trial — card required",
-        "Licenses for trial downloads survive cancellation"
+        "Licences for trial downloads survive cancellation, permanently",
+        "Cancelling any time before day 30 costs nothing"
       ],
       "paid_locked": [
-        "Everything after day 30, at a recurring monthly price",
+        "Everything after day 30, at an annual commitment billed monthly",
         "Premium and video assets, which the trial excludes"
       ],
       "drawbacks": [
         "Card and auto-bill mechanics from minute one",
-        "Unused trial downloads don't bank or roll over",
-        "Annual-plan variants can carry Adobe's cancellation-fee structure"
+        "The default plan is an annual commitment, not month-to-month",
+        "Half the remaining year is owed if you leave after the 14-day refund window",
+        "Unused trial downloads don't bank or roll over"
       ],
-      "get_summary": "In practice: ten professional images free — for people who set alarms. Everyone else donates a month or more of subscription fees to forgetting.",
+      "get_summary": "In practice: ten professional images free, for people who set alarms. Miss the date and the exit costs half a year's subscription.",
       "worth": "Ten standard stock images bought individually run $80–100+; the trial delivers that value if the exit executes.",
       "smart_moves": [
         "Download all 10 assets in the first sitting — value banked, decision deferred",
-        "Calendar day 27; cancel on the website and screenshot confirmation",
-        "Choose the monthly plan at signup, never 'annual billed monthly,' so no termination fee can exist",
-        "Unsplash covers most needs first — spend the trial only on images free libraries can't match"
+        "Calendar day 27; cancel on the website and screenshot the confirmation",
+        "Check the plan type at signup: month-to-month cannot carry a termination fee, annual-billed-monthly can",
+        "Missed the trial deadline? You still have 14 days from the first charge for a full refund — that window is the last cheap exit",
+        "Unsplash and Pexels cover most needs free — spend the trial only on images the free libraries can't match"
       ],
       "more_info": [
         [
           "The keep-your-downloads rule",
-          "Standard assets licensed during the trial stay licensed after cancellation — Adobe's genuine sweetener. The strategy writes itself: harvest immediately, exit on schedule, keep the receipts. The trap only functions on people who graze slowly."
+          "Assets you licence during the trial remain licensed after you cancel. This is real and it is the reason the trial is worth taking at all: ten standard images bought individually run well over a hundred dollars. Download them on day one."
+        ],
+        [
+          "The two exits, and what each costs",
+          "There are two ways out and they are priced very differently. Before day 30, cancelling costs nothing and you keep the assets. After the trial converts, Adobe's terms give a 14-day full-refund window from the start of the paid subscription. Past that, the published term is a fee of half your remaining annual commitment. The gap between exit one and exit three is the entire product."
         ],
         [
           "Watch the plan type at signup",
-          "Like Creative Cloud, Stock offers 'annual, billed monthly' — cheaper-looking, but mid-year cancellation triggers Adobe's early-termination fee structure. The pure monthly plan costs a little more and can be exited any month clean. On a trial you intend to cancel, that difference is everything."
+          "The free trial enrols you in an annual plan billed monthly by default. It looks monthly on the invoice and behaves annually on the way out. A true month-to-month plan costs more per month and has no termination fee — which is the cheaper option for anyone who is not certain they will stay a year."
         ]
       ],
       "short_worth": null,
@@ -5140,7 +5147,8 @@
         "Export your work": "Yes",
         "Commercial use": "Allowed",
         "Time limit": "Trial clock"
-      }
+      },
+      "verified": "2026-08"
     },
     {
       "name": "Photopea",
@@ -6640,38 +6648,50 @@
       "autobill": "—",
       "account": "Google account",
       "limits": "60-minute group meetings; 24-hour 1-on-1",
-      "realcost": "A Google account. The 60-minute group limit is notably gentler than Zoom's 40.",
+      "realcost": "A Google account, and nothing else. The 60-minute group limit is the only wall, and it is gentler than Zoom's 40.",
       "free_score": 78,
       "value_score": 7,
-      "short": "Yes — Google Meet's free tier gives 60-minute group meetings (vs. Zoom's 40) and 24-hour one-on-one calls, with up to 100 participants, no card required.",
-      "catch": "Meet exists inside the Google ecosystem — it's bundled with Gmail and Calendar, making it the path of least resistance for anyone already there. The 60-minute limit is the paid-tier fence.",
+      "short": "Yes, and there is no paid version of Meet to buy. Meet is free with any Google account: 60-minute meetings for three or more people, 24 hours one-to-one, up to 100 participants, no card. The longer limits are not sold separately — they arrive with a Google Workspace subscription, which is an email and storage product that happens to include Meet.",
+      "catch": "The fence is time, not features. At 50 minutes a chime and a banner warn everyone the meeting ends in ten, which is honest as fences go — no silent cutoff. Free calls also cannot be recorded. The route past the limit is not a Meet upgrade but a Workspace plan, so the real question is whether you want Google as your email host, not whether you want longer calls.",
       "free_includes": [
-        "60-minute group meetings (up to 100 people)",
-        "24-hour one-on-one calls",
-        "Screen sharing, captions, and reactions",
-        "Integrated with Gmail and Google Calendar"
+        "60-minute meetings for three or more people, up to 100 participants",
+        "24-hour one-to-one calls",
+        "Screen sharing, captions and reactions, in the browser with nothing to install",
+        "Built into Gmail and Google Calendar"
       ],
       "paid_locked": [
-        "Meetings beyond 60 minutes",
-        "Recording, breakout rooms, and attendance tracking",
-        "Noise cancellation and larger meetings"
+        "Meetings past 60 minutes, up to 24 hours on any Workspace plan",
+        "Recording, breakout rooms and attendance tracking",
+        "Larger meetings — up to 500 participants"
       ],
       "drawbacks": [
         "Requires a Google account",
-        "60-minute group cap (though gentler than Zoom's 40)",
-        "Recording is paid"
+        "60-minute cap on group calls, with a warning at 50",
+        "No recording on the free tier",
+        "The upgrade is a whole Workspace subscription, not a Meet add-on"
       ],
-      "get_summary": "In practice: the free video call that lives where your email already lives — 60-minute groups without installing anything.",
-      "worth": "Zoom's equivalent paid tier costs real money monthly; Meet's 60 free minutes cover most meetings.",
+      "get_summary": "In practice: the free video call that lives where your email already is — an hour at a time, 100 people, nothing to install.",
+      "worth": "Nothing to compare against, because Meet is not sold on its own. The equivalent capability from Zoom's paid tiers is a real monthly cost; here 60 minutes covers most meetings for nothing.",
       "smart_moves": [
-        "Share a Meet link directly from Gmail or Calendar — no separate app needed",
-        "The 60-minute limit covers most real meetings; only recurring all-hands hit the wall",
-        "For calls that must go longer, the rejoin trick works here too"
+        "Share a Meet link straight from Gmail or Calendar — no separate app for anyone",
+        "The 60 minutes covers most real meetings; only all-hands and workshops hit the wall",
+        "At the 50-minute chime, drop the same link back in chat — rejoining resets the clock",
+        "One-to-one runs 24 hours, so long calls only need one of the two people to leave"
       ],
-      "more_info": [],
+      "more_info": [
+        [
+          "So how much does Google Meet cost?",
+          "Nothing, for the version most people mean. There is no consumer price list for Meet and no way to buy 'Meet Pro'. Anyone with a Google account gets 60-minute group calls and 24-hour one-to-one calls at no charge. Longer meetings, recording and bigger rooms come bundled into Google Workspace, which is sold per user per month as a business email and storage suite. If you are asking the price of Meet itself, the answer is that it is not a product you can buy."
+        ],
+        [
+          "What actually happens at 60 minutes",
+          "You are warned first. At 50 minutes everyone hears a chime and sees a notice that the meeting ends in ten minutes. At 60 the call ends for everybody. Nothing is lost beyond the call itself, and the same link can be rejoined immediately, which starts a fresh hour. The cap only applies with three or more people — a two-person call runs for 24 hours."
+        ]
+      ],
       "short_worth": null,
       "slug": "is-google-meet-actually-free",
-      "favicon_url": "https://www.google.com"
+      "favicon_url": "https://www.google.com",
+      "verified": "2026-08"
     },
     {
       "name": "Microsoft 365 Online",
@@ -11425,6 +11445,14 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-08-31",
+      "item": "Adobe Stock Free Trial",
+      "change": "Free Score 18 → 14; the trial's annual commitment made explicit",
+      "from": "18",
+      "to": "14",
+      "detail": "We described Adobe's cancellation fee as something annual-plan 'variants can carry'. Adobe's own trial page shows the annual commitment billed monthly is the default the trial enrols you in, with a published fee of half the remaining year if you cancel more than 14 days after it converts. Also records the 14-day full-refund window, a second exit our page never mentioned."
+    },
     {
       "date": "2026-08-31",
       "item": "Trello",

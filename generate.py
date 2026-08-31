@@ -1910,8 +1910,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                   f'</div></div></div>'
                   f'<main class="wrap" id="categories">'
                   f'<div class="verdicts-head"><h2>{esc(T["verdicts_all_h"])}</h2>'
-                  f'<p class="count" id="count"></p>'
-                  f'<p>{esc(T["verdicts_all_p"].replace("{n}", str(len(listings))).replace("{g}", str(genuine)).replace("{t}", str(traps)))}</p></div>'
+                  f'<p class="count" id="count"></p></div>'
                   f'{sections_L}'
                   f'<p class="noresults" id="noresults">{T["noresults"]}</p></main>'
                   f'{headlines_L}'
@@ -2217,8 +2216,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 
     # ---------- /all/ — the directory ----------
     all_body = f"""
-<header class="pagehead tight wrap"><h1>Everything we&rsquo;ve checked</h1>
-<p>All {len(listings)}, from the genuinely free to the outright fake. Search by name, or filter by how free each one turned out.</p></header>
+<header class="pagehead tight wrap"><h1>Everything we&rsquo;ve checked</h1></header>
 <div class="side-legend closed" id="sidepanel">
 <div class="sl-tab" title="Verdict definitions and sorting" onclick="document.getElementById('sidepanel').classList.toggle('closed')">Guide</div>
 <div class="sl-body">

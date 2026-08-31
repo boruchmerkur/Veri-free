@@ -1328,7 +1328,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/all/">Every verdict</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/all/">Everything checked</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {NAV_JS}
 {COUPON_JS}
@@ -1577,7 +1577,7 @@ def build():
            f'<div class="dropdown"><a href="/#categories">Categories</a>'
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
            f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
-           f'<a href="/all/">Every verdict</a>'
+           f'<a href="/all/">Everything checked</a>'
            f'<a href="/deals/">Deals</a>'
            f'<a href="/coupons/">Coupons</a>'
            f'<a href="/free-consultations/">Consultations</a>'
@@ -2217,8 +2217,8 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 
     # ---------- /all/ — the directory ----------
     all_body = f"""
-<header class="pagehead tight wrap"><h1>Every verdict</h1>
-<p>All {len(listings)}, from the genuinely free to the outright fake. Search by name, or filter to the verdict you care about.</p></header>
+<header class="pagehead tight wrap"><h1>Everything we&rsquo;ve checked</h1>
+<p>All {len(listings)}, from the genuinely free to the outright fake. Search by name, or filter by how free each one turned out.</p></header>
 <div class="side-legend closed" id="sidepanel">
 <div class="sl-tab" title="Verdict definitions and sorting" onclick="document.getElementById('sidepanel').classList.toggle('closed')">Guide</div>
 <div class="sl-body">

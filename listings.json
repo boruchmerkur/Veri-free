@@ -4433,43 +4433,52 @@
       "card": "No",
       "autobill": "—",
       "account": "Required",
-      "limits": "10 boards per workspace on free",
-      "realcost": "An account. Ten boards covers most small teams indefinitely.",
-      "free_score": 82,
+      "limits": "10 boards, 10 collaborators and 10MB per file — each per Workspace",
+      "realcost": "An account, and a team of ten or fewer. Past ten collaborators the free Workspace stops being writable.",
+      "free_score": 74,
       "value_score": 7,
-      "short": "Yes — Trello's free plan is a real permanent tier: unlimited cards and members, ten boards per workspace, and the drag-and-drop kanban that made the product famous, no card anywhere.",
-      "catch": "The ten-board ceiling is the fence, and it's generously placed — many teams live inside it for years. The squeeze arrives with scale: more boards, bigger file attachments, and admin controls are the paid tier's territory.",
+      "short": "Yes — Trello's free plan is a genuinely permanent tier with no card and no clock: unlimited cards, unlimited Power-Ups, and the drag-and-drop kanban that made the product famous. What it isn't is unlimited in people. Free Workspaces run on a rule of three tens — 10 boards, 10 collaborators, 10MB per file.",
+      "catch": "The collaborator cap is the one that bites, because it arrived late and it bites backwards. Free Workspaces were open-ended on people until 8 April 2024; Atlassian then capped them at 10. Go over and Trello doesn't just block the eleventh invite — by Atlassian's own wording the existing boards “become view-only” and automations stop running. Work you already had becomes read-only until you remove people or pay. Note also what counts toward the ten: Workspace members, guests on a single board, and invitations nobody has accepted yet.",
       "free_includes": [
-        "Unlimited cards, lists, and members",
-        "10 boards per workspace",
-        "Checklists, due dates, labels, and attachments",
-        "Automation in modest monthly doses"
+        "Unlimited cards and lists, and unlimited Power-Ups per board",
+        "Up to 10 boards and 10 collaborators per Workspace",
+        "Unlimited storage, capped at 10MB per file",
+        "250 Workspace automation command runs a month",
+        "Checklists, due dates, labels, activity log, mobile apps and 2FA"
       ],
       "paid_locked": [
-        "More than 10 boards per workspace",
-        "Large file attachments",
-        "Admin controls and advanced views (timeline, calendar, dashboard)"
+        "Unlimited boards, and more than 10 people in a Workspace",
+        "Files above 10MB (Standard raises the ceiling to 250MB)",
+        "Automation beyond 250 command runs a month (Standard: 1,000)",
+        "Custom fields, advanced checklists, card mirroring and the Planner"
       ],
       "drawbacks": [
-        "10-board cap forces consolidation or workspaces gymnastics",
-        "Advanced views locked",
+        "10 collaborators per Workspace — pending invites and single-board guests count",
+        "Over the limit, existing boards go view-only and automations stop",
+        "10 boards per Workspace, and 10MB per file",
         "Owned by Atlassian — expect steady nudges toward its paid family"
       ],
-      "get_summary": "In practice: a household, a small team, or a couple of projects run comfortably free forever. It's one of the fairest freemium fences in software.",
-      "worth": "Comparable project tools charge $5–10 per user per month for what most small teams do here free.",
+      "get_summary": "In practice: a household, a solo worker or a small team of up to ten runs free indefinitely. The eleventh person is where it ends.",
+      "worth": "Comparable project tools charge $5–10 per user per month for what a team of ten does here free. Trello's own Standard tier is $5 per user per month billed annually.",
       "smart_moves": [
+        "Count your collaborators before you plan around the free tier — ten includes guests and unaccepted invites",
+        "Deactivated members and people only on closed boards don't count toward the ten",
         "One board per project, not per week — the 10-board cap rewards tidy structure",
         "Archive finished boards instead of deleting; archived boards don't count against you",
-        "The free automation allowance covers recurring-task busywork — set it up once"
+        "Separate Workspaces each get their own ten boards, though not a shared team"
       ],
       "more_info": [
         [
           "Where the fence actually sits",
-          "Unlimited cards and people mean the free tier scales with team size, not usage — unusual and generous. The fence is board count and file size. If you're bumping the board cap, merging projects into one board with labeled lists usually buys another year of free."
+          "Three tens, all per Workspace: 10 boards, 10 collaborators, 10MB per file. Cards, lists and Power-Ups are genuinely unlimited, so the plan scales with how much work you track — not with how much you use it. It stops scaling with how many people do the tracking, which is the opposite of what this page said until we rechecked it in August 2026."
+        ],
+        [
+          "What happens at the eleventh person",
+          "This is the part worth knowing before you build on the free plan. Atlassian's support documentation states that a free Workspace over the limit has its boards “become view-only” and that automations set up on those boards “won't run”. You are not blocked from growing; you are blocked from editing what you already made. The way out is removing collaborators or upgrading. Counted toward the ten: Workspace members, board guests, and pending invitations. Not counted: deactivated accounts, and members who only appear on closed boards."
         ],
         [
           "The Atlassian context",
-          "Trello sits inside Atlassian's suite, and the free tier partly exists to feed Jira and friends. Nothing sinister — just know the product's job is to be your gateway, and enjoy the gateway."
+          "Trello sits inside Atlassian's suite, and the free tier partly exists to feed Jira and friends. Nothing sinister — but the collaborator cap is a reminder that the terms of a free tier belong to the company offering it, and can tighten years after you have built your workflow on them."
         ]
       ],
       "short_worth": null,
@@ -4496,8 +4505,8 @@
       "sentiment": {
         "split": "G2 4.4/5 from business users · App Store 4.3/5 · Google Play 3.8/5.",
         "praised": "Simplicity is the compliment across every source: a board, lists, cards — learnable in a minute, and the free tier holds real teams for years.",
-        "complained": "The Android score carries app complaints — sync delays and a mobile experience reviewers find heavier than the web. The ten-board workspace ceiling and small attachment limits are the free-tier grievances, alongside the sense that development attention moved to Atlassian's bigger products.",
-        "takeaway": "Rare among the “free forever” tools in that the ceiling is generously placed and clearly marked. If ten boards isn't enough, the problem is probably your board sprawl, not the plan."
+        "complained": "The Android score carries app complaints — sync delays and a mobile experience reviewers find heavier than the web. On the free tier the grievances are the collaborator cap introduced in 2024, which caught existing Workspaces, the ten-board ceiling and the small attachment limit, alongside a sense that development attention moved to Atlassian's bigger products.",
+        "takeaway": "Still one of the more honest permanent free tiers — no card, no clock, no ads, and a product that works. Judge it on team size rather than features: under ten people it is excellent and costs nothing, and at eleven it stops being a free tool at all."
       },
       "verified": "2026-08",
       "free_spec": {
@@ -11416,6 +11425,14 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-08-31",
+      "item": "Trello",
+      "change": "Free Score 82 → 74; the members claim corrected",
+      "from": "82",
+      "to": "74",
+      "detail": "Our page said the free plan included unlimited members and called that unusually generous. Atlassian capped free Workspaces at 10 collaborators on 8 April 2024 — counting guests and pending invites — and a Workspace over the limit has its boards turned view-only with automations halted. The verdict stays Free forever, because the tier really is permanent and cardless, but the score drops: three hard fences, and an overage penalty that removes access you already had."
+    },
     {
       "date": "2026-08-20",
       "item": "WordPress",

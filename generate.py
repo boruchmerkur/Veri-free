@@ -1599,10 +1599,14 @@ def build():
     NAV = (f'<nav class="nav"><div class="wrap nav-in">'
            f'<a class="logo" href="/">VERIFIED·<b>FREE</b></a>'
            f'<div class="nav-links">'
-           f'<div class="dropdown"><a href="/#categories">Categories</a>'
+           # The categories hang off the offers link rather than standing as
+           # their own nav item. "Categories" pointed at /#categories, an
+           # anchor that stopped existing when the directory moved to /all/,
+           # so it silently dumped you at the top of the landing — which the
+           # logo already does.
+           f'<div class="dropdown"><a href="/all/">Free offers</a>'
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
            f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
-           f'<a href="/all/">Free offers</a>'
            f'<a href="/deals/">Deals</a>'
            f'<a href="/coupons/">Coupons</a>'
            f'<a href="/free-consultations/">Consultations</a>'

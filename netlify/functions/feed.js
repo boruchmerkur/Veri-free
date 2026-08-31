@@ -155,7 +155,12 @@ function score(title, summary, kind) {
 
 async function fetchFeed([name, url, kind]) {
   const ctl = new AbortController();
-  const timer = setTimeout(() => ctl.abort(), 6000);
+  // All 28 fetches run concurrently, so this is a per-feed ceiling rather than
+  // a budget being divided up — the whole sweep takes about a second when the
+  // sources behave. 7s because hnrss.org is regularly slower than 6 and an
+  // abort there is a timeout, not a dead source; the function's own limit is
+  // 10s, which this still clears.
+  const timer = setTimeout(() => ctl.abort(), 7000);
   let xml;
   try {
     const r = await fetch(url, {

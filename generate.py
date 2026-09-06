@@ -527,6 +527,13 @@ body.loc-ca .ca-badge{display:inline-flex}
 .streamwrap{padding-top:18px}
 .st-strip{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;padding:0 0 20px;border-bottom:2.5px solid var(--ink);margin-bottom:22px;font-size:14.5px;color:var(--muted)}
 .st-strip span:nth-child(2){flex:1;min-width:260px;max-width:70ch}
+/* The Quick Buck */
+.st-tag.real{background:#B3261E;color:#fff;border-color:#B3261E}
+.vfilters i{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10.5px;opacity:.55;margin-left:5px}
+.vfilter.on i{opacity:.8}
+.wire-srch{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:-.015em;margin:34px 0 8px;padding-top:26px;border-top:2.5px solid var(--ink)}
+.wire-src{font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:2;color:var(--muted);margin:0 0 10px}
+.wire-src-note{font-size:14px;color:var(--muted);margin:0;max-width:70ch}
 .st-live{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.16em;color:#B3261E;border:1.5px solid #B3261E;border-radius:5px;padding:2px 7px}
 .st-when{font-family:"IBM Plex Mono",monospace;font-size:11.5px}
 .stream{columns:3;column-gap:20px}
@@ -822,6 +829,33 @@ def stream_card(it, lead=False, match=None):
             f'</div></article>')
 
 
+WIRE_SCHEMES = ["Reality check", "Side hustles", "Passive income", "Real estate",
+                "Crypto", "Trading", "Investing", "Ecommerce", "Flipping", "Startups"]
+
+
+def wire_card(it, lead=False):
+    """A Quick Buck item. Deliberately the same card as the homepage stream —
+    one story shape for the whole site — with the scheme in the tag slot and
+    the enforcement scheme marked so it reads as the counterweight it is."""
+    img = ""
+    if it.get("image"):
+        img = (f'<div class="st-art"><img src="{esc(it["image"])}" alt="" loading="lazy" '
+               f'referrerpolicy="no-referrer"></div>')
+    cls = "st-card lead" if lead else "st-card"
+    if not it.get("image"):
+        cls += " notart"
+    scheme = it.get("scheme", "")
+    tag_cls = "st-tag real" if scheme == "Reality check" else "st-tag"
+    return (f'<article class="{cls}" data-s="{esc(scheme)}">{img}'
+            f'<div class="st-body"><div class="st-tags">'
+            f'<span class="{tag_cls}">{esc(scheme)}</span></div>'
+            f'<h3><a href="{esc(it["url"])}" target="_blank" rel="noopener nofollow">'
+            f'{esc(it["title"])}</a></h3>'
+            f'<p class="st-sum">{esc(it.get("summary", ""))}</p>'
+            f'<p class="st-meta">{esc(it["source"])} · {ago(it.get("date"))}</p>'
+            f'</div></article>')
+
+
 def deal_card(d, cta="Go to offer →"):
     """Shared card for /deals/, /coupons/ and /free-in-real-life/."""
     st = d.get("status", "verified")
@@ -944,6 +978,83 @@ LIVEFEED_JS = """<script>
       if(window.vfAgeTimes)window.vfAgeTimes(host);
     })
     .catch(function(){});   // offline or blocked: the baked snapshot stands
+})();
+</script>"""
+
+
+WIRE_JS = """<script>
+(function(){
+  var board=document.getElementById("wboard"),chips=document.getElementById("wchips"),
+      none=document.getElementById("wnone");
+  if(!board||!chips)return;
+  var esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
+
+  function apply(){
+    var on=chips.querySelector(".vfilter.on"),want=on?on.getAttribute("data-s"):"all",shown=0;
+    board.querySelectorAll(".st-card").forEach(function(c){
+      var hit=want==="all"||c.getAttribute("data-s")===want;
+      c.style.display=hit?"":"none";
+      if(hit)shown++;
+    });
+    if(none)none.style.display=shown?"none":"block";
+  }
+  chips.addEventListener("click",function(e){
+    var b=e.target.closest(".vfilter");
+    if(!b)return;
+    chips.querySelectorAll(".vfilter").forEach(function(x){x.classList.remove("on")});
+    b.classList.add("on");
+    apply();
+  });
+
+  function card(it,lead){
+    var cls="st-card"+(lead?" lead":"")+(it.image?"":" notart");
+    var art=it.image?'<div class="st-art"><img src="'+esc(it.image)+'" alt="" loading="lazy" '+
+      'referrerpolicy="no-referrer"></div>':"";
+    var tc=it.scheme==="Reality check"?"st-tag real":"st-tag";
+    var when="";
+    if(it.date){var d=new Date(it.date);
+      if(!isNaN(d))when='<time class="ts" datetime="'+esc(d.toISOString())+'">'+
+        esc(d.toLocaleDateString(undefined,{month:"short",day:"numeric"}))+"</time>";}
+    return '<article class="st-card'+(lead?" lead":"")+(it.image?"":" notart")+
+      '" data-s="'+esc(it.scheme)+'">'+art+
+      '<div class="st-body"><div class="st-tags"><span class="'+tc+'">'+esc(it.scheme)+
+      "</span></div><h3><a href=\\""+esc(it.url)+"\\" target=\\"_blank\\" rel=\\"noopener nofollow\\">"+
+      esc(it.title)+'</a></h3><p class="st-sum">'+esc(it.summary||"")+
+      '</p><p class="st-meta">'+esc(it.source)+" &middot; "+when+"</p></div></article>";
+  }
+
+  if(!window.fetch)return;
+  fetch("/api/wire",{headers:{Accept:"application/json"}})
+    .then(function(r){return r.ok?r.json():null;})
+    .then(function(d){
+      if(!d||!d.items||!d.items.length)return;
+      var baked=window.VF_WIRE_UPDATED?Date.parse(window.VF_WIRE_UPDATED):0;
+      var live=Date.parse(d.updated||"");
+      if(baked&&live&&live<=baked)return;   // never swap backwards
+      board.innerHTML=d.items.map(function(it,i){return card(it,i===0);}).join("");
+      // Rebuild the chip counts too, or they describe the board that was.
+      var counts={},order=[];
+      d.items.forEach(function(it){
+        if(!counts[it.scheme]){counts[it.scheme]=0;order.push(it.scheme);}
+        counts[it.scheme]++;
+      });
+      var was=chips.querySelector(".vfilter.on"),keep=was?was.getAttribute("data-s"):"all";
+      var pref=[];
+      chips.querySelectorAll(".vfilter").forEach(function(b){pref.push(b.getAttribute("data-s"))});
+      order.sort(function(a,b){
+        var ia=pref.indexOf(a),ib=pref.indexOf(b);
+        return (ia<0?99:ia)-(ib<0?99:ib);
+      });
+      chips.innerHTML='<button class="vfilter" data-s="all">All<i>'+d.items.length+"</i></button>"+
+        order.map(function(s){return '<button class="vfilter" data-s="'+esc(s)+'">'+esc(s)+
+          "<i>"+counts[s]+"</i></button>";}).join("");
+      var back=chips.querySelector('.vfilter[data-s="'+keep.replace(/"/g,'\\\\"')+'"]');
+      (back||chips.querySelector(".vfilter")).classList.add("on");
+      if(window.vfAgeTimes)window.vfAgeTimes(board);
+      apply();
+    })
+    .catch(function(){});   // the baked board stands
 })();
 </script>"""
 
@@ -1412,7 +1523,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/all/">Free offers</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/all/">Free offers</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/quick-buck/">Quick Buck</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {NAV_JS}
 {COUPON_JS}
@@ -1690,9 +1801,10 @@ def build():
            # logo already does.
            f'<div class="dropdown"><a href="/all/">Free offers</a>'
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
-           f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
+           f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/quick-buck/">The Quick Buck</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
            f'<a href="/deals/">Deals</a>'
            f'<a href="/coupons/">Coupons</a>'
+           f'<a href="/quick-buck/">Quick Buck</a>'
            f'<a href="/free-consultations/">Consultations</a>'
            f'<a href="/free-in-real-life/">Real Life</a>'
            f'<a href="/compare/">Compare</a>'
@@ -2423,6 +2535,54 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
                      extra_head=f'<script type="application/ld+json">{irl_schema}</script>')
         os.makedirs(os.path.join(OUT, "free-in-real-life"))
         open(os.path.join(OUT, "free-in-real-life", "index.html"), "w").write(p)
+
+    # ---------- the quick buck ----------
+    # A live board of get-rich-fast pitches, with the FTC and CFPB enforcement
+    # actions against those same schemes mixed into it rather than quarantined
+    # in a warning paragraph. Same shape as the homepage stream: a baked
+    # snapshot renders server-side, /api/wire refreshes it in the browser.
+    wire_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "wire_snapshot.json")
+    wire = json.load(open(wire_path, encoding="utf-8")) if os.path.exists(wire_path) else {}
+    if wire.get("items"):
+        wi = wire["items"]
+        counts = {}
+        for it in wi:
+            counts[it["scheme"]] = counts.get(it["scheme"], 0) + 1
+        order = [s for s in WIRE_SCHEMES if counts.get(s)]
+        chips = (f'<button class="vfilter on" data-s="all">All<i>{len(wi)}</i></button>'
+                 + "".join(f'<button class="vfilter" data-s="{esc(s)}">{esc(s)}'
+                           f'<i>{counts[s]}</i></button>' for s in order))
+        board = "".join(wire_card(it, lead=(i == 0)) for i, it in enumerate(wi))
+        src_list = " · ".join(esc(s) for s in wire.get("sources", []))
+        wire_body = f"""
+<header class="pagehead tight wrap"><h1>The Quick Buck</h1>
+<p>Every "make money fast" pitch we can find, next to the enforcement actions against them.</p></header>
+<details class="pagenote wrap"><summary>Read this before you read any of that</summary><div class="pn-body">
+<p>This board is not advice and nothing on it is endorsed. It is a reading room for the get-rich-fast genre — side hustles, trading, crypto, flipping, real estate, passive income — collected from {len(wire.get("sources", []))} public feeds and left in the publishers' own words.</p>
+<p>The reason it sits on a site about "free" is that the two cons rhyme. A number in a headline is a marketing decision, not a result: the person who made $60,000 in two months is the one who wrote about it, and you are not reading about the people who tried the same thing and lost. Survivorship is the whole business model.</p>
+<p>Which is why the <strong>Reality check</strong> filter is not a disclaimer strip at the bottom of the page. It is the FTC and the CFPB, in the same board, describing what happened to the schemes that got far enough to be prosecuted. Read the pitch and the prosecution together and the genre explains itself.</p>
+<p>Three rules that survive every version of this: if it needs your money up front, it is selling to you, not with you. If the returns are certain, the risk is being hidden somewhere you have not looked. Never put in money you would need back this year.</p>
+</div></details>
+<div class="findbar"><div class="wrap findbar-in">
+<div class="vfilters" id="wchips">{chips}</div>
+<span class="hs-when">Updated {ago(wire.get("updated"))}</span>
+</div></div>
+<main class="wrap">
+<div class="stream" id="wboard">{board}</div>
+<p class="noresults" id="wnone" style="display:none">Nothing in that scheme right now. <a href="#" onclick="document.querySelector('#wchips .vfilter').click();return false">Show everything</a></p>
+<section class="sec"><h2 class="wire-srch">Where this comes from</h2>
+<p class="wire-src">{src_list}</p>
+<p class="wire-src-note">Every feed on that list was fetched and confirmed live when this page was built. Headlines and images belong to their publishers and link back to the original.</p></section>
+<div style="padding-bottom:50px"></div></main>
+<script>window.VF_WIRE_UPDATED={json.dumps(wire.get("updated") or "")};</script>
+{WIRE_JS}"""
+        p = page_nav("The Quick Buck — get-rich-fast pitches, and the cases against them",
+                     "A live board of side-hustle, trading, crypto and passive-income pitches, "
+                     "collected from 21 public feeds and shown alongside the FTC and CFPB "
+                     "enforcement actions against the same schemes.",
+                     "/quick-buck/", wire_body)
+        os.makedirs(os.path.join(OUT, "quick-buck"))
+        open(os.path.join(OUT, "quick-buck", "index.html"), "w", encoding="utf-8").write(p)
 
     # ---------- when to buy ----------
     wtb_body = """

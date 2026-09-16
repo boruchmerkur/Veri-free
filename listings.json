@@ -4188,60 +4188,6 @@
       }
     },
     {
-      "name": "DreamSite Site Checkup",
-      "category": "software-tools",
-      "url": "https://dreamsitedesign.com/scan",
-      "verdict": "truly",
-      "card": "No",
-      "autobill": "—",
-      "account": "None — no signup at all",
-      "limits": "One page per scan; best-practices scan only",
-      "realcost": "Nothing. It's the studio's front door — scan free, hire them only if you want.",
-      "disclosure": "DreamSite and Verified Free share an owner. Same rubric, same scrutiny — details under More info.",
-      "free_includes": [
-        "Instant Speed and Security scores for any web address",
-        "HTTPS, certificate, and security-header checks read from the real server response",
-        "Load time, page weight, and render-blocking script analysis",
-        "Cookie safety, mixed content, version leakage, and mobile-readiness checks",
-        "No signup, no email gate — and scanned sites aren't stored"
-      ],
-      "paid_locked": [],
-      "drawbacks": [
-        "Scans the page you give it, not your whole site",
-        "A best-practices read of public information — not a penetration test",
-        "Heavily bot-protected sites may block any automated scan",
-        "It's a design studio's front door — their pitch lives nearby"
-      ],
-      "get_summary": "In practice: a plain-English answer to 'is my site slow or insecure?' in seconds — the checklist a professional audit starts with, minus the invoice.",
-      "worth": "Professional site audits start in the hundreds; this covers the opening checklist free.",
-      "smart_moves": [
-        "Scan before and after any site change — the scores make regressions obvious",
-        "Fix the security headers first; most are one-line server settings",
-        "Only scan sites you own or have permission to check",
-        "Pair it with Google's free PageSpeed Insights when you want deep performance detail"
-      ],
-      "more_info": [
-        [
-          "Who pays for this?",
-          "DreamSite is a design and engineering studio; the checkup is its front door. You get a genuinely free diagnostic, they get to demonstrate competence — the honest version of lead generation, with no email wall in between."
-        ],
-        [
-          "What the scan can and can't see",
-          "The exact checks — HTTPS, certificate, security headers — read the real server response and are precise. Content checks cover the single page loaded, and it's a best-practices scan of publicly visible information: not a break-in attempt, and not a substitute for a full security audit on high-stakes systems."
-        ],
-        [
-          "Disclosure, in full",
-          "DreamSite and Verified Free share an owner. This listing went through the same rubric as the other 58 — which is exactly why its Value score isn't a 10. If that rubric ever bends for the house, the whole site is worthless; it won't."
-        ]
-      ],
-      "free_score": 95,
-      "value_score": 7,
-      "short": "Yes — completely. Paste any web address and get graded Speed and Security scores in seconds: no signup, no card, no email gate, and the site states scanned addresses aren't stored.",
-      "catch": "The catch is the business model, stated plainly: the scan is a design studio's calling card. The results are real either way — and the absence of an email gate is more than most 'free audit' tools can say.",
-      "short_worth": null,
-      "slug": "is-dreamsite-site-checkup-actually-free"
-    },
-    {
       "name": "HubSpot CRM",
       "category": "business",
       "url": "https://www.hubspot.com/products/crm",
@@ -4785,7 +4731,7 @@
       "free_score": 98,
       "value_score": 7,
       "short": "Yes — the industry-standard free test of a website's HTTPS setup: paste a domain, wait a couple of minutes, get a letter grade with a full breakdown of certificate, protocol, and configuration issues.",
-      "catch": "It's the same species as the DreamSite checkup: a security firm demonstrating competence by giving the diagnosis away. The scan is slow and deeply technical — and the letter grade is the lingua franca of TLS quality.",
+      "catch": "It is a security firm demonstrating competence by giving the diagnosis away. The scan is slow and deeply technical — and the letter grade is the lingua franca of TLS quality.",
       "free_includes": [
         "A full TLS/SSL configuration analysis with a letter grade",
         "Certificate, protocol, and cipher detail",
@@ -11133,22 +11079,6 @@
       "favicon_url": "https://smallbusiness.withgoogle.com"
     },
     {
-      "name": "DreamSite Design — Free 30-Minute Consultation",
-      "url": "https://dreamsitedesign.com",
-      "type": "Free half-hour web design consultation",
-      "status": "verified",
-      "verified_date": "July 2026",
-      "summary": "A free 30-minute consultation with a DreamSite Design web strategist — site audits, redesign planning, new builds, or just honest answers about what your site needs. No obligation, no pitch timer. Use code VERIFREEDREAM when booking.",
-      "who": "Any business or individual with a web project or question",
-      "how": "Visit dreamsitedesign.com and book a consultation using code VERIFREEDREAM",
-      "worth": "Web design consultations typically run $75–200/half hour. This one is $0 with the code — a genuine front-door offer from the studio.",
-      "caveat": "The consultation is genuinely free and the code is real; if the studio ever stops honouring it, this listing comes down. The consultation is advice, not deliverables — hired work is quoted separately.",
-      "favicon_url": "https://dreamsitedesign.com",
-      "code": "VERIFREEDREAM",
-      "disclosure": "DreamSite Design and Verified Free share an owner. Listed on the same rubric as every other deal here.",
-      "consultation": true
-    },
-    {
       "name": "The Library Card Stack",
       "url": "https://www.libbyapp.com",
       "type": "One card unlocks ~$800+/year in free services",
@@ -11445,6 +11375,14 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-09-15",
+      "item": "DreamSite Site Checkup",
+      "change": "Removed — the site changed hands",
+      "from": "listed",
+      "to": "delisted",
+      "detail": "Verified Free is now owned by Sufrin Studios. The DreamSite listing and its consultation offer both carried a same-owner disclosure that stopped being true, and a disclosure that is no longer accurate is worse than no listing. Both removed rather than rewritten."
+    },
     {
       "date": "2026-08-31",
       "item": "Adobe Stock Free Trial",

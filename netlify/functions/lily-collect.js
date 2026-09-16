@@ -4,7 +4,7 @@
 // The edge function (lily-edge.js) on this same site POSTs its coarse,
 // already-anonymized event here — to this site's OWN origin. This collector's
 // only job is to relay that coarse count onward, server-to-server, to the
-// central dreamsite dashboard. Nothing raw ever reaches this point: the event
+// central Sufrin Studios dashboard. Nothing raw ever reaches this point: the event
 // it receives has no IP and no full user-agent (only path, referrer host,
 // country, device class, and a daily-rotating one-way hash). So the only data
 // that ever crosses a domain boundary is aggregate, non-identifying counts —
@@ -13,7 +13,7 @@
 // If you'd rather keep the data on THIS site only (no relay), delete the
 // RELAY_URL line and add your own store write instead.
 
-const RELAY_URL = 'https://dreamsitedesign.com/api/lily';
+const RELAY_URL = 'https://sufrinstudios.com/api/lily';
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',

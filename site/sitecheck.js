@@ -1,7 +1,7 @@
 /* Veri-Free — free site check (AI searchability + SEO)
    Calls the checkmysite audit backend (server-side fetch of the target, so it
    works cross-origin), then shows only the AI-assistant-visibility and SEO
-   checks. No backend on this site; connect-src must allow dreamsitedesign.com. */
+   checks. No backend on this site; connect-src must allow checkmysite.pro. */
 (function () {
   'use strict';
   var form = document.getElementById('scForm');
@@ -11,7 +11,7 @@
       statusEl = document.getElementById('scStatus'),
       results = document.getElementById('scResults'),
       foot = document.getElementById('scFoot');
-  var API = 'https://dreamsitedesign.com/api/audit';
+  var API = 'https://checkmysite.pro/api/audit';
   var ICO = { pass: '✓', warn: '!', fail: '✕' };
   // Localized homepages set window.SC_STRINGS before this script loads.
   var S = Object.assign({
@@ -25,7 +25,7 @@
     lead_ph: 'you@email.com', lead_btn: 'Email me the report',
     lead_sent: 'Sent — check your inbox.', lead_err: 'Couldn’t send — try again.'
   }, window.SC_STRINGS || {});
-  var LEAD = 'https://dreamsitedesign.com/api/lead';
+  var LEAD = 'https://checkmysite.pro/api/lead';
   var lastAudit = null;
 
   function clean(h) {
@@ -38,7 +38,7 @@
   }
 
   // After a successful check, offer the FULL report (every category, not just
-  // AI+SEO) by email — posts to the dreamsite lead endpoint, which emails the
+  // AI+SEO) by email — posts to the checkmysite lead endpoint, which emails the
   // visitor the itemized report. Honest states only: success shown on 200.
   var lead = null;
   function showLead() {

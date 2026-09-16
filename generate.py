@@ -1456,21 +1456,22 @@ NAV_JS = """<script>
 </script>"""
 
 
-# House ad for the sister studio. Rendered natively rather than via the shared
-# promo-bar.js so it needs no third-party script and no CSP loosening — the
-# existing policy already permits inline script and dreamsitedesign.com.
-# Same behaviour as the network bar: once per session, dismissible, remembered
-# for 7 days, and it never runs on the pages about DreamSite itself.
+# House ad for the studio that owns this site. Rendered natively rather than
+# via the shared promo-bar.js so it needs no third-party script and no CSP
+# loosening. Same behaviour as the network bar: once per session, dismissible,
+# remembered for 7 days.
+# It shows the DOMAIN rather than the studio's name, because the domain is the
+# thing a reader can act on.
 HOUSE_AD = """<div id="hoad" hidden>
 <span class="ho-lbl">From the studio behind this site</span>
-<a class="ho-msg" href="https://dreamsitedesign.com/?ref=veri-free" rel="noopener">dreamsitedesign.com <span class="ho-pitch">— websites built to be found by Google and AI</span></a>
-<a class="ho-go" href="https://dreamsitedesign.com/?ref=veri-free" rel="noopener">Visit</a>
+<a class="ho-msg" href="https://sufrinstudios.com/?ref=veri-free" rel="noopener">sufrinstudios.com <span class="ho-pitch">— websites built to be found by Google and AI</span></a>
+<a class="ho-go" href="https://sufrinstudios.com/?ref=veri-free" rel="noopener">Visit</a>
 <button class="ho-x" type="button" aria-label="Dismiss">&times;</button>
 </div>
 <script>
 (function(){
   var p=location.pathname;
-  if(p.indexOf('dreamsite')>-1||p.indexOf('checkmysite')>-1)return;
+  if(p.indexOf('sufrin')>-1||p.indexOf('checkmysite')>-1)return;
   try{
     var off=parseInt(localStorage.getItem('vfhoad:off')||'0',10);
     if(off&&Date.now()-off<6048e5)return;
@@ -1529,10 +1530,6 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {COUPON_JS}
 {FEED_JS}
 {HOUSE_AD}
-<script
-  src="https://dreamsitedesign.com/credit.js"
-  data-site="verifree"
-  defer></script>
 <script>
 (function(){{
   function strip(){{
@@ -1683,7 +1680,7 @@ function setLoc(loc){{
 </script>
 <!-- network-block 2026-07-12 -->
 <style>.toln{{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;padding:8px 16px;font:400 11px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;border-top:1px solid rgba(128,128,128,.1);color:rgba(128,128,128,.45)}}.toln a{{color:inherit;text-decoration:none}}.toln a:hover{{color:rgba(128,128,128,.85);text-decoration:underline}}.toln .d{{color:rgba(128,128,128,.2)}}@media(prefers-color-scheme:dark){{.toln{{border-top-color:rgba(200,200,200,.07);color:rgba(200,200,200,.35)}}.toln a:hover{{color:rgba(200,200,200,.8)}}.toln .d{{color:rgba(200,200,200,.15)}}}}</style>
-<nav class="toln" aria-label="Related sites"><a href="https://dreamsitedesign.com">DreamSite Design</a></nav>
+<nav class="toln" aria-label="Related sites"><a href="https://sufrinstudios.com">Sufrin Studios</a></nav>
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -1692,8 +1689,8 @@ function setLoc(loc){{
   "url": "https://veri-free.com",
   "publisher": {{
     "@type": "Organization",
-    "name": "DreamSite Design",
-    "url": "https://dreamsitedesign.com"
+    "name": "Sufrin Studios",
+    "url": "https://sufrinstudios.com"
   }}
 }}
 </script>
@@ -2637,7 +2634,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 <h2>What we don't do</h2>
 <p>No cookies. No advertising trackers. We do not store your IP address or your full browser details — they're used for a moment to filter out bots and then discarded, never saved and never sent anywhere. We can't identify you, we don't follow you across other websites, and there's nothing here to sell because we don't collect anything worth selling.</p>
 <h2>How the counting works</h2>
-<p>To tell a returning reader from a brand-new one within a single day, our system creates a scrambled, one-way code from technical details of the request. It resets every day and can't be reversed to identify anyone — it's the same cookieless method privacy-first tools like Plausible and Fathom use. These aggregate counts are handled by DreamSite Design, the studio that builds and operates this site.</p>
+<p>To tell a returning reader from a brand-new one within a single day, our system creates a scrambled, one-way code from technical details of the request. It resets every day and can't be reversed to identify anyone — it's the same cookieless method privacy-first tools like Plausible and Fathom use. These aggregate counts are handled by Sufrin Studios, the studio that builds and operates this site.</p>
 <h2>Questions</h2>
 <p>Email <a href="mailto:hello@veri-free.com">hello@veri-free.com</a> and we'll answer plainly.</p>
 </div></main>"""

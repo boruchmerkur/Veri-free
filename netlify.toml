@@ -61,7 +61,8 @@
     'https://techcrunch\.com/.*',
     'https://s\.yimg\.com/.*',
     'https://regmedia\.co\.uk/.*',
-    'https://www\.androidauthority\.com/.*',
+    # androidauthority returns 403 to the Image CDN's fetcher (checked
+    # 2026-09-17), so it is deliberately not listed and serves direct.
     'https://9to5google\.com/.*',
     'https://lifehacker\.com/.*',
     'https://www\.eff\.org/.*',

@@ -727,6 +727,16 @@ window.vfAgeTimes=function(root){
 };
 window.vfAgeTimes();
 </script>
+<script>
+document.addEventListener("error",function(e){
+  var t=e.target;
+  if(!t||t.tagName!=="IMG")return;
+  var fb=t.getAttribute("data-fb");
+  if(!fb)return;
+  t.removeAttribute("data-fb");
+  t.src=fb;
+},true);
+</script>
 <div id="hoad" hidden>
 <span class="ho-lbl">From the studio behind this site</span>
 <a class="ho-msg" href="https://sufrinstudios.com/?ref=veri-free" rel="noopener">sufrinstudios.com <span class="ho-pitch">— websites built to be found by Google and AI</span></a>

@@ -44,8 +44,13 @@ def art_tag(url, lead=False):
         load = 'loading="eager" fetchpriority="high" decoding="async"'
     else:
         load = 'loading="lazy" decoding="async"'
-    return (f'<div class="st-art"><img src="{esc(thumb(url))}" alt="" {load} '
-            f'referrerpolicy="no-referrer"></div>')
+    src = thumb(url)
+    # If the CDN cannot fetch a host — androidauthority answers its fetcher
+    # with 403 — the card would show a blank box, which is worse than a heavy
+    # image. data-fb carries the original so ART_FALLBACK_JS can swap it in.
+    fb = f' data-fb="{esc(url)}"' if src != url else ""
+    return (f'<div class="st-art"><img src="{esc(src)}" alt="" {load} '
+            f'referrerpolicy="no-referrer"{fb}></div>')
 
 
 def art_preload(items):
@@ -1042,6 +1047,20 @@ LIVEFEED_JS = """<script>
 </script>"""
 
 
+# Error events do not bubble, so this listens in the capture phase. One
+# handler covers baked cards and anything the live swap renders later.
+ART_FALLBACK_JS = """<script>
+document.addEventListener("error",function(e){
+  var t=e.target;
+  if(!t||t.tagName!=="IMG")return;
+  var fb=t.getAttribute("data-fb");
+  if(!fb)return;
+  t.removeAttribute("data-fb");
+  t.src=fb;
+},true);
+</script>"""
+
+
 WIRE_JS = """<script>
 (function(){
   var board=document.getElementById("wboard"),chips=document.getElementById("wchips"),
@@ -1606,6 +1625,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {NAV_JS}
 {COUPON_JS}
 {FEED_JS}
+{ART_FALLBACK_JS}
 {HOUSE_AD}
 <script>
 (function(){{

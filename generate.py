@@ -3,10 +3,59 @@
 Reads listings.json, writes the full site into ./site/.
 Run: python3 generate.py
 """
-import json, re, os, re, shutil, html
+import json, re, os, re, shutil, html, tomllib
+from urllib.parse import quote as _urlquote
 from i18n import L10N, EXTRA_LANGS, LANG_NAMES, HTML_LANG
 
 DOMAIN = "https://veri-free.com"
+
+# Feed art is hotlinked from publishers at full resolution. Measured
+# 2026-09-17, the homepage pulled 3.36 MB of it — one 1,015 KB JPEG into a card
+# a few hundred pixels wide — and that image, marked loading="lazy", was the
+# LCP element at 25.6s.
+#
+# The allowlist is read from netlify.toml rather than repeated here, so the
+# list the edge enforces and the list the build rewrites against can never
+# drift apart. A host that is not on it keeps its original URL.
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "netlify.toml"), "rb") as _f:
+    IMG_ALLOW_SRC = tomllib.load(_f).get("images", {}).get("remote_images", [])
+IMG_ALLOW = [re.compile(p) for p in IMG_ALLOW_SRC]
+ART_W = 640          # cards are ~380px in the 3-column grid, full width on mobile
+
+
+def thumb(url, w=ART_W):
+    """Route an allowlisted remote image through the Netlify Image CDN."""
+    if not url:
+        return ""
+    if any(p.fullmatch(url) for p in IMG_ALLOW):
+        return f"/.netlify/images?url={_urlquote(url, safe='')}&w={w}&fm=webp&q=72"
+    return url
+
+
+def art_tag(url, lead=False):
+    """The <img> for a story card.
+
+    The lead card is the LCP element on both the homepage and /quick-buck/, so
+    it loads eagerly at high priority. Marking it lazy — which is what the
+    whole stream used to do — makes the browser wait for layout before it will
+    even request the largest image on the page.
+    """
+    if lead:
+        load = 'loading="eager" fetchpriority="high" decoding="async"'
+    else:
+        load = 'loading="lazy" decoding="async"'
+    return (f'<div class="st-art"><img src="{esc(thumb(url))}" alt="" {load} '
+            f'referrerpolicy="no-referrer"></div>')
+
+
+def art_preload(items):
+    """Preload the lead card's art so the LCP request starts in the head."""
+    for it in items:
+        if it.get("image"):
+            return (f'<link rel="preload" as="image" fetchpriority="high" '
+                    f'href="{esc(thumb(it["image"]))}">')
+        break
+    return ""
 SPRITE_INDEX = {}
 if os.path.exists("assets/brand-index.json") and os.path.exists("assets/brand-sprite.png"):
     SPRITE_INDEX = json.load(open("assets/brand-index.json"))
@@ -800,10 +849,7 @@ def verified_line(l, site_checked):
 
 
 def stream_card(it, lead=False, match=None):
-    img = ""
-    if it.get("image"):
-        img = (f'<div class="st-art"><img src="{esc(it["image"])}" alt="" loading="lazy" '
-               f'referrerpolicy="no-referrer"></div>')
+    img = art_tag(it["image"], lead=lead) if it.get("image") else ""
     tags = "".join(f'<span class="st-tag">{esc(t)}</span>' for t in it.get("tags", []))
     vid = '<span class="st-vid">▶</span>' if it.get("kind") == "video" else ""
     cls = "st-card lead" if lead else "st-card"
@@ -837,10 +883,7 @@ def wire_card(it, lead=False):
     """A Quick Buck item. Deliberately the same card as the homepage stream —
     one story shape for the whole site — with the scheme in the tag slot and
     the enforcement scheme marked so it reads as the counterweight it is."""
-    img = ""
-    if it.get("image"):
-        img = (f'<div class="st-art"><img src="{esc(it["image"])}" alt="" loading="lazy" '
-               f'referrerpolicy="no-referrer"></div>')
+    img = art_tag(it["image"], lead=lead) if it.get("image") else ""
     cls = "st-card lead" if lead else "st-card"
     if not it.get("image"):
         cls += " notart"
@@ -921,6 +964,18 @@ LIVEFEED_JS = """<script>
   if(!host||!window.fetch)return;
   var esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
+  // Same rewrite the build does, against the same allowlist, so a card that
+  // arrives live is as light as one that was baked in.
+  var artsrc=function(u){
+    if(!u)return "";
+    var ok=window.VF_IMGOK||[];
+    for(var i=0;i<ok.length;i++){
+      try{ if(new RegExp("^(?:"+ok[i]+")$").test(u))
+        return "/.netlify/images?url="+encodeURIComponent(u)+"&w="+(window.VF_ARTW||640)+"&fm=webp&q=72";
+      }catch(e){}
+    }
+    return u;
+  };
 
   function matchOf(it){
     var idx=window.VF_MATCH||[],hay=(it.title||"")+" "+(it.summary||"");
@@ -935,8 +990,9 @@ LIVEFEED_JS = """<script>
 
   function card(it,lead){
     var cls="st-card"+(lead?" lead":"")+(it.image?"":" notart");
-    var art=it.image?'<div class="st-art"><img src="'+esc(it.image)+'" alt="" '+
-      'loading="lazy" referrerpolicy="no-referrer"></div>':"";
+    var art=it.image?'<div class="st-art"><img src="'+esc(artsrc(it.image))+'" alt="" '+
+      (lead?'loading="eager" fetchpriority="high"':'loading="lazy"')+
+      ' decoding="async" referrerpolicy="no-referrer"></div>':"";
     var tags=(it.tags||[]).map(function(t){
       return '<span class="st-tag">'+esc(t)+"</span>";}).join("");
     var vid=it.kind==="video"?'<span class="st-vid">&#9654;</span>':"";
@@ -963,21 +1019,25 @@ LIVEFEED_JS = """<script>
       '<p class="st-meta">'+esc(it.source)+" &middot; "+when+"</p></div></article>";
   }
 
-  fetch("/api/feed",{headers:{Accept:"application/json"}})
-    .then(function(r){return r.ok?r.json():null;})
-    .then(function(d){
-      if(!d||!d.items||!d.items.length)return;
-      // Only replace if the live pull is actually newer than what was baked.
-      // A stale-while-revalidate hit can be older than a fresh deploy, and
-      // swapping backwards would make the page regress on reload.
-      var baked=window.VF_SNAP_UPDATED?Date.parse(window.VF_SNAP_UPDATED):0;
-      var live=Date.parse(d.updated||"");
-      if(baked&&live&&live<=baked)return;
-      host.innerHTML=d.items.slice(0,16).map(function(it,i){
-        return card(it,i===0);}).join("");
-      if(window.vfAgeTimes)window.vfAgeTimes(host);
-    })
-    .catch(function(){});   // offline or blocked: the baked snapshot stands
+  function go(){
+    fetch("/api/feed",{headers:{Accept:"application/json"}})
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(d){
+        if(!d||!d.items||!d.items.length)return;
+        // Only replace if the live pull is actually newer than what was baked.
+        // A stale-while-revalidate hit can be older than a fresh deploy, and
+        // swapping backwards would make the page regress on reload.
+        var baked=window.VF_SNAP_UPDATED?Date.parse(window.VF_SNAP_UPDATED):0;
+        var live=Date.parse(d.updated||"");
+        if(baked&&live&&live<=baked)return;
+        host.innerHTML=d.items.slice(0,16).map(function(it,i){
+          return card(it,i===0);}).join("");
+        if(window.vfAgeTimes)window.vfAgeTimes(host);
+      })
+      .catch(function(){});   // offline or blocked: the baked snapshot stands
+  }
+  if(document.readyState==="complete")setTimeout(go,0);
+  else window.addEventListener("load",function(){setTimeout(go,0)});
 })();
 </script>"""
 
@@ -989,6 +1049,18 @@ WIRE_JS = """<script>
   if(!board||!chips)return;
   var esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
+  // Same rewrite the build does, against the same allowlist, so a card that
+  // arrives live is as light as one that was baked in.
+  var artsrc=function(u){
+    if(!u)return "";
+    var ok=window.VF_IMGOK||[];
+    for(var i=0;i<ok.length;i++){
+      try{ if(new RegExp("^(?:"+ok[i]+")$").test(u))
+        return "/.netlify/images?url="+encodeURIComponent(u)+"&w="+(window.VF_ARTW||640)+"&fm=webp&q=72";
+      }catch(e){}
+    }
+    return u;
+  };
 
   function apply(){
     var on=chips.querySelector(".vfilter.on"),want=on?on.getAttribute("data-s"):"all",shown=0;
@@ -1009,8 +1081,9 @@ WIRE_JS = """<script>
 
   function card(it,lead){
     var cls="st-card"+(lead?" lead":"")+(it.image?"":" notart");
-    var art=it.image?'<div class="st-art"><img src="'+esc(it.image)+'" alt="" loading="lazy" '+
-      'referrerpolicy="no-referrer"></div>':"";
+    var art=it.image?'<div class="st-art"><img src="'+esc(artsrc(it.image))+'" alt="" '+
+      (lead?'loading="eager" fetchpriority="high"':'loading="lazy"')+
+      ' decoding="async" referrerpolicy="no-referrer"></div>':"";
     var tc=it.scheme==="Reality check"?"st-tag real":"st-tag";
     var when="";
     if(it.date){var d=new Date(it.date);
@@ -1024,37 +1097,41 @@ WIRE_JS = """<script>
       '</p><p class="st-meta">'+esc(it.source)+" &middot; "+when+"</p></div></article>";
   }
 
-  if(!window.fetch)return;
-  fetch("/api/wire",{headers:{Accept:"application/json"}})
-    .then(function(r){return r.ok?r.json():null;})
-    .then(function(d){
-      if(!d||!d.items||!d.items.length)return;
-      var baked=window.VF_WIRE_UPDATED?Date.parse(window.VF_WIRE_UPDATED):0;
-      var live=Date.parse(d.updated||"");
-      if(baked&&live&&live<=baked)return;   // never swap backwards
-      board.innerHTML=d.items.map(function(it,i){return card(it,i===0);}).join("");
-      // Rebuild the chip counts too, or they describe the board that was.
-      var counts={},order=[];
-      d.items.forEach(function(it){
-        if(!counts[it.scheme]){counts[it.scheme]=0;order.push(it.scheme);}
-        counts[it.scheme]++;
-      });
-      var was=chips.querySelector(".vfilter.on"),keep=was?was.getAttribute("data-s"):"all";
-      var pref=[];
-      chips.querySelectorAll(".vfilter").forEach(function(b){pref.push(b.getAttribute("data-s"))});
-      order.sort(function(a,b){
-        var ia=pref.indexOf(a),ib=pref.indexOf(b);
-        return (ia<0?99:ia)-(ib<0?99:ib);
-      });
-      chips.innerHTML='<button class="vfilter" data-s="all">All<i>'+d.items.length+"</i></button>"+
-        order.map(function(s){return '<button class="vfilter" data-s="'+esc(s)+'">'+esc(s)+
-          "<i>"+counts[s]+"</i></button>";}).join("");
-      var back=chips.querySelector('.vfilter[data-s="'+keep.replace(/"/g,'\\\\"')+'"]');
-      (back||chips.querySelector(".vfilter")).classList.add("on");
-      if(window.vfAgeTimes)window.vfAgeTimes(board);
-      apply();
-    })
-    .catch(function(){});   // the baked board stands
+  function go(){
+    if(!window.fetch)return;
+    fetch("/api/wire",{headers:{Accept:"application/json"}})
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(d){
+        if(!d||!d.items||!d.items.length)return;
+        var baked=window.VF_WIRE_UPDATED?Date.parse(window.VF_WIRE_UPDATED):0;
+        var live=Date.parse(d.updated||"");
+        if(baked&&live&&live<=baked)return;   // never swap backwards
+        board.innerHTML=d.items.map(function(it,i){return card(it,i===0);}).join("");
+        // Rebuild the chip counts too, or they describe the board that was.
+        var counts={},order=[];
+        d.items.forEach(function(it){
+          if(!counts[it.scheme]){counts[it.scheme]=0;order.push(it.scheme);}
+          counts[it.scheme]++;
+        });
+        var was=chips.querySelector(".vfilter.on"),keep=was?was.getAttribute("data-s"):"all";
+        var pref=[];
+        chips.querySelectorAll(".vfilter").forEach(function(b){pref.push(b.getAttribute("data-s"))});
+        order.sort(function(a,b){
+          var ia=pref.indexOf(a),ib=pref.indexOf(b);
+          return (ia<0?99:ia)-(ib<0?99:ib);
+        });
+        chips.innerHTML='<button class="vfilter" data-s="all">All<i>'+d.items.length+"</i></button>"+
+          order.map(function(s){return '<button class="vfilter" data-s="'+esc(s)+'">'+esc(s)+
+            "<i>"+counts[s]+"</i></button>";}).join("");
+        var back=chips.querySelector('.vfilter[data-s="'+keep.replace(/"/g,'\\\\"')+'"]');
+        (back||chips.querySelector(".vfilter")).classList.add("on");
+        if(window.vfAgeTimes)window.vfAgeTimes(board);
+        apply();
+      })
+      .catch(function(){});   // the baked board stands
+  }
+  if(document.readyState==="complete")setTimeout(go,0);
+  else window.addEventListener("load",function(){setTimeout(go,0)});
 })();
 </script>"""
 
@@ -1872,6 +1949,7 @@ def build():
             # What the browser needs to refresh this slice from /api/feed: the
             # timestamp it is replacing, and the listing names to match against.
             + f'<script>window.VF_SNAP_UPDATED={json.dumps(stream.get("updated") or "")};'
+              f'window.VF_IMGOK={json.dumps(IMG_ALLOW_SRC)};window.VF_ARTW={ART_W};'
               f'window.VF_MATCH={match_index_json(match_index)};</script>'
             + LIVEFEED_JS)
 
@@ -1881,6 +1959,7 @@ def build():
 <div class="hero-top"><h1>Veri-<em>Free</em></h1><p class="tagline">Very Free &amp; Easy</p>
 <p class="sub">We check every "free" offer and tell you what it really costs.</p></div>
 </div></header>
+<main id="main">
 {home_stream}
 <section class="handoff"><div class="wrap">
 <a class="handoff-card" href="/all/">
@@ -1956,6 +2035,7 @@ document.querySelectorAll('.vfilter').forEach(function(btn){{
   }});
 }});
 </script>
+</main>
 <button class="backtop" id="btt" onclick="window.scrollTo({{top:0,behavior:'smooth'}})" aria-label="Back to top">↑</button>
 <script>
 window.addEventListener('scroll',function(){{document.getElementById('btt').classList.toggle('show',window.scrollY>600)}});
@@ -1988,7 +2068,8 @@ window.addEventListener('scroll',function(){{document.getElementById('btt').clas
 
     home = page("Verified Free — Is it actually free? We checked.",
                 "Verified Free: verified rankings of how free the internet's 'free' offers really are.",
-                "/", home_body + BANNER_JS, extra_head=home_extra + ALT_LINKS
+                "/", home_body + BANNER_JS,
+                extra_head=art_preload(stream.get("items", [])) + home_extra + ALT_LINKS
                 ).replace('<!--NAV-->', NAV_NOCAT)
     open(os.path.join(OUT, "index.html"), "w").write(home)
 
@@ -2571,13 +2652,15 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 <p class="wire-src">{src_list}</p>
 <p class="wire-src-note">Every feed on that list was fetched and confirmed live when this page was built. Headlines and images belong to their publishers and link back to the original.</p></section>
 <div style="padding-bottom:50px"></div></main>
-<script>window.VF_WIRE_UPDATED={json.dumps(wire.get("updated") or "")};</script>
+<script>window.VF_WIRE_UPDATED={json.dumps(wire.get("updated") or "")};
+window.VF_IMGOK={json.dumps(IMG_ALLOW_SRC)};window.VF_ARTW={ART_W};</script>
 {WIRE_JS}"""
         p = page_nav("The Quick Buck — get-rich-fast pitches, and the cases against them",
                      "A live board of side-hustle, trading, crypto and passive-income pitches, "
                      "collected from 21 public feeds and shown alongside the FTC and CFPB "
                      "enforcement actions against the same schemes.",
-                     "/quick-buck/", wire_body)
+                     "/quick-buck/", wire_body,
+                     extra_head=art_preload(wi))
         os.makedirs(os.path.join(OUT, "quick-buck"))
         open(os.path.join(OUT, "quick-buck", "index.html"), "w", encoding="utf-8").write(p)
 

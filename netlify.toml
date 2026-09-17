@@ -28,3 +28,61 @@
 # /.netlify/functions/lily-collect URL — so a forced redirect pointing there
 # rewrites every /api/lily request to a dead URL and returns 404. Removing it
 # lets the function's own route handle /api/lily.
+
+# Netlify Image CDN. Feed art is hotlinked from publishers at full resolution.
+# Measured 2026-09-17: the homepage pulled 3.36 MB of it, and the largest
+# single file was a 1,015 KB JPEG rendered into a card a few hundred pixels
+# wide. Routing those through /.netlify/images resizes and re-encodes at the
+# edge, serves them same-origin, and caches them.
+#
+# This is an ALLOWLIST on purpose. A permissive pattern would make the site an
+# open image proxy that anyone could run bandwidth through on this account.
+# A host that is not listed falls back to its original URL, which is exactly
+# today's behaviour — so a new publisher degrades rather than breaks.
+#
+# Patterns are TOML LITERAL strings (single quotes). Basic "..." strings treat
+# backslash as an escape and silently corrupt every \. in a regex.
+[images]
+  remote_images = [
+    # video thumbnails
+    'https://i\d?\.ytimg\.com/.*',
+    # Valnet network — XDA, Android Police, MakeUseOf, How-To Geek
+    'https://static\d*\.[a-z]+images\.com/.*',
+    'https://www\.xda-developers\.com/.*',
+    'https://www\.androidpolice\.com/.*',
+    'https://www\.makeuseof\.com/.*',
+    'https://www\.howtogeek\.com/.*',
+    # Future plc
+    'https://cdn\.mos\.cms\.futurecdn\.net/.*',
+    # tech press
+    'https://www\.pcworld\.com/.*',
+    'https://cdn\.arstechnica\.net/.*',
+    'https://cdn\.vox-cdn\.com/.*',
+    'https://techcrunch\.com/.*',
+    'https://s\.yimg\.com/.*',
+    'https://regmedia\.co\.uk/.*',
+    'https://www\.androidauthority\.com/.*',
+    'https://9to5google\.com/.*',
+    'https://lifehacker\.com/.*',
+    'https://www\.eff\.org/.*',
+    'https://krebsonsecurity\.com/.*',
+    # money and crypto
+    'https://images\.mktw\.net/.*',
+    'https://s3-images\.ctmedia\.io/.*',
+    'https://image\.cnbcfm\.com/.*',
+    'https://i\.insider\.com/.*',
+    'https://cdn\.sanity\.io/.*',
+    'https://s3\.cointelegraph\.com/.*',
+    'https://cdn\.decrypt\.co/.*',
+    'https://www\.tbstat\.com/.*',
+    'https://images\.fastcompany\.com/.*',
+    'https://assets\.fastcompany\.com/.*',
+    'https://www\.entrepreneur\.com/.*',
+    'https://millennialmoney\.com/.*',
+    'https://www\.gobankingrates\.com/.*',
+    'https://www\.biggerpockets\.com/.*',
+    'https://www\.smartpassiveincome\.com/.*',
+    'https://www\.financialsamurai\.com/.*',
+    'https://money\.com/.*',
+    'https://www\.nerdwallet\.com/.*',
+  ]

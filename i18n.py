@@ -74,6 +74,7 @@ L10N = {
     "reviews":        ("Reseñas",     "Las propias plataformas de reseñas, evaluadas — ¿a quién sirve su confianza?"),
     "data-apis":      ("Datos y APIs", "Conjuntos de datos, volcados y APIs para desarrolladores — qué niveles gratuitos son reales y cuáles murieron."),
     "leisure":        ("Ocio",        "Planes gratis y las plataformas de ofertas — museos, quedadas, Groupon y tu biblioteca."),
+    "health":         ("Salud", "Líneas de crisis, referencias públicas y las apps de meditación y ejercicio: cuáles son gratis y cuáles solo empiezan así."),
   },
 },
 "pt": {
@@ -141,6 +142,7 @@ L10N = {
     "reviews":        ("Avaliações",   "As próprias plataformas de avaliação, avaliadas — a confiança delas serve a quem?"),
     "data-apis":      ("Dados e APIs", "Conjuntos de dados, dumps e APIs para programadores — que níveis gratuitos são reais e quais morreram."),
     "leisure":        ("Lazer",        "Programas grátis e as plataformas de ofertas — museus, encontros, Groupon e sua biblioteca."),
+    "health":         ("Saúde", "Linhas de crise, referências públicas e os apps de meditação e exercício: quais são grátis e quais apenas começam assim."),
   },
 },
 "fr": {
@@ -208,6 +210,7 @@ L10N = {
     "reviews":        ("Avis",         "Les plateformes d’avis elles-mêmes, notées — leur confiance sert qui, au juste ?"),
     "data-apis":      ("Données et API", "Jeux de données, exports et API pour développeurs — quelles offres gratuites sont réelles, et lesquelles ont disparu."),
     "leisure":        ("Loisirs",      "Des sorties gratuites et les plateformes de bons plans — musées, rencontres, Groupon et votre bibliothèque."),
+    "health":         ("Santé", "Lignes de crise, références publiques et les applis de méditation et de sport : lesquelles sont gratuites, et lesquelles le sont seulement au début."),
   },
 },
 "de": {
@@ -275,6 +278,7 @@ L10N = {
     "reviews":        ("Bewertungen","Die Bewertungsplattformen selbst, bewertet — wem dient ihr Vertrauen?"),
     "data-apis":      ("Daten & APIs", "Datensätze, Dumps und Entwickler-APIs — welche Gratis-Stufen echt sind und welche eingestellt wurden."),
     "leisure":        ("Freizeit",   "Kostenlose Unternehmungen und die Deal-Plattformen — Museen, Meetups, Groupon und deine Bibliothek."),
+    "health":         ("Gesundheit", "Krisentelefone, öffentliche Nachschlagewerke und die Meditations- und Fitness-Apps: welche kostenlos sind und welche nur so anfangen."),
   },
 },
 }

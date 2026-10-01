@@ -10810,6 +10810,624 @@
         }
       ],
       "verified": "2026-08"
+    },
+    {
+      "name": "988 Suicide & Crisis Lifeline",
+      "category": "health",
+      "url": "https://988lifeline.org/",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None",
+      "limits": "None",
+      "realcost": "Nothing. It is a public service, and the call or text is free on any phone.",
+      "free_score": 100,
+      "value_score": 10,
+      "short": "Yes, completely. Dial or text 988 and you reach a trained crisis responder, free, 24 hours a day, in both the United States and Canada. No account, no app, no insurance, no caller ID requirement.",
+      "catch": "There is no catch, and that is worth saying plainly on a site that exists to find them. The one thing to know is geography: 988 reaches the US network from a US number and the Canadian service from a Canadian one, and Quebec continues to run its own provincial service rather than joining the national line. Canada's 988 answers in English and French.",
+      "free_includes": [
+        "A trained crisis responder by phone or text, 24 hours a day, every day",
+        "Free from any phone, with no account and no app to install",
+        "English and French in Canada; interpretation available in the US",
+        "Support for someone worried about another person, not only for yourself"
+      ],
+      "paid_locked": [
+        "Nothing. There is no paid tier."
+      ],
+      "get_summary": "In practice: three digits, any phone, any hour, no cost and nobody asking who you are first.",
+      "worth": "Compared with nothing, because there is nothing to compare it with. It is the service other things route you to.",
+      "drawbacks": [
+        "It reaches the network of the country your number belongs to",
+        "Quebec operates its own service rather than the national 988 line",
+        "Text and chat wait times can run longer than a call at busy hours"
+      ],
+      "smart_moves": [
+        "Save 988 in your phone now, while you do not need it — that is the whole point of a three-digit number",
+        "It is for anyone in distress, not only someone in immediate danger",
+        "You can call about another person you are worried about",
+        "In Quebec, 1-866-APPELLE (277-3553) is the provincial line"
+      ],
+      "more_info": [
+        [
+          "What actually happens when you call",
+          "The line connects you to a trained responder at a crisis centre, usually the one nearest you. They listen, talk it through, and can connect you to local services. Most calls end there. Emergency services are involved only in a small minority of cases where there is immediate danger to life, which is worth knowing because the fear of that outcome keeps people from calling at all."
+        ],
+        [
+          "Why it is on a site about free things",
+          "Because “free” is doing real work here. People in distress skip services they think will cost money, bill their insurance, or need an account. None of that applies to this one, and saying so is more useful than another review of a meditation app."
+        ]
+      ],
+      "slug": "is-988-suicide-crisis-lifeline-actually-free",
+      "canada": "Yes. Canada's 988 launched 30 November 2023 and runs nationally, 24/7, in English and French. Quebec continues to use its own provincial service.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "Crisis Text Line",
+      "category": "health",
+      "url": "https://www.crisistextline.org/",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None",
+      "limits": "None",
+      "realcost": "Nothing. A text message to a short code, free on the major carriers.",
+      "free_score": 98,
+      "value_score": 9,
+      "short": "Yes. Text HOME to 741741 in the US and you are connected to a trained volunteer crisis counsellor, free, 24 hours a day. No account, no app, nothing to install.",
+      "catch": "The honest caveat is not about money, it is about privacy. Conversations are logged and the service has previously drawn criticism for how it handled anonymised conversation data with a commercial spin-off, a practice it ended. Nothing about that affects what it costs you. It is worth knowing if you would rather speak than type.",
+      "free_includes": [
+        "A trained crisis counsellor by text, 24 hours a day",
+        "Free on major carriers, with no account and nothing to install",
+        "Text rather than voice, which is the point for anyone who cannot speak freely"
+      ],
+      "paid_locked": [
+        "Nothing. There is no paid tier."
+      ],
+      "get_summary": "In practice: a real conversation with a trained person, by text, at any hour, for nothing.",
+      "worth": "There is no paid equivalent of a volunteer crisis counsellor at three in the morning.",
+      "drawbacks": [
+        "Text-based, so it moves slower than a phone call",
+        "Short codes and numbers differ by country",
+        "Conversations are logged and reviewed for training and safety"
+      ],
+      "smart_moves": [
+        "Text, not call, is the point — it works where talking out loud is not possible",
+        "The number differs by country: 741741 in the US, 686868 in Canada",
+        "It is for any crisis, not only suicidal thoughts"
+      ],
+      "more_info": [
+        [
+          "The number is not the same everywhere",
+          "741741 is the US short code. Canada's equivalent is 686868, run by Kids Help Phone despite the name serving all ages, and the UK has its own at 85258. Texting the wrong one simply does not connect, which is a bad discovery to make in a crisis — worth storing the right one now."
+        ]
+      ],
+      "slug": "is-crisis-text-line-actually-free",
+      "canada": "Yes — text CONNECT to 686868, operated by Kids Help Phone and open to all ages, not only young people.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "MedlinePlus",
+      "category": "health",
+      "url": "https://medlineplus.gov/",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None",
+      "limits": "None",
+      "realcost": "Nothing. It is published by the US National Library of Medicine.",
+      "free_score": 97,
+      "value_score": 8,
+      "short": "Yes. MedlinePlus is the public health-information service of the US National Library of Medicine: conditions, medicines, lab tests and genetics, written for patients rather than clinicians. No account, no ads, no paywall.",
+      "catch": "There is nothing to catch. The limitation is editorial rather than commercial — it tells you what a condition is and what the evidence says, and deliberately does not tell you what to do about yours. That is a feature on a government reference and a frustration if you arrived wanting an answer.",
+      "free_includes": [
+        "Plain-language pages on conditions, medicines, supplements and lab tests",
+        "A medical encyclopaedia and a drug-interaction reference",
+        "Genetics information written for patients",
+        "No advertising and no tracking-funded business model"
+      ],
+      "paid_locked": [
+        "Nothing."
+      ],
+      "get_summary": "In practice: the reference to check a health claim against, free and without an agenda to sell you something.",
+      "worth": "The commercial health-content sites are free too, and funded by advertising that shapes what they cover.",
+      "drawbacks": [
+        "US-centric on drug names, brands and services",
+        "Describes evidence rather than giving you advice",
+        "Written to be accurate before readable"
+      ],
+      "smart_moves": [
+        "Use it to check what a commercial health site told you",
+        "The drug pages list interactions, which is the hardest thing to find elsewhere without an account",
+        "Lab-test pages explain what a result range actually means"
+      ],
+      "more_info": [
+        [
+          "Why a government reference reads differently",
+          "No advertiser means no incentive to cover whatever is being marketed this year, and no supplement brand to keep happy. It also means no engagement optimisation, which is why pages are plain and the writing is careful. On a health question, that trade is usually the right way round."
+        ]
+      ],
+      "slug": "is-medlineplus-actually-free",
+      "canada": "Freely available in Canada. Drug brand names and service references are US-specific.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "MyHealthfinder",
+      "category": "health",
+      "url": "https://health.gov/myhealthfinder",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None",
+      "limits": "None",
+      "realcost": "Nothing. Published by the US Office of Disease Prevention and Health Promotion.",
+      "free_score": 94,
+      "value_score": 7,
+      "short": "Yes. Give it an age and a sex and it returns the preventive screenings and vaccinations recommended for that profile, with the reasoning. No account, no email capture, no ads.",
+      "catch": "No catch, and a narrow scope. It answers one question — what preventive care is recommended for someone like me — and it answers it against US guidelines. It does not find you a clinic or tell you what any of it costs.",
+      "free_includes": [
+        "Personalised preventive-care recommendations by age and sex",
+        "The reasoning behind each recommendation, not only the list",
+        "Plain-language guidance on everyday prevention",
+        "No account and no email required to see results"
+      ],
+      "paid_locked": [
+        "Nothing."
+      ],
+      "get_summary": "In practice: a straight answer to what screenings you are actually due for, in under a minute.",
+      "worth": "The same question asked of a commercial health site costs you an email address and gets you a newsletter.",
+      "drawbacks": [
+        "Recommendations follow US guidelines, which differ from Canadian ones",
+        "Tells you what is recommended, not where to get it",
+        "Nothing about cost or coverage"
+      ],
+      "smart_moves": [
+        "Run it once a year — the recommendations change as you age into new brackets",
+        "Take the list to an appointment rather than trying to remember it",
+        "Canadian readers should check their provincial schedule, which differs"
+      ],
+      "more_info": [
+        [
+          "Guidelines are national, and yours may differ",
+          "Screening intervals are set nationally and genuinely disagree across countries — mammography and colorectal starting ages have moved in both the US and Canada in recent years, and not in step. Use this for the shape of the question and your own province or state for the schedule."
+        ]
+      ],
+      "slug": "is-myhealthfinder-actually-free",
+      "canada": "Usable, but the schedule is American. Provincial screening programmes set their own intervals.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "Find a Health Center (HRSA)",
+      "category": "health",
+      "url": "https://findahealthcenter.hrsa.gov/",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None",
+      "limits": "None on the finder",
+      "realcost": "The finder is free. The care it finds is sliding-scale by income, not always free.",
+      "free_score": 92,
+      "value_score": 9,
+      "short": "Yes — the directory is free and needs no account. It maps federally funded health centres that provide primary care, dental and often mental health services on a sliding scale by income, including to people with no insurance.",
+      "catch": "The tool is free; the care is not automatically. Federally qualified health centres charge on a sliding scale tied to household income, which for the lowest brackets can be nominal and for others is simply cheaper than the alternative. The word to hold onto is sliding, not free — walking in expecting no bill is how people get a surprise.",
+      "free_includes": [
+        "A searchable map of federally funded health centres by address",
+        "Primary care, dental and frequently mental health services at each",
+        "Centres required to serve patients regardless of insurance status",
+        "No account, no insurance details, nothing to sign up for"
+      ],
+      "paid_locked": [
+        "Nothing in the directory. The care itself is charged on a sliding scale."
+      ],
+      "get_summary": "In practice: how to find real care near you when you have no insurance, priced against what you earn.",
+      "worth": "The alternative for an uninsured patient is an emergency room and a bill that is not on any sliding scale.",
+      "drawbacks": [
+        "United States only",
+        "Sliding scale means a bill, usually small, not no bill",
+        "Waiting times at busy centres can be long"
+      ],
+      "smart_moves": [
+        "Ask about the sliding-scale discount when you book, not when you arrive",
+        "Bring proof of income — that is what sets your rate",
+        "Many centres provide dental, which is the hardest care to find affordably"
+      ],
+      "more_info": [
+        [
+          "What a federally qualified health centre is",
+          "A clinic receiving federal funding on condition that it serves a medically underserved area and charges on a sliding scale by income, regardless of a patient's insurance or immigration status. There are thousands of them, and the most common reason people do not use one is simply not knowing they exist."
+        ]
+      ],
+      "slug": "is-find-a-health-center-hrsa-actually-free",
+      "canada": "US programme. The Canadian equivalent is provincial health coverage plus community health centres, which vary by province.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "NHS Couch to 5K",
+      "category": "health",
+      "url": "https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None",
+      "limits": "None",
+      "realcost": "Nothing. It is published by the NHS.",
+      "free_score": 96,
+      "value_score": 9,
+      "short": "Yes. A nine-week running plan from the NHS that takes someone who does not run to thirty minutes continuous, free, with no account. The podcasts and the app are both free and ad-free.",
+      "catch": "No catch worth the name. The app asks nothing of you and sells nothing. The only thing that catches people is the plan itself: it is built around three runs a week with rest between, and compressing it is the reliable way to get injured.",
+      "free_includes": [
+        "The full nine-week plan, every week unlocked",
+        "Coached audio for every session, with a choice of coaches",
+        "The NHS app on iOS and Android, free and without ads",
+        "No account, no email, no upsell at week nine"
+      ],
+      "paid_locked": [
+        "Nothing."
+      ],
+      "get_summary": "In practice: the whole programme, coached, free, from a public health service with nothing to sell you.",
+      "worth": "Commercial running-coach apps charge monthly for a structured beginner plan.",
+      "drawbacks": [
+        "Nine weeks of three sessions each is the actual commitment",
+        "Built for absolute beginners; experienced runners will find it slow",
+        "UK health-service framing throughout"
+      ],
+      "smart_moves": [
+        "Repeat a week rather than pushing through it — the plan expects that",
+        "The rest days are part of the programme, not a gap in it",
+        "The podcast version works without the app if you would rather not install anything"
+      ],
+      "more_info": [
+        [
+          "Why a public health service gives away a coaching plan",
+          "Because the return on getting sedentary people moving is measured in avoided treatment, not subscriptions. It is the same logic behind the whole Better Health range, and it is why there is no premium tier waiting at week four."
+        ]
+      ],
+      "slug": "is-nhs-couch-to-5k-actually-free",
+      "canada": "The plan and podcasts work anywhere. The app is published in UK stores; the podcast version has no such limit.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "Insight Timer",
+      "category": "health",
+      "url": "https://insighttimer.com/",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "Required",
+      "limits": "Courses, offline downloads and playback controls need Member Plus",
+      "realcost": "An account. The free library is the real product, not a sample of it.",
+      "free_score": 84,
+      "value_score": 9,
+      "short": "Yes — and the free tier is unusually large. Over 250,000 guided meditations, talks and music tracks, plus live sessions and the timer, with no ads and no clock. Member Plus is $9.99 a month or $59.99 a year.",
+      "catch": "The fence is in an odd place, and it is the one thing to know before you rely on it. Member Plus holds the structured multi-week courses, offline downloads, and the playback controls — on a free account you cannot pause, rewind or skip forward within a track. For a thirty-minute meditation that is a real constraint, and it is the limit people hit first without expecting it.",
+      "free_includes": [
+        "250,000+ guided meditations, talks and music tracks",
+        "No advertising anywhere in the free tier",
+        "Live sessions and community groups",
+        "The meditation timer, in a basic form"
+      ],
+      "paid_locked": [
+        "The structured multi-session courses",
+        "Offline downloads",
+        "Pause, rewind and fast-forward within a track",
+        "The full timer with its complete range of bells and ambient sounds"
+      ],
+      "get_summary": "In practice: the largest genuinely free meditation library there is, with the convenience features sold separately.",
+      "worth": "The apps it competes with put almost everything behind $60–70 a year; here the library itself is the free part.",
+      "drawbacks": [
+        "No pause or rewind without Member Plus",
+        "Quality varies — anyone can publish, and it shows",
+        "Structured courses, the thing beginners most want, are the paid part"
+      ],
+      "smart_moves": [
+        "Follow a teacher rather than browsing — the library is too big to graze",
+        "Download is paid, so queue what you want before losing signal",
+        "If you want a structured course, check the free library first: some teachers publish sequences as separate free tracks"
+      ],
+      "more_info": [
+        [
+          "Where the money comes from, if not from you",
+          "Member Plus subscriptions and a teacher-donation model fund the free library rather than advertising, which is why the free tier has no ads at all — unusual in this category. It also means the catalogue is as uneven as its contributors, because the contributors are the product."
+        ]
+      ],
+      "slug": "is-insight-timer-actually-free",
+      "canada": "Same tiers worldwide, priced in local currency.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "Nike Training Club",
+      "category": "health",
+      "url": "https://www.nike.com/ntc-app",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "Required (free Nike account)",
+      "limits": "None on the workout library",
+      "realcost": "A free Nike account. The library is the marketing, and it is not withheld.",
+      "free_score": 88,
+      "value_score": 9,
+      "short": "Yes. Nike charged $14.99 a month for this until July 2020, dropped the subscription, and has kept the entire library free since: hundreds of trainer-led workouts and multi-week programmes, no premium tier, no locked sessions.",
+      "catch": "You are the point of the free app. It costs nothing and withholds nothing, and it exists to keep you inside Nike's ecosystem — the app knows what you train and the brand is in front of you every session. That is the whole transaction, and compared with a monthly fee for the same content most people take it.",
+      "free_includes": [
+        "The complete workout library — hundreds of sessions, nothing locked",
+        "Multi-week training programmes, not only one-off workouts",
+        "Trainer-led audio and video guidance",
+        "No advertising inside the app and no upsell to a premium tier"
+      ],
+      "paid_locked": [
+        "Nothing. The subscription was discontinued in 2020."
+      ],
+      "get_summary": "In practice: a full guided training library, free, in exchange for an account with a sportswear company.",
+      "worth": "It was $14.99 a month until 2020, and the content did not shrink when the price went to zero.",
+      "drawbacks": [
+        "A Nike account is required, and it is a marketing relationship",
+        "Equipment-free workouts dominate; strength programmes assume some kit",
+        "No paid tier means no promise it stays free forever"
+      ],
+      "smart_moves": [
+        "Start with a programme rather than single workouts — the sequencing is the real value",
+        "Filter by equipment before browsing, or half the library will not apply to you",
+        "Nothing is locked, so there is no reason to hunt for a discount code"
+      ],
+      "more_info": [
+        [
+          "What changed in 2020 and why it matters",
+          "Nike made the app free during the first pandemic spring and then made it permanent. Listings on this site usually warn that a free tier can be withdrawn; it is fair to note the opposite case, where a paid product went free and stayed that way for six years. It is still a company decision rather than a guarantee."
+        ]
+      ],
+      "slug": "is-nike-training-club-actually-free",
+      "canada": "Available and identical in Canada.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "Smiling Mind",
+      "category": "health",
+      "url": "https://www.smilingmind.com.au/",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "Required",
+      "limits": "None",
+      "realcost": "An account. It is a nonprofit funded by philanthropy and partnerships.",
+      "free_score": 91,
+      "value_score": 8,
+      "short": "Yes, entirely. Smiling Mind is an Australian not-for-profit and the whole app is free with no paid tier at all — no premium, no locked programmes, no upsell. Its strongest material is the structured programmes for children and classrooms.",
+      "catch": "There is no commercial catch, which makes the thing to watch its funding rather than its pricing. A nonprofit app depends on philanthropy and corporate partnerships, and that is a different kind of fragility from a freemium tier — not a squeeze toward paying, but no subscription revenue holding it up either.",
+      "free_includes": [
+        "Every programme in the app, with no premium tier",
+        "Structured mindfulness programmes for children, by age band",
+        "Classroom material built with educators",
+        "Programmes for sleep, stress and workplace use"
+      ],
+      "paid_locked": [
+        "Nothing. There is no paid tier."
+      ],
+      "get_summary": "In practice: a complete mindfulness app, free because a charity built it rather than a startup.",
+      "worth": "The commercial meditation apps charge $60–70 a year and have no comparable children's programme at any price.",
+      "drawbacks": [
+        "An account is required",
+        "Australian framing and accents throughout",
+        "Smaller library than the commercial apps, by design"
+      ],
+      "smart_moves": [
+        "The children's and classroom programmes are the reason to choose this one",
+        "Nothing is locked, so start with the structured programme rather than browsing",
+        "Donations fund it — worth knowing if you use it for a year and wonder how"
+      ],
+      "more_info": [
+        [
+          "A nonprofit is a different shape of free",
+          "Most entries in this category are free because a free tier feeds a paid one. This one is free because the organisation is a charity and giving it away is the mission. The practical difference is that there is no squeeze — and no subscription revenue underwriting it either."
+        ]
+      ],
+      "slug": "is-smiling-mind-actually-free",
+      "canada": "Available worldwide. Content is Australian in accent and curriculum references.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "Keep Lucid",
+      "category": "health",
+      "url": "https://keeplucid.com/",
+      "verdict": "truly",
+      "card": "No",
+      "autobill": "—",
+      "account": "None",
+      "limits": "None",
+      "realcost": "Nothing, and nothing is collected. There is no account to make.",
+      "free_score": 95,
+      "value_score": 7,
+      "short": "Yes. Daily games and tools for brain health, each tied to what the dementia research actually found — a speed-of-processing test, blood pressure and hearing tools, movement, and the fourteen modifiable risk factors. No account, no card, no paid tier.",
+      "catch": "The catch is in what this kind of thing can honestly claim rather than in what it costs. Speed-of-processing training is the one form of computerised brain training with trial evidence behind it for dementia risk; most of the category has none. The tools here are built around the published risk factors instead of around a score going up, which is the right way round and still not a medical intervention.",
+      "free_includes": [
+        "Fifteen games and daily tools, none locked",
+        "A speed-of-processing test, the trained task with the strongest evidence",
+        "Tools for the modifiable risk factors — blood pressure, hearing, movement",
+        "A reading feed of current research, each story opening on its publisher",
+        "No account, so nothing to hand over and nothing stored about you"
+      ],
+      "paid_locked": [
+        "Nothing. There is no paid tier."
+      ],
+      "get_summary": "In practice: the brain-health exercises with evidence behind them, free, with no account and nothing collected.",
+      "worth": "The commercial brain-training apps charge monthly for the same exercises and claim considerably more than the evidence supports.",
+      "drawbacks": [
+        "Brain training is not a treatment, and no app should be read as one",
+        "No account means no sync — progress lives on the device you used",
+        "A small project, not a clinical programme"
+      ],
+      "smart_moves": [
+        "The speed test is the part with research behind it — start there",
+        "The risk-factor tools matter more than the games; hearing and blood pressure are the big two",
+        "Install it from the browser if you want it on a phone — there is no app store step"
+      ],
+      "more_info": [
+        [
+          "Why the fourteen risk factors",
+          "The Lancet Commission on dementia prevention identifies a set of modifiable risk factors — hearing loss, high blood pressure, physical inactivity and others — that together account for a substantial share of dementia risk. Building tools around those rather than around puzzle scores is the difference between following the evidence and following the market."
+        ],
+        [
+          "Brain training, honestly",
+          "Most of this category sells the idea that practising a game makes you generally sharper, and the evidence for that transfer is weak. The exception is speed-of-processing training, where trial results have been more encouraging. A site that will not say so plainly is selling you something."
+        ]
+      ],
+      "slug": "is-keep-lucid-actually-free",
+      "canada": "Works anywhere. Nothing is region-locked because nothing is account-bound.",
+      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "MyFitnessPal",
+      "category": "health",
+      "url": "https://www.myfitnesspal.com/",
+      "verdict": "freeish",
+      "card": "No",
+      "autobill": "—",
+      "account": "Required",
+      "limits": "No barcode scanner; ads throughout",
+      "realcost": "An account, your diet data, and the feature the app was known for.",
+      "free_score": 46,
+      "value_score": 5,
+      "short": "Sort of, and less than it used to be. The free tier still logs food and counts calories against a database of millions of items — but barcode scanning, the single most-used feature for over a decade, moved behind Premium on 1 October 2022. Premium is $19.99 a month or $79.99 a year.",
+      "catch": "This is the clearest case on the site of a free tier being hollowed out rather than capped. Nothing was taken away from what the app can do; one feature was moved from the free side to the paid side, and it happened to be the one that made logging fast enough to sustain. Typing every item manually is the free experience, and the friction is the product strategy. The free tier also carries ads.",
+      "free_includes": [
+        "Food logging against a very large database",
+        "Calorie and basic macro totals",
+        "Exercise logging and a weight log",
+        "Recipe import"
+      ],
+      "paid_locked": [
+        "Barcode scanning — free until 1 October 2022",
+        "An ad-free experience",
+        "Custom macro targets by gram or percentage",
+        "Meal planning, on the higher Premium+ tier"
+      ],
+      "get_summary": "In practice: a capable food log that removed the feature which made food logging bearable.",
+      "worth": "Free calorie counters that kept barcode scanning exist, which is the comparison that matters here.",
+      "drawbacks": [
+        "No barcode scanning without paying",
+        "Ads in the free tier",
+        "The database is user-contributed, so entries vary in accuracy",
+        "Diet and weight data is sensitive and tied to an account"
+      ],
+      "smart_moves": [
+        "If barcode scanning is why you wanted it, look at the free alternatives first — several kept it",
+        "Log the same meals as saved favourites; it is the fastest route without the scanner",
+        "Export your diary before cancelling anything, not after"
+      ],
+      "more_info": [
+        [
+          "What moved, and when",
+          "Barcode scanning was free from the app's early years until 1 October 2022, when it became a Premium feature. It is worth stating the date plainly: anyone describing the free tier from memory is describing the pre-2022 app, and that is most of the advice you will find written about it."
+        ],
+        [
+          "Why a food log is a privacy question",
+          "A complete record of what you eat, your weight over time and your exercise is among the more revealing datasets a person can create about themselves. That is true of every app in the category, and it is a reason to think about the account, not only the price."
+        ]
+      ],
+      "slug": "is-myfitnesspal-actually-free",
+      "canada": "Same tiers in Canada, priced in Canadian dollars.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "Strava",
+      "category": "health",
+      "url": "https://www.strava.com/",
+      "verdict": "freeish",
+      "card": "No",
+      "autobill": "—",
+      "account": "Required",
+      "limits": "Segment leaderboards, route planning and matched runs are paid",
+      "realcost": "An account, and the features that made it a competitive app rather than a log.",
+      "free_score": 52,
+      "value_score": 6,
+      "short": "Sort of. Recording activities, seeing them, and following people are all still free. The competitive layer is not: full segment leaderboards, route planning, matched runs and training analysis moved to the subscription, now $79.99 a year or $11.99 a month.",
+      "catch": "Strava's free tier was reorganised rather than reduced — you can still record everything and nothing is deleted. What went behind the wall is the reason many people used it: comparing your effort on a segment against everyone else's. Free users still see each segment's top ten, which is enough to know where you are not. The gap between recording your ride and racing it is now the subscription.",
+      "free_includes": [
+        "Unlimited activity recording from the app or a watch",
+        "Your own activity history, with no cap",
+        "The social feed — following, kudos and comments",
+        "Segment exploration and your own PRs and CRs",
+        "The top ten on each segment leaderboard"
+      ],
+      "paid_locked": [
+        "Full segment leaderboards beyond the top ten",
+        "Route planning",
+        "Matched runs and rides, which compare repeated efforts",
+        "Monthly trends, comparisons and the full training log",
+        "Group challenges, moved to the subscription in August 2024"
+      ],
+      "get_summary": "In practice: a free and complete activity log, with the competition sold separately.",
+      "worth": "As a logbook it holds its own against anything free; as a competitive platform it is a paid product with a free entrance.",
+      "drawbacks": [
+        "The feature most associated with Strava is the paid one",
+        "Route planning, useful to every cyclist, is paid",
+        "Free tier has been narrowed more than once, so expect further changes",
+        "Location history is sensitive; privacy zones need setting up deliberately"
+      ],
+      "smart_moves": [
+        "Set your privacy zones around home before your first ride, not after",
+        "The top ten on a segment is visible free, which answers most of the question",
+        "Your data exports in bulk — check that before you depend on any platform for years of training history"
+      ],
+      "more_info": [
+        [
+          "What a narrowing free tier tells you",
+          "Strava has moved the line more than once: leaderboards and routes in one round, group challenges in August 2024. None of it removed your data or stopped you recording. The pattern worth noticing is that the free tier keeps what costs Strava money to run and sells what people are attached to."
+        ],
+        [
+          "The privacy part nobody reads",
+          "An activity log is a location history with timestamps, and the default settings have surprised people before. Privacy zones hide a radius around an address; set them up first, because they do not apply retroactively in a way most users expect."
+        ]
+      ],
+      "slug": "is-strava-actually-free",
+      "canada": "Same tiers in Canada.",
+      "verified": "2026-10"
+    },
+    {
+      "name": "Headspace",
+      "category": "health",
+      "url": "https://www.headspace.com/",
+      "verdict": "freeish",
+      "card": "No",
+      "autobill": "—",
+      "account": "Required",
+      "limits": "A small permanent free tier; most content is paid",
+      "realcost": "An account, and the sense that you have tried it when you have seen a fraction.",
+      "free_score": 38,
+      "value_score": 5,
+      "short": "Barely. There is a permanent free tier — the Beginner Basics course, a few sleepcasts and some breathing exercises — but it is a sample rather than a usable practice. Nearly everything is behind $69.99 a year or $12.99 a month, with 7- and 14-day trials on top.",
+      "catch": "The free tier is honest about existing and misleading about what it is for. It is enough to judge whether the teaching style suits you, which is a real service, and nowhere near enough to build a habit on — which is the design. Note also that the trials are separate from it: starting a trial means a card and a renewal date, while the free tier itself needs neither.",
+      "free_includes": [
+        "The Beginner Basics course",
+        "A small selection of sleepcasts and breathing exercises",
+        "Enough to tell whether the voice and style work for you"
+      ],
+      "paid_locked": [
+        "The great majority of the library",
+        "The themed and multi-week courses",
+        "The full sleep and focus catalogues",
+        "Everything beyond the introductory material"
+      ],
+      "get_summary": "In practice: a well-made sample that ends roughly where a habit would start.",
+      "worth": "Free, you get an introduction. The honest comparison is Insight Timer's 250,000 free tracks or Smiling Mind's complete free app.",
+      "drawbacks": [
+        "The free tier cannot sustain a practice, by design",
+        "Trials need a card and renew automatically",
+        "Among the more expensive apps in the category"
+      ],
+      "smart_moves": [
+        "Use the free tier for what it is good at — deciding whether the style suits you",
+        "If it does, compare against the apps whose libraries are free before subscribing",
+        "A trial is not the free tier; it has a card and a date attached"
+      ],
+      "more_info": [
+        [
+          "Free tier and free trial are not the same thing",
+          "Both exist here and they behave completely differently. The free tier is permanent, needs no card, and is small. The trial is 7 or 14 days, needs a card, and opens everything — then bills. Conflating them is the most common way people end up subscribed to a meditation app they meant to try."
+        ]
+      ],
+      "slug": "is-headspace-actually-free",
+      "canada": "Same tiers, priced in Canadian dollars.",
+      "verified": "2026-10"
     }
   ],
   "deals": [
@@ -11375,6 +11993,14 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-01",
+      "item": "Health",
+      "change": "New category — 13 listings",
+      "from": "—",
+      "to": "—",
+      "detail": "Health was the one subject the site covered offline, under Free in Real Life, and not online at all. The category opens with the crisis lines and the public references, the meditation and training apps whose free tiers are real, and three whose free tiers are not what people assume — MyFitnessPal moved barcode scanning behind Premium on 1 October 2022, Strava's segment leaderboards went to the subscription, and Headspace's permanent free tier is a sample rather than a practice. Every claim was checked against the provider's own page."
+    },
     {
       "date": "2026-09-15",
       "item": "DreamSite Site Checkup",

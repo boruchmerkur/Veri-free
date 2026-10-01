@@ -166,7 +166,20 @@
     "Internet Archive": "Millones de obras de dominio público y la Wayback Machine",
     "Ollama": "Modelos de IA en tu propio equipo — sin límites y sin conexión",
     "VSCodium": "El editor VS Code compilado sin la telemetría de Microsoft",
-    "WordPress.org (self-hosted)": "El software completo bajo licencia GPL — el alojamiento lo pones tú"
+    "WordPress.org (self-hosted)": "El software completo bajo licencia GPL — el alojamiento lo pones tú",
+    "988 Suicide & Crisis Lifeline": "Marca o escribe 988 — gratis, 24/7, sin cuenta",
+    "Crisis Text Line": "Un consejero de crisis por mensaje de texto, gratis, a cualquier hora",
+    "MedlinePlus": "La referencia médica pública de EE. UU. — sin anuncios ni cuenta",
+    "MyHealthfinder": "Qué exámenes preventivos te corresponden, según tu edad",
+    "Find a Health Center (HRSA)": "Centros de salud con tarifa según ingresos, aunque no tengas seguro",
+    "NHS Couch to 5K": "El plan completo de nueve semanas para empezar a correr",
+    "Insight Timer": "Más de 250.000 meditaciones guiadas, sin anuncios",
+    "Nike Training Club": "La biblioteca completa de entrenamientos — nada bloqueado desde 2020",
+    "Smiling Mind": "Una organización sin fines de lucro: la app entera, sin nivel de pago",
+    "Keep Lucid": "Juegos y herramientas de salud cerebral — sin cuenta, nada guardado",
+    "MyFitnessPal": "El escáner de códigos de barras pasó a ser de pago en 2022",
+    "Strava": "Registrar es gratis; competir en los segmentos, no",
+    "Headspace": "Un nivel gratuito permanente, pero pequeño: una muestra"
   },
   "pt": {
     "LibreOffice": "A suíte completa: Writer, Calc, Impress, Draw, Base",
@@ -335,7 +348,20 @@
     "Internet Archive": "Milhões de obras de domínio público e a Wayback Machine",
     "Ollama": "Modelos de IA no seu próprio computador — sem limites e offline",
     "VSCodium": "O editor VS Code compilado sem a telemetria da Microsoft",
-    "WordPress.org (self-hosted)": "O software completo sob licença GPL — a hospedagem é por sua conta"
+    "WordPress.org (self-hosted)": "O software completo sob licença GPL — a hospedagem é por sua conta",
+    "988 Suicide & Crisis Lifeline": "Ligue ou mande 988 — grátis, 24/7, sem conta",
+    "Crisis Text Line": "Um conselheiro de crise por mensagem, grátis, a qualquer hora",
+    "MedlinePlus": "A referência médica pública dos EUA — sem anúncios nem conta",
+    "MyHealthfinder": "Quais exames preventivos lhe cabem, conforme a idade",
+    "Find a Health Center (HRSA)": "Centros de saúde com tarifa conforme a renda, mesmo sem seguro",
+    "NHS Couch to 5K": "O plano completo de nove semanas para começar a correr",
+    "Insight Timer": "Mais de 250.000 meditações guiadas, sem anúncios",
+    "Nike Training Club": "A biblioteca completa de treinos — nada bloqueado desde 2020",
+    "Smiling Mind": "Uma organização sem fins lucrativos: o app inteiro, sem nível pago",
+    "Keep Lucid": "Jogos e ferramentas de saúde cerebral — sem conta, nada guardado",
+    "MyFitnessPal": "O leitor de códigos de barras passou a ser pago em 2022",
+    "Strava": "Registar é grátis; competir nos segmentos, não",
+    "Headspace": "Um nível gratuito permanente, mas pequeno: uma amostra"
   },
   "fr": {
     "LibreOffice": "La suite complète : Writer, Calc, Impress, Draw, Base",
@@ -504,7 +530,20 @@
     "Internet Archive": "Des millions d'œuvres du domaine public et la Wayback Machine",
     "Ollama": "Des modèles d'IA sur votre machine — sans limite et hors ligne",
     "VSCodium": "L'éditeur VS Code compilé sans la télémétrie de Microsoft",
-    "WordPress.org (self-hosted)": "Le logiciel complet sous licence GPL — l'hébergement reste à votre charge"
+    "WordPress.org (self-hosted)": "Le logiciel complet sous licence GPL — l'hébergement reste à votre charge",
+    "988 Suicide & Crisis Lifeline": "Appelez ou textez 988 — gratuit, 24/7, sans compte",
+    "Crisis Text Line": "Un intervenant de crise par SMS, gratuit, à toute heure",
+    "MedlinePlus": "La référence médicale publique des États-Unis — sans pub ni compte",
+    "MyHealthfinder": "Quels dépistages vous concernent, selon votre âge",
+    "Find a Health Center (HRSA)": "Des centres de santé tarifés selon le revenu, même sans assurance",
+    "NHS Couch to 5K": "Le plan complet de neuf semaines pour se mettre à courir",
+    "Insight Timer": "Plus de 250 000 méditations guidées, sans publicité",
+    "Nike Training Club": "La bibliothèque complète d'entraînements — rien de verrouillé depuis 2020",
+    "Smiling Mind": "Une association à but non lucratif : l'app entière, sans offre payante",
+    "Keep Lucid": "Jeux et outils pour la santé du cerveau — sans compte, rien de conservé",
+    "MyFitnessPal": "Le scanner de codes-barres est devenu payant en 2022",
+    "Strava": "Enregistrer est gratuit ; se mesurer sur les segments, non",
+    "Headspace": "Un niveau gratuit permanent, mais réduit : un échantillon"
   },
   "de": {
     "LibreOffice": "Die komplette Suite: Writer, Calc, Impress, Draw, Base",
@@ -673,6 +712,19 @@
     "Internet Archive": "Millionen gemeinfreier Werke und die Wayback Machine",
     "Ollama": "KI-Modelle auf dem eigenen Rechner — ohne Limits und offline",
     "VSCodium": "Der VS-Code-Editor, kompiliert ohne Microsofts Telemetrie",
-    "WordPress.org (self-hosted)": "Die komplette Software unter GPL — das Hosting stellst du selbst"
+    "WordPress.org (self-hosted)": "Die komplette Software unter GPL — das Hosting stellst du selbst",
+    "988 Suicide & Crisis Lifeline": "988 anrufen oder texten — kostenlos, rund um die Uhr",
+    "Crisis Text Line": "Krisenberatung per SMS, kostenlos, zu jeder Zeit",
+    "MedlinePlus": "Die öffentliche US-Medizinreferenz — ohne Werbung, ohne Konto",
+    "MyHealthfinder": "Welche Vorsorge für dein Alter empfohlen ist",
+    "Find a Health Center (HRSA)": "Gesundheitszentren mit einkommensabhängigem Tarif, auch ohne Versicherung",
+    "NHS Couch to 5K": "Der komplette Neun-Wochen-Laufplan für den Anfang",
+    "Insight Timer": "Über 250.000 geführte Meditationen, werbefrei",
+    "Nike Training Club": "Die komplette Workout-Bibliothek — seit 2020 nichts gesperrt",
+    "Smiling Mind": "Eine gemeinnützige App — vollständig, ganz ohne Bezahlstufe",
+    "Keep Lucid": "Spiele und Tools für die Hirngesundheit — ohne Konto, nichts gespeichert",
+    "MyFitnessPal": "Der Barcode-Scanner wurde 2022 kostenpflichtig",
+    "Strava": "Aufzeichnen ist gratis, der Segment-Wettkampf nicht",
+    "Headspace": "Eine dauerhaft kostenlose Stufe, aber klein — eine Probe"
   }
 }

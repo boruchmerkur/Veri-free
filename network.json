@@ -2,88 +2,48 @@
   "_": "Sites in the same hands as Verified Free. Seeded from seo-audit/sites.json on 2026-10-01; the authenticated and password-walled entries there are excluded because a scanner cannot see them. Verified Free itself is not in this list.",
   "sites": [
     {
-      "domain": "torah.today",
-      "label": "torah.today"
-    },
-    {
-      "domain": "rebbesletters.com",
-      "label": "Rebbe's Letters"
+      "domain": "add120.life",
+      "label": "add120"
     },
     {
       "domain": "beismoshiach.org",
       "label": "Beis Moshiach"
     },
     {
-      "domain": "yeshiva101.com",
-      "label": "Yeshiva 101"
-    },
-    {
-      "domain": "thetreeoflifebooks.com",
-      "label": "Tree of Life Books"
-    },
-    {
-      "domain": "rabbiboruch.com",
-      "label": "Rabbi Boruch"
-    },
-    {
-      "domain": "noahide.life",
-      "label": "noahide.life"
-    },
-    {
-      "domain": "moshiach.rocks",
-      "label": "moshiach.rocks"
-    },
-    {
-      "domain": "shuk.world",
-      "label": "shuk.world"
-    },
-    {
-      "domain": "shuk.love",
-      "label": "shuk.love"
-    },
-    {
       "domain": "beshtmate.com",
       "label": "Beshtmate"
-    },
-    {
-      "domain": "chevrusa101.com",
-      "label": "Chevrusa101"
-    },
-    {
-      "domain": "thebeautoxnurse.com",
-      "label": "Beautox Nurse"
-    },
-    {
-      "domain": "add120.life",
-      "label": "add120"
-    },
-    {
-      "domain": "exhibita.design",
-      "label": "EXHIBITA"
-    },
-    {
-      "domain": "torahcodes.online",
-      "label": "Torah Codes"
-    },
-    {
-      "domain": "checkmysite.pro",
-      "label": "checkmysite"
-    },
-    {
-      "domain": "dreamsitedesign.com",
-      "label": "DreamSite"
-    },
-    {
-      "domain": "brandonrussell.art",
-      "label": "Brandon Russell"
     },
     {
       "domain": "bgcutouts.com",
       "label": "bgcutouts"
     },
     {
+      "domain": "brandonrussell.art",
+      "label": "Brandon Russell"
+    },
+    {
+      "domain": "chabadhouse.online",
+      "label": "Chabad Houses"
+    },
+    {
+      "domain": "checkmysite.pro",
+      "label": "checkmysite"
+    },
+    {
+      "domain": "chevrusa101.com",
+      "label": "Chevrusa101"
+    },
+    {
       "domain": "crewup.dev",
       "label": "crewup"
+    },
+    {
+      "domain": "dreamsitedesign.com",
+      "label": "DreamSite"
+    },
+    {
+      "domain": "exhibita.design",
+      "label": "EXHIBITA"
     },
     {
       "domain": "futurejob.info",
@@ -98,20 +58,64 @@
       "label": "jcard.vip"
     },
     {
+      "domain": "keeplucid.com",
+      "label": "Keep Lucid"
+    },
+    {
+      "domain": "moshiach.rocks",
+      "label": "moshiach.rocks"
+    },
+    {
+      "domain": "noahide.life",
+      "label": "noahide.life"
+    },
+    {
+      "domain": "rabbiboruch.com",
+      "label": "Rabbi Boruch"
+    },
+    {
+      "domain": "rebbesletters.com",
+      "label": "Rebbe's Letters"
+    },
+    {
       "domain": "sendsecure.cloud",
       "label": "Sealed"
+    },
+    {
+      "domain": "shuk.love",
+      "label": "shuk.love"
+    },
+    {
+      "domain": "shuk.world",
+      "label": "shuk.world"
     },
     {
       "domain": "targum.me",
       "label": "Targum"
     },
     {
+      "domain": "thebeautoxnurse.com",
+      "label": "Beautox Nurse"
+    },
+    {
+      "domain": "thetreeoflifebooks.com",
+      "label": "Tree of Life Books"
+    },
+    {
+      "domain": "torah.today",
+      "label": "torah.today"
+    },
+    {
+      "domain": "torahcodes.online",
+      "label": "Torah Codes"
+    },
+    {
       "domain": "www.moshiach101.info",
       "label": "Moshiach 101"
     },
     {
-      "domain": "chabadhouse.online",
-      "label": "Chabad Houses"
+      "domain": "yeshiva101.com",
+      "label": "Yeshiva 101"
     }
   ]
 }

@@ -85,6 +85,7 @@ CATS = {
     "reviews": ("Reviews", "The review platforms themselves, rated — whose trust do they actually serve?"),
     "data-apis": ("Data & APIs", "Datasets, dumps and developer APIs — which free tiers are real, and which ones died."),
     "leisure": ("Leisure", "Free things to do and the deal platforms behind the rest — museums, meetups, Groupon, and your library."),
+    "health": ("Health", "Crisis lines, public references, and the fitness and meditation apps — which ones are free, and which only start that way."),
 }
 
 VERDICTS = {
@@ -1464,6 +1465,7 @@ ICONS = {
     "reviews": '<img src="/icons/reviews.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
     "data-apis": '<img src="/icons/data-apis.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
     "leisure": '<img src="/icons/leisure.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
+    "health": '<img src="/icons/health.png" alt="" class="caticon" width="16" height="16" loading="lazy">',
 }
 
 def favicon(url, big=False, override=None):

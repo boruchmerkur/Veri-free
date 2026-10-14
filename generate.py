@@ -8,6 +8,9 @@ from urllib.parse import quote as _urlquote
 from i18n import L10N, EXTRA_LANGS, LANG_NAMES, HTML_LANG
 
 DOMAIN = "https://veri-free.com"
+# Set in build() once listings.json is read. page() renders the footer and runs
+# at module level, so this cannot live as a local of build().
+HAS_COUPONS = False
 
 # Feed art is hotlinked from publishers at full resolution. Measured
 # 2026-09-17, the homepage pulled 3.36 MB of it — one 1,015 KB JPEG into a card
@@ -537,16 +540,6 @@ body.loc-ca .ca-badge{display:inline-flex}
 .so-verdict.v-forever{color:#0A6E8A;border-color:#0A6E8A;background:#E2EFF4}
 .so-verdict.v-freeish{color:#A05E03;border-color:#A05E03;background:#F7EDDC}
 .so-verdict.v-trap,.so-verdict.v-fake,.so-verdict.v-notfree{color:#B3261E;border-color:#B3261E;background:#F9E3E1}
-/* landing handoff into the directory */
-.handoff{padding:34px 0 46px}
-.handoff-card{display:block;max-width:720px;border:2.5px solid var(--ink);border-radius:14px;padding:22px 26px;background:var(--card);text-decoration:none;transition:background .12s,transform .12s}
-.handoff-card:hover{background:var(--paper);transform:translateY(-2px)}
-.ho-k{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.ho-h{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(21px,2.5vw,28px);letter-spacing:-.015em;color:var(--ink);margin:6px 0 10px;line-height:1.15}
-.ho-n{display:block;font-size:14.5px;color:var(--muted);line-height:1.6}
-.ho-n b{color:var(--ink)}
-.handoff .ho-go{display:inline-block;margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--brand)}
-.handoff-card:hover .ho-go{text-decoration:underline}
 /* homepage: thin, prominent find bar — the product, one band deep */
 .hero.slim{padding:20px 0 12px}
 .hero.slim .hero-top{align-items:baseline;gap:6px 14px}
@@ -1622,7 +1615,7 @@ def page(title, desc, path, body, extra_head="", lang="en"):
 {body}
 <footer><div class="wrap foot-in">
 <span>© 2026 Verified Free. Verified Free — we check so you don't get billed.</span>
-<span><a href="/all/">Free offers</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a> · <a href="/coupons/">Coupons</a> · <a href="/quick-buck/">Quick Buck</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
+<span><a href="/all/">Free offers</a> · <a href="/methodology/">How we verify</a> · <a href="/deals/">Deals</a>{" · <a href=\"/coupons/\">Coupons</a>" if HAS_COUPONS else ""} · <a href="/quick-buck/">Quick Buck</a> · <a href="/free-consultations/">Consultations</a> · <a href="/free-in-real-life/">Free in Real Life</a> · <a href="/compare/">Compare</a> · <a href="/changelog/">What changed</a> · <a href="/when-to-buy/">When to buy</a> · <a href="/submit/">For businesses</a> · <a href="mailto:hello@veri-free.com">Contact</a> · <a href="/privacy/">Privacy</a></span>
 </div></footer>
 {NAV_JS}
 {COUPON_JS}
@@ -1850,6 +1843,11 @@ def build():
     data = json.load(open(os.path.join(os.path.dirname(OUT), "listings.json")))
     checked = data["checked"]
     listings = data["listings"]
+    # /coupons/ is only generated when a deal actually carries a code. Linking
+    # to it unconditionally is how the nav, the footer and the sitemap all came
+    # to point at a 404 the day the last coded deal was removed.
+    global HAS_COUPONS
+    HAS_COUPONS = any(x.get("code") for x in data.get("deals", []))
     for l in listings:
         l["slug"] = slugify(l["name"])
     listings.sort(key=lambda x: (-x["free_score"], -x["value_score"]))
@@ -1899,7 +1897,8 @@ def build():
            f'<div class="dropdown-menu"><div class="dd-inner">{cat_dd}<div class="sep"></div>'
            f'<a href="/deals/">Verified Deals</a><a href="/free-in-real-life/">Free in Real Life</a><a href="/quick-buck/">The Quick Buck</a><a href="/compare/">Comparisons</a><a href="/changelog/">What Changed</a><a href="/when-to-buy/">When to Buy</a></div></div></div>'
            f'<a href="/deals/">Deals</a>'
-           f'<a href="/coupons/">Coupons</a>'
+           + (f'<a href="/coupons/">Coupons</a>' if HAS_COUPONS else '') +
+           f''
            f'<a href="/quick-buck/">Quick Buck</a>'
            f'<a href="/free-consultations/">Consultations</a>'
            f'<a href="/free-in-real-life/">Real Life</a>'
@@ -1983,13 +1982,6 @@ def build():
 </div></header>
 <main id="main">
 {home_stream}
-<section class="handoff"><div class="wrap">
-<a class="handoff-card" href="/all/">
-<span class="ho-k">The verdicts</span>
-<span class="ho-h">All {len(listings)}, checked against one rubric</span>
-<span class="ho-n"><b>{genuine}</b> truly free · <b>{forever_n}</b> free forever · <b>{squeeze}</b> free-ish · <b>{traps}</b> traps &amp; fakes</span>
-<span class="ho-go">Search and filter them →</span></a>
-</div></section>
 {headlines_html}
 <section class="sitecheck"><div class="wrap">
 <div class="sc-head">
@@ -2945,14 +2937,36 @@ Verified Free
                 shutil.copy2(src_f, os.path.join(OUT, f))
             elif os.path.isdir(src_f):
                 shutil.copytree(src_f, os.path.join(OUT, f), dirs_exist_ok=True)
-    urls = [f"{DOMAIN}/", f"{DOMAIN}/all/", f"{DOMAIN}/methodology/", f"{DOMAIN}/submit/", f"{DOMAIN}/deals/", f"{DOMAIN}/coupons/", f"{DOMAIN}/free-consultations/", f"{DOMAIN}/free-in-real-life/", f"{DOMAIN}/compare/", f"{DOMAIN}/changelog/", f"{DOMAIN}/when-to-buy/", f"{DOMAIN}/privacy/"] + [f"{DOMAIN}/{lg}/" for lg in EXTRA_LANGS] + [f"{DOMAIN}/{c}/" for c in CATS] + [f"{DOMAIN}/{lg}/{c}/" for lg in EXTRA_LANGS for c in CATS] + [f"{DOMAIN}/{l['slug']}/" for l in listings]
-    if comparisons:
-        urls.extend(comp_urls[1:])  # skip /compare/ already added
+    # The sitemap is derived from what was actually written, not from a hand
+    # kept list. The hand-kept list is how /coupons/ stayed in the sitemap, the
+    # nav and the footer for two weeks after the page stopped being generated,
+    # and how /quick-buck/ never got in at all. A walk cannot drift.
     from datetime import date
     today = date.today().isoformat()
-    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
-              "".join(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n"
-    open(os.path.join(OUT, "sitemap.xml"), "w").write(sitemap)
+    urls = []
+    for root, _dirs, files in os.walk(OUT):
+        if "index.html" not in files:
+            continue
+        rel = os.path.relpath(root, OUT).replace(os.sep, "/")
+        path = "/" if rel == "." else "/" + rel.strip("/") + "/"
+        with open(os.path.join(root, "index.html"), encoding="utf-8") as fh:
+            doc = fh.read()
+        # Read the whole head, not a fixed prefix. extra_head comes AFTER the
+        # inline stylesheet, so the robots tag on /submit/thanks/ sits about
+        # 50KB in and a 4KB peek misses it entirely.
+        head = doc[:doc.find("</head>") + 7] if "</head>" in doc else doc
+        if re.search(r'<meta[^>]+name=["\']robots["\'][^>]*noindex', head, re.I):
+            continue
+        urls.append(DOMAIN + path)
+    urls.sort(key=lambda u: (u.count("/"), u))
+    nl = "\n"
+    sitemap = ('<?xml version="1.0" encoding="UTF-8"?>' + nl
+               + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + nl
+               + "".join(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>" + nl
+                         for u in urls)
+               + "</urlset>" + nl)
+    open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8").write(sitemap)
+    print(f"  sitemap: {len(urls)} indexable URLs")
     body404 = '<main class="wrap"><header class="pagehead"><h1>Not found</h1><p>That page doesn\'t exist — but the verdicts do. <a href="/">Search the full list</a>.</p></header></main>'
     open(os.path.join(OUT, "404.html"), "w").write(page_nav("Not found — Verified Free", "Page not found.", "/404.html", body404))
 

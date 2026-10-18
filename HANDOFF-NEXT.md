@@ -1,8 +1,18 @@
 # veri-free.com — handoff (updated 2026-07-31)
 
-> **Ownership:** this site belongs to **Sufrin Studios** (sufrinstudios.com)
-> as of 2026-09-15. It is not a DreamSite property. Analytics relay is
-> `sufrinstudios.com/api/lily`; the homepage checker calls `checkmysite.pro`.
+> **Ownership:** this site belongs to **TopSearch** (topsearch.solutions).
+> The studio was Sufrin Studios until 2026-10-18 and DreamSite before that.
+>
+> **The offer, for any copy that mentions the studio:** design and hosting are
+> free, and the client starts paying once the search work is working — when
+> the traffic is actually rising. Say it that way round; it is the offer, not
+> a discount.
+>
+> **Analytics relay is still `sufrinstudios.com/api/lily`** and must stay
+> there until the endpoint exists on topsearch.solutions, which answered 404
+> on 2026-10-18. Either half of the lily tracker missing is a silent zero
+> rather than an error, so verify with a POST before moving it. The homepage
+> checker calls `checkmysite.pro`.
 
 ## Ground rules — read first
 - **Working home: `C:\Users\BoruchMerkur\Projects\Veri-free`** (git works here).
@@ -17,7 +27,7 @@
   are served AT their config.path and NOT at /.netlify/functions/<name>.
   NEVER add a [[redirects]] rule for them — that's what broke /api/lily once.
 - CSP lives in `assets/_headers` (copied to site root at build).
-  `connect-src 'self' https://sufrinstudios.com https://checkmysite.pro`.
+  `connect-src 'self' https://checkmysite.pro`.
 - **Every new listing needs its card line translated**: add lang→name→text to
   `i18n_listings.json` for es/pt/fr/de (falls back to English if missing).
   UI-chrome strings live in `i18n.py`.
@@ -42,7 +52,7 @@
   A weekly cloud routine health-checks it (Sundays 12:00 UTC,
   claude.ai/code/routines/trig_015NEeX8Kiy5mf8U9whQzyqo).
 - Analytics: lily edge tracker (netlify/ files) → dashboard at
-  sufrinstudios.com/dashboard (password-gated).
+  the studio dashboard (password-gated).
 
 ## PENDING — user must click (blocks form capture)
 Netlify dashboard → veri-free project → **Forms → "Enable form detection"**,

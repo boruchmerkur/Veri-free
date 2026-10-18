@@ -4,7 +4,7 @@
 // The edge function (lily-edge.js) on this same site POSTs its coarse,
 // already-anonymized event here — to this site's OWN origin. This collector's
 // only job is to relay that coarse count onward, server-to-server, to the
-// central Sufrin Studios dashboard. Nothing raw ever reaches this point: the event
+// central TopSearch dashboard. Nothing raw ever reaches this point: the event
 // it receives has no IP and no full user-agent (only path, referrer host,
 // country, device class, and a daily-rotating one-way hash). So the only data
 // that ever crosses a domain boundary is aggregate, non-identifying counts —
@@ -13,6 +13,12 @@
 // If you'd rather keep the data on THIS site only (no relay), delete the
 // RELAY_URL line and add your own store write instead.
 
+// STILL sufrinstudios.com on purpose. The studio was renamed TopSearch on
+// 2026-10-18, but topsearch.solutions/api/lily answers 404 (checked that day,
+// along with /api/collect, /api/beacon, /lily and /api/checks) while the old
+// endpoint still accepts the POST and returns 200. Either half of this tracker
+// missing is a silent zero, not an error, so the relay moves when the endpoint
+// exists on the new domain and not before.
 const RELAY_URL = 'https://sufrinstudios.com/api/lily';
 
 const CORS = {

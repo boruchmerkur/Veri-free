@@ -550,8 +550,8 @@ body.loc-ca .ca-badge{display:inline-flex}
    is not fixed (the wrapping category bar runs ~300px on a phone), so there
    is no honest `top` value to offset by. Prominence comes from the rules. */
 .findbar{background:var(--paper);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink)}
-/* On /quick-buck/ the bar follows a bordered note rather than a page head, so the top rule lands a few pixels under another line and the pair reads as an empty band. One separator is enough. */
-.findbar.oneline{border-top:0}
+/* On /quick-buck/ the bar holds scheme chips and a timestamp, not a search field, and it sits between a bordered note and a wall of bordered cards. Both heavy rules are banding rather than separating, so this page takes none. /all/, where the bar is a real toolbar, keeps its pair. */
+.findbar.norule{border-top:0;border-bottom:0}
 .findbar-in{display:flex;align-items:center;gap:12px 16px;padding:10px 22px;flex-wrap:wrap}
 .findbar .searchbar{margin:0;flex:1 1 300px;min-width:0;border-width:2px;border-radius:10px}
 .findbar .searchbar input{padding:9px 13px;font-size:15px}
@@ -2669,7 +2669,7 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
 <p>Which is why the <strong>Reality check</strong> filter is not a disclaimer strip at the bottom of the page. It is the FTC and the CFPB, in the same board, describing what happened to the schemes that got far enough to be prosecuted. Read the pitch and the prosecution together and the genre explains itself.</p>
 <p>Three rules that survive every version of this: if it needs your money up front, it is selling to you, not with you. If the returns are certain, the risk is being hidden somewhere you have not looked. Never put in money you would need back this year.</p>
 </div></details></div>
-<div class="findbar oneline"><div class="wrap findbar-in">
+<div class="findbar norule"><div class="wrap findbar-in">
 <div class="vfilters" id="wchips">{chips}</div>
 <span class="hs-when" id="wwhen">Updated {ago(wire.get("updated"))}</span>
 </div></div>

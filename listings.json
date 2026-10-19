@@ -11428,6 +11428,68 @@
       "slug": "is-headspace-actually-free",
       "canada": "Same tiers, priced in Canadian dollars.",
       "verified": "2026-10"
+    },
+    {
+      "name": "TopSearch Free Website & Hosting",
+      "category": "business",
+      "url": "https://topsearch.solutions/",
+      "verdict": "forever",
+      "card": "No",
+      "autobill": "—",
+      "account": "None — you talk to them",
+      "limits": "The site runs on their hosting; a studio credit sits in the footer",
+      "realcost": "Nothing, unless the search work starts producing. Then a monthly retainer.",
+      "free_score": 80,
+      "value_score": 9,
+      "short": "Yes, and it stays free. TopSearch designs and hosts the site at no charge, open to anyone who asks, with no card and no screening. The only thing they ever invoice is SEO work, and that starts when the traffic is actually rising — so a site that never gains traffic never costs anything.",
+      "catch": "The free part is the front door, and the listing may as well say so: a studio that builds your site for nothing is betting it can later sell you search work. That bet costs you nothing if it loses. What does cost you is leaving. The domain is yours, but the site runs on their stack, so moving hosts means having it rebuilt — the free build is not a package you can pick up and carry. A small studio credit sits in the footer too. Neither is hidden, and both are the reason this is Free Forever rather than Truly Free.",
+      "free_includes": [
+        "The site designed and built, at no charge",
+        "Hosting, with no monthly fee and no clock",
+        "Open to anyone who asks — no screening, no card",
+        "The domain registered in your name, not theirs",
+        "It stays up whether or not you ever buy anything"
+      ],
+      "paid_locked": [
+        "SEO work, billed as a monthly retainer — and only once results show",
+        "Moving the site to another host, which means paying someone to rebuild it"
+      ],
+      "get_summary": "In practice: a real website, built and hosted for nothing, from a studio hoping you will later want the search work.",
+      "worth": "A small business site runs four figures to build and a monthly fee to host. Here both are nil, and the invoice only appears if the search work does something.",
+      "drawbacks": [
+        "The site lives on their hosting; leaving means rebuilding it",
+        "A studio credit appears in the footer",
+        "The free build exists to introduce a paid service",
+        "One studio, so capacity is finite"
+      ],
+      "smart_moves": [
+        "Check the domain is registered in your name at the start — it is the part you keep",
+        "Ask for the content and images in a form you hold, whoever hosts the site",
+        "Nothing obliges you to buy the SEO work; the site stays up either way",
+        "If you only need a brochure page and will never want search work, that is a fine use of this and nobody is pretending otherwise"
+      ],
+      "more_info": [
+        [
+          "Why a studio gives the build away",
+          "Design is a one-off sale; search work is a monthly one. A studio that charges for the build earns once and competes on price with every other studio. A studio that gives the build away has a client already on its hosting, already in a relationship, and a natural second conversation about traffic. That is the whole model, and it is more honest than it sounds: the thing being given away really is given away, and the thing being sold is sold on results."
+        ],
+        [
+          "Free and portable are different things",
+          "This is the distinction the site keeps returning to. The build costs nothing and will go on costing nothing. It is not portable, and portability is what people assume “free” includes. The domain is the piece that travels; the site is not. Worth knowing on day one rather than on the day you want to leave."
+        ]
+      ],
+      "free_spec": {
+        "Card required": "No",
+        "Free plan or trial": "Free plan",
+        "Their branding": "On free tier",
+        "Export your work": "Limited",
+        "Commercial use": "Allowed",
+        "Time limit": "None"
+      },
+      "slug": "is-topsearch-free-website-hosting-actually-free",
+      "canada": "Toronto-based; works with clients anywhere.",
+      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing.",
+      "verified": "2026-10"
     }
   ],
   "deals": [
@@ -11993,6 +12055,14 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-19",
+      "item": "TopSearch Free Website & Hosting",
+      "change": "Listed — Free Forever, 80",
+      "from": "—",
+      "to": "80",
+      "detail": "The studio that publishes this site gives away the design and the hosting and invoices only for SEO work, once traffic is rising. The free part is permanent and open to anyone, with no card. It is not Truly Free because that verdict means you can take the thing and go, and the site runs on the studio's hosting — the domain travels, the build does not. Carries the same-owner disclosure."
+    },
     {
       "date": "2026-10-01",
       "item": "Health",

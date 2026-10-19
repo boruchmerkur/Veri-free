@@ -461,6 +461,8 @@ body.loc-ca .ca-badge{display:inline-flex}
    is not fixed (the wrapping category bar runs ~300px on a phone), so there
    is no honest `top` value to offset by. Prominence comes from the rules. */
 .findbar{background:var(--paper);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink)}
+/* On /quick-buck/ the bar follows a bordered note rather than a page head, so the top rule lands a few pixels under another line and the pair reads as an empty band. One separator is enough. */
+.findbar.oneline{border-top:0}
 .findbar-in{display:flex;align-items:center;gap:12px 16px;padding:10px 22px;flex-wrap:wrap}
 .findbar .searchbar{margin:0;flex:1 1 300px;min-width:0;border-width:2px;border-radius:10px}
 .findbar .searchbar input{padding:9px 13px;font-size:15px}

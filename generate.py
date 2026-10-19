@@ -550,6 +550,8 @@ body.loc-ca .ca-badge{display:inline-flex}
    is not fixed (the wrapping category bar runs ~300px on a phone), so there
    is no honest `top` value to offset by. Prominence comes from the rules. */
 .findbar{background:var(--paper);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink)}
+/* On /quick-buck/ the bar follows a bordered note rather than a page head, so the top rule lands a few pixels under another line and the pair reads as an empty band. One separator is enough. */
+.findbar.oneline{border-top:0}
 .findbar-in{display:flex;align-items:center;gap:12px 16px;padding:10px 22px;flex-wrap:wrap}
 .findbar .searchbar{margin:0;flex:1 1 300px;min-width:0;border-width:2px;border-radius:10px}
 .findbar .searchbar input{padding:9px 13px;font-size:15px}
@@ -1138,7 +1140,19 @@ WIRE_JS = """<script>
             "<i>"+counts[s]+"</i></button>";}).join("");
         var back=chips.querySelector('.vfilter[data-s="'+keep.replace(/"/g,'\\\\"')+'"]');
         (back||chips.querySelector(".vfilter")).classList.add("on");
-        if(window.vfAgeTimes)window.vfAgeTimes(board);
+        // The stamp is baked at build time and the swap used to leave it
+        // alone, so the page showed the date of the last deploy beside
+        // stories collected minutes ago.
+        var w=document.getElementById("wwhen");
+        if(w&&d.updated){
+          var du=new Date(d.updated);
+          if(!isNaN(du)){
+            w.innerHTML='Updated <time class="ts" datetime="'+esc(du.toISOString())+
+              '">'+esc(du.toLocaleDateString(undefined,{month:"short",day:"numeric"}))+
+              "</time>";
+          }
+        }
+        if(window.vfAgeTimes){window.vfAgeTimes(board);if(w)window.vfAgeTimes(w);}
         apply();
       })
       .catch(function(){});   // the baked board stands
@@ -2649,15 +2663,15 @@ window.addEventListener('scroll',function(){document.getElementById('btt').class
         wire_body = f"""
 <header class="pagehead tight wrap"><h1>The Quick Buck</h1>
 <p>Every "make money fast" pitch we can find, next to the enforcement actions against them.</p></header>
-<details class="pagenote wrap"><summary>Read this before you read any of that</summary><div class="pn-body">
+<div class="wrap"><details class="pagenote"><summary>Read this before you read any of that</summary><div class="pn-body">
 <p>This board is not advice and nothing on it is endorsed. It is a reading room for the get-rich-fast genre — side hustles, trading, crypto, flipping, real estate, passive income — collected from {len(wire.get("sources", []))} public feeds and left in the publishers' own words.</p>
 <p>The reason it sits on a site about "free" is that the two cons rhyme. A number in a headline is a marketing decision, not a result: the person who made $60,000 in two months is the one who wrote about it, and you are not reading about the people who tried the same thing and lost. Survivorship is the whole business model.</p>
 <p>Which is why the <strong>Reality check</strong> filter is not a disclaimer strip at the bottom of the page. It is the FTC and the CFPB, in the same board, describing what happened to the schemes that got far enough to be prosecuted. Read the pitch and the prosecution together and the genre explains itself.</p>
 <p>Three rules that survive every version of this: if it needs your money up front, it is selling to you, not with you. If the returns are certain, the risk is being hidden somewhere you have not looked. Never put in money you would need back this year.</p>
-</div></details>
-<div class="findbar"><div class="wrap findbar-in">
+</div></details></div>
+<div class="findbar oneline"><div class="wrap findbar-in">
 <div class="vfilters" id="wchips">{chips}</div>
-<span class="hs-when">Updated {ago(wire.get("updated"))}</span>
+<span class="hs-when" id="wwhen">Updated {ago(wire.get("updated"))}</span>
 </div></div>
 <main class="wrap">
 <div class="stream" id="wboard">{board}</div>

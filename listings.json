@@ -3593,79 +3593,6 @@
       }
     },
     {
-      "name": "Sefaria",
-      "category": "books-reading",
-      "url": "https://www.sefaria.org",
-      "verdict": "truly",
-      "card": "No",
-      "autobill": "—",
-      "account": "Optional",
-      "limits": "None",
-      "realcost": "Nothing. Nonprofit, donation-funded.",
-      "free_includes": [
-        "Tanach, Talmud, Midrash, and thousands of connected texts",
-        "English translations alongside the originals",
-        "Source-sheet building tools",
-        "Free apps and offline access"
-      ],
-      "paid_locked": [],
-      "short": "Yes — the entire Jewish library: Tanach, Talmud, commentaries, and thousands of connected texts with translations, free, no account required, no ads.",
-      "catch": "None. A nonprofit that put a complete classical library online and asks nothing at the door.",
-      "worth": "A printed home library of these texts runs well over a thousand dollars.",
-      "smart_moves": [
-        "Download texts in the free app for offline use before traveling",
-        "The source-sheet builder replaces paid worksheet tools for teaching",
-        "Builders: the API and data are free too"
-      ],
-      "free_score": 100,
-      "value_score": 10,
-      "get_summary": "In practice: a complete beis midrash in your pocket — texts, translations, and connections that would fill a room of seforim.",
-      "drawbacks": [
-        "Translation style varies text to text",
-        "So much depth it takes a little orientation"
-      ],
-      "more_info": [
-        [
-          "How deep it goes",
-          "From Tanach and Talmud through Midrash, halacha, and Chassidus, with commentaries interlinked so a verse opens onto everything ever said about it. The connections between texts — not just the texts — are the real gift."
-        ],
-        [
-          "Free beyond the website",
-          "The mobile apps work offline once texts are downloaded, and the entire database and API are open for builders. A nonprofit funded by donors; there is nothing to buy."
-        ]
-      ],
-      "short_worth": null,
-      "slug": "is-sefaria-actually-free",
-      "external_ratings": [
-        {
-          "source": "App Store",
-          "score": "4.5/5",
-          "url": "https://apps.apple.com/us/app/id1163273965",
-          "count": "768"
-        },
-        {
-          "source": "Google Play",
-          "score": "4.6/5",
-          "url": "https://play.google.com/store/apps/details?id=org.sefaria.sefaria&hl=en_US&gl=US",
-          "count": "4.1K"
-        }
-      ],
-      "safety": {
-        "verdict": "Yes. A nonprofit library of Jewish texts, free to read, with the underlying texts openly licensed.",
-        "download": "sefaria.org and the official apps.",
-        "data": "No account needed to read. An account syncs your notes and reading history across devices, and that's its only purpose.",
-        "scams": "Nothing is upsold. The organisation runs on donations, and the text database is published for anyone to build on."
-      },
-      "free_spec": {
-        "Card required": "No",
-        "What you need": "Nothing",
-        "Catalogue": "Public domain",
-        "Waitlists": "No",
-        "Keep after leaving": "Yes",
-        "Offline reading": "Yes"
-      }
-    },
-    {
       "name": "Audible",
       "category": "books-reading",
       "url": "https://www.audible.com",
@@ -8850,101 +8777,6 @@
       }
     },
     {
-      "name": "Beis Moshiach",
-      "category": "books-reading",
-      "url": "https://beismoshiach.org",
-      "verdict": "truly",
-      "card": "No",
-      "autobill": "—",
-      "account": "None needed",
-      "limits": "The website is open; the printed weekly is a separate paid subscription",
-      "realcost": "Nothing to read online. Print is the paid product.",
-      "free_includes": [
-        "The weekly magazine's content, open in the browser",
-        "Years of archive — sichos, farbrengens, and Moshiach & Geulah essays and features",
-        "No account, no card, no paywall, no metering"
-      ],
-      "paid_locked": [
-        "The printed weekly edition (subscription)"
-      ],
-      "short": "Yes — the magazine's website is fully open: current content and years of archive with no account, no card and no paywall. Money only enters if you want the printed weekly delivered.",
-      "catch": "It's a focused publication — Chabad, Moshiach and Geulah — so the depth is the draw and the niche is the limit. The printed weekly costs money; the site doesn't.",
-      "worth": "Jewish weeklies typically run $100–180/year in print or metered digital; the open archive here is $0.",
-      "smart_moves": [
-        "Read the current features online before deciding whether you want print",
-        "Treat the archive as a research library — it goes back years"
-      ],
-      "free_score": 97,
-      "value_score": 6,
-      "get_summary": "In practice: an international weekly's worth of Chassidus, Moshiach and Geulah reading — plus its archive — permanently open in the browser.",
-      "drawbacks": [
-        "Niche by design — Chabad/Moshiach focus",
-        "The print edition is a separate paid subscription"
-      ],
-      "more_info": [
-        [
-          "Why is the website free if print costs money?",
-          "Print subscriptions cover the physical product; the content itself stays open. The website is the magazine, not a teaser for it."
-        ]
-      ],
-      "short_worth": null,
-      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free.",
-      "free_spec": {
-        "Card required": "No",
-        "What you need": "Nothing",
-        "Catalogue": "Publisher's own",
-        "Waitlists": "No",
-        "Keep after leaving": "Yes",
-        "Offline reading": "Yes"
-      }
-    },
-    {
-      "name": "The Rebbe's Letters",
-      "category": "books-reading",
-      "url": "https://rebbesletters.com",
-      "verdict": "truly",
-      "card": "No",
-      "autobill": "—",
-      "account": "None needed",
-      "limits": "A reader's portal — the printed Igros Kodesh volumes remain the full scholarly set",
-      "realcost": "Nothing.",
-      "free_includes": [
-        "A clean reader's portal into the Rebbe's Igros Kodesh",
-        "Browse and read letters in the browser — nothing to install",
-        "No account, no card, no ads"
-      ],
-      "paid_locked": [],
-      "short": "Yes — completely open: a reader's portal into the Rebbe's letters with no account, no card and no ads. The printed volumes are for owning; reading is free.",
-      "catch": "It's a portal into one literature — the Rebbe's Igros Kodesh — not a general Jewish library, and Hebrew reading skills help.",
-      "worth": "A printed Igros Kodesh set runs into the hundreds of dollars; reading online is $0.",
-      "smart_moves": [
-        "Start from the portal's entry points rather than browsing volume by volume"
-      ],
-      "free_score": 100,
-      "value_score": 7,
-      "get_summary": "In practice: the Rebbe's correspondence — a library in itself — readable free in the browser.",
-      "drawbacks": [
-        "Single-literature focus",
-        "Not a substitute for the printed set's apparatus"
-      ],
-      "more_info": [
-        [
-          "What are the Igros Kodesh?",
-          "The Lubavitcher Rebbe's collected letters — thousands of letters on Torah, guidance and public affairs, printed in dozens of volumes and studied daily by many."
-        ]
-      ],
-      "short_worth": null,
-      "disclosure": "This site and Verified Free share a publisher. Stamped on the same rubric as every other listing — the verdict would say so if it weren't free.",
-      "free_spec": {
-        "Card required": "No",
-        "What you need": "Nothing",
-        "Catalogue": "Publisher's own",
-        "Waitlists": "No",
-        "Keep after leaving": "Yes",
-        "Offline reading": "Yes"
-      }
-    },
-    {
       "name": "Indeed",
       "category": "earn",
       "url": "https://www.indeed.com",
@@ -12055,6 +11887,14 @@
     }
   ],
   "changelog": [
+    {
+      "date": "2026-10-29",
+      "item": "Sefaria, Beis Moshiach, The Rebbe's Letters",
+      "change": "Delisted — moved to shuk.world",
+      "from": "listed",
+      "to": "—",
+      "detail": "Three Jewish entries sat on a shelf about free ebook libraries, where a reader searching for free books was served by five of them and not by these. All three are already listed on shuk.world's community directory, which is where a reader looking for them actually goes. Their URLs redirect there rather than 404."
+    },
     {
       "date": "2026-10-19",
       "item": "TopSearch Free Website & Hosting",
